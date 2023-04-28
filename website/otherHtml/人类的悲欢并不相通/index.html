@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>raining</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        .rain {
+            position: absolute;
+            width: 5px;
+            height: 600px;
+            /*outline: solid 1px;*/
+            transform-origin: top;
+            transform: rotate(-15deg);
+        }
+
+        .water {
+            width: 5px;
+            height: 60px;
+            /*background-color: darkgray;*/
+            background-image: linear-gradient(to bottom, transparent, darkgray);
+            animation: waterFall 1s infinite;
+            animation-timing-function: linear;
+        }
+
+        .spread {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            bottom: 0;
+            left: -50px;
+            margin-left: 50%;
+            margin-bottom: -100px;
+            border-radius: 1000px;
+            border: whitesmoke solid 2px;
+            animation: spreadAni 1s infinite linear;
+        }
+
+        @keyframes spreadAni {
+            0% {
+                transform: rotate(15deg) rotateX(60deg) scale(0.2);
+                opacity: 0;
+            }
+            45% {
+                transform: rotate(15deg) rotateX(60deg) scale(0);
+                opacity: 0;
+            }
+            46% {
+                transform: rotate(15deg) rotateX(60deg) scale(0);
+                opacity: 0.3;
+            }
+            100% {
+                border-width: 10px;
+                transform: rotate(15deg) rotateX(60deg) scale(1);
+                opacity: 0;
+            }
+        }
+
+        @keyframes waterFall {
+            0% {
+                opacity: 1;
+                margin-top: 0;
+            }
+            50% {
+                margin-top: 600px;
+                opacity: 1;
+            }
+            51% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 0;
+                margin-top: 600px;
+            }
+        }
+
+        #activeTitle {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            padding-top: 300px;
+            font-size: 60px;
+            color: white;
+            font-weight: 200;
+            z-index: 1000;
+            /*outline: solid 1px;*/
+        }
+
+        #activeContent {
+            /*outline: solid 1px;*/
+            white-space: pre-wrap;
+            font-family: "Times New Roman", serif;
+        }
+
+        body {
+            width: 1500px;
+            /*height: 1000px;*/
+            /*overflow: hidden;*/
+            position: relative;
+            overflow-x: hidden;
+            /*overflow-y: hidden;*/
+            background-color: gray;
+        }
+
+        .sense {
+            /*width: 1500px;*/
+            width: 100%;
+            height: 1000px;
+            /*border: solid 2px;*/
+            background-color: gray;
+            background-image: linear-gradient(to bottom, dimgray, slategray, darkgray);
+            overflow: hidden;
+        }
+
+        img {
+            position: absolute;
+            width: 100%;
+            top: -200px;
+        }
+
+        .flash {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #fff;
+            opacity: 0.1;
+            animation: lighten 8s infinite;
+            /*z-index: 900;*/
+        }
+
+        @keyframes lighten {
+            0% {
+                opacity: 0;
+            }
+            45% {
+                opacity: 0;
+            }
+            46% {
+                opacity: 0.6;
+            }
+            49% {
+                opacity: 0.2;
+            }
+            50% {
+                opacity: 0.5;
+            }
+            80% {
+                opacity: 0;
+            }
+            81% {
+                opacity: 0.6;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="sense">
+    <div class="flash"></div>
+    <h1 id="activeTitle">
+        <span id="activeContent"></span>
+    </h1>
+</div>
+
+
+</body>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.9"></script>
+<script>
+
+    function r(maxN) {
+        return Math.random() * maxN;
+    }
+
+    // 添加随机雨水
+    let sense = document.querySelector(".sense");
+    for (let i = 0; i < 200; i++) {
+        let rain = document.createElement("div");
+        rain.className = "rain";
+        rain.style.setProperty('left', `${r(1800) - 200}px`);
+        rain.style.setProperty('top', `${r(60)}px`);
+        let water = document.createElement("div");
+        let wd = -r(1000);
+        water.style.animationDelay = `${+wd}ms`;
+        water.className = "water";
+        rain.appendChild(water);
+        let spread = document.createElement("div");
+        spread.className = "spread";
+        spread.style.animationDelay = `${+wd}ms`;
+        rain.appendChild(spread);
+        sense.appendChild(rain);
+    }
+
+    let options = {
+        strings: [
+            '人类的悲欢并不相通',
+            'Human joys and sorrows are not interlinked',
+            'However...',
+            'Not required',
+            '有人等烟雨，有人等雨停，有人等雨伞',
+            '世间大雨滂沱，万物苟且偷生',
+            '更何况你我。',
+        ],
+        typeSpeed: 200,   //打印速度
+        startDelay: 300, //开始之前的延迟300毫秒
+        backSpeed: 50,
+        loop: true,      //是否循环
+    };
+    let typed = new Typed('#activeContent', options);
+</script>
+</html>

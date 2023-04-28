@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>一个机器人走路动画</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* 头部动画 */
+        @keyframes head {
+            /*transform: translateY(-80px);*/
+            25% {
+                transform: translateY(-5px) translateX(-5px);
+            }
+            50% {
+                transform: translateY(-0px) translateX(0);
+            }
+            75% {
+                transform: translateY(-5px) translateX(5px);
+            }
+        }
+
+        /* 眼部闪光动画 */
+        @keyframes eyeAni {
+            25% {
+                box-shadow: black 0 0 20px;
+                background-color: blue;
+            }
+            50% {
+
+            }
+            75% {
+                box-shadow: black 0 0 20px;
+                background-color: red;
+            }
+        }
+
+        /* 身体上下动画 */
+        @keyframes bodyUpDown {
+            25% {
+                transform: translateY(-10px);
+            }
+            50% {
+                transform: translateY(0);
+            }
+            75% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* 大臂1动画 */
+        @keyframes rootArm1 {
+            25% {
+                transform: translateY(20px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(20px) rotate(30deg);
+            }
+            75% {
+                transform: translateY(20px) rotate(0deg);
+            }
+        }
+
+        /* 大臂2动画 */
+        @keyframes rootArm2 {
+            25% {
+                transform: translateY(20px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(20px) rotate(-30deg);
+            }
+            75% {
+                transform: translateY(20px) rotate(0deg);
+            }
+        }
+
+        /* 小臂1动画 */
+        @keyframes subArm1 {
+            50% {
+                transform: rotate(30deg);
+            }
+        }
+
+        /* 小臂2动画 */
+        @keyframes subArm2 {
+            50% {
+                transform: rotate(0deg);
+            }
+        }
+
+        /* 大腿1动画 */
+        @keyframes rootLegWalk1 {
+            /* 最开始  rotate(-5deg);*/
+            25% {
+                transform: rotate(-15deg);
+            }
+            50% {
+                transform: rotate(5deg);
+            }
+            75% {
+                transform: rotate(30deg);
+            }
+        }
+
+        /* 小腿1动画 */
+        @keyframes subLegWalk1 {
+            /* 最开始 transform: rotate(-10deg);*/
+            25% {
+                top: 80%;
+                transform: rotate(0deg);
+                background-color: skyblue;
+            }
+            50% {
+                top: 70%;
+                background-color: red;
+                transform: rotate(-30deg);
+            }
+            75% {
+                top: 80%;
+                background-color: deeppink;
+                transform: rotate(-15deg);
+            }
+        }
+
+        /* 大腿2动画 */
+        @keyframes rootLegWalk2 {
+            25% {
+                /*向前迈*/
+                transform: rotate(30deg);
+            }
+            50% {
+                /*踩下去*/
+                transform: rotate(5deg);
+            }
+            75% {
+                /*往后登*/
+                transform: rotate(-15deg);
+            }
+        }
+
+        /* 小腿2动画 */
+        @keyframes subLegWalk2 {
+            25% {
+                top: 80%;
+                transform: rotate(-30deg);
+                background-color: transparent;
+            }
+            50% {
+                top: 80%;
+                background-color: red;
+                transform: rotate(-5deg);
+            }
+            75% {
+                top: 80%;
+                background-color: transparent;
+                transform: rotate(0deg);
+            }
+        }
+
+        /* 脚丫1动画 */
+        @keyframes foot1 {
+            25% {
+                transform: rotate(-5deg);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+            75% {
+                transform: rotate(10deg);
+            }
+        }
+
+        /* 脚丫2动画 */
+        @keyframes foot2 {
+            25% {
+                transform: rotate(20deg);
+            }
+            50% {
+                transform: translateX(10px);
+            }
+            75% {
+                transform: rotate(10deg);
+            }
+        }
+
+        /* 剑光动画 */
+        @keyframes weaponLightAni {
+            25% {
+                width: 30px;
+                height: 0;
+            }
+            50% {
+                box-shadow: pink 0 0 40px;
+                /*transform: translateX(10px);*/
+            }
+            75% {
+                box-shadow: yellow 0 0 100px;
+                /*transform: rotate(10deg);*/
+            }
+        }
+
+        /* 剑动画 */
+        @keyframes weaponAni {
+            50% {
+                transform: rotate(-360deg);
+            }
+            100% {
+                transform: rotate(-720deg);
+            }
+        }
+
+        .body {
+            width: 70px;
+            height: 200px;
+            position: relative;
+            left: 40%;
+            margin-top: 20vh;
+            border: solid 5px;
+            border-radius: 60px;
+            animation: bodyUpDown 2s infinite;
+        }
+
+        .eye {
+            width: 25px;
+            height: 10px;
+            position: absolute;
+            left: 5px;
+            top: 30%;
+            border-top-left-radius: 100px;
+            border-bottom-right-radius: 100px;
+            background-color: deeppink;
+            animation: eyeAni 2s infinite;
+        }
+
+        .head {
+            width: 80px;
+            height: 80px;
+            position: absolute;
+            border: solid 5px;
+            margin-left: -10px;
+            transform-origin: center bottom;
+            margin-top: -70px;
+            border-top-left-radius: 30px;
+            border-bottom-right-radius: 50px;
+            animation: head 2s infinite;
+        }
+
+        .arm1, .arm2, .arm11, .arm22, .leg1, .leg2, .leg11, .leg22, .foot1, .foot2 {
+            border-top-left-radius: 30px;
+            border-top-right-radius: 30px;
+        }
+
+        .arm1 {
+            width: 42px;
+            height: 160px;
+            border: solid 5px;
+            position: absolute;
+            transform-origin: center top;
+            margin-left: 10px;
+            transform: translateY(20px) rotate(-30deg);
+            animation: rootArm1 2s infinite;
+        }
+
+        .arm11 {
+            width: 90%;
+            height: 90%;
+            border: solid 3px;
+            top: 80%;
+            position: absolute;
+            transform-origin: center top;
+            transform: rotate(0deg);
+            animation: subArm1 2s infinite;
+        }
+
+        .arm2 {
+            width: 100px;
+            height: 160px;
+            border: solid 5px;
+            position: absolute;
+            transform-origin: center top;
+            margin-left: -20px;
+            transform: translateY(20px) rotate(30deg);
+            opacity: 0.3;
+            animation: rootArm2 2s infinite;
+        }
+
+        .leg1 {
+            width: 50px;
+            height: 90%;
+            border: solid 5px;
+            position: absolute;
+            top: 80%;
+            left: 40%;
+            transform-origin: center top;
+            transform: rotate(5deg);
+            animation: rootLegWalk1 2s infinite;
+        }
+
+        .arm22 {
+            width: 90%;
+            height: 90%;
+            border: 3px solid;
+            border-bottom-right-radius: 100px;
+            border-bottom-width: 15px;
+            top: 80%;
+            position: absolute;
+            transform-origin: center top;
+            transform: rotate(30deg);
+            animation: subArm2 2s infinite;
+        }
+
+        .leg11 {
+            width: 90%;
+            height: 90%;
+            border: solid 4px;
+            position: absolute;
+            top: 80%;
+            transform-origin: center top;
+            transform: rotate(-10deg);
+            animation: subLegWalk1 2s infinite;
+        }
+
+        .foot1 {
+            width: 80px;
+            height: 30px;
+            position: absolute;
+            right: 0;
+            bottom: -3px;
+            border: solid 3px;
+            border-top-left-radius: 40px;
+            transform-origin: right center;
+            animation: foot1 2s infinite;
+        }
+
+        .leg2 {
+            width: 50px;
+            height: 90%;
+            border: solid 5px;
+            position: absolute;
+            top: 80%;
+            left: 10%;
+            opacity: 0.3;
+            transform-origin: top center;
+            transform: rotate(-5deg);
+            animation: rootLegWalk2 2s infinite;
+        }
+
+        .leg22 {
+            width: 90%;
+            height: 90%;
+            border: solid 4px;
+            position: absolute;
+            top: 70%;
+            transform-origin: top center;
+            transform: rotate(-30deg);
+            animation: subLegWalk2 2s infinite;
+        }
+
+        .foot2 {
+            width: 80px;
+            height: 30px;
+            position: absolute;
+            right: 0;
+            bottom: -3px;
+            border: solid 3px;
+            border-top-left-radius: 40px;
+            animation: foot2 2s infinite;
+        }
+
+        .finger1, .finger2, .finger3, .finger4, .finger5 {
+            width: 5px;
+            height: 30px;
+            border: solid 2px;
+            position: absolute;
+            transform-origin: top center;
+            top: 95%;
+        }
+
+        .finger1 {
+            left: 20%;
+        }
+
+        .finger2 {
+            left: 40%;
+        }
+
+        .finger3 {
+            left: 60%;
+        }
+
+        .finger4 {
+            left: 80%;
+        }
+
+        .finger5 {
+            left: 0;
+            width: 10px;
+            height: 15px;
+            transform: rotate(30deg);
+        }
+
+        .weapon {
+            width: 60px;
+            height: 20px;
+            position: absolute;
+            right: -20px;
+            bottom: -20px;
+            border: solid 2px;
+            transform-origin: 20px center;
+            animation: weaponAni 2s infinite;
+        }
+
+        .light {
+            width: 300px;
+            height: 40px;
+            position: absolute;
+            right: 60px;
+            background-color: hotpink;
+            border-bottom-left-radius: 100px;
+            animation: weaponLightAni 2s infinite;
+        }
+
+    </style>
+</head>
+
+<body>
+<div class="body">
+    <div class="head">
+        <div class="eye"></div>
+    </div>
+    <div class="arm1">
+        <div class="arm11">
+            <div class="finger1"></div>
+            <div class="finger2"></div>
+            <div class="finger3"></div>
+            <div class="finger4"></div>
+            <div class="finger5"></div>
+            <div class="weapon">
+                <div class="light"></div>
+            </div>
+        </div>
+    </div>
+    <div class="arm2">
+        <div class="arm22"></div>
+    </div>
+    <div class="leg1">
+        <div class="leg11">
+            <div class="foot1"></div>
+        </div>
+    </div>
+    <div class="leg2">
+        <div class="leg22">
+            <div class="foot2"></div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>

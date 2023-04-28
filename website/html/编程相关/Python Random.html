@@ -1,0 +1,203 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Python Random</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>Random</h1>
+<hr />
+<h2>choice</h2>
+<p>随机选择一个元素</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">a</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">choice</span><span class="p">(</span><span class="p">[</span><span class="kc">True</span><span class="p">,</span><span class="">&nbsp;</span><span class="kc">False</span><span class="p">]</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h2>shuffle</h2>
+<p>洗牌函数，打乱列表的顺序</p>
+<p>注意：该函数没有返回值</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">b</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">2</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">3</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">4</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">5</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">6</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">7</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">8</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">shuffle</span><span class="p">(</span><span class="n">b</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h2>sample</h2>
+<p>从列表中随机抽多个函数</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">c</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">sample</span><span class="p">(</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">2</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">3</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">4</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">5</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">6</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">7</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">8</span><span class="p">]</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">3</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nb">print</span><span class="p">(</span><span class="n">c</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h2>uniform</h2>
+<p>随机浮点数</p>
+<p>注意：左右两个参数位置可以互换</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">d</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">uniform</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">1</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">d</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">0</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nb">print</span><span class="p">(</span><span class="n">d</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h2>triangular</h2>
+<p>随机浮点数（能够加权）</p>
+<p>注意：第三个参数如果不写的话，会是默认前两个参数的中点，随机到的值会更接近第三个参数，而uniform是均匀分布</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="k">for</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">u</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">10000</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">t</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">triangular</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">10000</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">10</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">end</span><span class="o">=</span><span class="s2">"</span><span class="se">\t</span><span class="se">\t</span><span class="se">\t</span><span class="s2">"</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<p>对比triangluar和unifrom的区别：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">im</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">'</span><span class="s1">RGB</span><span class="s1">'</span><span class="p">,</span><span class="">&nbsp;</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">1000</span><span class="p">)</span><span class="p">,</span><span class="">&nbsp;</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">0</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">0</span><span class="p">)</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">for</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">range</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">t1</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">triangular</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">999</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">1</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">t2</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">triangular</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">999</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">1</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">im</span><span class="o">.</span><span class="n">putpixel</span><span class="p">(</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">t1</span><span class="p">)</span><span class="p">,</span><span class="">&nbsp;</span><span class="nb">int</span><span class="p">(</span><span class="n">t2</span><span class="p">)</span><span class="p">)</span><span class="p">,</span><span class="">&nbsp;</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">255</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">255</span><span class="p">)</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">pass</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">im</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">"</span><span class="s2">randomTestTriangular.png</span><span class="s2">"</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<p><img alt="" src="Python Random\0.png" /></p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">im</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">Image</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="s1">'</span><span class="s1">RGB</span><span class="s1">'</span><span class="p">,</span><span class="">&nbsp;</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">1000</span><span class="p">)</span><span class="p">,</span><span class="">&nbsp;</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">0</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">0</span><span class="p">)</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">for</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">range</span><span class="p">(</span><span class="mi">100000</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">u1</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">999</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">u2</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">uniform</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">999</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">im</span><span class="o">.</span><span class="n">putpixel</span><span class="p">(</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="n">u1</span><span class="p">)</span><span class="p">,</span><span class="">&nbsp;</span><span class="nb">int</span><span class="p">(</span><span class="n">u2</span><span class="p">)</span><span class="p">)</span><span class="p">,</span><span class="">&nbsp;</span><span class="p">(</span><span class="mi">255</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">255</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">255</span><span class="p">)</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">im</span><span class="o">.</span><span class="n">save</span><span class="p">(</span><span class="s2">"</span><span class="s2">randomTestUniform.png</span><span class="s2">"</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<p><img alt="" src="Python Random\1.png" /></p>
+<h2>betavariate</h2>
+<p>贝塔分布函数</p>
+<p>注意：参数的条件是 <code>alpha &gt; 0</code> 和 <code>beta &gt; 0</code>。 返回值的范围介于 0 和 1 之间。</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">a</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">betavariate</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">1</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h2>expovariate</h2>
+<p>指数分布</p>
+<h2>gammavariate</h2>
+<p>Gamma 分布</p>
+<h2>gauss</h2>
+<p>高斯分布，其实就是正太分布，只不过这个函数的算法比下面那个算的更快</p>
+<h2>lognormvariate</h2>
+<p>对数正态分布</p>
+<p>设X是取值为正数的连续随机变量，若</p>
+<p><img alt="img" src="https://bkimg.cdn.bcebos.com/formula/56bd702c9ab68077c49e08ea38acd48c.svg" /></p>
+<p>，X的概率密度为</p>
+<p><img alt="img" src="https://bkimg.cdn.bcebos.com/formula/f4593d4acdb338357eca7b595c70b1d9.svg" /></p>
+<p>则称随机变量X服从对数正态分布，记为</p>
+<p><img alt="img" src="https://bkimg.cdn.bcebos.com/formula/e43c4d1d5c2029ab773432c5bfe0d2b7.svg" /></p>
+<p>。</p>
+<h2>normalvariate</h2>
+<p>正太分布</p>
+<p>第一个参数是平均值 μ，第二个参数是标准差 σ</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="k">for</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">a</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">normalvariate</span><span class="p">(</span><span class="mi">100</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">1</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<ol>
+<li>平均值 μ 决定了数据所在的范围，</li>
+<li>标准差 σ 表示数据的集中程度， σ 越小越集中</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="mf">100</span><span class="mf">.29293618455121</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="mf">98</span><span class="mf">.32582828317587</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="mf">100</span><span class="mf">.09745053680207</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="mf">100</span><span class="mf">.72019096853344</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="mf">101</span><span class="mf">.06466332381702</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="mf">98</span><span class="mf">.77703168129466</span></div></div></li>
+</ol></div>
+
+<h2>vonmisesvariate</h2>
+<p>冯·米塞斯分布</p>
+<p>冯·米塞斯（von Mises）分布。 <em>mu</em> 是平均角度，以弧度表示，介于0和 2pi 之间，<em>kappa</em> 是浓度参数，必须大于或等于零。 如果 <em>kappa</em> 等于零，则该分布在 0 到 2pi 的范围内减小到均匀的随机角度。</p>
+<h2>paretovariate(alpha)</h2>
+<p>帕累托分布，alpha是形状参数</p>
+<p>返回（1，+∞）的一个数，大数占极少数</p>
+<p>alpha越大，贫富差距越小</p>
+<h2>weibullvariate(alpha, beta)</h2>
+<p>威布尔分布（看成一种只含有正半轴的正太分布）</p>
+<p><em>alpha</em> 是比例参数，<em>beta</em> 是形状参数。</p>
+<p>alpha：这个数决定数据更容易生成在哪里，相当于mu</p>
+<p>beta：这个数决定了数据的集中程度，越大越集中</p>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

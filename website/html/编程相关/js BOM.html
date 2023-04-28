@@ -1,0 +1,160 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>js BOM</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>学习笔记Js BOM</h1>
+<hr />
+<h2>navigator 对象</h2>
+<h3>主要属性</h3>
+<ul>
+<li>navigator.userAgent：当前浏览器的信息</li>
+<li>navigator.platform：操作系统平台</li>
+<li></li>
+</ul>
+<p>打印<code>console.log(navigator);</code> 的结果</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div><div class="line-numbers"><div class="line-num" data-line-num="19"></div></div><div class="line-numbers"><div class="line-num" data-line-num="20"></div></div><div class="line-numbers"><div class="line-num" data-line-num="21"></div></div><div class="line-numbers"><div class="line-num" data-line-num="22"></div></div><div class="line-numbers"><div class="line-num" data-line-num="23"></div></div><div class="line-numbers"><div class="line-num" data-line-num="24"></div></div><div class="line-numbers"><div class="line-num" data-line-num="25"></div></div><div class="line-numbers"><div class="line-num" data-line-num="26"></div></div><div class="line-numbers"><div class="line-num" data-line-num="27"></div></div><div class="line-numbers"><div class="line-num" data-line-num="28"></div></div><div class="line-numbers"><div class="line-num" data-line-num="29"></div></div><div class="line-numbers"><div class="line-num" data-line-num="30"></div></div><div class="line-numbers"><div class="line-num" data-line-num="31"></div></div><div class="line-numbers"><div class="line-num" data-line-num="32"></div></div><div class="line-numbers"><div class="line-num" data-line-num="33"></div></div><div class="line-numbers"><div class="line-num" data-line-num="34"></div></div><div class="line-numbers"><div class="line-num" data-line-num="35"></div></div><div class="line-numbers"><div class="line-num" data-line-num="36"></div></div><div class="line-numbers"><div class="line-num" data-line-num="37"></div></div><div class="line-numbers"><div class="line-num" data-line-num="38"></div></div><div class="line-numbers"><div class="line-num" data-line-num="39"></div></div><div class="line-numbers"><div class="line-num" data-line-num="40"></div></div><div class="line-numbers"><div class="line-num" data-line-num="41"></div></div><div class="line-numbers"><div class="line-num" data-line-num="42"></div></div><div class="line-numbers"><div class="line-num" data-line-num="43"></div></div><div class="line-numbers"><div class="line-num" data-line-num="44"></div></div><div class="line-numbers"><div class="line-num" data-line-num="45"></div></div><div class="line-numbers"><div class="line-num" data-line-num="46"></div></div><div class="line-numbers"><div class="line-num" data-line-num="47"></div></div><div class="line-numbers"><div class="line-num" data-line-num="48"></div></div><div class="line-numbers"><div class="line-num" data-line-num="49"></div></div><div class="line-numbers"><div class="line-num" data-line-num="50"></div></div><div class="line-numbers"><div class="line-num" data-line-num="51"></div></div><div class="line-numbers"><div class="line-num" data-line-num="52"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">appCodeName</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"Mozilla"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">appName</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"Netscape"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">appVersion</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"5.0&nbsp;(iPhone;&nbsp;CPU&nbsp;iPhone&nbsp;OS&nbsp;10_3_1&nbsp;like&nbsp;Mac&nbsp;OS&nbsp;X)&nbsp;AppleWebKit/603.1.30&nbsp;(KHTML,&nbsp;like&nbsp;Gecko)&nbsp;Version/10.0&nbsp;Mobile/14E304&nbsp;Safari/602.1"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">bluetooth</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">Bluetooth</span><span class="">&nbsp;</span><span class="p">{</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">clipboard</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">Clipboard</span><span class="">&nbsp;</span><span class="p">{</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">connection</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">NetworkInformation</span><span class="">&nbsp;</span><span class="p">{</span><span class="nx">onchange</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">null</span><span class="p">,</span><span class="">&nbsp;</span><span class="nx">effectiveType</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"4g"</span><span class="p">,</span><span class="">&nbsp;</span><span class="nx">rtt</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">200</span><span class="p">,</span><span class="">&nbsp;</span><span class="nx">downlink</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">1.65</span><span class="p">,</span><span class="">&nbsp;</span><span class="nx">saveData</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">false</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">cookieEnabled</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">true</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">credentials</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">CredentialsContainer</span><span class="">&nbsp;</span><span class="p">{</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">deviceMemory</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">8</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">doNotTrack</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">null</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">geolocation</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">Geolocation</span><span class="">&nbsp;</span><span class="p">{</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">hardwareConcurrency</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">12</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">hid</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">HID</span><span class="">&nbsp;</span><span class="p">{</span><span class="nx">onconnect</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">null</span><span class="p">,</span><span class="">&nbsp;</span><span class="nx">ondisconnect</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">null</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">keyboard</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">Keyboard</span><span class="">&nbsp;</span><span class="p">{</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">language</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"zh-CN"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">languages</span><span class="o">:</span><span class="">&nbsp;</span><span class="p">(</span><span class="mf">2</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">[</span><span class="s2">"zh-CN"</span><span class="p">,</span><span class="">&nbsp;</span><span class="s2">"zh"</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">locks</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">LockManager</span><span class="">&nbsp;</span><span class="p">{</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">managed</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">NavigatorManagedData</span><span class="">&nbsp;</span><span class="p">{</span><span class="nx">onmanagedconfigurationchange</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">null</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">maxTouchPoints</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">1</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">mediaCapabilities</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">MediaCapabilities</span><span class="">&nbsp;</span><span class="p">{</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">mediaDevices</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">MediaDevices</span><span class="">&nbsp;</span><span class="p">{</span><span class="nx">ondevicechange</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">null</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">mediaSession</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">MediaSession</span><span class="">&nbsp;</span><span class="p">{</span><span class="nx">metadata</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">null</span><span class="p">,</span><span class="">&nbsp;</span><span class="nx">playbackState</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"none"</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">mimeTypes</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">MimeTypeArray</span><span class="">&nbsp;</span><span class="p">{</span><span class="nx">length</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">0</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">onLine</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">true</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">permissions</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">Permissions</span><span class="">&nbsp;</span><span class="p">{</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">platform</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"Win32"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">plugins</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">PluginArray</span><span class="">&nbsp;</span><span class="p">{</span><span class="nx">length</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">0</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">presentation</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">Presentation</span><span class="">&nbsp;</span><span class="p">{</span><span class="nx">defaultRequest</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">null</span><span class="p">,</span><span class="">&nbsp;</span><span class="nx">receiver</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">null</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">product</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"Gecko"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">productSub</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"20030107"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">scheduling</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">Scheduling</span><span class="">&nbsp;</span><span class="p">{</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">serial</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">Serial</span><span class="">&nbsp;</span><span class="p">{</span><span class="nx">onconnect</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">null</span><span class="p">,</span><span class="">&nbsp;</span><span class="nx">ondisconnect</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">null</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">serviceWorker</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">ServiceWorkerContainer</span><span class="">&nbsp;</span><span class="p">{</span><span class="nx">controller</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">null</span><span class="p">,</span><span class="">&nbsp;</span><span class="nx">ready</span><span class="o">:</span><span class="">&nbsp;</span><span class="nb">Promise</span><span class="p">,</span><span class="">&nbsp;</span><span class="nx">oncontrollerchange</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">null</span><span class="p">,</span><span class="">&nbsp;</span><span class="nx">onmessage</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">null</span><span class="p">,</span><span class="">&nbsp;</span><span class="nx">onmessageerror</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">null</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">storage</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">StorageManager</span><span class="">&nbsp;</span><span class="p">{</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">usb</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">USB</span><span class="">&nbsp;</span><span class="p">{</span><span class="nx">onconnect</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">null</span><span class="p">,</span><span class="">&nbsp;</span><span class="nx">ondisconnect</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">null</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">userActivation</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">UserActivation</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">hasBeenActive</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">true</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">isActive</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">false</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">[</span><span class="p">[</span><span class="nx">Prototype</span><span class="p">]</span><span class="p">]</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">UserActivation</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">userAgent</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"Mozilla/5.0&nbsp;(iPhone;&nbsp;CPU&nbsp;iPhone&nbsp;OS&nbsp;10_3_1&nbsp;like&nbsp;Mac&nbsp;OS&nbsp;X)&nbsp;AppleWebKit/603.1.30&nbsp;(KHTML,&nbsp;like&nbsp;Gecko)&nbsp;Version/10.0&nbsp;Mobile/14E304&nbsp;Safari/602.1"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">userAgentData</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">NavigatorUAData</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">brands</span><span class="o">:</span><span class="">&nbsp;</span><span class="p">[</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">mobile</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">false</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">[</span><span class="p">[</span><span class="nx">Prototype</span><span class="p">]</span><span class="p">]</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">NavigatorUAData</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">vendor</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"Google&nbsp;Inc."</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">vendorSub</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">""</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">wakeLock</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">WakeLock</span><span class="">&nbsp;</span><span class="p">{</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">webdriver</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">false</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">webkitPersistentStorage</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">DeprecatedStorageQuota</span><span class="">&nbsp;</span><span class="p">{</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">webkitTemporaryStorage</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">DeprecatedStorageQuota</span><span class="">&nbsp;</span><span class="p">{</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">xr</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">XRSystem</span><span class="">&nbsp;</span><span class="p">{</span><span class="nx">ondevicechange</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">null</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">[</span><span class="p">[</span><span class="nx">Prototype</span><span class="p">]</span><span class="p">]</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">Navigator</span></div></div></li>
+</ol></div>
+
+<p>使用location.herf</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">alert</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">)</span><span class="p">;</span><span class="">&nbsp;</span><span class="c1">//&nbsp;显示当前&nbsp;URL
+</span><span class="k">if</span><span class="">&nbsp;</span><span class="p">(</span><span class="nx">confirm</span><span class="p">(</span><span class="s2">"Go&nbsp;to&nbsp;Wikipedia?"</span><span class="p">)</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="s2">"https://wikipedia.org"</span><span class="p">;</span><span class="">&nbsp;</span><span class="c1">//&nbsp;将浏览器重定向到另一个&nbsp;URL
+</span><span class="p">}</span></div></div></li>
+</ol></div>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

@@ -1,0 +1,124 @@
+:root {
+    --myPink: #D9A99A;
+    --lightPink: #FEF6F0;
+    --bgColor: #A6B09F;
+    --lightColor: #c7d1c0;
+    --darkColor: #525c4b;
+    --contentHeight: 1400px;
+}
+
+body {
+    background-color: var(--bgColor);
+}
+
+main {
+    height: var(--contentHeight);
+    position: relative;
+    width: 70%;
+    padding-top:140px;
+    margin: 0 auto;
+    background-color: var(--lightColor);
+}
+main .title {
+    text-align: center;
+    font-size: 40px;
+    /* font-family: '宋体'; */
+    color: var(--darkColor);
+    /* font-weight: bolder; */
+    letter-spacing: 0.2em;
+    line-height: 80px;
+    /* background-color: green; */
+}
+main .box {
+    width: 80%;
+    height: 240px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    margin-top: 20px;
+    margin-bottom: 40px;
+    /* background-color: red; */
+    border-top-left-radius: 40px;
+    background-color: #fff;
+    box-shadow: var(--darkColor) 5px 5px 15px;
+    transition: all 0.5s;
+}
+main .box:hover {
+    transform: scale(1.01);
+    box-shadow: var(--darkColor) 10px 10px 30px;
+}
+main .box h3 {
+    font-size: 23px;
+}
+main .box:hover h3{
+    /* background-image: linear-gradient(45deg, rgba(0, 128, 0, 0.062), rgba(144, 238, 144, 0.096)); */
+    background-image: linear-gradient(135deg,rgb(38, 68, 19),rgb(23, 218, 39));
+    -webkit-background-clip:text;
+    color: transparent;
+}
+main .box .content {
+    height: 150px;
+    width: 800px;
+    margin-top: 10px;
+    /* background-color: blue; */
+}
+main .box .left {
+    width: 30%;
+    height: 150px;
+    /* background-color: orange; */
+    float: left;
+    overflow: hidden;
+}
+main .box .right {
+    width: 62%;
+    height: 150px;
+    padding-left: 20px;
+    /* background-color: gray; */
+    float: left;
+}
+main .box .right p {
+    margin-top: 0px;
+    text-indent: 2em;
+    font-size: 18px;
+    /* font-family: '宋体'; */
+    line-height: 1.8em;
+}
+main .box .sub {
+    height: 40px;
+    /* background-color: pink; */
+    margin-top: 12px;
+}
+main .box .sub .a1 {
+    height: 35px;
+    line-height: 35px;
+    padding-left: 20px;
+    width: 90px;
+    /* border: solid 1px; */
+    border-radius: 20px;
+    float: left;
+    cursor: pointer;
+    background-color: #c7d1c054;
+    transition: all 0.2s;
+}
+main .box .sub .a1:hover {
+    background-color: var(--darkColor);
+    color: white;
+    transform: scale(1.05);
+}
+main .box .sub .a1:active {
+    transform: scale(0.8);
+}
+main .box .sub .a2 {
+    height: 35px;
+    line-height: 35px;
+    padding-left: 20px;
+    width: 90px;
+    /* border: solid 1px; */
+    border-radius: 20px;
+    text-align: center;
+    float: left;
+    cursor: pointer;
+    /* background-color: var(--lightColor); */
+}

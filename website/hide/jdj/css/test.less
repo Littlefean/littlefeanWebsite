@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+.colorTest {
+  filter: hue-rotate(30deg);
+
+}
+
+// 对灯光效果的测试
+.lightDiv {
+  position: relative;
+  perspective: 150px;
+  overflow: hidden;
+  background-color: black;
+  outline: solid 1px white;
+  margin: 0 auto;
+  // 宽度和高度需要定死
+  width: 1200px;
+  height: 600px;
+  //background-image: url("../img/wiz.png");
+
+  .lightBase() {
+    position: absolute;
+    transform-style: preserve-3d;
+    opacity: 0.9;
+    //outline: solid 1px whitesmoke;
+    filter: blur(30px);
+    .flashLight();
+  }
+  // 闪烁动画
+  .flashLight() {
+    animation-name: flash;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  // 放射光
+  .lightUtil() {
+    .lightBase();
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+    @rate: 100%;
+    border-top-left-radius: @rate;
+    border-top-right-radius: @rate;
+  }
+  // 点光源
+  .doteLight() {
+    .lightBase();
+    border-radius: 50%;
+    background-image: radial-gradient(circle at center center, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0) 100%);
+  }
+
+  .light1 {
+    .lightUtil();
+
+    width: 150px;
+    height: 500px;
+    margin-left: 200px;
+    margin-top: 50px;
+    transform-origin: center center;
+    transform: rotateX(16deg);
+  }
+
+  .light2 {
+    .lightUtil();
+    width: 128px;
+    height: 595px;
+    margin-left: 61px;
+    margin-top: 132px;
+    transform-origin: center top;
+    transform: rotateZ(-15deg);
+
+  }
+
+  .light3 {
+    .lightUtil();
+    width: 115px;
+    height: 467px;
+    margin-left: 273px;
+    margin-top: 155px;
+    transform-origin: center top;
+    transform: rotateZ(-10deg);
+  }
+
+  .light4 {
+    .lightUtil();
+    width: 108px;
+    height: 467px;
+    margin-left: 319px;
+    margin-top: 505px;
+    transform-origin: center top;
+    transform: rotateZ(-157deg);
+  }
+
+  .light5 {
+    .lightUtil();
+    width: 120px;
+    height: 377px;
+    margin-left: 570px;
+    margin-top: 223px;
+    transform-origin: center top;
+    transform: rotateZ(0deg);
+  }
+
+  .light6 {
+    // dote----
+    .doteLight();
+    width: 120px;
+    height: 120px;
+    margin-left: 570px;
+    margin-top: 223px;
+    transform-origin: center top;
+    transform: rotateZ(180deg);
+
+  }
+
+  .light7 {
+    .lightUtil();
+    width: 120px;
+    height: 377px;
+    margin-left: 694px;
+    margin-top: 168px;
+    transform-origin: center top;
+    transform: rotateZ(-92deg);
+  }
+
+  .light8 {
+    .lightUtil();
+    width: 120px;
+    height: 495px;
+    margin-left: 982px;
+    margin-top: 146px;
+    transform-origin: center top;
+    transform: rotateZ(45deg);
+  }
+
+  .light9 {
+    .lightUtil();
+    width: 120px;
+    height: 495px;
+    margin-left: 680px;
+    margin-top: 446px;
+    transform-origin: center top;
+    transform: rotateZ(-90deg);
+  }
+}
+
+
+body {
+
+
+  background-color: black;
+}

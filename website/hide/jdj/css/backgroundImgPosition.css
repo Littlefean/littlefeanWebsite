@@ -1,0 +1,44 @@
+.bg1 {
+  left: -195px;
+  top: -14px;
+}
+.maskBg1 {
+  z-index: 12;
+}
+.bg2 {
+  left: 287px;
+  top: -20px;
+}
+.bg3 {
+  left: 179px;
+  top: 94px;
+}
+.bg4 {
+  left: -66px;
+  top: -29px;
+}
+.bg5 {
+  left: 182px;
+  top: 82px;
+}
+.bg6 {
+  left: 51px;
+  top: 103px;
+}
+.bg7 {
+  left: 450px;
+  top: -122px;
+  transform: scale(0.7);
+}
+.bg8 {
+  left: 193px;
+  top: 18px;
+}
+.bg9 {
+  left: 0;
+  top: 0;
+}
+.maskBg2 {
+  transform: scale(1.3);
+}
+/*# sourceMappingURL=backgroundImgPosition.css.map */

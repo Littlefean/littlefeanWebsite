@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 3000px;
+  background-color: black;
+}
+.iconCubeBox {
+  width: 40px;
+  height: 40px;
+  margin: 500px auto;
+  position: relative;
+  perspective: 500px;
+  transform-origin: left top;
+  outline: solid 1px red;
+}
+.iconCubeBox .rotateContainer {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -100px;
+  margin-top: -100px;
+  transform-style: preserve-3d;
+  transform-origin: 0% 50% 50px;
+  /* //设置3d空间的原点在平面中心再向Z轴移动200px的位置 */
+  animation: rotate-frame 8s linear infinite;
+  outline: solid 1px white;
+}
+.iconCubeBox .rotateContainer .slide {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background: transparent;
+  transform-style: preserve-3d;
+}
+.iconCubeBox .rotateContainer .slide .border {
+  width: 100%;
+  height: 100%;
+  border: solid 2px lawngreen;
+  box-shadow: green 0 0 20px;
+}
+.iconCubeBox .rotateContainer .top {
+  left: 50px;
+  top: -50px;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+}
+.iconCubeBox .rotateContainer .top .border {
+  animation-delay: 1s;
+}
+.iconCubeBox .rotateContainer .bottom {
+  left: 50px;
+  bottom: -50px;
+  transform: rotateX(90deg);
+  transform-origin: top;
+}
+.iconCubeBox .rotateContainer .bottom .border {
+  animation-delay: 2s;
+}
+.iconCubeBox .rotateContainer .left {
+  left: -50px;
+  bottom: 50px;
+  transform: rotateY(90deg);
+  transform-origin: right;
+}
+.iconCubeBox .rotateContainer .left .border {
+  animation-delay: 3s;
+}
+.iconCubeBox .rotateContainer .right {
+  top: 50px;
+  left: 150px;
+  transform: rotateY(-90deg);
+  transform-origin: left;
+}
+.iconCubeBox .rotateContainer .right .border {
+  animation-delay: 4s;
+}
+.iconCubeBox .rotateContainer .front {
+  left: 50px;
+  top: 50px;
+  transform: translateZ(100px);
+}
+.iconCubeBox .rotateContainer .front .border {
+  animation-delay: 5s;
+}
+.iconCubeBox .rotateContainer .back {
+  left: 50px;
+  top: 50px;
+  transform: translateZ(0);
+}
+.iconCubeBox .rotateContainer .back .border {
+  animation-delay: 6s;
+}
+@keyframes flash {
+  0% {
+    border-width: 1px;
+    box-shadow: green 0 0 20px;
+  }
+  33% {
+    border-width: 1px;
+    box-shadow: greenyellow 0 0 15px;
+    border-right-color: deepskyblue;
+    border-left-color: red;
+  }
+  66% {
+    border-width: 1px;
+    box-shadow: greenyellow 0 0 10px;
+  }
+  0% {
+    border-width: 1px;
+    box-shadow: green 0 0 20px;
+  }
+}
+@keyframes rotate-frame {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg);
+  }
+  100% {
+    transform: rotateX(360deg) rotateY(360deg) rotateZ(360deg);
+  }
+}
+/*# sourceMappingURL=otherMore.css.map */

@@ -1,0 +1,224 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Python Manim</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>Manim</h1>
+<hr />
+<p>动画举例：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">manimlib</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="o">*</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">class</span><span class="">&nbsp;</span><span class="nc">HelloWord</span><span class="p">(</span><span class="n">Scene</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">def</span><span class="">&nbsp;</span><span class="nf">construct</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;创建物体</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">text</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">Text</span><span class="p">(</span><span class="s2">"</span><span class="s2">helloWord!</span><span class="s2">"</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;创建动画</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">anim</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">Write</span><span class="p">(</span><span class="n">text</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;播放动画</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="bp">self</span><span class="o">.</span><span class="n">play</span><span class="p">(</span><span class="n">anim</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">class1</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">HelloWord</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">class1</span><span class="o">.</span><span class="n">construct</span><span class="p">(</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h2>库结构</h2>
+<hr />
+<h3>主要结构</h3>
+<blockquote>
+<p>animation（动画）</p>
+<p>camera（照相机）</p>
+<p>container（容器）</p>
+<p>for_3b1b_videos</p>
+<p>mobject（物体）</p>
+<p>once_useful_constructs</p>
+<p>scene（场景）</p>
+<p>utils（公用）</p>
+</blockquote>
+<h3>全部结构</h3>
+<blockquote>
+<p>animation</p>
+<blockquote>
+<p>composition.py</p>
+<p>creation.py</p>
+<p>fading.py</p>
+<p>growing.py</p>
+<p>indication.py</p>
+<p>movement.py</p>
+<p>numbers.py</p>
+<p>rotation.py</p>
+<p>specialized.py</p>
+<p>transform.py</p>
+<p>update.py</p>
+</blockquote>
+<p>camera</p>
+<blockquote>
+<p>camera.py</p>
+<p>mapping_camera.py</p>
+<p>moving_camera.py</p>
+<p>multi_camera.py</p>
+<p>three_d_camera.py</p>
+</blockquote>
+<p>container</p>
+<blockquote>
+<p>container.py</p>
+</blockquote>
+<p>files</p>
+<p>for_3b1b_videos</p>
+<blockquote>
+<p>common_scenes.py</p>
+<p>pi_class.py</p>
+<p>pi_creature.py</p>
+<p>pi_creature_animations.py</p>
+<p>pi_creature_scene.py</p>
+</blockquote>
+<p>mobject</p>
+<blockquote>
+<p>types</p>
+<p>svg</p>
+<p>changing.py</p>
+<p>coordinate_systems.py</p>
+<p>frame.py</p>
+<p>functions.py</p>
+<p>geometry.py</p>
+<p>matrix.py</p>
+<p>mobject.py</p>
+<p>mobject_update_utils.py</p>
+<p>numbers.py</p>
+<p>number_line.py</p>
+<p>probability.py</p>
+<p>shape_matchers.py</p>
+<p>three_dimensions.py</p>
+<p>three_d_shading_utils.py</p>
+<p>three_d_utils.py</p>
+<p>value_tracker.py</p>
+<p>vector_field.py</p>
+</blockquote>
+<p>once_useful_constructs</p>
+<blockquote>
+<p>combinatorics.py</p>
+<p>complex_transformation_scene.py</p>
+<p>counting.py</p>
+<p>fractals.py</p>
+<p>graph_theory.py</p>
+<p>light.py</p>
+<p>matrix_multiplication.py</p>
+<p>NOTE.md</p>
+<p>region.py</p>
+</blockquote>
+<p>scene</p>
+<blockquote>
+<p>graph_scene.py</p>
+<p>media_dir.txt</p>
+<p>moving_camera_scene.py</p>
+<p>reconfigurable_scene.py</p>
+<p>sample_space_scene.py</p>
+<p>scene.py</p>
+<p>scene_file_writer.py</p>
+<p>scene_from_video.py</p>
+<p>three_d_scene.py</p>
+<p>vector_space_scene.py</p>
+<p>zoomed_scene.py</p>
+</blockquote>
+<p>utils</p>
+<blockquote>
+<p>bezier.py</p>
+<p>color.py</p>
+<p>config_ops.py</p>
+<p>debug.py</p>
+<p>file_ops.py</p>
+<p>images.py</p>
+<p>iterables.py</p>
+<p>paths.py</p>
+<p>rate_functions.py</p>
+<p>simple_functions.py</p>
+<p>sounds.py</p>
+<p>space_ops.py</p>
+<p>strings.py</p>
+<p>tex_file_writing.py</p>
+</blockquote>
+</blockquote>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

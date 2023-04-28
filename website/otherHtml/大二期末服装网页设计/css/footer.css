@@ -1,0 +1,68 @@
+@font-face {
+  font-family: "lovely";
+  src: url("../font/comicbd.ttf");
+}
+@font-face {
+  font-family: "han";
+  src: url("../font/方正粗黑宋简体.ttf");
+}
+.footer {
+  overflow: hidden;
+  background-color: #f7e9d8;
+}
+.footer h1 {
+  font-family: "lovely", serif;
+  color: #aa4a30;
+  text-align: center;
+  font-size: 3rem;
+  line-height: 2em;
+  margin-top: 2rem;
+}
+.footer hr {
+  background-color: #aa4a30;
+  width: 80%;
+  margin: 0 auto;
+}
+.footer .main {
+  width: 80%;
+  margin: 0 auto;
+}
+.footer .main .items {
+  display: flex;
+  justify-content: space-between;
+}
+.footer .main .items .item {
+  width: 30rem;
+  height: 6.6rem;
+  display: block;
+}
+.footer .main .items .item img {
+  vertical-align: middle;
+  margin-right: 1rem;
+  transition: all 0.5s;
+}
+.footer .main .items .item span {
+  color: #aa4a30;
+  line-height: 6.6rem / 2;
+  font-family: 'han', serif;
+  font-size: 6.6rem / 2;
+  vertical-align: center;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.footer .main .items .item:hover img {
+  transform: rotate(90deg);
+}
+.footer .main .items .item:hover span {
+  margin-left: 1rem;
+}
+.footer .main p {
+  font-family: 'han', serif;
+  text-align: center;
+  color: #cb9683;
+  font-size: 2rem;
+  line-height: 2em;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+/*# sourceMappingURL=footer.css.map */

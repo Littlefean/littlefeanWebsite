@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>期末作业之服装网站设计</title>
+	<link rel="stylesheet" href="../css/nav.css">
+	<link rel="stylesheet" href="../css/footer.css">
+	<link rel="stylesheet" href="../css/chinesepop.css">
+	<link rel="stylesheet" href="../css/util.css">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		em {
+			font-style: normal;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="nav">
+		<h1 class="logo">期末作业之服装网站设计</h1>
+		<a href="../index.html">首页</a>
+		<a href="../index.html#styles">服装系列</a>
+		<a href="../html/introduce.html">品牌介绍</a>
+		<a href="../html/comment.html">论坛</a>
+	</div>
+	<div class="top-line">
+		<h1>复古系列</h1>
+		<div class="box b1">
+			<img src="../imgs/retrostyle/图层 3.png" alt="">
+			<h1>慵懒毛衣</h1>
+			<em>302￥</em>
+		</div>
+		<div class="box b2">
+			<img src="../imgs/retrostyle/图层 4.png" alt="">
+			<h1>毛绒连衣裙</h1>
+			<em>500￥</em>
+		</div>
+		<div class="box b3">
+			<img src="../imgs/retrostyle/图层 6.png" alt="">
+			<h1>金丝绒半身裙</h1>
+			<em>150￥</em>
+		</div>
+	</div>
+	<div class="hr"></div>
+	<div class="line">
+		<img src="../imgs/retrostyle/图层 8.png" alt="">
+		<div class="site">
+			<div class="content">
+				<img src="../imgs/retrostyle/图层 10.png" alt="">
+				<h1>蓝色优雅针织衫</h1>
+				<button class="buy">立即抢购</button>
+			</div>
+		</div>
+	</div>
+	<div class="line reverse">
+		<img src="../imgs/retrostyle/图层 11.png" alt="">
+		<div class="site">
+			<div class="content">
+				<img src="../imgs/retrostyle/图层 13.png" alt="">
+				<h1>紫色迷幻针织衫</h1>
+				<button class="buy">立即抢购</button>
+			</div>
+		</div>
+	</div>
+	<div class="line">
+		<img src="../imgs/retrostyle/图层 16.png" alt="">
+		<div class="site">
+			<div class="content">
+				<img src="../imgs/retrostyle/图层 17.png" alt="">
+				<h1>红色金丝绒长裙</h1>
+				<button class="buy">立即抢购</button>
+			</div>
+		</div>
+	</div>
+	<div class="bottom-line">
+		<div class="background">
+			<h1>毛衣小配饰</h1>
+			<img src="../imgs/retrostyle/图层 18.png" alt="" class="big">
+			<img src="../imgs/retrostyle/图层 19.png" alt="" class="small">
+		</div>
+	</div>
+	<div class="footer">
+		<h1 class="twoColorFont">JOIN US</h1>
+		<hr>
+		<div class="main">
+			<div class="items">
+				<div class="item" onclick="go('../html/introduce.html')">
+					<img src="../imgs/icon/li.png" alt="">
+					<span class="twoColorFont">小店简介</span>
+				</div>
+				<div class="item" onclick="go('../html/ys.html')">
+					<img src="../imgs/icon/li.png" alt="">
+					<span class="twoColorFont">隐私权声明</span>
+				</div>
+				<div class="item" onclick="go('../html/comment.html')">
+					<img src="../imgs/icon/li.png" alt="">
+					<span class="twoColorFont">粉丝论坛</span>
+				</div>
+			</div>
+			<p>这只是前端一个期末作业写的一个网页啊，和商业完全没有关系，内容纯属虚构，请勿当真！这是一个网页作业仅供展示！
+				<br>
+				这只是一个期末作业写的一个网页模板啊，请勿当真！
+			</p>
+		</div>
+	</div>
+	<script src="../js/util.js"></script>
+	<script>
+		// 给所有有 twoColorFonts 类名的文字元素设置成奇数个字改变颜色的样式
+		var twoColorFonts = document.getElementsByClassName("twoColorFont");
+		for (let elem of twoColorFonts) {
+			changeColor(elem, "#e89f71");
+		}
+	</script>
+</body>
+
+</html>

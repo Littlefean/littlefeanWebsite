@@ -1,0 +1,177 @@
+@font-face {
+  font-family: "lovely";
+  src: url("../font/comicbd.ttf");
+}
+@font-face {
+  font-family: "han";
+  src: url("../font/方正粗黑宋简体.ttf");
+}
+html {
+  font-size: 10px;
+}
+body {
+  background-color: #f7e9d8;
+}
+.logo {
+  text-align: center;
+  font-size: 5rem;
+  color: #aa4a30;
+  font-family: "lovely";
+}
+.banner {
+  width: 80%;
+  height: 600px;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-bottom: 100px;
+  background-color: pink;
+}
+.banner .video-pan {
+  width: 100%;
+}
+.banner .video-pan div {
+  width: 25%;
+  height: 600px;
+  float: left;
+  position: relative;
+  transition: all 0.2s;
+  z-index: 100;
+  font-family: 'han';
+  cursor: pointer;
+}
+.banner .video-pan div a {
+  font-size: 60px;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 250px;
+  margin-top: 0px;
+  color: transparent;
+  transition: all 0.2s;
+}
+.banner .video-pan div:hover {
+  background-color: rgba(226, 54, 41, 0.5);
+}
+.banner .video-pan div:hover a {
+  color: #f9f4f1;
+  margin-top: -60px;
+}
+.banner video {
+  width: 100%;
+  margin-top: -600px;
+  z-index: 50;
+}
+.macaron {
+  width: 80%;
+  height: 600px;
+  position: relative;
+  margin: 0 auto;
+}
+.macaron .title1,
+.macaron .title2 {
+  text-align: center;
+  color: #b76a55;
+  font-size: 4rem;
+  transition: all 0.5s;
+}
+.macaron .title1 {
+  font-family: 'lovely';
+}
+.macaron .title2 {
+  font-family: 'han';
+}
+.macaron .title2:hover {
+  font-size: 5rem;
+  cursor: pointer;
+}
+.macaron img {
+  position: absolute;
+  width: 40%;
+  top: 10%;
+  transition: all 0.5s;
+}
+.macaron .left-img {
+  left: 5%;
+  transform: rotate(15deg);
+}
+.macaron .left-img:hover {
+  transform: rotate(20deg) scale(1.02);
+  cursor: pointer;
+}
+.macaron .right-img {
+  left: 55%;
+  transform: rotate(-15deg);
+}
+.macaron .right-img:hover {
+  transform: rotate(-20deg) scale(1.02);
+  cursor: pointer;
+}
+.choice {
+  width: 80%;
+  height: 500px;
+  margin: 0 auto;
+  position: relative;
+}
+.choice .left,
+.choice .right,
+.choice .middle {
+  width: 40rem;
+  height: 40rem;
+  position: absolute;
+  top: 10rem;
+  transition: all 0.5s;
+}
+.choice .left:hover,
+.choice .right:hover,
+.choice .middle:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.choice .left img,
+.choice .right img,
+.choice .middle img {
+  position: absolute;
+  z-index: 10;
+  /* Chrome, Safari, Opera */
+  -webkit-filter: sepia(50%);
+  filter: sepia(50%);
+  transition: all 0.5s;
+}
+.choice .left:hover img,
+.choice .right:hover img,
+.choice .middle:hover img {
+  /* Chrome, Safari, Opera */
+  -webkit-filter: sepia(0%);
+  filter: sepia(0%);
+}
+.choice .left h2,
+.choice .right h2,
+.choice .middle h2 {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  margin-top: -2rem;
+  text-align: center;
+  font-size: 5rem;
+  font-family: 'han';
+  font-weight: 400;
+  color: white;
+  z-index: 20;
+  text-shadow: rgba(226, 54, 41, 0.5) 1px 1px 1px;
+  transition: all 0.5s;
+}
+.choice .left:hover h2,
+.choice .right:hover h2,
+.choice .middle:hover h2 {
+  text-shadow: rgba(226, 54, 41, 0.5) 5px 5px 5px;
+}
+.choice .middle {
+  left: 50%;
+  top: 0;
+  margin-left: -20rem;
+}
+.choice .right {
+  right: 0;
+}

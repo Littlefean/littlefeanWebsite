@@ -1,0 +1,31 @@
+body {
+  background-color: black;
+  color: white;
+}
+body main {
+  width: 80%;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 50px;
+  background-color: #272727;
+}
+body main h1 {
+  text-align: center;
+  line-height: 2em;
+}
+body main p,
+body main h2 {
+  line-height: 2em;
+}
+body main p {
+  text-indent: 2em;
+  color: #dfdfdf;
+}
+body main p a {
+  color: pink;
+}
+body main p.end {
+  text-align: right;
+  margin-right: 6em;
+}
+/*# sourceMappingURL=howWork-0-1024.css.map */

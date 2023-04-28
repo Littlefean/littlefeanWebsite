@@ -1,0 +1,313 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body .top1 main,
+body .top2 main {
+  width: 80%;
+  height: 100%;
+  margin: 0 auto;
+}
+body .top1 {
+  background-color: #1f7ccc;
+  height: 50px;
+  position: relative;
+}
+body .top1 main .inputArea {
+  height: 35px;
+  margin-top: 6px;
+  width: 35%;
+  float: left;
+  position: relative;
+}
+body .top1 main .inputArea input {
+  height: 35px;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px gray;
+  outline: none;
+  border: none;
+}
+body .top1 main .inputArea img {
+  position: absolute;
+  right: 8px;
+  top: 9px;
+}
+body .top1 main .inputArea img:hover {
+  cursor: pointer;
+}
+body .top1 main .right {
+  color: white;
+  float: right;
+  height: 100%;
+  width: 65%;
+  line-height: 50px;
+  vertical-align: middle;
+  font-weight: bolder;
+}
+body .top1 main .right img {
+  margin-left: 20px;
+}
+body .top1 main .right img.sub {
+  margin-left: 0;
+  transform: translateY(-5px);
+}
+body .top1 main .right img.sub:hover {
+  cursor: pointer;
+}
+body .top2 {
+  background-color: #fff;
+  height: 88px;
+}
+body .top2 main .logo {
+  height: 88px;
+  color: #1f7ccc;
+  font-size: 30px;
+  line-height: 88px;
+  font-weight: bolder;
+  margin-left: 100px;
+  float: left;
+  user-select: none;
+}
+body .top2 main ul {
+  height: 88px;
+  width: 80%;
+  float: right;
+}
+body .top2 main ul li {
+  float: right;
+  margin-right: 30px;
+  height: 100%;
+}
+body .top2 main ul li a {
+  font-size: 20px;
+  text-decoration: none;
+  color: #7d7d7d;
+  height: 88px;
+  line-height: 88px;
+  transition: all 0.2s;
+}
+body .top2 main ul li a:hover {
+  border-top: #1f7ccc solid 3px;
+  border-bottom: #1f7ccc solid 3px;
+  transform: scale(1.5);
+  color: #1f7ccc;
+}
+body .banner {
+  position: relative;
+  background-color: pink;
+  color: white;
+}
+body .banner .textArea {
+  width: 900px;
+  position: absolute;
+  left: 50%;
+  margin-left: -450px;
+  top: 20%;
+  height: 200px;
+  color: white;
+  text-align: center;
+}
+body .banner .textArea h1 {
+  text-align: center;
+  font-size: 40px;
+  margin-bottom: 50px;
+}
+body .banner .textArea p {
+  text-align: center;
+  font-size: 20px;
+  line-height: 50px;
+}
+body .banner .textArea h1,
+body .banner .textArea p {
+  transition: all 0.5s;
+}
+body .banner .textArea h1:hover,
+body .banner .textArea p:hover {
+  transform: scale(1.1);
+}
+body .banner .bg {
+  width: 100%;
+  -webkit-filter: brightness(30%);
+  transition: all 1s;
+}
+body .banner .bg:hover {
+  -webkit-filter: brightness(10%);
+}
+body .banner .db {
+  position: absolute;
+  width: 100px;
+  left: 50%;
+  transform: translateX(-50px);
+  bottom: -50px;
+  transition: all 0.2s;
+}
+body .banner .db:hover {
+  cursor: pointer;
+  transform: translateX(-50px) translateY(10px);
+}
+body .mid {
+  background-color: #fff;
+  background-image: url("icon/边角.png");
+  background-size: contain;
+  padding-top: 100px;
+}
+body .mid main {
+  width: 80%;
+  margin: 0 auto;
+}
+body .mid main .title {
+  height: 100px;
+  text-align: center;
+  position: relative;
+}
+body .mid main .title h1 {
+  color: gray;
+  text-align: center;
+  font-size: 31px;
+  margin-top: -20px;
+}
+body .mid main .blocks {
+  width: 100%;
+  height: 300px;
+}
+body .mid main .blocks .block {
+  float: left;
+  height: 100%;
+  width: 290px;
+  margin-right: 10px;
+  background-color: #ececec;
+}
+body .mid main .blocks .block .blockTitle {
+  background-color: #3f586c;
+  height: 60px;
+  line-height: 60px;
+  color: white;
+  text-indent: 2em;
+}
+body .mid main .blocks .first .blockTitle {
+  background-color: #1f7ccc;
+}
+body .mid main .title2 {
+  width: 100%;
+  text-align: center;
+  height: 100px;
+  line-height: 100px;
+  font-size: 30px;
+}
+body .mid main .title2 a {
+  color: #2980cd;
+}
+body .mid .content2 {
+  width: 100%;
+  height: 700px;
+  position: relative;
+  text-align: center;
+}
+body .mid .content2 .mainImg {
+  width: 600px;
+}
+body .mid .content2 .b1 {
+  left: 10%;
+  top: 20%;
+}
+body .mid .content2 .b2 {
+  right: 3%;
+  top: 12%;
+}
+body .mid .content2 .b3 {
+  left: 58%;
+  top: 47%;
+}
+body .mid .content2 .box {
+  position: absolute;
+  width: 250px;
+  height: 280px;
+  transition: all 0.5s;
+}
+body .mid .content2 .box:hover {
+  transform: scale(1.1);
+}
+body .mid .content2 .box .topBar {
+  width: 100px;
+  height: 5px;
+  background-color: gray;
+}
+body .mid .content2 .box h2 {
+  line-height: 2em;
+  font-size: 25px;
+  color: #595959;
+  text-align: left;
+}
+body .mid .content2 .box p {
+  color: #929292;
+  text-align: left;
+  line-height: 2em;
+}
+body .mid .content2 .box a {
+  color: #cacaca;
+  display: block;
+  text-align: left;
+  margin-top: 30px;
+}
+body .mid .content3 {
+  width: 100%;
+  height: 280px;
+}
+body .mid .content3 .card {
+  width: 33%;
+  margin-right: 0;
+  float: left;
+  text-align: center;
+  transition: all 0.5s;
+  transform: scale(0.95);
+}
+body .mid .content3 .card:hover {
+  transform: scale(1.1);
+}
+body .mid .content3 .card .title {
+  color: #1f7ccc;
+  height: 50px;
+  line-height: 50px;
+  font-size: 20px;
+}
+body .mid .content3 .card p {
+  font-size: 12px;
+  text-align: center;
+  line-height: 2em;
+}
+body .footer {
+  height: 400px;
+  background-color: #1f7ccc;
+  background-image: url("icon/矩形 7.png");
+  background-size: auto;
+  color: white;
+}
+body .footer h1 {
+  text-align: center;
+  height: 100px;
+  line-height: 100px;
+  font-size: 30px;
+}
+body .footer .iconArea {
+  height: 50px;
+  margin: 0 auto;
+  text-align: center;
+}
+body .footer .iconArea img {
+  margin: 0 20px 0 20px;
+}
+body .footer hr {
+  color: white;
+  width: 60%;
+  margin: 30px auto;
+}
+body .footer p {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 2em;
+}
+/*# sourceMappingURL=index.css.map */

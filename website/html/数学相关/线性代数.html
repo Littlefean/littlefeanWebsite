@@ -1,0 +1,147 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>线性代数</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>线性代数</h1>
+<hr />
+<p><strong>张成空间</strong>：v与w全部线性组合构成的向量集合</p>
+<p><strong>线性相关</strong>：v与w向量平行</p>
+<p><strong>线性无关</strong>：所有向量部分张成空间增添了新的维度</p>
+<p><strong>空间的一个基</strong>：张成该空间的一个线性无关向量的集合（严格定义）</p>
+<p><strong>矩阵</strong>：如同线性变换，就是输入一个向量给矩阵，矩阵输出一个向量。</p>
+<p><strong>线性变换 条件</strong>：</p>
+<ol>
+<li>直线依旧是直线，不能在变换后有所弯曲</li>
+<li>在是直线的基础上，必须保持平行且等距分布</li>
+<li>原点必须保持固定，如果不固定的，叫仿射变换</li>
+</ol>
+<h2>线性变换（矩阵）</h2>
+<p>一个二维线性变换由4个数组成</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">【&nbsp;2&nbsp;3&nbsp;&nbsp;】</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">【&nbsp;1&nbsp;-2&nbsp;】</span></div></div></li>
+</ol></div>
+
+<p>左边一竖列是变换后的 i，右边是变换后的 j ，i 原来是x轴的单位向量，j 是 y轴的单位向量</p>
+<h3>向量 × 矩阵：</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">【x】        【&nbsp;a&nbsp;&nbsp;b&nbsp;】&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【a】&nbsp;&nbsp;&nbsp;&nbsp;【b】&nbsp;&nbsp;&nbsp;[&nbsp;ax+by&nbsp;]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">【&nbsp;】→输入&nbsp;【&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;】&nbsp;=&nbsp;&nbsp;x【&nbsp;】&nbsp;+&nbsp;y【&nbsp;】&nbsp;=&nbsp;[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">【y】      【&nbsp;c&nbsp;&nbsp;d&nbsp;】&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;【c】&nbsp;&nbsp;&nbsp;&nbsp;【d】&nbsp;&nbsp;&nbsp;[&nbsp;cx+dy&nbsp;]</span></div></div></li>
+</ol></div>
+
+<h3>矩阵 × 矩阵：</h3>
+<p>集合意义上表示对 i j 先根据某一个矩阵进行线性变换，后再根据某一个矩阵进行线性变换。</p>
+<p>剪切矩阵和旋转矩阵</p>
+<p>读法：←方向读法，起源于函数 <code>f(g(x))</code> 的写法</p>
+<p>方法：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="k">[a&nbsp;&nbsp;b]&nbsp;[ix&nbsp;&nbsp;jx]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[i?&nbsp;&nbsp;&nbsp;j?]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">[&nbsp;&nbsp;&nbsp;&nbsp;]&nbsp;[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]&nbsp;&nbsp;&nbsp;=&nbsp;&nbsp;&nbsp;[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">[c&nbsp;&nbsp;d]&nbsp;[iy&nbsp;&nbsp;jy]&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[i?&nbsp;&nbsp;&nbsp;j?]</span></div></div></li>
+</ol></div>
+
+<p>先把ix，jx放到abcd里变化一下出来结果，放到结果的 i 里面，再把 jx jy 放到abcd里。同上</p>
+<h2>行列式</h2>
+<p>特殊的缩放比例，即线性变换对面机产生改变的比例，被称为这个变幻的行列式</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">det([3022])&nbsp;=&nbsp;6</span></div></div></li>
+</ol></div>
+
+<p>只需要检验一个矩阵的行列式是否为0，就能了解这个矩阵所代表的变换是否将空间压缩到了更小的维度上。</p>
+<p>当行列式出现负值时，集合理解可以表示整个面被翻转了。如：j 本来在 i 的逆时针方向，但是却反了</p>
+<p>矩阵的列必然线性相关。</p>
+<h3>计算方法：</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">[</span><span class="n">a</span><span class="">&nbsp;&nbsp;</span><span class="n">b</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">det</span><span class="p">[</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">]</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">ad</span><span class="">&nbsp;</span><span class="o">-</span><span class="">&nbsp;</span><span class="n">bc</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">[</span><span class="n">c</span><span class="">&nbsp;&nbsp;</span><span class="n">d</span><span class="p">]</span></div></div></li>
+</ol></div>
+
+<p>其中a表示x轴方向伸缩比例，d表示y轴方向伸缩比例</p>
+<h2>其他概念</h2>
+<p><code>轨</code> 变换后空间的维度</p>
+<p><code>满轨</code> 表示变幻后不降低维度</p>
+<p><code>列空间</code> 所有可能变换后结果的集合</p>
+<p><code>零空间</code> 变换后一些向量落到了零点上</p>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

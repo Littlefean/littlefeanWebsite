@@ -1,0 +1,223 @@
+/**
+ 此样式适用于各个代码工程项目文件
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #1e1e1e;
+  padding-top: 50px;
+}
+.file {
+  display: inline-block;
+  margin: 2px;
+  padding: 6px;
+  font-size: 5px;
+  line-height: 1.5em;
+  height: 4em;
+  color: #7f7f7f;
+  background-color: #040611;
+  transition: all 0.5s;
+  border-radius: 10px;
+}
+.folder {
+  margin: 25px;
+  padding: 10px;
+  box-sizing: content-box;
+  flex-wrap: wrap;
+  position: relative;
+  border: solid 2px #afb1b3;
+  background-color: #323232;
+  transition: all 0.5s;
+}
+.folder .folderName {
+  padding-left: 2em;
+  padding-right: 2em;
+  margin-left: 0.5em;
+  opacity: 0.8;
+  position: absolute;
+  height: 20px;
+  background-color: #7e8e99;
+  left: 0;
+  top: -20px;
+  transition: all 0.5s;
+}
+.folder .lines0 {
+  height: 4em;
+}
+.folder .lines1 {
+  height: 9em;
+}
+.folder .lines2 {
+  height: 14em;
+}
+.folder .lines3 {
+  height: 19em;
+}
+.folder .lines4 {
+  height: 24em;
+}
+.folder .lines5 {
+  height: 29em;
+}
+.folder .lines6 {
+  height: 34em;
+}
+.folder .lines7 {
+  height: 39em;
+}
+.folder .lines8 {
+  height: 44em;
+}
+.folder .lines9 {
+  height: 49em;
+}
+.folder .lines10 {
+  height: 54em;
+}
+.folder .html,
+.folder .wxml,
+.folder .fxml,
+.folder .xml,
+.folder .htm {
+  color: black;
+  font-weight: bold;
+  background-color: #579242;
+}
+.folder .md {
+  color: black;
+  background-color: #efefef;
+}
+.folder .txt,
+.folder .TXT,
+.folder .pdf {
+  color: black;
+  background-color: #717e87;
+}
+.folder .map {
+  background-color: #87939a;
+  color: whitesmoke;
+}
+.folder .psd {
+  color: #1cccf7;
+  border: solid 1px #1cccf7;
+  background-color: #001d26;
+}
+.folder .fla {
+  color: #ff4120;
+  border: solid 1px #ff4120;
+  background-color: #260600;
+}
+.folder .doc,
+.folder .docx {
+  color: #80c3f4;
+  background-color: #103f91;
+}
+.folder .xlsx,
+.folder .xls {
+  color: #33c481;
+  background-color: #185c37;
+}
+.folder .css,
+.folder .wxss,
+.folder .stlu,
+.folder .scss {
+  color: black;
+  background-color: #ad6c79;
+}
+.folder .ts {
+  color: black;
+  font-weight: bold;
+  background-color: #3f93b0;
+}
+.folder .js,
+.folder .jsx {
+  color: black;
+  font-weight: bold;
+  background-color: #bd8e3e;
+}
+.folder .less {
+  color: whitesmoke;
+  background-color: #ae532a;
+}
+.folder .json {
+  color: black;
+  background-color: #717e87;
+}
+.folder .java {
+  color: #19262b;
+  font-weight: bolder;
+  background-color: #3e86a0;
+}
+.folder .py {
+  color: black;
+  font-weight: bolder;
+  background-image: linear-gradient(to right bottom, #3b94c1 40%, #e7b906 60%);
+}
+.folder .go {
+  color: black;
+  background-color: #6ad7e5;
+}
+.folder .c {
+  color: white;
+  background-color: #00589c;
+}
+.folder .h,
+.folder .hpp {
+  color: white;
+  background-color: #2c0d2c;
+}
+.folder .s,
+.folder .S {
+  color: greenyellow;
+  background-color: darkgreen;
+}
+.folder .class,
+.folder .pyc {
+  color: #97b1bb;
+  background-color: #011329;
+}
+.folder .jar,
+.folder .exe,
+.folder .EXE {
+  color: #a5d9ee;
+  background-color: #002044;
+}
+.folder .bat {
+  color: #eea5a5;
+  background-color: #440000;
+}
+.folder .mca,
+.folder .db,
+.folder .dat {
+  color: #aceea5;
+  background-color: #094400;
+}
+.folder .ttf,
+.folder .TTF,
+.folder .woff,
+.folder .woff2 {
+  color: #87939a;
+  background-color: #5c6566;
+}
+.folder .jpg,
+.folder .png,
+.folder .bmp {
+  color: #1faa75;
+  border: solid 1px;
+  background-color: #053332;
+}
+.folder .ini,
+.folder .lnk {
+  color: #7f7f7f;
+  background-color: rgba(4, 6, 17, 0.5);
+}
+.folder .zip,
+.folder .rar,
+.folder .gz {
+  color: #87939a;
+  background-color: #5c6566;
+}
+/*# sourceMappingURL=htmlProjectStyle.css.map */

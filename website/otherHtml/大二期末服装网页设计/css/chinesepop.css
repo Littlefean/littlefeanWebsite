@@ -1,0 +1,201 @@
+@font-face {
+  font-family: "lovely";
+  src: url("../font/comicbd.ttf");
+}
+@font-face {
+  font-family: "han";
+  src: url("../font/方正粗黑宋简体.ttf");
+}
+html {
+  font-size: 10px;
+}
+h1 {
+  color: #3c2601;
+  font-family: 'han', serif;
+  font-weight: 400;
+}
+.top-line {
+  width: 80%;
+  height: 55rem;
+  margin: 5rem auto 0;
+  position: relative;
+}
+.top-line h1 {
+  text-align: center;
+  font-size: 4rem;
+  line-height: 2em;
+}
+.top-line .box {
+  width: 25rem;
+  height: 45rem;
+  position: absolute;
+  color: white;
+  background-color: #edcfa9;
+  box-shadow: rgba(128, 128, 128, 0.37) 0 0 0;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+.top-line .box:hover {
+  transform: translateY(-1.5rem);
+  box-shadow: rgba(128, 128, 128, 0.37) 5px 5px 15px;
+}
+.top-line .box img {
+  width: 100%;
+}
+.top-line .box h1 {
+  font-size: 2.5rem;
+}
+.top-line .box em {
+  font-size: 3rem;
+  font-family: 'lovely', serif;
+  width: 15rem;
+  display: block;
+  margin: 0 auto;
+  color: brown;
+  text-align: center;
+  transition: all 0.5s;
+}
+.top-line .box:hover em {
+  transform: scale(1.3);
+}
+.top-line .b1,
+.top-line .b3 {
+  top: 0;
+}
+.top-line .b3 {
+  right: 0;
+}
+.top-line .b2 {
+  left: 50%;
+  margin-left: -25rem / 2;
+}
+.hr {
+  width: 80%;
+  height: 5px;
+  background-color: #edcfa9;
+  border: 3px solid #d4b691;
+  border-radius: 100px;
+  margin: 1rem auto;
+}
+.line {
+  width: 80%;
+  height: 45rem;
+  margin: 5rem auto;
+}
+.line .buy {
+  display: block;
+  margin: 0 auto;
+  outline: 0;
+  font-size: 3rem;
+  border-radius: 100px;
+  color: #3c2601;
+  font-family: 'han', serif;
+  padding: 0.2rem 4rem 0.2rem 4rem;
+  background-color: #e79f70;
+  border: 4px solid #d8784f;
+  transition: all 0.1s;
+  user-select: none;
+  cursor: pointer;
+}
+.line .buy:hover {
+  transform: scale(1.1);
+  background-color: #551311;
+  border-color: #d8784f;
+  color: white;
+}
+.line .buy:active {
+  transform: scale(0.9);
+  background-color: #ee1e17;
+}
+.line > img {
+  height: 100%;
+  float: left;
+  box-shadow: rgba(128, 128, 128, 0.37) 0 0 0;
+  transition: all 0.5s;
+}
+.line > img:hover {
+  transform: translateY(-1.5rem);
+  box-shadow: rgba(128, 128, 128, 0.37) 5px 5px 15px;
+}
+.line .site {
+  height: 100%;
+  width: 60%;
+  float: right;
+}
+.line .site .content {
+  height: 100%;
+  width: 60%;
+  background-color: #f2dcc0;
+  box-shadow: rgba(128, 128, 128, 0.37) 0 0 0;
+  transition: all 0.5s;
+}
+.line .site .content:hover {
+  transform: translateY(-1.5rem);
+  box-shadow: rgba(128, 128, 128, 0.37) 5px 5px 15px;
+}
+.line .site .content img {
+  width: 100%;
+  margin-top: 1rem;
+}
+.line .site .content h1 {
+  text-align: center;
+  line-height: 2em;
+  font-size: 4rem;
+}
+.reverse > img {
+  height: 100%;
+  float: right;
+}
+.reverse .site {
+  height: 100%;
+  width: 60%;
+  float: left;
+}
+.reverse .site .content {
+  height: 100%;
+  width: 60%;
+  float: right;
+  margin-right: 10rem;
+}
+.bottom-line {
+  height: 30rem;
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.bottom-line .background {
+  background-color: #f2dcc0;
+  height: 15rem;
+  margin-top: 5rem;
+  position: relative;
+}
+.bottom-line .background h1 {
+  color: #aa4a30;
+  font-size: 3rem;
+  padding-top: 1rem;
+  margin-left: 10rem;
+}
+.bottom-line .background img {
+  position: absolute;
+  height: 100%;
+  box-shadow: rgba(128, 128, 128, 0.37) 0 0 0;
+  transition: all 0.5s;
+}
+.bottom-line .background img:hover {
+  transform: translateX(-1.5rem);
+  z-index: 100;
+  box-shadow: rgba(128, 128, 128, 0.37) 5px 5px 15px;
+}
+.bottom-line .background .big {
+  height: 22.5rem;
+  left: 30%;
+  top: -5rem;
+  z-index: 20;
+}
+.bottom-line .background .small {
+  height: 18rem;
+  left: 48%;
+  top: 3rem;
+  z-index: 10;
+}
+/*# sourceMappingURL=chinesepop.css.map */

@@ -1,0 +1,568 @@
+/**
+  我的初始化
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  overflow-y: auto;
+}
+body::-webkit-scrollbar {
+  width: 14px;
+  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 4px;
+  scrollbar-arrow-color: red;
+  /*background-color: #fff;*/
+}
+body::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 100px;
+  /*-webkit-box-shadow: inset 0 0 5px yellow;*/
+  background: rgba(255, 255, 255, 0.2);
+  scrollbar-arrow-color: rgba(255, 255, 255, 0.2);
+}
+body::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  /*-webkit-box-shadow: inset 0 0 10px rgba(0, 0, 255, 0.9);*/
+  border: solid 2px rgba(255, 255, 255, 0.4);
+  border-radius: 100px;
+  background: rgba(0, 0, 0, 0.1);
+}
+/***
+ 有关中心恒星的样式
+ */
+#centerStar {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-5px) translateY(-5px);
+  border-radius: 100px;
+  box-shadow: 0 0 10px yellow;
+  background-color: white;
+}
+/**
+ 和旋转有关的css动画
+ */
+@keyframes planetRound {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes planetRoundR {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}
+@keyframes rotate-frame {
+  0% {
+    transform: rotateX(45deg) rotateY(0deg) rotateZ(30deg);
+  }
+  100% {
+    transform: rotateX(45deg) rotateY(360deg) rotateZ(30deg);
+  }
+}
+/**
+ 星空画布的样式
+ */
+.canvasTmp {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  overflow: hidden;
+}
+.starWay {
+  width: 80%;
+  height: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: left center;
+}
+.slipStar {
+  width: 3px;
+  height: 3px;
+  border-radius: 100px;
+  position: absolute;
+  background-color: white;
+  animation-name: slideStar;
+  animation-duration: 6s;
+  animation-timing-function: cubic-bezier(0.99, 0, 1, 1);
+  animation-iteration-count: infinite;
+}
+@keyframes slideStar {
+  0% {
+    width: 0.2px;
+    height: 0.2px;
+    left: 0;
+  }
+  100% {
+    width: 7px;
+    height: 7px;
+    left: 100%;
+  }
+}
+.polyhedron {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50px) translateY(-50px);
+  perspective: 800px;
+}
+.polyhedron .rotateContainer {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -40px;
+  margin-top: -40px;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50% 48.28px;
+  transform: rotateX(60deg) rotateZ(30deg);
+}
+.polyhedron .rotateContainer .slide {
+  outline: solid 2px skyblue;
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+  transform-style: preserve-3d;
+  transition: all 0.2s;
+}
+.polyhedron .rotateContainer .slide:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 20px yellow;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+}
+.polyhedron .rotateContainer .slide:active {
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 20px orange;
+  width: 35px;
+  height: 35px;
+}
+.polyhedron .rotateContainer .s0 {
+  left: 50%;
+  top: 50%;
+  margin-left: -20px;
+  margin-top: -20px;
+}
+.polyhedron .rotateContainer .s0 .s1 {
+  right: -100%;
+}
+.polyhedron .rotateContainer .s0 .s1 .s11 {
+  right: -100%;
+}
+.polyhedron .rotateContainer .s0 .s1 .s11 .s12 {
+  top: -100%;
+  transform-origin: bottom center;
+  transform: rotateX(-45deg);
+}
+.polyhedron .rotateContainer .s0 .s1 .s11 .s111 {
+  right: -100%;
+}
+.polyhedron .rotateContainer .s0 .s1,
+.polyhedron .rotateContainer .s0 .s11,
+.polyhedron .rotateContainer .s0 .s111 {
+  transform-origin: left center;
+  transform: rotateY(-45deg);
+}
+.polyhedron .rotateContainer .s0 .s2 {
+  top: -100%;
+}
+.polyhedron .rotateContainer .s0 .s2 .s21 {
+  top: -100%;
+}
+.polyhedron .rotateContainer .s0 .s2 .s21 .s22 {
+  left: -100%;
+  transform-origin: right center;
+  transform: rotateY(45deg);
+}
+.polyhedron .rotateContainer .s0 .s2 .s21 .s211 {
+  top: -100%;
+}
+.polyhedron .rotateContainer .s0 .s2,
+.polyhedron .rotateContainer .s0 .s21,
+.polyhedron .rotateContainer .s0 .s211 {
+  transform-origin: bottom center;
+  transform: rotateX(-45deg);
+}
+.polyhedron .rotateContainer .s0 .s3 {
+  left: -100%;
+}
+.polyhedron .rotateContainer .s0 .s3 .s31 {
+  left: -100%;
+}
+.polyhedron .rotateContainer .s0 .s3 .s31 .s32 {
+  bottom: -100%;
+  transform-origin: top center;
+  transform: rotateX(45deg);
+}
+.polyhedron .rotateContainer .s0 .s3 .s31 .s311 {
+  left: -100%;
+}
+.polyhedron .rotateContainer .s0 .s3,
+.polyhedron .rotateContainer .s0 .s31,
+.polyhedron .rotateContainer .s0 .s311 {
+  transform-origin: right center;
+  transform: rotateY(45deg);
+}
+.polyhedron .rotateContainer .s0 .s4 {
+  bottom: -100%;
+}
+.polyhedron .rotateContainer .s0 .s4 .s41 {
+  bottom: -100%;
+}
+.polyhedron .rotateContainer .s0 .s4 .s41 .s42 {
+  right: -100%;
+  transform-origin: left center;
+  transform: rotateY(-45deg);
+}
+.polyhedron .rotateContainer .s0 .s4 .s41 .s411 {
+  bottom: -100%;
+}
+.polyhedron .rotateContainer .s0 .s4,
+.polyhedron .rotateContainer .s0 .s41,
+.polyhedron .rotateContainer .s0 .s411 {
+  transform-origin: top center;
+  transform: rotateX(45deg);
+}
+body {
+  background-color: black;
+  color: white;
+  height: 1000px;
+}
+body .menu {
+  outline: solid 1px;
+  position: absolute;
+  left: 5%;
+  z-index: 500;
+}
+body .menu .inner {
+  width: 170px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+body .menu .inner a {
+  width: 100%;
+  margin: 5px;
+  line-height: 2em;
+  text-align: center;
+  font-size: 20px;
+  display: block;
+  outline: solid 1px;
+}
+body main {
+  height: 100vh;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+body main .dataBox {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  outline: solid 1px;
+  color: white;
+}
+body main .series {
+  width: 10%;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  background-color: transparent;
+  animation-name: planetRound;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+body main .series .container {
+  height: 0;
+  animation-name: planetRoundR;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+body main .series .container a:hover ~ p {
+  visibility: visible;
+}
+body main .series .container .title {
+  font-size: 14px;
+}
+body main .series .container p {
+  font-size: xx-small;
+  visibility: hidden;
+}
+body main .series .container .iconCubeBox {
+  width: 30px;
+  height: 30px;
+  margin: 0 auto 40px;
+  perspective: 800px;
+}
+body main .series .container .iconCubeBox .rotateContainer {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50% 25px;
+  /* //设置3d空间的原点在平面中心再向Z轴移动200px的位置 */
+  animation-name: rotate-frame;
+  animation-duration: 8s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+body main .series .container .iconCubeBox .rotateContainer .slide {
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  background: transparent;
+  transform-style: preserve-3d;
+}
+body main .series .container .iconCubeBox .rotateContainer .slide .border {
+  width: 100%;
+  height: 100%;
+  border: solid 2px lightgray;
+  box-shadow: darkgrey 0 0 20px;
+  transition: all 0.2s;
+}
+body main .series .container .iconCubeBox .rotateContainer .slide .blueBorder {
+  border: solid 2px skyblue;
+  box-shadow: blue 0 0 20px;
+}
+body main .series .container .iconCubeBox .rotateContainer .slide .blueBorder:hover {
+  transform: rotateZ(45deg);
+}
+body main .series .container .iconCubeBox .rotateContainer .slide .greenBorder {
+  border: solid 2px lawngreen;
+  box-shadow: green 0 0 20px;
+}
+body main .series .container .iconCubeBox .rotateContainer .slide .greenBorder:hover {
+  margin-left: 100px;
+}
+body main .series .container .iconCubeBox .rotateContainer .slide .roseBorder {
+  border: solid 2px #f0ecdf;
+  box-shadow: #f19472 0 0 20px;
+}
+body main .series .container .iconCubeBox .rotateContainer .slide .roseBorder:hover {
+  transform: rotateZ(45deg);
+}
+body main .series .container .iconCubeBox .rotateContainer .slide .pinkBorder {
+  border: solid 2px pink;
+  box-shadow: hotpink 0 0 20px;
+}
+body main .series .container .iconCubeBox .rotateContainer .slide .pinkBorder:hover {
+  border-radius: 100px;
+}
+body main .series .container .iconCubeBox .rotateContainer .slide .yellowBorder {
+  border: solid 2px yellow;
+  box-shadow: darkorange 0 0 20px;
+}
+body main .series .container .iconCubeBox .rotateContainer .slide .yellowBorder:hover {
+  transform: scale(1.5);
+}
+body main .series .container .iconCubeBox .rotateContainer .slide .redBorder {
+  border: solid 2px red;
+  box-shadow: orangered 0 0 20px;
+}
+body main .series .container .iconCubeBox .rotateContainer .slide .redBorder:hover {
+  transform: scale(1.5);
+  border-radius: 100px;
+}
+body main .series .container .iconCubeBox .rotateContainer .slide .purpleBorder {
+  border: solid 2px mediumpurple;
+  box-shadow: purple 0 0 20px;
+}
+body main .series .container .iconCubeBox .rotateContainer .slide .purpleBorder:hover {
+  border-radius: 100px;
+}
+body main .series .container .iconCubeBox .rotateContainer .slide .grayBorder {
+  border: solid 2px lightgray;
+  box-shadow: darkgrey 0 0 20px;
+}
+body main .series .container .iconCubeBox .rotateContainer .top {
+  left: 25px;
+  top: -25px;
+  transform: rotateX(-90deg);
+  transform-origin: bottom;
+}
+body main .series .container .iconCubeBox .rotateContainer .top .border {
+  animation-delay: 1s;
+}
+body main .series .container .iconCubeBox .rotateContainer .bottom {
+  left: 25px;
+  bottom: -25px;
+  transform: rotateX(90deg);
+  transform-origin: top;
+}
+body main .series .container .iconCubeBox .rotateContainer .bottom .border {
+  animation-delay: 2s;
+}
+body main .series .container .iconCubeBox .rotateContainer .left {
+  left: -25px;
+  bottom: 25px;
+  transform: rotateY(90deg);
+  transform-origin: right;
+}
+body main .series .container .iconCubeBox .rotateContainer .left .border {
+  animation-delay: 3s;
+}
+body main .series .container .iconCubeBox .rotateContainer .right {
+  top: 25px;
+  left: 75px;
+  transform: rotateY(-90deg);
+  transform-origin: left;
+}
+body main .series .container .iconCubeBox .rotateContainer .right .border {
+  animation-delay: 4s;
+}
+body main .series .container .iconCubeBox .rotateContainer .front {
+  left: 25px;
+  top: 25px;
+  transform: translateZ(50px);
+}
+body main .series .container .iconCubeBox .rotateContainer .front .border {
+  animation-delay: 5s;
+}
+body main .series .container .iconCubeBox .rotateContainer .back {
+  left: 25px;
+  top: 25px;
+  transform: translateZ(0);
+}
+body main .series .container .iconCubeBox .rotateContainer .back .border {
+  animation-delay: 6s;
+}
+.bottomContent {
+  width: 80%;
+  height: 30px;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -40%;
+  text-align: center;
+  color: white;
+}
+.bottomContent #activeContent {
+  white-space: pre-wrap;
+}
+.indexFooter {
+  width: 80%;
+  height: 2em;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  margin-left: -40%;
+  text-align: center;
+  font-family: 微软雅黑, serif;
+  font-size: 15px;
+  color: gray;
+  outline: solid 1px;
+  transition: all 0.2s;
+}
+#beiAnId {
+  transition: all 0.2s;
+}
+#beiAnId:hover {
+  color: greenyellow;
+}
+@media screen and (max-width: 1024px) {
+  /**
+手机端适配
+*/
+  body .menu {
+    position: static;
+    left: 0;
+    z-index: 500;
+    width: 100%;
+    display: block;
+    overflow: hidden;
+  }
+  body .menu .inner {
+    display: block;
+    width: 100%;
+  }
+  body .menu .inner a {
+    display: block;
+    width: 60%;
+    margin: 20px auto;
+    font-size: 50px;
+  }
+  body main {
+    border: solid 2px red;
+    width: 100%;
+    height: 70vh;
+    overflow-y: scroll;
+    padding-top: 100px;
+    padding-bottom: 100px;
+  }
+  body main .series {
+    height: 400px;
+    width: 80%;
+    margin: 0 auto 46px;
+    display: block;
+    position: static;
+    outline: solid 1px;
+  }
+  body main .series .container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+  body main .series .container a {
+    display: block;
+    height: 50%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    top: 30%;
+    outline: solid 1px pink;
+  }
+  body main .series .container a span.title {
+    font-size: 50px;
+  }
+  body main .series .container a .iconCubeBox {
+    outline: solid 1px red;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+  }
+  body main .series .container p {
+    visibility: visible;
+    font-size: 25px;
+    color: gray;
+  }
+  .bottomContent {
+    bottom: 10%;
+    font-size: 50px;
+  }
+  .bottomContent #activeContent {
+    white-space: pre-wrap;
+    line-height: 1.5em;
+  }
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,280 @@
+:root {
+    --myPink: #D9A99A;
+    --lightPink: #FEF6F0;
+    --bgColor: #A6B09F;
+    --lightColor: #c7d1c0;
+    --darkColor: #525c4b;
+    --contentHeight: 1500px;
+}
+
+body {
+    background-color: var(--bgColor);
+}
+
+/* 左侧内容部分 */
+
+body>.left {
+    height: var(--contentHeight);
+    position: relative;
+    width: 75%;
+    padding-top: 140px;
+    float: left;
+    background-color: var(--lightColor);
+    overflow: hidden;
+}
+
+body main {
+    width: 84%;
+    height: var(--contentHeight);
+    /* background-color: pink; */
+    float: right;
+    overflow: hidden;
+}
+
+main .title {
+    text-align: center;
+    font-size: 40px;
+    /* font-family: '宋体'; */
+    color: var(--darkColor);
+    /* font-weight: bolder; */
+    letter-spacing: 0.2em;
+    line-height: 80px;
+    margin-bottom: -40px;
+    /* background-color: green; */
+}
+
+main .box {
+    width: 80%;
+    /* height: 180px; */
+    padding: 20px 30px;
+    margin: 80px auto 40px;
+    /* background-color: red; */
+    border-top-left-radius: 40px;
+    background-color: #fff;
+    box-shadow: var(--darkColor) 5px 5px 15px;
+    transition: all 0.5s;
+}
+
+main .box:hover {
+    transform: scale(1.01);
+    box-shadow: var(--darkColor) 10px 10px 30px;
+}
+
+main .box .client-title {
+    width: 250px;
+    height: 80px;
+    position: relative;
+    top: -60px;
+    /* border: solid 1px; */
+    z-index: 20;
+    border-top-left-radius: 40px;
+    /* box-shadow: var(--bgColor) 5px 5px 5px; */
+    /* background-color: #fff; */
+    background-image: linear-gradient(90deg, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+}
+
+main .box .client-title img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100px;
+    padding: 8px;
+    /* border: solid 4px; */
+    border-color: var(--darkColor);
+    box-shadow: var(--bgColor) 2px 5px 5px;
+    background-color: #fff;
+    float: left;
+}
+
+main .box .client-title h4 {
+    line-height: 80px;
+    display: block;
+    font-size: 25px;
+    text-indent: 0.5em;
+    /* background-color: #fff; */
+}
+
+main .box .content {
+    margin-top: -40px;
+    /* height: 120px; */
+    /* background-color: red; */
+    padding-bottom: 25px;
+}
+
+main .box .content h4 {
+    font-size: 20px;
+    line-height: 45px;
+}
+
+main .box .content p {
+    line-height: 1.5em;
+    padding-left: 40px;
+    text-indent: 2em;
+}
+
+main .box .content h6 {
+    color: var(--darkColor);
+    text-align: right;
+    padding-right: 20px;
+    font-size: 15px;
+    display: block;
+    width: 180px;
+    float: right;
+    transition: all 0.2s;
+}
+
+main .box .content h6:hover {
+    padding-right: 25px;
+    cursor: pointer;
+    color: black;
+}
+
+main .box h3 {
+    font-size: 23px;
+}
+
+main .box:hover h3 {
+    /* background-image: linear-gradient(45deg, rgba(0, 128, 0, 0.062), rgba(144, 238, 144, 0.096)); */
+    background-image: linear-gradient(135deg, rgb(38, 68, 19), rgb(23, 218, 39));
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+/* 右侧部分 */
+
+body>.right {
+    height: var(--contentHeight);
+    width: 25%;
+    padding-top: 140px;
+    float: left;
+    background-color: var(--lightColor);
+    overflow: hidden;
+}
+
+body>.right .user {
+    width: 300px;
+    height: 430px;
+    margin-top: 50px;
+    position: fixed;
+    border-top-left-radius: 40px;
+    box-shadow: var(--darkColor) 5px 5px 15px;
+    background-color: #fff;
+}
+
+.user .head {
+    width: 200px;
+    height: 150px;
+    margin: -50px auto 0;
+    /* margin-bottom: -50px; */
+    /* outline: solid 1px; */
+}
+
+.user .head img {
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
+    margin: 0 auto;
+    padding: 10px;
+    /* border: solid 5px; */
+    background-color: #fff;
+    box-shadow: var(--bgColor) 2px 5px 5px;
+}
+
+.user .head h2 {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.user .top {
+    padding-left: 40px;
+    padding-right: 40px;
+    /* background-color: pink; */
+}
+
+.user .top .bar {
+    height: 10px;
+    background-color: whitesmoke;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    border-radius: 100px;
+    box-shadow: var(--bgColor) 2px 2px 2px;
+    overflow: hidden;
+}
+
+.user .top .bar .inner {
+    width: 35%;
+    height: 100%;
+    background-image: linear-gradient(270deg, gold, orange);
+    box-shadow: yellow 20px 0 20px;
+}
+
+.user .middle {
+    height: 100px;
+    /* outline: solid 1px; */
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.user .middle .m-box {
+    height: 100%;
+    width: 30%;
+    float: left;
+    /* outline: solid 1px; */
+    border-top-left-radius: 20px;
+    margin-left: 11px;
+    box-shadow: var(--bgColor) 2px 2px 5px;
+    background-color: whitesmoke;
+}
+
+.user .middle .m-box:nth-child(1) {
+    margin-left: 0;
+}
+
+.user .middle .m-box p {
+    text-align: center;
+    line-height: 30px;
+}
+
+.user .middle .m-box span {
+    text-align: center;
+    display: block;
+    line-height: 25px;
+    margin: 0 auto;
+}
+
+.user .middle .m-box img {
+    display: block;
+    margin: 0 auto;
+    width: 30px;
+    height: 30px;
+}
+.user .item {
+    line-height: 30px;
+    text-align: center;
+    transition: all 0.2s;
+    cursor: pointer;
+}
+.user .item:hover {
+    transform: scale(1.1);
+    background-color: var(--lightColor);
+}
+.user button {
+    width: 100px;
+    height: 40px;
+    display: block;
+    margin: 10px auto 0;
+    outline: 0;
+    border: 0;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-size: 15px;
+}
+.user button:hover {
+    background-color: darkred;
+    color: var(--lightPink);
+    box-shadow: var(--darkColor) 0 0 5px;
+}
+.user button:active {
+    transform: scale(0.8);
+}

@@ -1,0 +1,222 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>操作系统</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>操作系统</h1>
+<hr />
+<h2>学习建议</h2>
+<p>学以致用，有利于理解经验</p>
+<h2>操作系统的概念</h2>
+<p>层级</p>
+<ol>
+<li>裸机</li>
+<li>操作系统</li>
+<li>应用</li>
+</ol>
+<p>给软件和用户提供接口</p>
+<p>打开任务管理器就可以看到操作系统的管理</p>
+<h2>功能和目标</h2>
+<p>三个问题</p>
+<ol>
+<li>
+<p>系统资源管理者</p>
+</li>
+<li>
+<p>文件管理</p>
+</li>
+<li>内存管理（存储器管理）</li>
+<li>CPU管理（处理机管理）</li>
+<li>
+<p>设备管理（打开摄像头聊天）</p>
+</li>
+<li>
+<p>对用户提供什么功能</p>
+</li>
+<li>
+<p><strong>命令接口</strong>（用户直接使用）</p>
+<ul>
+<li>
+<p>联机命令接口（交互式命令接口）</p>
+<p>用户说一句，系统做一句</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;win&nbsp;+&nbsp;r</span></div></div></li></p>
+</li>
+</ul>
+</li>
+</ol>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cmd</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;输入&nbsp;time</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;就会返回当前时间</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<pre><code>  - 脱机命令接口（批处理命令接口）
+
+    用户说一堆，系统做一堆
+
+    就是 `.bat` 文件，把所有的指令都串起来了
+</code></pre>
+<ol>
+<li>
+<p><strong>程序接口</strong>（用户通过程序间接使用）</p>
+<p>程序员调用 <code>dll</code> 文件，只能通过用户程序间接调用</p>
+<p>系统调用 == 广义指令</p>
+</li>
+<li>
+<p>GUI（图形视窗操作）</p>
+<p>比如：把文件拖拽到回收站</p>
+</li>
+<li>
+<p>在纯硬件上实现什么功能</p>
+</li>
+</ol>
+<p>实现对硬件机器的拓展</p>
+<p>也就是把一些很简单的硬件功能拓展了更丰富的用户使用的功能</p>
+<p>进程：程序的执行过程，需要放到内存中，然后再被CPU处理</p>
+<h2>四个特征</h2>
+<p>并发和共享是最基本的两个条件</p>
+<p>如果没有并发，就谈不上虚拟和异步</p>
+<h3>并发</h3>
+<p>两个或者多个事件在同一时间间隔发生，宏观上是同时发生的，<strong>微观上是交替发生的</strong>。</p>
+<p><strong>并行</strong>：多个事件同一时刻同时发生</p>
+<p>区分：并发微观上是交替的，并行才是真正的同时发生</p>
+<p>操作系统的并发性：操作系统中同时存在着多个运行着的程序</p>
+<p>一个单核处理器同一时刻只能执行一个程序</p>
+<h3>共享</h3>
+<p>系统中的资源可供内存中多个并发执行的进程共同使用</p>
+<p>两种共享方式</p>
+<ol>
+<li>互斥共享方式</li>
+</ol>
+<p>在一个时间段内，只允许一个进程访问这个资源</p>
+<p><em>就有点像学多线程的时候，某种锁</em></p>
+<ol>
+<li>同时共享方式</li>
+</ol>
+<p>在一个时间段内，允许多个进程同事对他访问</p>
+<p>这个同时可能只是宏观上的同时，微观上还是交替的</p>
+<p>但有的也是在微观上同时使用的</p>
+<p>比如一边玩游戏一边听音乐，音乐播放器是同时被两个进程使用的</p>
+<h3>虚拟</h3>
+<p>把一个物理上的实体分为若干个对应物</p>
+<p>举例：</p>
+<p>空分复用技术</p>
+<p>GTA5需要4Gb的内存，但是可以有虚拟内存</p>
+<p>时分复用技术</p>
+<p>如果只有一个CPU内核，那么但是可以同时执行很多应用程序，看上去就像有好几个核心一样</p>
+<h3>异步</h3>
+<p>进程的执行往往走走停停，以不可预知的速度向前推进</p>
+<h2>发展和分类</h2>
+<h3>手工操作阶段</h3>
+<p>人工输入纸袋，拉出纸袋，这段时间非常慢，时间都浪费了</p>
+<p>并且在这一个时间段内，一个计算机只为这一个用户服务</p>
+<h3>批处理阶段——单道批处理系统</h3>
+<p>让<strong>监督程序</strong>负责控制作业的输入和输出，这个监督程序就是操作系统的雏形</p>
+<p>主要优点：解决了人输入速度慢的矛盾，资源利用率有所提升</p>
+<h3>批处理阶段——多道批处理系统（重点）</h3>
+<p>每次往内存中输入多道程序</p>
+<p>缺点：没有提供人机交互的能力，用户响应时间长，把作业输入要等很长时间才能出结果，没有debug能力</p>
+<h3>分时操作系统（重点）</h3>
+<p>解决人机交互能力</p>
+<p>缺点：不具有优先处理紧急任务的能力</p>
+<h3>实时操作系统（重点）</h3>
+<p>外面发出的信号要在严格的时间限制内完成，</p>
+<p>提现了及时性和可靠性</p>
+<ol>
+<li>硬实时操作系统</li>
+</ol>
+<p>导弹控制系统，自动驾驶系统</p>
+<p>必须在严格的时间限制内完成</p>
+<ol>
+<li>软实时操作系统</li>
+</ol>
+<p>能够偶尔违反时间规定</p>
+<h3>其他不太会考到的操作系统</h3>
+<p>网络操作系统：能把网络中的计算机结合起来，实现数据传送</p>
+<p>分布式操作系统：主要特点：分布性和并行性，系统中的各台计算机地位相同，任何工作都可以分布在这台计算机上</p>
+<p>个人操作系统</p>
+<h2>运行机制和体系结构</h2>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<!-- 
+    百度界面制作练习
+    by littlefean
+    2020年10月17日
+ -->
+<html>
+
+<head>
+    <title>百度一下，你就知道</title>
+    <link rel="stylesheet" href="baidu.css">
+    <link rel="stylesheet" href="top.css">
+    <link rel="stylesheet" href="more-menu.css">
+    <link rel="stylesheet" href="weather-menu.css">
+    <style></style>
+</head>
+
+<body>
+    <main>
+        <div id="top">
+            <div class="left-content">
+                <a href="https://news.baidu.com/">新闻</a>
+                <a href="https://www.hao123.com/">hao123</a>
+                <a href="https://www.hao123.com/">地图</a>
+                <a href="https://haokan.baidu.com/?sfrom=baidu-top">视频</a>
+                <a href="https://tieba.baidu.com/">贴吧</a>
+                <a href="https://xueshu.baidu.com/">学术</a>
+                <a href="https://www.baidu.com/more/" id="more">更多</a>
+            </div>
+
+            <!-- 鼠标放上显示的 更多 二级菜单 -->
+            <div id="moreMenu" hidden="true">
+                <div class="line">
+                    <div class="block">
+                        <div class="logo-img">
+                            <img src="img/menu/baiduyun2x-e0be79e69e.png" alt="">
+                        </div>
+                        <a href="https://pan.baidu.com/disk/home">网盘</a>
+                    </div>
+                    <div class="block">
+                        <div class="logo-img">
+                            <img src="img/menu/zhidao2x-e9b427ecc4.png" alt="">
+                        </div>
+                        <a href="https://zhidao.baidu.com/">知道</a>
+                    </div>
+                    <div class="block">
+                        <div class="logo-img">
+                            <img src="img/menu/baike2x-1fe3db7fa6.png" alt="">
+                        </div>
+                        <a href="https://baike.baidu.com/">百科</a>
+                    </div>
+                    <div class="block">
+                        <div class="logo-img">
+                            <img src="img/menu/tupian2x-482fc011fc.png" alt="">
+                        </div>
+                        <a href="https://image.baidu.com/">图片</a>
+                    </div>
+                </div>
+                <div class="line">
+                    <div class="block">
+                        <div class="logo-img">
+                            <img src="img/menu/baobaozhidao2x-af409f9dbe.png" alt="">
+                        </div>
+                        <a>宝宝知道</a>
+                    </div>
+                    <div class="block">
+                        <div class="logo-img">
+                            <img src="img/menu/wenku2x-f3aba893c1.png" alt="">
+                        </div>
+                        <a>文库</a>
+                    </div>
+                    <div class="block">
+                        <div class="logo-img">
+                            <img src="img/menu/jingyan2x-e53eac48cb.png" alt="">
+                        </div>
+                        <a>经验</a>
+                    </div>
+                    <div class="block">
+                        <div class="logo-img">
+                            <img src="img/menu/yinyue2x-c18adacacb.png" alt="">
+                        </div>
+                        <a>音乐</a>
+                    </div>
+                </div>
+                <div class="buttom">
+                    <a href="">查看全部百度产品></a>
+                </div>
+            </div>
+
+            <!-- 鼠标放上弹出的天气二级菜单 -->
+            <div id="weatherMenu" hidden="true">
+                <div class="lunner">
+                    <!-- 向左 -->
+                    <div class="daytime">10月18日</div>
+                    <div class="daytime-lunner">农历九月初二</div>
+                    <div class="mood">未来七天天气</div>
+                    <!-- 向右 -->
+                    <div class="choice">切换</div>
+                    <div class="iconimg">..</div>
+                </div>
+                <div class="everyday">
+                    <div class="day">
+                        <div class="day-title">今天（周日）</div>
+                        <div class="day-icon">
+                            <img src="img/a2.png" alt="">
+                        </div>
+                        <div class="temp">15℃</div>
+                        <div class="weather">小雨</div>
+                        <div class="wind">微风&nbsp;3级别</div>
+                        <!-- 上面需要特殊转义小于号 -->
+                    </div>
+                    <div class="day">
+                        <div class="day-title">今天（周日）</div>
+                        <div class="day-icon">
+                            <img src="img/a2.png" alt="">
+                        </div>
+                        <div class="temp">15℃</div>
+                        <div class="weather">小雨</div>
+                        <div class="wind">微风&nbsp;3级别</div>
+                    </div>
+                    <div class="day">
+                        <div class="day-title">昨天（周六）</div>
+                        <div class="day-icon">
+                            <img src="img/a2.png" alt="">
+                        </div>
+                        <div class="temp">15℃</div>
+                        <div class="weather">小雨</div>
+                        <div class="wind">微风&nbsp;3级别</div>
+                    </div>
+                    <div class="day">
+                        <div class="day-title">前天（周五）</div>
+                        <div class="day-icon">
+                            <img src="img/a2.png" alt="">
+                        </div>
+                        <div class="temp">15℃</div>
+                        <div class="weather">小雨</div>
+                        <div class="wind">微风&nbsp;3级别</div>
+                    </div>
+                    <div class="day">
+                        <div class="day-title">周四</div>
+                        <div class="day-icon">
+                            <img src="img/a2.png" alt="">
+                        </div>
+                        <div class="temp">15℃</div>
+                        <div class="weather">小雨</div>
+                        <div class="wind">微风&nbsp;3级别</div>
+                    </div>
+                </div>
+            </div>
+            <!-- 二级菜单：设置 -->
+            <!-- TODO -->
+            <!-- 二级菜单：个人中心 -->
+            <!-- TODO -->
+            <div class="right-content">
+                <div class="user">
+                    <img src="img/user.jpg" alt="" id="user-head" width="28">
+                    <a href="">littlefean</a>
+                </div>
+                <div class="settings">
+                    <a href="">设置</a>
+                </div>
+
+                <div id="level">优</div>
+
+                <div class="show-weather">
+                    <a href="" style="float: right;">15℃</a>
+                    <img src="img/a2.png" alt="" class="weather" width="23" style="float: right;">
+                    <a href="" class="location" style="float: right;">成都</a>
+                </div>
+            </div>
+        </div>
+        <img src="img/result.png" alt="图片未能正常显示" id="center-logo">
+        <div id="search-div">
+            <input type="text" maxlength="36">
+            <button>百度一下</button>
+        </div>
+        <div id="buttom">
+            <div class="left-content">
+                <a href="">设为首页</a>
+                <a href="">关于百度</a>
+                <a href="">About Baidu</a>
+                <a href="">百度营销</a>
+                <a href="">使用百度前必读</a>
+                <a href="">意键反馈</a>
+                <a href="">帮助中心</a>
+            </div>
+            <div class="right-content">
+                <a href="">©2020 Baidu</a>
+                <a href="">(京)-经营性-2017-0020</a>
+                <a href="">京公网安备11000002000001号</a>
+                <a href="">京ICP证030173号</a>
+            </div>
+        </div>
+    </main>
+
+
+</body>
+<script src="baidu.js"></script>
+
+</html>

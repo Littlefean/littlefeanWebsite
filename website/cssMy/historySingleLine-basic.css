@@ -1,0 +1,61 @@
+@font-face {
+  font-family: "impact";
+  src: url("../fonts/impact.woff");
+}
+body {
+  color: white;
+  background-color: black;
+}
+body .mainTitle {
+  text-align: center;
+  line-height: 4em;
+}
+body .logs {
+  width: 80%;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+body .logs .item {
+  width: 20%;
+  min-width: 200px;
+  height: 100px;
+  margin: 15px;
+  padding: 20px;
+  position: relative;
+  text-align: center;
+  background-color: black;
+}
+body .logs .item .time {
+  width: 100px;
+  height: 100%;
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform: translateX(-100px);
+  font-family: "impact", serif;
+  color: black;
+  background-color: #f7971d;
+  filter: hue-rotate(0deg);
+}
+body .logs .item .time .icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+body .logs .item .time span {
+  font-size: 18px;
+}
+body .logs .item .time .year,
+body .logs .item .time .t {
+  display: block;
+  text-align: center;
+}
+body .logs .item .time .month {
+  margin-right: 4px;
+}
+body .logs .item .time .month,
+body .logs .item .time .day {
+  font-size: 32px;
+}
+/*# sourceMappingURL=historySingleLine-basic.css.map */

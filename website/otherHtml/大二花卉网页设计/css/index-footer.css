@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+:root {
+    --myPink: #D9A99A;
+    --lightPink: #FEF6F0;
+    --bgColor: #A6B09F;
+    --lightColor: #c7d1c0;
+    --darkColor: #525c4b;
+}
+
+.footer {
+    /* height: 180px; */
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background-color: var(--darkColor);
+    /* background-color: red; */
+    text-align: center;
+    color: var(--bgColor);
+    font-family: '宋体';
+    font-size: 18px;
+    line-height: 30px;
+    transition: all 1s;
+    z-index: 180;
+    box-shadow: rgba(46, 46, 0, 0.226) 0px 10px 30px inset;
+}
+.footer:hover {
+    box-shadow: rgba(0, 0, 0, 0.397) 0px 10px 30px inset;
+    /* transform: scale(1.1); */
+    color: white;
+}
+.footer .slogn {
+    color: var(--lightColor);
+    line-height: 50px;
+    letter-spacing: 0.15em;
+    font-size: 24px;
+
+}
+.footer ul {
+    /* background-color: red; */
+    display: block;
+    width: 60%;
+    height: 25px;
+    margin: 0 auto;
+    list-style: none;
+}
+.footer ul li {
+    float: left;
+    margin-left: 40px;
+}
+.footer ul li:first{
+    margin-left: 0px;
+}
+.footer br {
+    line-height: 10px;
+}
+/* .footer .hr {
+    width: 75%;
+    height: 2px;
+    
+    background-color: var(--bgColor);
+    margin: 0 auto;
+} */
+.footer .end {
+    font-size: 18px;
+    line-height: 30px;
+    margin-top: -20px;
+    /* background-color: yellow;
+    display: block;
+    width: 75%;
+    height: 50px;
+    margin: 0 auto; */
+}

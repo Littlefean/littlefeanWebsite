@@ -1,0 +1,108 @@
+@keyframes flash {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+footer.mainFooter {
+  padding-top: 20px;
+  padding-bottom: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+footer.mainFooter ul.topUl {
+  height: 30px;
+  width: 60%;
+  margin: 0 auto;
+}
+footer.mainFooter ul.topUl li {
+  float: left;
+  margin-right: 60px;
+  height: 30px;
+  list-style-type: none;
+}
+footer.mainFooter ul.topUl li a {
+  height: 30px;
+  line-height: 30px;
+  text-decoration: none;
+  border-left-width: 5px;
+  padding-left: 20px;
+  border-left: solid whitesmoke;
+  transition: all 0.2s;
+}
+footer.mainFooter ul.topUl li a:hover {
+  color: yellow;
+}
+footer.mainFooter .mid {
+  position: relative;
+  overflow: hidden;
+  width: 60%;
+  margin: 20px auto;
+}
+footer.mainFooter .mid .left,
+footer.mainFooter .mid .center,
+footer.mainFooter .mid .right {
+  width: 33.333%;
+  float: left;
+  padding-right: 30px;
+}
+footer.mainFooter .mid .left h2,
+footer.mainFooter .mid .center h2,
+footer.mainFooter .mid .right h2 {
+  line-height: 3em;
+}
+footer.mainFooter .mid .left p {
+  line-height: 2em;
+}
+footer.mainFooter .mid .center table tr {
+  min-height: 60px;
+  transition: all 0.5s;
+}
+footer.mainFooter .mid .center table tr:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+footer.mainFooter .mid .center table tr:hover img {
+  transform: rotate(15deg);
+}
+footer.mainFooter .mid .center table tr:hover td:nth-child(3) {
+  color: yellow;
+  animation-play-state: running;
+}
+footer.mainFooter .mid .center table tr td {
+  min-width: 30px;
+  padding: 5px 5px 5px 0;
+}
+footer.mainFooter .mid .center table tr td img {
+  width: 30px;
+  height: 30px;
+  border-radius: 20%;
+  transition: all 0.5s;
+}
+footer.mainFooter .mid .center table tr td:nth-child(3) {
+  animation-name: flash;
+  animation-duration: 0.2s;
+  animation-play-state: paused;
+  animation-iteration-count: infinite;
+}
+footer.mainFooter .mid .right ul {
+  display: block;
+}
+footer.mainFooter .mid .right ul li {
+  float: none;
+  line-height: 2em;
+}
+footer.mainFooter .mid .right ul li:hover {
+  color: lime;
+}
+footer.mainFooter .mid .right ul li a {
+  width: auto;
+  text-align: left;
+}
+footer.mainFooter .sub {
+  text-align: center;
+}
+/*# sourceMappingURL=footer-basic.css.map */

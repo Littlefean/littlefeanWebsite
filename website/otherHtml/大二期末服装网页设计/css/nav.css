@@ -1,0 +1,39 @@
+@font-face {
+  font-family: "lovely";
+  src: url("../font/comicbd.ttf");
+}
+@font-face {
+  font-family: "han";
+  src: url("../font/方正粗黑宋简体.ttf");
+}
+.nav {
+  height: 10rem;
+  border-bottom: solid 5px;
+  border-color: #b76a55;
+  background-color: #f7e9d8;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding-left: 12rem;
+  padding-right: 12rem;
+}
+.nav .logo {
+  display: inline;
+  font-size: 5rem;
+  color: #aa4a30;
+  font-family: "lovely";
+  line-height: 10rem;
+}
+.nav a {
+  text-decoration: none;
+  color: #aa4a30;
+  font-family: 'han';
+  font-size: 2.5rem;
+  text-shadow: rgba(226, 54, 41, 0.5) 0px 0px 0px;
+  line-height: 10rem;
+  transition: all 0.2s;
+}
+.nav a:hover {
+  transform: scale(1.2);
+  text-shadow: rgba(226, 54, 41, 0.5) 2px 2px 2px;
+}

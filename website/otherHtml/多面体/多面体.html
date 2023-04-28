@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="polyhedron.css">
+</head>
+
+<body>
+<div class="polyhedron">
+    <div class="rotateContainer">
+        <div class="slide s0">
+            <div class="slide s1">
+                <div class="slide s11">
+                    <div class="slide s12"></div>
+                    <div class="slide s111"></div>
+                </div>
+            </div>
+            <div class="slide s2">
+                <div class="slide s21">
+                    <div class="slide s22"></div>
+                    <div class="slide s211"></div>
+                </div>
+            </div>
+            <div class="slide s3">
+                <div class="slide s31">
+                    <div class="slide s32"></div>
+                    <div class="slide s311"></div>
+                </div>
+            </div>
+            <div class="slide s4">
+                <div class="slide s41">
+                    <div class="slide s42"></div>
+                    <div class="slide s411"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    let polyhedron = document.querySelector(".polyhedron");
+    let rotateBase = polyhedron.querySelector(".rotateContainer");
+    window.addEventListener("mousemove", (e) => {
+        console.log(e.pageX);
+        console.log(e.pageY);
+        let k = 300;
+        rotateBase.style.transform = `rotateX(${k * e.pageY / 1080}deg) rotateZ(${-k * e.pageX / 1920}deg)`;
+    });
+</script>
+</html>

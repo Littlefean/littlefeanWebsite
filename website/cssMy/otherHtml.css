@@ -1,0 +1,61 @@
+@keyframes itemAni {
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+  25% {
+    transform: translateX(-10px) translateY(10px);
+  }
+  50% {
+    transform: translateX(10px) translateY(10px);
+  }
+  75% {
+    transform: translateX(-10px) translateY(-10px);
+  }
+  100% {
+    transform: translateX(0px) translateY(0px);
+  }
+}
+main h1,
+main h2 {
+  text-align: center;
+  line-height: 2em;
+}
+main .otherBox {
+  overflow: hidden;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+main .otherBox .item {
+  display: block;
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  float: left;
+  text-align: center;
+  animation-name: itemAni;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+main .otherBox .item:hover {
+  cursor: pointer;
+}
+main .otherBox .item:hover .itemIcon {
+  transform: scale(1.1);
+  box-shadow: yellow 0 0 20px;
+}
+main .otherBox .item:hover h4 {
+  transform: scale(1.2);
+}
+main .otherBox .item .itemIcon {
+  width: 70px;
+  height: 70px;
+  background-color: skyblue;
+  border-radius: 20px;
+  transition: all 0.5s;
+}
+main .otherBox .item h4 {
+  transition: all 0.5s;
+  font-weight: normal;
+}
+/*# sourceMappingURL=otherHtml.css.map */

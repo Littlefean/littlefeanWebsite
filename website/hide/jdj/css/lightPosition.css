@@ -1,0 +1,43 @@
+.light {
+  filter: brightness(100%) hue-rotate(0deg) grayscale(0%);
+}
+.p1 {
+  left: 35px;
+  top: -97px;
+}
+.p2 {
+  left: 268px;
+  top: 1px;
+  transform: scale(0.9) !important;
+}
+.p3 {
+  left: 372px;
+  top: 217px;
+  transform: scale(0.7) !important;
+}
+.p4 {
+  left: 195px;
+  top: -199px;
+}
+.p5 {
+  left: 505px;
+  top: 139px;
+}
+.p6 {
+  left: 572px;
+  top: 149px;
+  transform: scale(0.4) scaleX(1.5) !important;
+}
+.p7 {
+  left: 309px;
+  top: 65px;
+}
+.p8 {
+  left: 340px;
+  top: 16px;
+}
+.p9 {
+  left: 155px;
+  top: 402px;
+}
+/*# sourceMappingURL=lightPosition.css.map */

@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@keyframes flash {
+  0% {
+    box-shadow: 0 0 10px green;
+  }
+  50% {
+    box-shadow: 0 0 30px green;
+  }
+  100% {
+    box-shadow: 0 0 10px green;
+  }
+}
+@keyframes luck {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    background-color: greenyellow;
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes shake {
+  0% {
+    transform: translateX(2px);
+  }
+  50% {
+    transform: translateX(-2px) translateY(5px);
+  }
+  75% {
+    transform: translateX(1px) translateY(-2px);
+  }
+  100% {
+    transform: translateX(2px);
+  }
+}
+body main {
+  width: 80%;
+  margin: 0 auto;
+  background-color: whitesmoke;
+  min-height: 100vh;
+}
+body main h1,
+body main p {
+  line-height: 2em;
+  text-align: center;
+}
+body main .inputArea {
+  outline: solid 1px;
+  text-align: center;
+}
+body main .inputArea #inputDate {
+  margin: 20px auto;
+  display: block;
+  font-size: 20px;
+}
+body main .inputArea #start {
+  display: block;
+  font-size: 20px;
+  line-height: 2em;
+  border-radius: 1000px;
+  padding: 0 50px 0 50px;
+  margin: 30px auto;
+}
+body main .inputArea #start:hover {
+  cursor: pointer;
+}
+body main .result {
+  display: none;
+}
+body main .result .note {
+  text-align: center;
+  line-height: 2em;
+  font-size: 25px;
+  letter-spacing: 2px;
+}
+body main .result .littleNote {
+  text-align: center;
+  line-height: 2em;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+body main .result .bar {
+  width: 60%;
+  height: 20px;
+  border-radius: 100px;
+  outline: solid 2px;
+  overflow: hidden;
+  margin: 0 auto;
+}
+body main .result .bar .water {
+  background-color: darkgreen;
+  height: 100%;
+  width: 100%;
+  animation-name: flash;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+}
+body main .result .grid {
+  overflow: hidden;
+  width: 80%;
+  margin: 0 auto;
+}
+body main .result .grid .yearBlock {
+  float: left;
+  background-color: green;
+  margin: 2px;
+  border-radius: 5px;
+  width: 40px;
+  height: 40px;
+  margin: 5px;
+  color: white;
+  line-height: 40px;
+  font-size: 10px;
+  text-align: center;
+}
+body main .result .grid .weekBlock {
+  float: left;
+  background-color: green;
+  margin: 2px;
+  border-radius: 5px;
+  width: 10px;
+  height: 10px;
+}
+body main .result .grid .dayBlock {
+  float: left;
+  background-color: green;
+  margin: 2px;
+  border-radius: 5px;
+  width: 5px;
+  height: 5px;
+  margin: 1px;
+  border-radius: 0;
+}
+/*# sourceMappingURL=index.css.map */

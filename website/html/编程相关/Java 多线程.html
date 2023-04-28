@@ -1,0 +1,275 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Java 多线程</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>多线程</h1>
+<hr />
+<h2>并发、并行</h2>
+<hr />
+<p>并发：多个事件同一时间段内发生（交替）</p>
+<p>并行：多个事件同一时刻发生（同时）</p>
+<h2>线程、进程</h2>
+<hr />
+<p>进程：一个内存中运行的应用程序</p>
+<p>线程：进程中的一个执行单元，一个进程至少有一个线程</p>
+<h4>线程的调度：</h4>
+<p>分时调度：</p>
+<p>所有线程轮流使用CPU的使用权，平均分配每个CPU的占用时间</p>
+<p>抢占式调度：</p>
+<p>优先让优先级高的线程使用CPU，如果线程的优先级相同，那么会随机选择一个(线程随机性),Java使用的为抢占式调度.</p>
+<h2>创建线程类</h2>
+<hr />
+<h3>创建Thread类的子类</h3>
+<p>java.long.Thread类:是描述线程的类，我们想要实现多线程的程序，必须继承Thread类</p>
+<h4>实现步骤</h4>
+<ol>
+<li>
+<p>创建一个Thread类的子类</p>
+</li>
+<li>
+<p>在Thread类的子类中重写Thread类中的run方法，设置线程任务（开启线程要做什么？）</p>
+</li>
+<li>
+<p>创建Thread类的子类对象</p>
+</li>
+<li>
+<p>调用Thread类中的方法start方法，开启新的线程，执行run方法</p>
+</li>
+</ol>
+<p>​    注意：多次启动一个线程是违法的，特别是线程执行结束的时候，不能再重新启动</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">class</span><span class="">&nbsp;</span><span class="nc">Demo</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">static</span><span class="">&nbsp;</span><span class="kt">void</span><span class="">&nbsp;</span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span><span class="">&nbsp;</span><span class="n">rags</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">MyThread</span><span class="">&nbsp;</span><span class="n">mt</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">MyThread</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">mt</span><span class="p">.</span><span class="na">start</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">class</span><span class="">&nbsp;</span><span class="nc">MyThread</span><span class="">&nbsp;</span><span class="kd">extends</span><span class="">&nbsp;</span><span class="n">Thread</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@override</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">run</span><span class="p">(</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"</span><span class="s">test</span><span class="s">"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//一种获取线程名称的方式
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">String</span><span class="">&nbsp;</span><span class="n">name</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">getName</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">name</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//获取线程名称的另外一种方式
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">Thread</span><span class="">&nbsp;</span><span class="n">t</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">t</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//写成一行
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Thread</span><span class="p">.</span><span class="na">currentThread</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="na">getName</span><span class="p">(</span><span class="p">)</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h3>获取线程的名称</h3>
+<ol>
+<li>使用Thread类中的方法，getName()</li>
+</ol>
+<p><code>String getName()</code></p>
+<ol>
+<li>可以先获取到当前正在执行的线程，使用线程中的方法getName()获取线程的名称</li>
+</ol>
+<p><code>static Thread currentThread()   //返回当前正在执行线程的引用</code></p>
+<h3>设置线程的名称</h3>
+<ol>
+<li>使用Thread类中的方法，setName()</li>
+</ol>
+<p><code>void steName(String name)</code></p>
+<ol>
+<li>创建一个带参数的构造方法，参数传递线程的名称；调用父类的带参构造方法，让父类给子线程起名字</li>
+</ol>
+<h3>暂停线程</h3>
+<p><code>public static void sleep(long millis)          //使当前的线程以指定的毫秒暂停</code></p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">class</span><span class="">&nbsp;</span><span class="nc">Demo</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">static</span><span class="">&nbsp;</span><span class="kt">void</span><span class="">&nbsp;</span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span><span class="">&nbsp;</span><span class="n">args</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">for</span><span class="p">(</span><span class="n">i</span><span class="o">=</span><span class="mi">0</span><span class="p">;</span><span class="">&nbsp;</span><span class="n">i</span><span class="o">&lt;</span><span class="mi">60</span><span class="p">;</span><span class="">&nbsp;</span><span class="n">i</span><span class="o">+</span><span class="o">+</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   </span><span class="k">try</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">Thread</span><span class="p">.</span><span class="na">sleep</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span><span class="p">;</span><span class="c1">//1000毫秒是1秒
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="n">InterruptedExpection</span><span class="">&nbsp;</span><span class="n">e</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h2>创建多线程的第二种方式</h2>
+<hr />
+<p>实现Runnable接口</p>
+<p>java.lang.Runnable</p>
+<h4>实现步骤</h4>
+<ol>
+<li>创建一个Runnable接口实现类</li>
+<li>在实现类中重写run方法，设置线程任务</li>
+<li>创建一个接口的实现类对象</li>
+<li>创建Thread类对象，构造方法中传递Runnable接口的实现类对象</li>
+<li>调用Thread类中的start方法，开启新的线程执行run方法</li>
+</ol>
+<h4>实例</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">class</span><span class="">&nbsp;</span><span class="nc">MyRunnable</span><span class="">&nbsp;</span><span class="kd">implements</span><span class="">&nbsp;</span><span class="n">Runnable</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@override</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="">&nbsp;</span><span class="kt">void</span><span class="">&nbsp;</span><span class="nf">run</span><span class="p">(</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//线程任务
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">class</span><span class="">&nbsp;</span><span class="nc">Demo</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">static</span><span class="">&nbsp;</span><span class="kt">void</span><span class="">&nbsp;</span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span><span class="">&nbsp;</span><span class="n">args</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">MyRunnable</span><span class="">&nbsp;</span><span class="n">mr</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">MyRunnable</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//将Runnab接口传递到Thread类中，并执行
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">Thread</span><span class="p">(</span><span class="n">mr</span><span class="p">)</span><span class="p">.</span><span class="na">start</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h4>好处</h4>
+<ol>
+<li>避免了单继承的局限性</li>
+</ol>
+<p>一个类只能继承一个类，但是接口还可以继承其他的类</p>
+<ol>
+<li>增强程序的扩展性，降低了程序的耦合性</li>
+</ol>
+<p>实现Runnable接口的方式，把设置线程任务和开启线程任务进行了分离（解耦）</p>
+<p>实现类中，重写了run方法：用来设置线程任务</p>
+<p>创建Thread类对象，调用start方法：用来开启新线程</p>
+<h2>匿名内部类方式创建线程</h2>
+<hr />
+<h4>举例：</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">class</span><span class="">&nbsp;</span><span class="nc">Demo</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">static</span><span class="">&nbsp;</span><span class="kt">void</span><span class="">&nbsp;</span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span><span class="">&nbsp;</span><span class="n">args</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">Thread</span><span class="p">(</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@override</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="">&nbsp;</span><span class="kt">void</span><span class="">&nbsp;</span><span class="nf">run</span><span class="p">(</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//线程任务
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">.</span><span class="na">start</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">Runnable</span><span class="p">(</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@override</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="">&nbsp;</span><span class="kt">void</span><span class="">&nbsp;</span><span class="nf">run</span><span class="p">(</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//线程任务
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">.</span><span class="na">start</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h2>线程安全</h2>
+<hr />
+<p>单线程程序是不会出现线程安全的</p>
+<p>多线程程序，没有访问共享数据，不会产生问题</p>
+<p>多线程访问了共享的数据，会产生线程安全问题</p>
+<h3>线程同步</h3>
+<p>三种同步操作：</p>
+<ol>
+<li>同步代码块</li>
+<li>同步方法</li>
+<li>锁机制</li>
+</ol>
+<h2>同步代码块</h2>
+<hr />
+<h4>格式：</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">synchronized</span><span class="p">(</span><span class="n">同步锁</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//sing扣nai子的
+</span><span class="">  </span><span class="c1">//需要同步的代码块
+</span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h4>注意：</h4>
+<ol>
+<li>通过代码块中的锁对象，可以使用任意对象</li>
+<li>但是必须保证多个线程使用的锁对象是同一个</li>
+<li>锁对象的作用是把同步代码块锁住，只让一个线程在同步代码块中执行</li>
+</ol>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

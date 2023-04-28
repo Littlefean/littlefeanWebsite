@@ -1,0 +1,349 @@
+
+body {
+  background-color: black;
+  color: white;
+  height: 1000px;
+
+  .menu {
+    outline: solid 1px;
+    position: absolute;
+    //padding: 15px;
+    left: 5%;
+    z-index: 500;
+
+    .inner {
+      width: 170px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+
+      a {
+        width: 100%;
+        margin: 5px;
+        line-height: 2em;
+        text-align: center;
+        //text-indent: 2em;
+        font-size: 20px;
+        display: block;
+        outline: solid 1px;
+      }
+    }
+  }
+
+  main {
+    height: 100vh;
+    width: 90%;
+    margin: 0 auto;
+    //border: solid 1px red;
+    position: relative;
+
+    .dataBox {
+      // 鼠标悬停信息专有盒子
+      width: 100px;
+      height: 100px;
+      position: absolute;
+      right: 0;
+      top: 0;
+      outline: solid 1px;
+      color: white;
+
+    }
+
+    .series {
+      width: 10%;
+      //height: 10%;
+      height: 0; // 高度调零，否则遮挡鼠标
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      text-align: center;
+      //outline: solid 1px;
+      background-color: transparent;
+      // 公转动画
+      animation-name: planetRound;
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+
+      .container {
+        height: 0; // 高度调零
+        animation-name: planetRoundR;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+
+        a {
+          &:hover {
+            ~ p {
+              visibility: visible;
+            }
+          }
+        }
+
+        .title {
+          font-size: 14px;
+        }
+
+        p {
+          font-size: xx-small;
+          visibility: hidden;
+        }
+
+        .iconCubeBox {
+          //整个旋转体的核心
+          @iconBoxL: 30px;
+          width: @iconBoxL;
+          height: @iconBoxL;
+          margin: 0 auto 40px;
+          //position: absolute;
+          perspective: 800px;
+          //outline: solid 1px red;
+
+          .rotateContainer {
+            // 旋转基座，同时也用来容纳6个面
+            @cubeL: 50px; // 正方体的边长
+            @containerL: @cubeL * 2;
+
+            width: @containerL;
+            height: @containerL;
+
+            // 与旋转中心同心对齐
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -(@containerL / 2);
+            margin-top: -(@containerL / 2);
+
+            transform-style: preserve-3d;
+            transform-origin: 50% 50% (@cubeL/2);
+            /* //设置3d空间的原点在平面中心再向Z轴移动200px的位置 */
+            // 设置自转动画
+            animation-name: rotate-frame;
+            animation-duration: 8s;
+            animation-timing-function: linear;
+            animation-iteration-count: infinite;
+
+            //outline: solid 1px gray;
+
+            .slide {
+              width: @cubeL;
+              height: @cubeL;
+              position: absolute;
+              background: transparent;
+              transform-style: preserve-3d;
+
+              &:hover {
+                .border {
+                  //.fill();
+                }
+              }
+
+              .fill() {
+                background-color: rgba(255, 255, 255, 0.5);
+              }
+              .borderFlash() {
+                border: 4px solid lawngreen;
+                box-shadow: #b0ffb0 0 0 50px;
+              }
+              .rotate45() {
+                transform: rotateZ(45deg);
+              }
+              .big() {
+                transform: scale(1.5);
+              }
+              .swiftOut() {
+                margin-left: 100px;
+              }
+              .circle() {
+                border-radius: 100px;
+              }
+
+              .border {
+                width: 100%;
+                height: 100%;
+                .grayBorder;
+                transition: all 0.2s;
+              }
+
+              .blueBorder {
+                border: solid 2px skyblue;
+                box-shadow: blue 0 0 20px;
+
+                &:hover {
+                  .rotate45();
+                }
+              }
+
+              .greenBorder {
+                border: solid 2px lawngreen;
+                box-shadow: green 0 0 20px;
+
+                &:hover {
+                  .swiftOut();
+                }
+              }
+
+              .roseBorder {
+                border: solid 2px #f0ecdf;
+                box-shadow: rgb(241, 148, 114) 0 0 20px;
+
+                &:hover {
+                  .rotate45();
+                }
+              }
+
+              .pinkBorder {
+                border: solid 2px pink;
+                box-shadow: hotpink 0 0 20px;
+
+                &:hover {
+                  .circle();
+                }
+              }
+
+              .yellowBorder {
+                border: solid 2px yellow;
+                box-shadow: darkorange 0 0 20px;
+
+                &:hover {
+                  .big();
+                }
+              }
+
+              .redBorder {
+                border: solid 2px red;
+                box-shadow: orangered 0 0 20px;
+
+                &:hover {
+                  .big();
+                  .circle();
+                }
+              }
+
+              .purpleBorder {
+                border: solid 2px mediumpurple;
+                box-shadow: purple 0 0 20px;
+
+                &:hover {
+                  .circle();
+                }
+              }
+
+              .grayBorder {
+                border: solid 2px lightgray;
+                box-shadow: darkgrey 0 0 20px;
+              }
+            }
+
+            .top {
+              left: (@cubeL/2);
+              top: -(@cubeL/2);
+              transform: rotateX(-90deg);
+              transform-origin: bottom;
+
+              .border {
+                animation-delay: 1s;
+              }
+            }
+
+            .bottom {
+              left: (@cubeL/2);
+              bottom: -(@cubeL/2);
+              transform: rotateX(90deg);
+              transform-origin: top;
+
+              .border {
+                animation-delay: 2s;
+              }
+            }
+
+            .left {
+              left: -(@cubeL/2);
+              bottom: (@cubeL/2);
+              transform: rotateY(90deg);
+              transform-origin: right;
+
+              .border {
+                animation-delay: 3s;
+              }
+            }
+
+            .right {
+              top: (@cubeL/2);
+              left: @cubeL+(@cubeL/2);
+              transform: rotateY(-90deg);
+              transform-origin: left;
+
+              .border {
+                animation-delay: 4s;
+              }
+            }
+
+            .front {
+              left: (@cubeL/2);
+              top: (@cubeL/2);
+              transform: translateZ(@cubeL);
+
+              .border {
+                animation-delay: 5s;
+              }
+            }
+
+            .back {
+              left: (@cubeL/2);
+              top: (@cubeL/2);
+              transform: translateZ(0);
+
+              .border {
+                animation-delay: 6s;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.bottomContent {
+  width: 80%;
+  height: 30px;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  margin-left: -40%;
+  //outline: solid 1px;
+  text-align: center;
+  color: white;
+
+  #activeContent {
+    white-space: pre-wrap;
+    //font-family: "Times New Roman", serif;
+
+    //color: black;
+    //background-color: #fff;
+  }
+}
+
+.indexFooter {
+  width: 80%;
+  height: 2em;
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  margin-left: -40%;
+  text-align: center;
+
+  font-family: 微软雅黑, serif;
+  font-size: 15px;
+  color: gray;
+  outline: solid 1px;
+  transition: all 0.2s;
+
+}
+
+#beiAnId {
+  transition: all 0.2s;
+
+  &:hover {
+    color: greenyellow;
+  }
+}

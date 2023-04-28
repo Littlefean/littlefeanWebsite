@@ -1,0 +1,118 @@
+// 980 ~ inf
+@media (min-width: 980px) {
+  h3.md-focus:before,
+  h4.md-focus:before,
+  h5.md-focus:before,
+  h6.md-focus:before {
+    color: #ddd;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    position: absolute;
+    left: -1.642857143rem;
+    top: .357142857rem;
+    float: left;
+    font-size: 9px;
+    padding-left: 2px;
+    padding-right: 2px;
+    vertical-align: bottom;
+    font-weight: normal;
+    line-height: normal;
+  }
+
+  h3.md-focus:before {
+    content: 'h3';
+  }
+
+  h4.md-focus:before {
+    content: 'h4';
+  }
+
+  h5.md-focus:before {
+    content: 'h5';
+    top: 0;
+  }
+
+  h6.md-focus:before {
+    content: 'h6';
+    top: 0;
+  }
+}
+
+// 1400 ~ inf
+@media only screen and (min-width: 1400px) {
+  #write {
+    max-width: 1024px;
+  }
+}
+
+// 1800 ~ inf
+@media only screen and (min-width: 1800px) {
+  #write {
+    max-width: 1200px;
+  }
+}
+
+// 0 ~ 1000
+@media (max-width: 1000px) {
+  footer {
+    border-top: none;
+  }
+
+  footer:hover {
+    color: inherit;
+  }
+}
+
+// 0 ~ 48em
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner {
+    margin-left: 3.5em;
+  }
+
+  .md-toc-h4 .md-toc-inner {
+    margin-left: 5em;
+  }
+
+  .md-toc-h5 .md-toc-inner {
+    margin-left: 6.5em;
+  }
+
+  .md-toc-h6 .md-toc-inner {
+    margin-left: 8em;
+  }
+}
+
+// 0 ~ 1024
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content {
+    width: 240px;
+  }
+}
+
+// 0 ~ 800
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar {
+    display: none;
+  }
+}
+
+// 0 ~ 500
+@media screen and (max-width: 500px) {
+  body.typora-export {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  #write {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .CodeMirror-sizer {
+    margin-left: 0 !important;
+  }
+
+  .CodeMirror-gutters {
+    display: none !important;
+  }
+}

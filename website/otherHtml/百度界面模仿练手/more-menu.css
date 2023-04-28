@@ -1,0 +1,77 @@
+#moreMenu {
+    opacity: 0;
+    width: 304px;
+    height: 223px;
+    background-color: white;
+    box-shadow: 0px 0px 10px gray;
+    border-radius: 10px;
+    position: absolute;
+    left: 120px;
+    top: 50px;
+    z-index: 100;
+}
+
+#moreMenu .line {
+    width: 304px;
+    height: 86px;
+    margin-top: 10px;
+}
+
+#moreMenu .buttom {
+    height: 30px;
+    width: 100%;
+}
+
+#moreMenu .buttom a {
+    /* display: block; */
+    /* 居中遇到问题 */
+    margin-left: 84px;
+    font-size: 14px;
+    /* text-align: center; */
+    /* margin: 0 auto; */
+}
+
+#moreMenu .block {
+    width: 54px;
+    height: 100%;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#moreMenu .logo-img {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    margin-top: 5px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: whitesmoke;
+    border-radius: 15px;
+}
+
+#moreMenu .block img {
+    width: 45px;
+    height: 45px;
+    display: block;
+    margin: 0 auto;
+}
+
+#moreMenu .block p {
+    font-size: 12px;
+    text-align: center;
+}
+#moreMenu .block a {
+    margin-top: 5px;
+    font-size: 12px;
+    display: block;
+    text-align: center;
+}
+#moreMenu .block a:hover{
+    cursor: pointer;
+    user-select: none;
+}
+#moreMenu .block p:hover {
+    /* color: skyblue; */
+    cursor: pointer;
+}

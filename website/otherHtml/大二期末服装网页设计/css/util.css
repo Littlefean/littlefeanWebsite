@@ -1,0 +1,45 @@
+p::selection,
+h1::selection,
+h2::selection,
+h3::selection,
+h4::selection,
+h5::selection,
+h6::selection,
+a::selection,
+span::selection,
+font::selection,
+em::selection,
+img::selection {
+  background: #f3f599;
+  color: #ff645d;
+}
+p::-moz-selection,
+h1::-moz-selection,
+h2::-moz-selection,
+h3::-moz-selection,
+h4::-moz-selection,
+h5::-moz-selection,
+h6::-moz-selection,
+a::-moz-selection,
+span::-moz-selection,
+font::-moz-selection,
+em::-moz-selection,
+img::-moz-selection {
+  background: #f3f599;
+  color: #ff645d;
+}
+p::-webkit-selection,
+h1::-webkit-selection,
+h2::-webkit-selection,
+h3::-webkit-selection,
+h4::-webkit-selection,
+h5::-webkit-selection,
+h6::-webkit-selection,
+a::-webkit-selection,
+span::-webkit-selection,
+font::-webkit-selection,
+em::-webkit-selection,
+img::-webkit-selection {
+  background: #f3f599;
+  color: #ff645d;
+}

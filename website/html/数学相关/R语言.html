@@ -1,0 +1,338 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>R语言</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>学习笔记R语言</h1>
+<hr />
+<h4>学习笔记参考</h4>
+<p>https://www.jianshu.com/p/bf422ab1c6c5</p>
+<p>bilibili视频教程</p>
+<p>https://www.bilibili.com/video/BV19x411X7C6?from=search&amp;seid=10874911040810219245</p>
+<h4>数据分析的过程：</h4>
+<p>数据收集，数据存储，数据统计，数据挖掘Data Mining，数据可视化，进行决策</p>
+<h2>基础</h2>
+<h4>基本操作</h4>
+<p>getwd()  查看当前路径</p>
+<p>默认文件路径是用户文件夹下有一个 Document / R</p>
+<p>更改默认路径：<code>setwd(dir=".....绝对路径....")</code></p>
+<p>查看当前文件夹下文件：<code>list.files()</code></p>
+<p>列出操作历史记录： <code>history(历史记录条数)</code></p>
+<p>清空屏幕：<code>ctrl L</code></p>
+<p>保存工作空间： <code>save.image()</code></p>
+<p>退出： <code>q()</code></p>
+<h4>使用帮助</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">help.start</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;会给出你一个关于R的帮助网站</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">help</span><span class="p">(</span><span class="n">sum</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;列出一个函数详细的信息</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="o">?</span><span class="n">plot</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;可以直接用问号表示</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">args</span><span class="p">(</span><span class="n">plot</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;输出一个函数的参数格式</span></div></div></li>
+</ol></div>
+
+<p>一些示例图</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">example</span><span class="p">(</span><span class="s">"</span><span class="s">hist"</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">demo</span><span class="p">(</span><span class="n">graphics</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;列出很多绘制的图</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">vignette</span><span class="p">(</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<p>如果明明有这个包，却help不到这个包的提示信息，是因为还没有载入这个包</p>
+<p>这个时候就可以用两个问号来看</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">??qplot</span></div></div></li>
+</ol></div>
+
+<p>本地搜索，模糊词汇匹配</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">help.search</span><span class="p">(</span><span class="s">"</span><span class="s">heatmap"</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<p>列出所有关于xxx的内容</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">apropos</span><span class="p">(</span><span class="s">"</span><span class="s">sum"</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">apropos</span><span class="p">(</span><span class="s">"</span><span class="s">sum"</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">mod</span><span class="o">=</span><span class="s">"</span><span class="s">function"</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;只列出函数有关的内容</span></div></div></li>
+</ol></div>
+
+<h2>第三方包</h2>
+<h3>安装和更新</h3>
+<p>安装指令：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">install.packages</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;首次使用该指令需要选择镜像站点，会弹出一个框，找到China选了就行</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;安装vcd包</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">install.packages</span><span class="p">(</span><span class="s">"</span><span class="s">vcd"</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;同时安装多个包</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">install.packages</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">"</span><span class="s">AER"</span><span class="p">,</span><span class="">&nbsp;</span><span class="s">"</span><span class="s">ca"</span><span class="p">)</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<p>显示当前的安装包</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">library()</span></div></div></li>
+</ol></div>
+
+<p>显示安装包的路径</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="na">.libPaths</span><span class="p">()</span></div></div></li>
+</ol></div>
+
+<p>更新安装的软件包</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">update.packages()</span></div></div></li>
+</ol></div>
+
+<h3>使用</h3>
+<p>显示包的帮助文档</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">help</span><span class="p">(</span><span class="n">package</span><span class="o">=</span><span class="s">"</span><span class="s">xxx"</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">library</span><span class="p">(</span><span class="n">help</span><span class="o">=</span><span class="s">"</span><span class="s">xxx"</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<p>列出包中所使用的函数</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">ls</span><span class="p">(</span><span class="s">"</span><span class="s">package:&nbsp;vcd"</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<p>删除包</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">remove.package</span><span class="p">(</span><span class="s">"</span><span class="s">vcd"</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h3>R包的批量移植</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">installed.packages</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;列出已经安装的R包</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">installed.packages</span><span class="p">(</span><span class="p">)</span><span class="p">[</span><span class="p">,</span><span class="m">1</span><span class="p">]</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;只访问第一列</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">Rpack</span><span class="">&nbsp;</span><span class="o">&lt;-</span><span class="">&nbsp;</span><span class="nf">installed.packages</span><span class="p">(</span><span class="p">)</span><span class="p">[</span><span class="p">,</span><span class="m">1</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">save</span><span class="p">(</span><span class="n">Rpack</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">file</span><span class="o">=</span><span class="s">"</span><span class="s">Rpack.Rdata"</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;去另一台设备上打开这个保存了的文件</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">for&nbsp;</span><span class="p">(</span><span class="n">i</span><span class="">&nbsp;</span><span class="n">in</span><span class="">&nbsp;</span><span class="n">Rpack</span><span class="p">)</span><span class="">&nbsp;</span><span class="nf">install.packages</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h2>进入正题</h2>
+<h3>变量</h3>
+<p>不能以数字开头</p>
+<p>赋值： <code>x &lt;- 3</code> 用左箭头符号代替 = 号</p>
+<p>有时候会看到两个 <code>&lt;&lt;-</code> 这个是强制赋值给一个全局变量，而不是局部变量</p>
+<p>列出当前工作空间中有哪些变量：<code>ls()</code>、<code>ls.str()</code> 列出更详细的信息</p>
+<p>删除对象变量：<code>rm(x)</code>  , <code>rm(list=ls())</code> 删除所有变量</p>
+<h3>运算符号</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="o">*</span><span class="o">*</span><span class="">&nbsp;</span><span class="c1">#&nbsp;幂运算</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="o">%%</span><span class="">&nbsp;</span><span class="c1">#&nbsp;求余运算</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="o">%/%</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;整除运算</span></div></div></li>
+</ol></div>
+
+<h3>数据结构</h3>
+<h4>数据类型汇总</h4>
+<ol>
+<li>数值型</li>
+<li>字符串</li>
+<li>逻辑型  <code>TRUE</code>，<code>FALSE</code>， <code>T</code>， <code>F</code></li>
+<li>日期型</li>
+</ol>
+<h4>数列（向量）</h4>
+<p>可以理解为一维数组</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">x</span><span class="">&nbsp;</span><span class="o">&lt;-</span><span class="">&nbsp;</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">2</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">3</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">4</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">5</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;把数列12345赋值给x</span></div></div></li>
+</ol></div>
+
+<h5>快捷生成</h5>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;[1,&nbsp;100]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">seq</span><span class="p">(</span><span class="n">from</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">to</span><span class="o">=</span><span class="m">100</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">seq</span><span class="p">(</span><span class="n">from</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">to</span><span class="o">=</span><span class="m">100</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">by</span><span class="o">=</span><span class="m">2</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;隔一个蹦一个的</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">seq</span><span class="p">(</span><span class="n">from</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">to</span><span class="o">=</span><span class="m">100</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">length.out</span><span class="o">=</span><span class="m">10</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;限制输出的个数是10个&nbsp;等差的</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">rep</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">5</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;2&nbsp;2&nbsp;2&nbsp;2&nbsp;2&nbsp;&nbsp;重复5次2</span></div></div></li>
+</ol></div>
+
+<h5>类型问题</h5>
+<p>向量里面的类型必须是统一的类型，如果里面但凡有一个字符串类型，那么整个里面其他的数字都变成字符串类型的了</p>
+<h5>向量运算</h5>
+<p>向量 * n ： 把这个向量里面的每一个元素都 * n</p>
+<p>向量 + 向量： 把两个向量对应元素相加</p>
+<p>向量[条件表达式]：输出符合条件的向量里面的内容</p>
+<p>向量编程是R语言的精髓所在</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">x</span><span class="">&nbsp;</span><span class="o">&lt;-</span><span class="">&nbsp;</span><span class="n">x</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="m">1</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;每个元素+1</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">x</span><span class="">&nbsp;</span><span class="o">&gt;</span><span class="">&nbsp;</span><span class="m">5</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;对每个元素都比较一遍是否大于5，返回一个元素为布尔值的</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">x</span><span class="">&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="n">y</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;遍历每一个元素，看他们对应的元素是否相等</span></div></div></li>
+</ol></div>
+
+<h5>向量索引</h5>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">length</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="">&nbsp;</span><span class="c1">#&nbsp;向量里面元素的数量</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">x</span><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;第一个值，不是从0开始！</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">x</span><span class="p">[</span><span class="m">-1</span><span class="p">]</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;除了第一个元素的其他所有元素</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">x</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">4</span><span class="o">:</span><span class="m">18</span><span class="p">)</span><span class="p">]</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;输出第四个到第十八个元素</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">x</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="m">11</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">11</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">23</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">34</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">6</span><span class="p">)</span><span class="p">]</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;直接输出对应位置的元素，这个里面不能既有正数又有负数</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">x</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="bp">T</span><span class="p">,</span><span class="bp">F</span><span class="p">,</span><span class="bp">T</span><span class="p">,</span><span class="bp">F</span><span class="p">)</span><span class="p">]</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;只把逻辑为真的输出出来</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">x</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="bp">T</span><span class="p">)</span><span class="p">]</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;所有的都是T了</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">x</span><span class="p">[</span><span class="nf">c</span><span class="p">(</span><span class="bp">T</span><span class="p">,</span><span class="">&nbsp;</span><span class="bp">F</span><span class="p">)</span><span class="p">]</span><span class="">&nbsp;</span><span class="c1">#&nbsp;会按照顺序进行判断，相当于&nbsp;TFTFTFTF……</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;如果&nbsp;TF这个一个循环里比x的长度还长，后面不够的就会成缺失值NA</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">y</span><span class="p">[</span><span class="n">y</span><span class="o">&gt;</span><span class="m">5</span><span class="p">]</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;判断是否符合条件</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">y</span><span class="p">[</span><span class="n">y</span><span class="o">&gt;</span><span class="m">5</span><span class="">&nbsp;</span><span class="o">&&</span><span class="">&nbsp;</span><span class="n">y</span><span class="o">&lt;</span><span class="m">9</span><span class="p">]</span></div></div></li>
+</ol></div>
+
+<h5>字符串向量</h5>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">z</span><span class="">&nbsp;</span><span class="o">&lt;-</span><span class="">&nbsp;</span><span class="nf">c</span><span class="p">(</span><span class="s">"</span><span class="s">one"</span><span class="p">,</span><span class="">&nbsp;</span><span class="s">"</span><span class="s">two"</span><span class="p">,</span><span class="">&nbsp;</span><span class="s">"</span><span class="s">three"</span><span class="p">,</span><span class="">&nbsp;</span><span class="s">"</span><span class="s">four"</span><span class="p">,</span><span class="">&nbsp;</span><span class="s">"</span><span class="s">five"</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="s">"</span><span class="s">one"</span><span class="">&nbsp;</span><span class="o">%in%</span><span class="">&nbsp;</span><span class="n">z</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;是否包含在内的运算符判断</span></div></div></li>
+</ol></div>
+
+<p>判断，筛选</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">z</span><span class="p">[</span><span class="n">z</span><span class="">&nbsp;</span><span class="o">%in%</span><span class="">&nbsp;</span><span class="nf">c</span><span class="p">(</span><span class="s">"</span><span class="s">one"</span><span class="p">,</span><span class="">&nbsp;</span><span class="s">"</span><span class="s">two"</span><span class="p">)</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;输出z中符合逻辑表达式的元素</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">z</span><span class="">&nbsp;</span><span class="o">%in%</span><span class="">&nbsp;</span><span class="nf">c</span><span class="p">(</span><span class="s">"</span><span class="s">one"</span><span class="p">,</span><span class="">&nbsp;</span><span class="s">"</span><span class="s">two"</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;把z向量自动转化成了布尔型向量，每一个元素表示该位置上原来的元素是否符合逻辑表达式的内容</span></div></div></li>
+</ol></div>
+
+<p>造字典</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">names</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="">&nbsp;</span><span class="c1">#&nbsp;NULL</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">names</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">&lt;-</span><span class="">&nbsp;</span><span class="nf">c</span><span class="p">(</span><span class="s">"</span><span class="s">a"</span><span class="p">,</span><span class="">&nbsp;</span><span class="s">"</span><span class="s">b"</span><span class="p">,</span><span class="">&nbsp;</span><span class="s">"</span><span class="s">c"</span><span class="n">...........</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">y</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;a&nbsp;b&nbsp;c&nbsp;d&nbsp;....</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;1&nbsp;2&nbsp;3&nbsp;4&nbsp;....</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">y</span><span class="p">[</span><span class="s">"</span><span class="s">a"</span><span class="p">]</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;1</span></div></div></li>
+</ol></div>
+
+<h5>增加</h5>
+<p>扩展</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;可以通过索引直接扩展</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">x</span><span class="p">[</span><span class="m">101</span><span class="p">]</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="m">101</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;这时候原本有100个元素的向量就变成101个了</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;如果中间有空隙，那么中间的元素就是NA了</span></div></div></li>
+</ol></div>
+
+<p>插入</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;在某个下标位置之后插入，下标是从1开始的</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">append</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">v</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">values</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="m">99</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">after</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="m">5</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;向量，插入的值，插入的位置</span></div></div></li>
+</ol></div>
+
+<h5>删除</h5>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">y</span><span class="">&nbsp;</span><span class="o">&lt;-</span><span class="">&nbsp;</span><span class="n">y</span><span class="p">[</span><span class="o">-</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">3</span><span class="p">)</span><span class="p">]</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;删除了1到3位置上的元素</span></div></div></li>
+</ol></div>
+
+<h5>查询</h5>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;查找数列的最大值</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">which.max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;返回元素的最大下标</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">[</span><span class="n">y</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">l</span><span class="p">]</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nf">max</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;用两个变量&nbsp;最大值，最大下标接收max的结果</span></div></div></li>
+</ol></div>
+
+<h4>矩阵</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div><div class="line-numbers"><div class="line-num" data-line-num="19"></div></div><div class="line-numbers"><div class="line-num" data-line-num="20"></div></div><div class="line-numbers"><div class="line-num" data-line-num="21"></div></div><div class="line-numbers"><div class="line-num" data-line-num="22"></div></div><div class="line-numbers"><div class="line-num" data-line-num="23"></div></div><div class="line-numbers"><div class="line-num" data-line-num="24"></div></div><div class="line-numbers"><div class="line-num" data-line-num="25"></div></div><div class="line-numbers"><div class="line-num" data-line-num="26"></div></div><div class="line-numbers"><div class="line-num" data-line-num="27"></div></div><div class="line-numbers"><div class="line-num" data-line-num="28"></div></div><div class="line-numbers"><div class="line-num" data-line-num="29"></div></div><div class="line-numbers"><div class="line-num" data-line-num="30"></div></div><div class="line-numbers"><div class="line-num" data-line-num="31"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">x</span><span class="">&nbsp;</span><span class="o">&lt;-</span><span class="">&nbsp;</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">2</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">2</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">2</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">3</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">3</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">3</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">4</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">5</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">4</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;把数列转化成矩阵</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;参数&nbsp;（被转化的数列，转化后有多少行，转化后有多少列）</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">y</span><span class="">&nbsp;</span><span class="o">&lt;-</span><span class="">&nbsp;</span><span class="nf">matrix</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">nr</span><span class="o">=</span><span class="m">3</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">nc</span><span class="o">=</span><span class="m">4</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;行3列4</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;apply(矩阵,&nbsp;MARGIN=1（按行），函数)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">apply</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">MARGIN</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">max</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;查找每一行的最大值</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="o">&gt;</span><span class="">&nbsp;</span><span class="n">x</span><span class="o">&lt;-</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">9</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">3</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">8</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">6</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">6</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">4</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">2</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">7</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">2</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">5</span><span class="p">,</span><span class="">&nbsp;</span><span class="m">1</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="o">&gt;</span><span class="">&nbsp;</span><span class="n">y</span><span class="o">&lt;-</span><span class="nf">matrix</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">nr</span><span class="o">=</span><span class="m">3</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">nc</span><span class="o">=</span><span class="m">4</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="o">&gt;</span><span class="">&nbsp;</span><span class="n">y</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">[</span><span class="p">,</span><span class="m">1</span><span class="p">]</span><span class="">&nbsp;</span><span class="p">[</span><span class="p">,</span><span class="m">2</span><span class="p">]</span><span class="">&nbsp;</span><span class="p">[</span><span class="p">,</span><span class="m">3</span><span class="p">]</span><span class="">&nbsp;</span><span class="p">[</span><span class="p">,</span><span class="m">4</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">[</span><span class="m">1</span><span class="p">,</span><span class="p">]</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="m">1</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="m">8</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="m">4</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="m">2</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">[</span><span class="m">2</span><span class="p">,</span><span class="p">]</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="m">9</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="m">6</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="m">2</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="m">5</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">[</span><span class="m">3</span><span class="p">,</span><span class="p">]</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="m">3</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="m">6</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="m">7</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="m">1</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="o">&gt;</span><span class="">&nbsp;</span><span class="nf">apply</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">MARGIN</span><span class="o">=</span><span class="m">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">max</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">[</span><span class="m">1</span><span class="p">]</span><span class="">&nbsp;</span><span class="m">8</span><span class="">&nbsp;</span><span class="m">9</span><span class="">&nbsp;</span><span class="m">7</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;每一行的最大值找到了</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;计算矩阵每一列的均值</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">apply</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">MARGIN</span><span class="o">=</span><span class="m">2</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">mean</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;默认按列填充，&nbsp;byrow=TRUE&nbsp;&nbsp;(&nbsp;按行填充&nbsp;)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;求数列的中位数和平均数</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">mean</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">median</span><span class="p">(</span><span class="n">x</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;计算矩阵的方差和标准差</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">apply</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">MARGIN</span><span class="o">=</span><span class="m">2</span><span class="p">,</span><span class="n">var</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">apply</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">MARGIN</span><span class="o">=</span><span class="m">2</span><span class="p">,</span><span class="n">sd</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h3>数据集</h3>
+<h4>R内置数据集</h4>
+<p>https://www.jianshu.com/p/6cf05fb4e60d</p>
+<p>看到P19了</p>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

@@ -1,0 +1,95 @@
+@keyframes flash {
+  0% {
+    text-shadow: whitesmoke 0 0 1px, black 0 0 1px;
+    //transform: scale(1);
+  }
+  90% {
+    text-shadow: whitesmoke 0 0 50px, black 0 0 10px;
+    //transform: scale(1.5);
+  }
+  100% {
+    text-shadow: whitesmoke 0 0 1px, black 0 0 1px;
+    //transform: scale(1);
+  }
+}
+
+nav {
+  @h: 80px;
+  height: @h;
+  background-color: rgba(255, 255, 255, 0.2);
+
+  .title {
+    height: @h;
+    width: 300px;
+    float: left;
+    padding: 10px;
+    user-select: none;
+    //outline: solid 1px;
+
+    h1, p {
+      margin-left: 20px;
+      text-align: left;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    h1 {
+      width: auto;
+
+      font-size: 30px;
+      line-height: 40px;
+      //outline: solid 1px white;
+      animation-name: flash;
+      animation-iteration-count: infinite;
+      animation-duration: 10s;
+      //outline: solid 1px whitesmoke;
+    }
+
+    p {
+      //height: 20px;
+    }
+  }
+
+  ul {
+    height: @h;
+    width: 60%;
+    //outline: solid 1px red;
+    float: left;
+
+    li {
+      list-style-type: none;
+      float: left;
+      //outline: solid 1px;
+      height: @h;
+      padding-left: 20px;
+      padding-right: 20px;
+      //background-color: pink;
+
+      transition: all 1s;
+
+      &:hover {
+        background-color: black;
+        transform: rotate(180deg);
+        box-shadow: black 0 0 30px;
+        border-radius: 50%;
+
+        a {
+          //background-color: #171717;
+          transform: scale(1.2) rotate(-180deg);
+          text-shadow: white 0 0 20px;
+        }
+      }
+
+      a {
+        display: block;
+        height: @h;
+        line-height: @h;
+        //outline: solid 1px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+        transition: all 1s;
+      }
+    }
+  }
+}

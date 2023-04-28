@@ -1,0 +1,147 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="preconnect" href="https://static.leetcode-cn.com">
+    <link rel="preconnect" href="https://assets.leetcode-cn.com">
+    <link rel="preload" href="https://static.leetcode-cn.com/cn-mono-assets/production/main/styles.eb5497ef.css"
+          as="style" onload='this.onload=null,this.setAttribute("rel","stylesheet")'>
+    <link rel="preload" href="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-components.97946a01.css"
+          as="style" onload='this.onload=null,this.setAttribute("rel","stylesheet")'>
+    <link rel="preload" href="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-modules.4db7db4d.css"
+          as="style" onload='this.onload=null,this.setAttribute("rel","stylesheet")'>
+    <link rel="preload" href="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-main.06cc37da.css"
+          as="style" onload='this.onload=null,this.setAttribute("rel","stylesheet")'>
+    <link rel="preload" href="https://static.leetcode-cn.com/cn-mono-assets/production/main/main.3a7d5853.css"
+          as="style" onload='this.onload=null,this.setAttribute("rel","stylesheet")'>
+    <link rel="preload" as="script"
+          href="https://static.leetcode-cn.com/cn-mono-assets/production/main/runtime~main.8d1a80a5.js">
+    <link rel="preload" as="script"
+          href="https://static.leetcode-cn.com/cn-mono-assets/production/main/styles.eb5497ef.js">
+    <link rel="preload" as="script"
+          href="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-components.97946a01.js">
+    <link rel="preload" as="script"
+          href="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-modules.4db7db4d.js">
+    <link rel="preload" as="script"
+          href="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-dls.9560cee9.js">
+    <link rel="preload" as="script"
+          href="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-schema.c17cb0f2.js">
+    <link rel="preload" as="script"
+          href="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-i18n.ed7ee91c.js">
+    <link rel="preload" as="script"
+          href="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-common.5fcad717.js">
+    <link rel="preload" as="script"
+          href="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-track.c7208a60.js">
+    <link rel="preload" as="script"
+          href="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-discuss.bc3c0abe.js">
+    <link rel="preload" as="script"
+          href="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-main.06cc37da.js">
+    <link rel="preload" as="script"
+          href="https://static.leetcode-cn.com/cn-mono-assets/production/main/main.3a7d5853.js">
+    <title>力扣</title>
+    <script>window.prerenderReady = !1</script>
+    <script>!function () {
+        var e;
+        (e = document.createElement("link").relList) && e.supports && e.supports("preload") || document.querySelectorAll('link[rel="preload"][as="style"]').forEach((function (e) {
+            e.onload = null, e.setAttribute("rel", "stylesheet")
+        }))
+    }()</script>
+</head>
+<body>
+<script>!function () {
+    const t = "lc-dark-side", c = localStorage.getItem(t);
+    c && document.body.classList.add(c)
+}()</script>
+<style id="initial-loading-style">body {
+    --initial-loading-bg: #FFF;
+    --initial-loading-bounce-bg: #999;
+    --loading-image: url("https://assets.leetcode-cn.com/common/light-loading.gif")
+}
+
+body.dark {
+    --initial-loading-bg: #1C1C1C;
+    --initial-loading-bounce-bg: #8A8A8A;
+    --loading-image: url("https://assets.leetcode-cn.com/common/dark-loading.gif")
+}
+
+#initial-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--initial-loading-bg);
+    transition: opacity .6s;
+    z-index: 100
+}
+
+#initial-loading[data-is-hide=true] {
+    opacity: 0;
+    pointer-events: none
+}
+
+#initial-loading::after, #initial-loading::before {
+    content: " "
+}
+
+#initial-loading::before {
+    flex-grow: .618
+}
+
+#initial-loading::after {
+    flex-grow: 1
+}
+
+#initial-loading .spinner {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    background-image: var(--loading-image);
+    background-size: contain;
+    background-repeat: no-repeat
+}</style>
+<div id="initial-loading">
+    <div class="spinner"></div>
+</div>
+<div id="app"></div>
+<script src="https://static.leetcode-cn.com/cn-mono-assets/production/main/runtime~main.8d1a80a5.js"></script>
+<script src="https://static.leetcode-cn.com/cn-mono-assets/production/main/styles.eb5497ef.js"></script>
+<script src="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-components.97946a01.js"></script>
+<script src="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-modules.4db7db4d.js"></script>
+<script src="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-dls.9560cee9.js"></script>
+<script src="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-schema.c17cb0f2.js"></script>
+<script src="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-i18n.ed7ee91c.js"></script>
+<script src="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-common.5fcad717.js"></script>
+<script src="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-track.c7208a60.js"></script>
+<script src="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-discuss.bc3c0abe.js"></script>
+<script src="https://static.leetcode-cn.com/cn-mono-assets/production/main/noj-main.06cc37da.js"></script>
+<script src="https://static.leetcode-cn.com/cn-mono-assets/production/main/main.3a7d5853.js"></script>
+<script>if (!/prerender/i.test(navigator.userAgent) && /leetcode-cn\.com/.test(window.location.href)) {
+    var _hmt = _hmt || [];
+    !function () {
+        var e = document.createElement("script");
+        e.src = "https://hm.baidu.com/hm.js?fa218a3ff7179639febdb15e372f411c";
+        var t = document.getElementsByTagName("script")[0];
+        t.parentNode.insertBefore(e, t)
+    }(), function () {
+        var e = document.createElement("script");
+        e.src = "https://www.googletagmanager.com/gtag/js?id=UA-131851415-1";
+        var t = document.getElementsByTagName("script")[0];
+        t.parentNode.insertBefore(e, t), e.onload = function () {
+            function e() {
+                dataLayer.push(arguments)
+            }
+
+            window.dataLayer = window.dataLayer || [], e("js", new Date), e("config", "UA-131851415-1")
+        }
+    }()
+}</script>
+<noscript><img src="https://certify.alexametrics.com/atrk.gif?account=tIUcs1Y1Mn20Io" style="display:none" height="1"
+               width="1" alt=""/></noscript>
+</body>
+</html>

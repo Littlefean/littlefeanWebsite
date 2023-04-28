@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<!-- 
+    发射子弹的动画
+    2020年10月7日
+    by littlefean
+ -->
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <title>
+        animation
+    </title>
+    <script>
+        //生成从minNum到maxNum的随机数，来自菜鸟教程
+        //其实我是想自己造这个轮子的，但是写了两下出错了，懒的弄了
+        function randomNum(minNum, maxNum) {
+            switch (arguments.length) {
+                case 1:
+                    return parseInt(Math.random() * minNum + 1, 10);
+                    break;
+                case 2:
+                    return parseInt(Math.random() * (maxNum - minNum + 1) + minNum, 10);
+                    break;
+                default:
+                    return 0;
+                    break;
+            }
+        }
+
+        // for (var i = 0; i < 100; i++) {
+        //     console.log(randomNum(10, 20));
+        // }
+    </script>
+    <style>
+        /* 全局CSS变量，其实感觉也没啥比要这样搞 */
+        :root {
+            --bulletColor: red;
+            --bulletWidth: 50px;
+            --bulletHeight: 20px;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            height: 3000px;
+            background-color: cornflowerblue;
+        }
+
+        main {
+            width: 1200px;
+            margin: 0 auto;
+            margin-top: 50px;
+            /* background-color:blue; */
+        }
+
+        /* 上面的面板 */
+        #commandPannal {
+            /* background-color:mediumspringgreen; */
+            height: 100px;
+            width: 1000px;
+            margin: 0 auto;
+
+            /* outline-style: solid; */
+        }
+
+        /* 分别的信息面板 */
+        #timeDiv,
+        #scoreDiv,
+        #difficultyDiv {
+            position: absolute;
+            width: 200px;
+            /* outline-style: solid; */
+        }
+
+        #timeDiv {
+            top: 80px;
+            left: 300px;
+        }
+
+        #scoreDiv {
+            top: 80px;
+            left: 1000px;
+        }
+
+        #difficultyDiv {
+            top: 80px;
+            left: 1200px;
+        }
+
+        /* 难度设置提交按钮 */
+        #setDifficulty {
+            width: 40px;
+            height: 20px;
+            font-size: 10px;
+            border-radius: 15px;
+            border-color: orange;
+            border-top-color: gold;
+            border-bottom-color: goldenrod;
+            border-width: 3px;
+            box-shadow: 5px 5px 3px rgb(79, 80, 82);
+            transition: all 0.2s;
+        }
+
+        #setDifficulty:hover {
+            width: 50px;
+            height: 30px;
+        }
+
+        /* 标题 */
+        #scoreTitle,
+        #timeTitle,
+        #timeCount,
+        #difficultyTitle,
+        #difficulty,
+        #score {
+            display: inline;
+            font-size: 20px;
+            color: rgb(216, 216, 216);
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            user-select: none;
+        }
+
+        /* 数据 */
+        #score,
+        #timeCount,
+        #difficulty {
+            font-size: 60px;
+            color: #fff;
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        /* 难度输入框 */
+        #difficulty {
+            width: 200px;
+        }
+
+        /* 发射按钮 */
+        #fireBtn {
+            background-color: coral;
+            height: 50px;
+            width: 400px;
+            display: block;
+            margin: 0 auto;
+            /* 里面的文字 */
+            font-size: 25px;
+            color: #fff;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            letter-spacing: 3px;
+            user-select: none;
+            /* 边框 */
+            border-radius: 15px;
+            border-color: orange;
+            border-top-color: gold;
+            border-bottom-color: goldenrod;
+            border-width: 10px;
+            box-shadow: 10px 10px 5px rgb(79, 80, 82);
+            /* 边框外面的轮廓 */
+            outline-style: none;
+            /* 动画时间 */
+            transition: all 0.2s;
+        }
+
+        #fireBtn:hover {
+            width: 420px;
+            height: 60px;
+            font-size: 27px;
+        }
+
+        #fireBtn:active {
+            width: 410px;
+            height: 55px;
+            box-shadow: 5px 5px 3px rgb(37, 37, 37);
+            color: gray;
+            border-color: orange;
+            border-top-color: goldenrod;
+            border-bottom-color: gold;
+            background-color: maroon;
+        }
+
+        /* 场地背景 */
+        #field {
+            background-color: brown;
+            width: 1000px;
+            height: 1000px;
+            margin: 0 auto;
+        }
+
+        /* 弹 */
+        .bullet {
+            background-color: var(--bulletColor);
+            width: var(--bulletWidth);
+            height: var(--bulletHeight);
+
+            border-style: solid;
+            border-radius: 0px 15px 15px 0px;
+            border-color: darkred;
+            border-left-color: goldenrod;
+            border-left-style: dashed;
+            border-left-width: 2px;
+            box-shadow: 3px 3px 5px rgb(75, 17, 30);
+            border-width: 6px;
+
+            position: absolute;
+            left: 10px;
+            top: 200px;
+        }
+
+        /* 爆炸火花 */
+        .boob {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            border-radius: 1000px;
+            opacity: 1;
+            box-shadow: rgba(255, 252, 81, 0.514);
+            background-color: rgb(255, 251, 0);
+        }
+
+        /* 提示窗 */
+        #helpDiv {
+            width: 250px;
+            /* height: 250px; */
+            padding: 20px;
+            position: absolute;
+            z-index: 100;
+            left: 5px;
+            top: 300px;
+            background-color: green;
+            font-size: 20px;
+            line-height: 35px;
+            color: #fff;
+            text-indent: 2em;
+        }
+    </style>
+</head>
+
+<body>
+<main>
+    <div id="commandPannal">
+        <button id="fireBtn">fire!</button>
+        <div id="timeDiv">
+            <p id="timeTitle">time:</p>
+            <p id="timeCount">60</p>
+        </div>
+        <div id="scoreDiv">
+            <p id="scoreTitle">score:</p>
+            <p id="score"></p>
+        </div>
+        <div id="difficultyDiv">
+            <p id="difficultyTitle">difficulty:</p>
+            <input id="difficulty" value="10"></p>
+            <button id="setDifficulty">set!</button>
+        </div>
+
+    </div>
+
+    <div id="helpDiv">
+        我也不知道这叫什么游戏，就叫拆弹吧。
+        按fire开始，鼠标滑过炮弹就能拆弹加分。
+        看看宁在规定的时间内看能拿到多少分。<br>
+        我瞎鸡er写的，本来就练习一下js动画的，
+        结果不知不觉做成游戏了 - -。<br>
+        随时可以更改难度，点提交，这个代表出膛速度随机程度。
+    </div>
+    <div id="field">
+        <!-- <div class="boob"></div> -->
+    </div>
+</main>
+
+
+<script>
+    // 时间设定
+    const FINAL_COUNTDOWN = 30; //一次游戏的时间
+    var score = 0;
+    var gameClock = FINAL_COUNTDOWN;
+    var gameClockEle = document.getElementById("timeCount");
+    var gameStartFlage = 0;
+    gameClockEle.innerHTML = gameClock;
+
+    // 分数变量
+    var scoreEle = document.getElementById("score");
+    var scoreArray = new Array();//存放得分列表
+    scoreEle.innerHTML = score;
+
+    // 难度属性
+    var difficultyEle = document.getElementById("difficulty");
+    var difficultySetBtn = document.getElementById("setDifficulty");
+    var difficulty = Number(difficultyEle.value);
+    //修改难度按钮
+    difficultySetBtn.onclick = function () {
+        var getNum = Number(difficultyEle.value)
+        console.log(getNum);
+        if (isNaN(getNum)) {
+            //js全局函数isNaN来判断输入内容是否是纯数字
+            alert("请输入正确的数字格式！，【0，100】以内的实数");
+        } else if ((getNum < 0) || (getNum > 100)) {
+            alert("难度请控制在【0，100】以内");
+        } else {
+            alert("难度修改成功");
+            difficulty = getNum;
+        }
+    };
+    // console.log(difficulty);
+
+    var field = document.getElementById("field");
+    //需求，按下一个按钮，就生成一个div从左向右运动出去
+    var fireBtnBtn = document.getElementById("fireBtn");
+    fireBtnBtn.onclick = function () {
+        //游戏开始
+        gameStartFlage++;
+        if (gameStartFlage <= 1) {
+            var timeClock = setInterval(function () {
+                gameClock--;
+                // console.log(gameClock);
+                gameClockEle.innerHTML = gameClock;
+                if (gameClock <= 10) {
+                    gameClockEle.style.color = "darkred";
+                }
+                if (gameClock <= 0) {
+                    alert("游戏结束了，您的得分是" + score);
+                    if (scoreArray.length > 0) {
+                        var maxScore = Math.max.apply(Math, scoreArray);
+                        if (score > maxScore) {
+                            upScore = score - maxScore;
+                            alert("恭喜您突破了自己！比之前的最高分高出了" + upScore + "分！");
+                        }
+                    }
+                    scoreArray.push(score);
+                    // 重置游戏
+                    score = 0;
+                    scoreEle.innerHTML = score;
+                    gameClock = FINAL_COUNTDOWN;
+                    gameClockEle.innerHTML = gameClock;
+                    gameClockEle.style.color = "#fff";
+                    gameStartFlage = 0;
+                    clearInterval(timeClock);
+                    return;
+                }
+            }, 1000);
+        }
+        //新创建一个div，子弹对象
+        var bullet = document.createElement("div");
+        //给这个对象设置class名
+        bullet.setAttribute("class", "bullet");
+        bullet.isSplit = false;//是否被炸了
+        //设置鼠标滑过该对象的事件
+        bullet.onmouseover = function () {
+            //子弹变小
+            bullet.style.width = "20px";
+            bullet.style.height = "5px";
+            bullet.style.borderWidth = "2px";
+            bullet.isSplit = true;
+            //加分
+            score++;
+            scoreEle.innerHTML = score;
+
+            //爆炸效果
+            var boob = document.createElement("div");
+            boob.setAttribute("class", "boob");
+            boob.style.left = bullet.style.left;
+            boob.style.top = bullet.style.top;
+            // console.log("creat!" + boob.style.left);
+            field.appendChild(boob);
+            //爆炸动画
+            var time = 0;
+            var boobSize = 10;
+            var boobAni = setInterval(function () {
+                time++;
+                boob.style.width = boobSize + 'px';
+                boob.style.height = boobSize + 'px';
+                boobSize++;
+                boob.style.opacity = 1 / Math.sqrt(time);  //原来的函数是 透明度 = 1/time，变淡太快
+                // console.log(time);
+                if (time >= 300) {
+                    boob.remove();
+                    clearInterval(boobAni);
+                    return;
+                }
+            }, 10);
+            // bullet.remove();
+        };
+        //对象增添到场地
+        field.appendChild(bullet);
+
+        //发射这个子弹
+        var xStart = 200;
+        var yStart = 200;
+        var x = 0;
+        var y = 0;
+
+        const V_X = 50;
+        var Vx = randomNum(V_X - difficulty, V_X + difficulty);
+        var Vy = 0;
+        var t = 0;
+        var dt = 0.03;
+        var g = 10;
+
+        var flage = 0;  // 为了锁定水平速度的
+        var bulletAni = setInterval(function () {
+            t += dt;
+            x += Vx * dt;
+            //平抛的竖直方向上的运动公式 y = 1/2 gt²
+            y = 0.5 * g * t * t;
+            bullet.style.left = xStart + x + 'px';
+            bullet.style.top = yStart + y + 'px';
+            // console.log(y);
+            if (bullet.isSplit) {
+                flage++;
+                // console.log(flage);
+                if (flage <= 1) {
+                    Vx = randomNum(-100, 100);
+                    // console.log("!");
+                }
+            }
+            if ((y >= 1000) || (x >= 1000)) {
+                //超过边界删除子弹
+                bullet.remove();
+                clearInterval(bulletAni);
+                return;
+            }
+        }, 1);
+    };
+
+</script>
+</body>
+<!-- 
+    2020年10月7日，js语法应该有待提高。
+ -->
+
+</html>

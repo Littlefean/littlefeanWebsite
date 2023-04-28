@@ -1,0 +1,30 @@
+/**
+ 和旋转有关的css动画
+ */
+
+@keyframes planetRound {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+
+@keyframes planetRoundR {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}
+
+@keyframes rotate-frame {
+  0% {
+    transform: rotateX(45deg) rotateY(0deg) rotateZ(30deg);
+  }
+  100% {
+    transform: rotateX(45deg) rotateY(360deg) rotateZ(30deg);
+  }
+}

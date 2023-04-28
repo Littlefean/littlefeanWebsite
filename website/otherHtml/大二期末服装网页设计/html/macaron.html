@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>期末作业之服装网站设计</title>
+	<link rel="stylesheet" href="../css/nav.css">
+	<link rel="stylesheet" href="../css/macaron.css">
+	<link rel="stylesheet" href="../css/footer.css">
+	<link rel="stylesheet" href="../css/util.css">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		em {
+			font-style: normal;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="nav">
+		<h1 class="logo">期末作业之服装网站设计</h1>
+		<a href="../index.html">首页</a>
+		<a href="../index.html#styles">服装系列</a>
+		<a href="../html/introduce.html">品牌介绍</a>
+		<a href="../html/comment.html">论坛</a>
+	</div>
+	<div class="line1">
+		<div class="box b1">
+			<h2>马卡龙系列</h2>
+			<p>
+				萌妹子和少女心的女孩子，对马卡龙色毫无抵抗力。
+				马卡龙色系就是这么有魔力，是冬季里的有太阳，让
+				你的冬季一秒变得生机盎然，元气满满。马卡龙色系
+				穿衣搭配，玩转小清新，满足你泛滥的少女心！
+			</p>
+			<em>MAKRON</em>
+		</div>
+		<div class="box b2">
+			<img src="../imgs/macaron/图层 20.png" alt="">
+			<h2>牛油果绿在逃公主连衣裙</h2>
+			<p>春日牛油果，沁入人心</p>
+		</div>
+		<div class="box b3">
+			<img src="../imgs/macaron/图层 21.png" alt="">
+			<h2>焦糖布丁在逃公主连衣裙</h2>
+			<p>任岁月荏苒，任世事沧桑</p>
+		</div>
+	</div>
+	<div class="line-bar">
+		<em>MAKRON</em>
+	</div>
+	<div class="line2">
+		<div class="left">
+			<img src="../imgs/macaron/图层 23.png" alt="">
+			<div class="text">
+				<h2>蕾丝灯笼袖甜美连衣裙</h2>
+				<p>
+					爱丽丝仙境，浓浓的少女心风。蕾丝
+					的拼接满足了女生对于公主的想象。
+					粉粉嫩嫩的颜色是幻想中的色彩。
+				</p>
+			</div>
+		</div>
+		<div class="right">
+			<img src="../imgs/macaron/图层 25.png" alt="">
+			<div class="text">
+				<h2>温柔橘色长袖连衣裙</h2>
+				<p>
+					温暖的橘色是马卡龙色系里的
+					一抹明亮的色彩，它明艳亮丽，
+					积极向上！
+				</p>
+			</div>
+		</div>
+	</div>
+	<div class="line3">
+		<div class="main">
+			<div class="box">
+				<img src="../imgs/macaron/图层 22.png" alt="">
+			</div>
+			<div class="box">
+				<img src="../imgs/macaron/图层 24.png" alt="">
+			</div>
+			<div class="box b3">
+				<h2>
+					马卡龙色不仅适合
+					<br>
+					萌萌的的小妹妹
+					<br>
+					也适合于
+					<br>
+					大妹妹的穿搭！
+				</h2>
+				<em>MAKRON</em>
+			</div>
+		</div>
+	</div>
+	<div class="line4">
+		<div class="box">
+			<img src="../imgs/macaron/图层 27.png" alt="">
+			<h2>甜美学院风连衣裙</h2>
+			<p>甜甜的学院风</p>
+			<p>爱情也不过如此吧！</p>
+		</div>
+		<div class="box">
+			<img src="../imgs/macaron/图层 29.png" alt="">
+			<h2>紫色长袖连衣裙</h2>
+			<p>成熟的小女人</p>
+			<p>V字领给人优雅的小心机</p>
+		</div>
+		<div class="box">
+			<img src="../imgs/macaron/图层 28.png" alt="">
+			<h2>蓝色牛仔小外套</h2>
+			<p>俏皮的小外套</p>
+			<p>少女的甜蜜警告</p>
+		</div>
+	</div>
+	<div class="footer">
+		<h1 class="twoColorFont">JOIN US</h1>
+		<hr>
+		<div class="main">
+			<div class="items">
+				<div class="item" onclick="go('../html/introduce.html')">
+					<img src="../imgs/icon/li.png" alt="">
+					<span class="twoColorFont">小店简介</span>
+				</div>
+				<div class="item" onclick="go('../html/ys.html')">
+					<img src="../imgs/icon/li.png" alt="">
+					<span class="twoColorFont">隐私权声明</span>
+				</div>
+				<div class="item" onclick="go('../html/comment.html')">
+					<img src="../imgs/icon/li.png" alt="">
+					<span class="twoColorFont">粉丝论坛</span>
+				</div>
+			</div>
+			<p>这只是前端一个期末作业写的一个网页啊，和商业完全没有关系，内容纯属虚构，请勿当真！这是一个网页作业仅供展示！
+				<br>
+				小店地址:这只是一个期末作业写的一个网页模板啊，请勿当真！
+			</p>
+		</div>
+	</div>
+	<script src="../js/util.js"></script>
+	<script>
+		// 给所有有 twoColorFonts 类名的文字元素设置成奇数个字改变颜色的样式
+		var twoColorFonts = document.getElementsByClassName("twoColorFont");
+		for (let elem of twoColorFonts) {
+			changeColor(elem, "#e89f71");
+		}
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+// 小行星转动棒子
+.asteroid {
+  width: 30%;
+  height: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -5px;
+  transform-origin: left center;
+  animation-name: planetRound;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+
+  .star {
+    right: 0;
+    top: 50%;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background-color: #fff;
+  }
+}

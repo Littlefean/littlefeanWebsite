@@ -1,0 +1,137 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>C语言二级考试笔记</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>C语言二级考试笔记</h1>
+<hr />
+<ol>
+<li>标识符又叫变量名</li>
+<li>三种基本结构可以解决递归问题</li>
+<li>已经证明三种基本结构就可以实现任何复杂算法</li>
+</ol>
+<h3>书写问题</h3>
+<ol>
+<li>科学计数法中，前面的数如果是零点几，零可以省略 <code>.2e1</code></li>
+<li>科学计数法，e右边的数可以是0e</li>
+<li>科学计数法e右边的数前面加0会忽略零</li>
+<li>011表示八进制，9。前面可以无限加0</li>
+<li><code>%.2f</code>是会自动四舍五入的</li>
+<li><code>%m.nd</code> m表示左边加空格 ，n表示左边补零</li>
+<li><code>0L</code>  <code>100u</code> 数字后面加L表示长，u表示无符号</li>
+<li>n++ 运行到下一行的时候n才+1</li>
+<li>字符常量表示法： <code>\x6D</code> 斜杠后面直接加x，然后十六进制。相比整形没有0</li>
+</ol>
+<h3>宏定义</h3>
+<ol>
+<li>宏定义只是做简单的替换，定义了一个函数并不会按照运算律执行</li>
+</ol>
+<h3>语法问题</h3>
+<ol>
+<li>case语句，没有break，后面的依旧顺序执行</li>
+<li></li>
+</ol>
+<h3>函数知识</h3>
+<ol>
+<li><code>sizeof()</code> 函数里可以放double这种关键字</li>
+<li>函数不可以返回数组</li>
+<li>函数声明，参数名可以不一样</li>
+<li>函数声明，参数中二维数组第二个值不可以忽略。（里面的那一层得清楚）</li>
+<li>形参不可以是表达式</li>
+</ol>
+<h3>数组</h3>
+<ol>
+<li>二维数组如果只定义了后一维度，则必须初始化，否则不知道分配多大的内存空间给它。</li>
+<li></li>
+</ol>
+<h3>指针</h3>
+<ol>
+<li>把一个指针变量赋值给另一个指针变量，要确保他们的基类型相同</li>
+<li>字符型指针可以指向字符串</li>
+<li><code>sizeof(*r)</code>  为 4，一个指针变量占4个字节长度</li>
+</ol>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

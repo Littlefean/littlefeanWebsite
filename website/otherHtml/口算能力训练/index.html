@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+<!--    个位数、十位数、百位数 -->
+<!--    加减、乘除、加减乘、乘法、除法、减法、加法-->
+<!-- 个位数、十位数、百位数 -->
+<div class="settings">
+    <label>
+        题目类型：
+        <select name="" id="number1">
+            <option value="1">个位数</option>
+            <option value="2">十位数</option>
+            <option value="3">百位数</option>
+            <option value="4">千位数</option>
+        </select>
+        <select name="op" id="ops">
+            <option value="a">加</option>
+            <option value="r">减</option>
+            <option value="m">乘</option>
+            <option value="d">除</option>
+            <option value="ar">加减</option>
+            <option value="md">乘除</option>
+            <option value="armd">加减乘除</option>
+        </select>
+        <select name="" id="number2">
+            <option value="1">个位数</option>
+            <option value="2">十位数</option>
+            <option value="3">百位数</option>
+            <option value="4">千位数</option>
+        </select>
+        题录数量：<input type="text" value="15" id="testCount">
+        <button id="go">开始口算测试，冲冲冲！</button>
+    </label>
+</div>
+<div class="timeSpan">
+    已经经历了<span id="sec">0</span>秒
+</div>
+
+<div class="questions">
+
+</div>
+<div class="logs">
+    <div class="log"></div>
+</div>
+</body>
+<script src="index.js"></script>
+</html>

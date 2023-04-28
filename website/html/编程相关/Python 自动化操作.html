@@ -1,0 +1,173 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Python 自动化操作</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>pyautogui</h1>
+<hr />
+<h2>公用方法</h2>
+<ol>
+<li><code>position()</code> 获取当前鼠标位置</li>
+<li><code>size()</code> 获取屏幕大小</li>
+<li><code>onScreen(x, y=None)</code> 判断某点是否在屏幕上</li>
+</ol>
+<h2>鼠标方法</h2>
+<ol>
+<li><code>mouseDown()</code>  按下鼠标</li>
+<li><code>mouseUp()</code>  释放鼠标</li>
+<li><code>mouseDown()</code>  按下鼠标</li>
+<li><code>click()</code>  单击</li>
+<li><code>leftClick()</code>  左键单击</li>
+<li><code>middleClick()</code>  中单击</li>
+<li><code>rightClick()</code>  右键单击</li>
+<li><code>doubleClick()</code> 双击</li>
+<li><code>tripleClick()</code> 三击</li>
+<li><code>scroll()</code> 滚轮</li>
+<li><code>moveTo()</code> 鼠标移动到</li>
+<li><code>moveRel()</code> 将鼠标光标移动到屏幕上相对于当前光标的点位置</li>
+<li><code>dragTo()</code> 执行鼠标拖动</li>
+<li><code>dragRel()</code> 执行鼠标拖动 （相对）</li>
+</ol>
+<h2>键盘方法</h2>
+<ol>
+<li><code>keyDown()</code> 按下某个键</li>
+<li><code>keyUp()</code> 释放某个键</li>
+<li><code>press()</code> 按下然后释放</li>
+<li><code>typewrite()</code> 对每一个执行键盘键按下，然后释放</li>
+<li><code>hotkey()</code> 对按顺序传递的参数执行向下键，然后执行按相反顺序释放键。</li>
+</ol>
+<h1>psutil</h1>
+<hr />
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;获取所有运行的exe程序</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">array</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">psutil</span><span class="o">.</span><span class="n">pids</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="o">&gt;&gt;</span><span class="o">&gt;</span><span class="">&nbsp;</span><span class="p">[</span><span class="mi">1234</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">123</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">2345</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">23423</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;根据运行exe程序的实例</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">p</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="mi">2345</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">p</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="o">&gt;&gt;</span><span class="o">&gt;</span><span class="">&nbsp;</span><span class="n">psutil</span><span class="o">.</span><span class="n">Process</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="mi">1260</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">name</span><span class="o">=</span><span class="s1">'</span><span class="s1">python.exe</span><span class="s1">'</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">started</span><span class="o">=</span><span class="s1">'</span><span class="s1">22:57:34</span><span class="s1">'</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;可以查看的属性</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">p</span><span class="o">.</span><span class="n">name</span><span class="p">(</span><span class="p">)</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">p</span><span class="o">.</span><span class="n">pid</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">p</span><span class="o">.</span><span class="n">status</span><span class="p">(</span><span class="p">)</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">p</span><span class="o">.</span><span class="n">cpu_times</span></div></div></li>
+</ol></div>
+
+<h1>win32gui</h1>
+<hr />
+<p>说明文档：</p>
+<p>http://timgolden.me.uk/pywin32-docs/win32gui.html</p>
+<p>实战案例：</p>
+<p>https://www.jianshu.com/p/b3255cf50693</p>
+<h2>获取当前活动窗口</h2>
+<p>GetForegroundWindow()</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">a</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">win32gui</span><span class="o">.</span><span class="n">GetForegroundWindow</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h2>获取所有活动窗口</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">win32gui</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="o">*</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">main</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">titles</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nb">set</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">def</span><span class="">&nbsp;</span><span class="nf">foo</span><span class="p">(</span><span class="n">hwnd</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">mouse</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;去掉下面这句就所有都输出了，但是我不需要那么多</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="n">IsWindow</span><span class="p">(</span><span class="n">hwnd</span><span class="p">)</span><span class="">&nbsp;</span><span class="ow">and</span><span class="">&nbsp;</span><span class="n">IsWindowEnabled</span><span class="p">(</span><span class="n">hwnd</span><span class="p">)</span><span class="">&nbsp;</span><span class="ow">and</span><span class="">&nbsp;</span><span class="n">IsWindowVisible</span><span class="p">(</span><span class="n">hwnd</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">titles</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">GetWindowText</span><span class="p">(</span><span class="n">hwnd</span><span class="p">)</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">EnumWindows</span><span class="p">(</span><span class="n">foo</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">0</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">lt</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="p">[</span><span class="n">t</span><span class="">&nbsp;</span><span class="k">for</span><span class="">&nbsp;</span><span class="n">t</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="n">titles</span><span class="">&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="n">t</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">lt</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">for</span><span class="">&nbsp;</span><span class="n">t</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="n">lt</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="n">t</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h2>获取窗口信息</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;获取窗口位置</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">left</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">top</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">right</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">bottom</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">win32gui</span><span class="o">.</span><span class="n">GetWindowRect</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#获取某个句柄的类名和标题</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">title</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">win32gui</span><span class="o">.</span><span class="n">GetWindowText</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">clsname</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">win32gui</span><span class="o">.</span><span class="n">GetClassName</span><span class="p">(</span><span class="n">handle</span><span class="p">)</span></div></div></li>
+</ol></div>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: darkslategray;
+  color: whitesmoke;
+}
+body .settings {
+  background-color: #1f3434;
+  line-height: 4em;
+  text-align: center;
+}
+body .timeSpan {
+  outline: solid 1px;
+  height: 60px;
+  text-align: center;
+  font-size: 30px;
+}
+body .timeSpan #sec {
+  color: red;
+}
+body .logs {
+  width: 250px;
+  height: 1000px;
+  position: fixed;
+  right: 20px;
+  top: 20%;
+  outline: solid 1px;
+  overflow: scroll;
+}
+body .logs .log {
+  font-size: 10px;
+}
+body .questions {
+  width: 60%;
+  margin: 0 auto;
+  outline: solid 1px;
+  min-height: 500px;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+  transition: all 0.2s;
+}
+body .questions .question {
+  vertical-align: center;
+}
+body .questions .question .a,
+body .questions .question .op,
+body .questions .question .b,
+body .questions .question .ep {
+  user-select: none;
+  margin-right: 10px;
+}
+body .questions .question input {
+  display: inline;
+  font-size: 30px;
+  height: 30px;
+  background-color: transparent;
+  color: whitesmoke;
+  width: 100px;
+}
+body .questions .success {
+  width: 200px;
+  font-size: 30px;
+  margin: 30px;
+}
+/*# sourceMappingURL=index.css.map */

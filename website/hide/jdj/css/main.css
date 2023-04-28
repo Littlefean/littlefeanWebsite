@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+body {
+  background: black;
+  transition: background-color 1s;
+}
+body main {
+  width: 1200px;
+  margin: 0 auto;
+  height: 848px;
+  outline: solid 1px white;
+  position: relative;
+  overflow: hidden;
+  transform-origin: top center;
+  transform: scale(1.6);
+}
+body main .bg {
+  transition: all 1s;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+body main .maskBg {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  filter: blur(30px);
+}
+body main .light {
+  transition: all 0.5s;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  transform: scale(0.4);
+}
+body main img {
+  position: absolute;
+}
+/*# sourceMappingURL=main.css.map */

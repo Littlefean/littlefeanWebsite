@@ -1,0 +1,302 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>bootstarp</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>学习笔记Bootstarp</h1>
+<hr />
+<h2>官网</h2>
+<p>https://bootstrap.css88.com/</p>
+<h2>使用四部曲</h2>
+<ol>
+<li>创建文件结构</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;index.html</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;css</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;imges</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;bootstrap</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|css</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|      bootstrap.css</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|      bootstrap.min.css</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|      ...</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|js</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|fonts</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ol>
+<li>创建html骨架结构</li>
+</ol>
+<p>从官网的代码上：入门 &gt; 基础模板</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div><div class="line-numbers"><div class="line-num" data-line-num="19"></div></div><div class="line-numbers"><div class="line-num" data-line-num="20"></div></div><div class="line-numbers"><div class="line-num" data-line-num="21"></div></div><div class="line-numbers"><div class="line-num" data-line-num="22"></div></div><div class="line-numbers"><div class="line-num" data-line-num="23"></div></div><div class="line-numbers"><div class="line-num" data-line-num="24"></div></div><div class="line-numbers"><div class="line-num" data-line-num="25"></div></div><div class="line-numbers"><div class="line-num" data-line-num="26"></div></div><div class="line-numbers"><div class="line-num" data-line-num="27"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="cp">&lt;!DOCTYPE&nbsp;html&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">html</span><span class="">&nbsp;</span><span class="na">lang</span><span class="o">=</span><span class="s">"en"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">meta</span><span class="">&nbsp;</span><span class="na">charset</span><span class="o">=</span><span class="s">"utf-8"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c">&lt;!--</span><span class="c">&nbsp;用IE浏览器的最高内核来渲染界面&nbsp;</span><span class="c">--&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">meta</span><span class="">&nbsp;</span><span class="na">http-equiv</span><span class="o">=</span><span class="s">"X-UA-Compatible"</span><span class="">&nbsp;</span><span class="na">content</span><span class="o">=</span><span class="s">"IE=edge"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c">&lt;!--</span><span class="c">&nbsp;视口设置：视口的宽度和设备完全一致，默认缩放比例和PC端一致，用户不能自行缩放&nbsp;</span><span class="c">--&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">meta</span><span class="">&nbsp;</span><span class="na">name</span><span class="o">=</span><span class="s">"viewport"</span><span class="">&nbsp;</span><span class="na">content</span><span class="o">=</span><span class="s">"width=device-width,&nbsp;initial-scale=1"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span><span class="">Bootstrap&nbsp;101&nbsp;Template</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">title</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c">&lt;!--</span><span class="c">&nbsp;Bootstrap&nbsp;</span><span class="c">--&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">link</span><span class="">&nbsp;</span><span class="na">href</span><span class="o">=</span><span class="s">"css/bootstrap.min.css"</span><span class="">&nbsp;</span><span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c">&lt;!--</span><span class="c">&nbsp;HTML5&nbsp;shim&nbsp;and&nbsp;Respond.js&nbsp;for&nbsp;IE8&nbsp;support&nbsp;of&nbsp;HTML5&nbsp;elements&nbsp;and&nbsp;media&nbsp;queries&nbsp;</span><span class="c">--&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c">&lt;!--</span><span class="c">&nbsp;WARNING:&nbsp;Respond.js&nbsp;doesn't&nbsp;work&nbsp;if&nbsp;you&nbsp;view&nbsp;the&nbsp;page&nbsp;via&nbsp;file://&nbsp;</span><span class="c">--&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c">&lt;!--</span><span class="c">[if&nbsp;lt&nbsp;IE&nbsp;9]&gt;
+&nbsp;&nbsp;&nbsp;      解决IE９以下浏览器对h5标签不识别问题
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;      解决IE9以下浏览器对css3媒体查询不识别问题
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;script&nbsp;src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"&gt;&lt;/script&gt;
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&lt;![endif]</span><span class="c">--&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">head</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span><span class="">Hello,&nbsp;world!</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">h1</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c">&lt;!--</span><span class="c">&nbsp;jQuery&nbsp;(necessary&nbsp;for&nbsp;Bootstrap's&nbsp;JavaScript&nbsp;plugins)&nbsp;</span><span class="c">--&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">script</span><span class="">&nbsp;</span><span class="na">src</span><span class="o">=</span><span class="s">"http://code.jquery.com/jquery-1.11.2.min.js"</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c">&lt;!--</span><span class="c">&nbsp;Include&nbsp;all&nbsp;compiled&nbsp;plugins&nbsp;(below),&nbsp;or&nbsp;include&nbsp;individual&nbsp;files&nbsp;as&nbsp;needed&nbsp;</span><span class="c">--&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">script</span><span class="">&nbsp;</span><span class="na">src</span><span class="o">=</span><span class="s">"js/bootstrap.min.js"</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">body</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">html</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ol>
+<li>引入相关样式文件</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">link</span><span class="">&nbsp;</span><span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span><span class="">&nbsp;</span><span class="na">href</span><span class="o">=</span><span class="s">"bootstrap/css/bootstrap.min.css"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ol>
+<li>书写内容</li>
+</ol>
+<h2>布局容器</h2>
+<h3>container类</h3>
+<ul>
+<li>响应式布局容器 固定宽度</li>
+</ul>
+<h3>container-fluid类</h3>
+<ul>
+<li>流式布局容器</li>
+<li>占据全部视窗的容器</li>
+<li>适合于单独做移动端的开发</li>
+</ul>
+<h2>栅格系统</h2>
+<p>把内容划分为12个部分</p>
+<h3>栅格选项参数</h3>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>小屏幕 &lt;768px</th>
+<th>小屏设备 &gt;=768px</th>
+<th>中等屏幕 &gt;=992px</th>
+<th>宽屏设备 &gt;= 1200px</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.container 最大宽度</td>
+<td>自动</td>
+<td>750px</td>
+<td>970px</td>
+<td>1170px</td>
+</tr>
+<tr>
+<td>类前缀</td>
+<td>.col-xs-</td>
+<td>.col-sm-</td>
+<td>.col-md-</td>
+<td>.col-lg-</td>
+</tr>
+<tr>
+<td>列数</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">div</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"row"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">div</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"col-lg-3"</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">div</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"col-lg-3"</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">div</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"col-lg-3"</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">div</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"col-lg-3"</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<h3>列嵌套</h3>
+<h3>列偏移</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">div</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"row"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">div</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"col-md-4"</span><span class="p">&gt;</span><span class="">left</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">div</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"col-md-4&nbsp;col-md-offset-4"</span><span class="p">&gt;</span><span class="">right</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c">&lt;!--</span><span class="c">向右偏移四分,原理是增加左外边距</span><span class="c">--&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<h3>列排序</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">div</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"row"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">div</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"col-md-4&nbsp;col-md-push-8"</span><span class="p">&gt;</span><span class="">left</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">div</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"col-md-8&nbsp;col-md-pull-4"</span><span class="p">&gt;</span><span class="">right</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c">&lt;!--</span><span class="c">右侧往左拉4份,左侧往右推4份</span><span class="c">--&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<h3>响应式工具</h3>
+<p>在不同的屏幕尺寸下显示或者隐藏某些元素</p>
+<table>
+<thead>
+<tr>
+<th>类名</th>
+<th>超小屏</th>
+<th>小屏</th>
+<th>中屏</th>
+<th>大屏</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>.hidden-xs</td>
+<td>隐藏</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>.hidden-sm</td>
+<td></td>
+<td>隐藏</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>.hidden-md</td>
+<td></td>
+<td></td>
+<td>隐藏</td>
+<td></td>
+</tr>
+<tr>
+<td>.hidden-lg</td>
+<td></td>
+<td></td>
+<td></td>
+<td>隐藏</td>
+</tr>
+</tbody>
+</table>
+<p><code>.visible-xx</code> 是和上面的相反的,在某种特定屏幕下不显示</p>
+<h2>一些小工具</h2>
+<p>https://v3.bootcss.com/components/#glyphicons-how-to-use</p>
+<p>按钮</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">button</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"btn&nbsp;btn-default&nbsp;btn-lg"</span><span class="p">&gt;</span><span class="">按钮</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">button</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<p>下拉菜单</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">div</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"dropdown"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">button</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"btn&nbsp;btn-default&nbsp;dropdown-toggle"</span><span class="">&nbsp;</span><span class="na">type</span><span class="o">=</span><span class="s">"button"</span><span class="">&nbsp;</span><span class="na">id</span><span class="o">=</span><span class="s">"dropdownMenu1"</span><span class="">&nbsp;</span><span class="na">data-toggle</span><span class="o">=</span><span class="s">"dropdown"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="na">aria-haspopup</span><span class="o">=</span><span class="s">"true"</span><span class="">&nbsp;</span><span class="na">aria-expanded</span><span class="o">=</span><span class="s">"true"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Dropdown</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">span</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"caret"</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">span</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">button</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">ul</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"dropdown-menu"</span><span class="">&nbsp;</span><span class="na">aria-labelledby</span><span class="o">=</span><span class="s">"dropdownMenu1"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="nt">a</span><span class="">&nbsp;</span><span class="na">href</span><span class="o">=</span><span class="s">"#"</span><span class="p">&gt;</span><span class="">Action</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">a</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">li</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="nt">a</span><span class="">&nbsp;</span><span class="na">href</span><span class="o">=</span><span class="s">"#"</span><span class="p">&gt;</span><span class="">Another&nbsp;action</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">a</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">li</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="nt">a</span><span class="">&nbsp;</span><span class="na">href</span><span class="o">=</span><span class="s">"#"</span><span class="p">&gt;</span><span class="">Something&nbsp;else&nbsp;here</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">a</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">li</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">li</span><span class="">&nbsp;</span><span class="na">role</span><span class="o">=</span><span class="s">"separator"</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"divider"</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">li</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="nt">a</span><span class="">&nbsp;</span><span class="na">href</span><span class="o">=</span><span class="s">"#"</span><span class="p">&gt;</span><span class="">Separated&nbsp;link</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">a</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">li</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">ul</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<p>下拉菜单里可以添加分割线，小标题等等的，具体到官网里复制。</p>
+<p>按钮组</p>
+<p>导航条</p>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

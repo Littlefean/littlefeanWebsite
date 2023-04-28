@@ -1,0 +1,313 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>左神算法课</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>左程云的算法课笔记</h1>
+<hr />
+<h2>求中点</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">mid</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="p">(</span><span class="n">L</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="n">R</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">/</span><span class="">&nbsp;</span><span class="mi">2</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">//&nbsp;改进后
+</span><span class="n">mid</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">L</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="p">(</span><span class="n">R</span><span class="">&nbsp;</span><span class="o">-</span><span class="">&nbsp;</span><span class="n">L</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">&gt;</span><span class="o">&gt;</span><span class="">&nbsp;</span><span class="mi">1</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<h2>递归Master公式</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">T</span><span class="p">(</span><span class="n">N</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">a</span><span class="">&nbsp;</span><span class="o">*</span><span class="">&nbsp;</span><span class="n">T</span><span class="p">(</span><span class="n">N</span><span class="o">/</span><span class="n">b</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="n">O</span><span class="p">(</span><span class="n">N</span><span class="o">^</span><span class="n">d</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;a是递归分成了几个部分
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;b是递归分成了几个部分，
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;d是每次递归处理中的时间复杂度级别是什么样的
+</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">log</span><span class="">&nbsp;</span><span class="n">b</span><span class="">&nbsp;</span><span class="n">a</span><span class="">&nbsp;</span><span class="o">&lt;</span><span class="">&nbsp;</span><span class="n">d</span><span class="">&nbsp;</span><span class="o">=</span><span class="o">=</span><span class="o">=</span><span class="o">=</span><span class="o">&gt;</span><span class="">&nbsp;</span><span class="n">O</span><span class="p">(</span><span class="n">N</span><span class="o">^</span><span class="n">d</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">log</span><span class="">&nbsp;</span><span class="n">b</span><span class="">&nbsp;</span><span class="n">a</span><span class="">&nbsp;</span><span class="o">&gt;</span><span class="">&nbsp;</span><span class="n">d</span><span class="">&nbsp;</span><span class="o">=</span><span class="o">=</span><span class="o">=</span><span class="o">=</span><span class="o">&gt;</span><span class="">&nbsp;</span><span class="n">O</span><span class="p">(</span><span class="n">N</span><span class="o">^</span><span class="n">longba</span><span class="p">)</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<h2>N²级排序</h2>
+<p>选择排序不稳定</p>
+<p>只有冒泡和插入是稳定的。</p>
+<p>选择，冒泡，插入排序的空间复杂度都是O1</p>
+<h2>NlogN级排序</h2>
+<h3>快排2.0版本</h3>
+<p>partition的时候：</p>
+<p>分成小于flag的部分，等于flag的部分，大于flag的部分</p>
+<p>等于的部分不管，只对小于和大于的部分进行递归。</p>
+<h3>快排3.0版本</h3>
+<p>选取flag的时候随机选择，才能做到O（NlogN）</p>
+<h3>归并应用</h3>
+<p>求所有逆序对。利用了归并的稳定性。</p>
+<h3>归并、快排、堆排的比较</h3>
+<p>归并：【稳定性】稳定，但是空间占用O(N)</p>
+<p>快排：不稳定，空间O(logN)，折中</p>
+<p>堆排：【省空间】不稳定，（在堆化的过程中就已经不稳定了），但是占空间可以达到O(1)。</p>
+<p>快排为什么比归并排序快一些？因为常数项低</p>
+<p>看你在实际业务需求里要的是什么。</p>
+<h3>怼人</h3>
+<p>原地归并排序是垃圾，会让时间复杂度回到ON方</p>
+<p>快速排序非常难做到稳定性，不用掌握，可以搜01stable sort，，论文《智力过剩》</p>
+<p>目前没有找到时间复杂度是NlogN、空间复杂度是O1，又稳定的排序。</p>
+<h2>综合排序</h2>
+<p>java，看你的元素都是int，那肯定不用保证稳定性，稳定性失去了意义。所以用快排。</p>
+<p>如果一看你定义的数据类型是自定义类型，那就会用归并排序了。是为了稳定性考虑的。</p>
+<p>当快排的递归的数组长度小于60的时候就用了插入排序，因为小规模情况下相差不大。并且插入排序常数项极低。</p>
+<p>语言自己实现好的源代码很多很复杂，都是结合了很多种情况。</p>
+<h2>不基于比较的排序</h2>
+<h3>计数排序</h3>
+<p>根据高考成绩、身高、年龄。的超多人排序</p>
+<h3>基数排序</h3>
+<p>位不够的前面补充零，按位排序。</p>
+<h2>链表</h2>
+<p>判断链表是不是形成了自环问题</p>
+<p>快慢指针，一个走两步一个走一步，当两个指针相遇，让慢指针回到头，然后两个指针一起走，相遇的点就是入环点</p>
+<h2>图论</h2>
+<p>迪杰斯特拉算法堆优化，不能用系统提供的堆，因为你涉及到了修改堆里面的数据。</p>
+<h2>前缀树</h2>
+<h2>贪心算法</h2>
+<p>字典序是什么，把每一个字符看成一个26进制数，比较大小</p>
+<p>案例1，有一堆字符串，给出一种拼接方案，使得这些字符串拼接成的结果字典序最小。</p>
+<p>不要直接按字典序排序！写一个比较器，cmp（a，b），比较两个字符串a+b字典序小还是b+a字典序小。</p>
+<p>icpc wordfinall的选手也不一定能证明贪心算法。</p>
+<p>贪心在笔试最后一两个可能会有，但是面试很少有，因为没有什么区分度</p>
+<p>案例2：项目利润问题（leetcode502）</p>
+<p>准备一个小根堆作为锁住的项目，准备一个大根堆作为解锁的项目</p>
+<p>小根堆的数据比较项是项目的投入，大根堆数据比较的项目是项目的利润。</p>
+<p>每做一个项目就看看小根堆里新解锁的放到大根堆里。</p>
+<p>大小堆的结合应用：随时获得数据流的中位数</p>
+<p><img alt="Snipaste_2022-05-25_14-47-36" src="左神算法课\0.png" /></p>
+<h2>暴力递归</h2>
+<p>汉诺塔问题：</p>
+<p>想全局问题可能就想不出来了，// 想全局的问题可能就想不出来了，想局部的问题</p>
+<p>打印一个字符串的全部子序列</p>
+<p>所谓的分支限界，就是递归+剪枝。</p>
+<p>博弈论问题，左右两端拿石头。leetcode486</p>
+<p>试法累积经验：</p>
+<p><img alt="Snipaste_2022-05-25_15-38-11" src="左神算法课\1.png" /></p>
+<p>只用递归结构，不用额外数据结构，逆序一个栈</p>
+<p>例题：给一个数字字符串，看看能转化成多少种字母字符串</p>
+<p><img alt="Snipaste_2022-05-25_15-54-30" src="左神算法课\2.png" /></p>
+<p>01背包问题也可以用这个来做，dfs+剪枝</p>
+<h2>哈希函数与哈希表</h2>
+<p>由于有哈希均匀问题，所以可以考虑压缩哈希表</p>
+<h3>布隆过滤器（黑名单url）</h3>
+<p>把子节流设置成一个数组，用int类型去拼接，节省空间。</p>
+<p>arr = [10101001010000101000111000110001100000000000000000]</p>
+<p>有超级超级多的url，设计一个哈希表，只有add、in，功能。不考虑删除功能。</p>
+<p>用多种哈希算法求不同的hash(url)，得到结果 index1,index2,index...indexk。</p>
+<p>让arr[index1] = 1, arr[index2] = 1。。。这就是添加了。</p>
+<p>检测某一个url是不是黑名单的时候，就把多种hash算法的结果都求出来，看看所有的对应索引位置上都是不是1，如果都是1，才是黑名单。</p>
+<p>缺陷：可能会误杀，但是不会放过一个黑名单url。</p>
+<p>只要arr开的够大，误杀率就会小。</p>
+<p>k值，就是哈希函数的数量，取的越少，重叠率就越高，如果取的越多，那反而重叠率也越高，因为涂黑（标记为1）的arr位也就越多了，反而又增加了重叠的概率。</p>
+<h3>一致性哈希</h3>
+<p>有一些数据分别放到不同的计算机上，怎么部署？分布式。</p>
+<p>哈希（计算机）%计算机数量====》 去找哪一个计算机里找数据</p>
+<p>改成一个环。然后再分配很多个虚拟节点。</p>
+<h2>并查集</h2>
+<p>路径优化直接跳过了还没看</p>
+<p>求岛屿数量二维数组传统解法：</p>
+<p>把1感染成2然后直接dfs，比广度优先代码小很多很多。</p>
+<p>应用：求岛屿数量多CUP计算拼接合并问题，这种基本上只有Google级别公司会问到。</p>
+<h2>KMP算法</h2>
+<p>最长公共前后缀的理解</p>
+<h2>马拉车算法</h2>
+<p>理解是：对加#中心扩展法的一种加速优化。时间复杂度可以达到ON量级。</p>
+<p>分了三种情况</p>
+<h2>单调栈</h2>
+<h2>树形dp</h2>
+<p><img alt="Snipaste_2022-05-28_13-29-00" src="左神算法课\3.png" /></p>
+<h2>Morris遍历（线索二叉树）</h2>
+<p>二叉树里最炫酷的东西</p>
+<p>遍历这个事情很重要</p>
+<p>如果一个树明令禁止遍历的时候修改这个树，那不能用这个方法</p>
+<p><img alt="Snipaste_2022-05-28_13-38-36" src="左神算法课\4.png" /></p>
+<h2>暴力递归</h2>
+<p>优化过程： </p>
+<p>暴力递归，记忆化搜索，动态规划</p>
+<h2>完全背包问题：</h2>
+<h3>斜率优化</h3>
+<p>观察二维dp表，如果发生了枚举行为，我就观察是不是直接可以用以前的状态推出来。</p>
+<h2>AVL树</h2>
+<h4>检查平衡性的时机：</h4>
+<p>添加一个节点：对添加的节点的地方检查平衡性，再对父节点检查平衡性，一直到根节点</p>
+<p>删除一个节点：某一个节点替代被删除的节点的父节点开始一直往上检查。</p>
+<h2>中级提升班</h2>
+<h3>打表法：</h3>
+<p>遇到一个题输入是整数，输出是整数，可以数学找规律再倒推代码</p>
+<p>这样的题目能中个四成左右</p>
+<h3>数组预处理：</h3>
+<p>如果发现查询某个部分比较频繁，可以想象先生成前缀和数组或者什么的二维数组。在最内层循环进行优化，就能让时间复杂度降低一阶。   </p>
+<p>01二维数组，找一个最大的正方形1框，就生成两个辅助二维数组，一个二维数组表示当前位置最多向右延伸连续多少个1，一个是向下的。查找的时候直接遍历找。</p>
+<h3>概率转化问题</h3>
+<p>就拼二进制，超了就继续</p>
+<h3>二叉树问题</h3>
+<p>看清题目里说的什么是路径，有可能从根节点出发到叶节点，也可能不到叶子节点，有可能是从任意两个节点之间的路径。这些所有的题目都可以用二叉树递归的方法来解决</p>
+<h3>每一行每一列都是递增的二维数组</h3>
+<p>从右上角开始找，找到左下角。</p>
+<p><img alt="Snipaste_2022-06-05_08-34-42" src="左神算法课\5.png" /></p>
+<p>在二维数组中找到数量最多的1的行，也是如此，这个0和1的分部始终保持0左1右</p>
+<p><img alt="Snipaste_2022-06-05_08-36-59" src="左神算法课\6.png" /></p>
+<h3>洗衣机扔衣服问题</h3>
+<p>leetcode517，</p>
+<p>有一排洗衣机，每个洗衣机都可以让自己里面的一个衣服扔到左边或者右边里面去</p>
+<p>问一轮一轮之后，所有洗衣机里的数量相等，最少需要多少轮操作。</p>
+<p>思路：分析每个位置的左边部分盈亏和右边部分的盈亏，推出每个位置需要进行多少轮操作，有点像网络流最大流的限制，找到最值就可以了</p>
+<h3>螺旋打印矩阵问题</h3>
+<p>写出来一个打印一个框的方法</p>
+<p><img alt="Snipaste_2022-06-05_08-56-26" src="左神算法课\7.png" /></p>
+<h3>正方形矩阵旋转90°问题</h3>
+<p>​   一个一个框转。</p>
+<p><img alt="Snipaste_2022-06-05_09-05-10" src="左神算法课\8.png" /></p>
+<h3>zigzag打印二维数组</h3>
+<p><img alt="Snipaste_2022-06-05_09-10-50" src="左神算法课\9.png" /></p>
+<h3>实现一种动态结构：显示票数最多的k个候选人</h3>
+<p>两个方法：</p>
+<p>add（候选人人名字符串）</p>
+<p>打印函数：printTopK（）</p>
+<p>这可能要自己实现一个堆，不能用系统提供的堆。</p>
+<p>需要三个东西，一个词频表，一个容量为K的小根堆。一个堆位置Map</p>
+<h3>用两个栈拼出一个队列</h3>
+<p>一个push栈，一个pop栈</p>
+<p>先把入队列的元素通通都入push栈，出队列的时候检查pop栈里有没有东西，没有东西就一股脑把push栈里的东西倒入pop栈，然后pop就可以了 </p>
+<p>pop栈里有东西，push栈一定不要放</p>
+<h3>两个队列拼出一个栈</h3>
+<p>一个队列头接一个队列尾</p>
+<p>如果面试问只用栈做图的广度优先遍历，就用两个栈去拼队列。</p>
+<h3>状压dp</h3>
+<p>二维压缩：</p>
+<ol>
+<li>一个位置，只和左边一个有关，上边一个有关</li>
+</ol>
+<p>从上往下每一个滚动数组，从左往右遍历</p>
+<ol>
+<li>一个位置，和上一行的左边部分有关</li>
+</ol>
+<p>从上往下每一行滚动数组，从右往左遍历</p>
+<ol>
+<li>一个位置，依赖左边，左上角，上边</li>
+</ol>
+<p>从上往下滚动数组，额外记录一个上一行的变量，从左往右更新</p>
+<h3>接雨水问题</h3>
+<p>只关注每一个位置上能接住多少水，</p>
+<p>怎么求每一个位置上的？最左侧到左边，最高位置  和  最右边到右边位置高度，整体取最小值。</p>
+<p><img alt="Snipaste_2022-06-05_20-57-42" src="左神算法课\10.png" /></p>
+<p>双指针技巧把空间复杂度压缩到O1</p>
+<h3>数组中间切一刀问题</h3>
+<p>让左边部分最大值减去右边部分最大值，这个差的绝对值尽量大。</p>
+<p>直接找到全局最大值，然后和最左侧点和最右侧点比较</p>
+<p><img alt="Snipaste_2022-06-05_21-03-13" src="左神算法课\11.png" /></p>
+<h3>字符串旋转词</h3>
+<p>环形字符串，类似于环形数组，判断某一个字符串是否是它的字串，直接拼一个两倍的它。</p>
+<h3>斐波那契数列套路</h3>
+<p>F(N) = F .... F (N - n)，矩阵快速幂版本就需要求n阶行列式了。</p>
+<p>有一个兔子，两年之后成熟，可以生两个兔子，但是每一个兔子5年之后会死</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">F(N)&nbsp;=&nbsp;F(N&nbsp;-&nbsp;1)&nbsp;+&nbsp;2*F(N&nbsp;-&nbsp;2)&nbsp;-&nbsp;F(N&nbsp;-&nbsp;5)</span></div></div></li>
+</ol></div>
+
+<h3>三条边组成三角形问题——斐波那契数列</h3>
+<p>给你从1到17这么多数字（边），每一个边都是+1的</p>
+<p>最多保留的边，每三个边组合都不能组成三角形，就是斐波那契数列。</p>
+<h3>数字范围问题</h3>
+<p>用负数来读取识别数字的题目，因为负数比正数大一个。（静态类型语言有这个问题）</p>
+<h3>求完全二叉树的节点个数</h3>
+<p>先一直往左下角窜，求出整个树的最大高度，</p>
+<p>递归求解，右树的左下角是否有节点。</p>
+<h3>最长递增子序列</h3>
+<p>一般传统的解决方法都是ON²级别的解法</p>
+<h3>一个特殊数字能否被3整除</h3>
+<p><img alt="Snipaste_2022-06-07_16-29-57" src="左神算法课\12.png" /></p>
+<p>让这些部分加起来看能不能被三整除</p>
+<h3>主播打赏花钱最终获得到目标人气值</h3>
+<p>技巧：给递归以限制，否则递归可能跑步完</p>
+<h3>保留最小字符串最小字典序问题</h3>
+<p>我的目的是删除一个字符串里的所有出现数量大于1 的字符，最终结果是让这个字符串字典序尽可能的小。</p>
+<p>我应该怎么删除？</p>
+<p>先生成Counter，从左到右遍历字符串，对应的词频-1，如果发现词频减少成0了，怎么办？</p>
+<p>说明你的右侧不再有 stirng[i] 这个字符了，意味着只有从开始到i这一段，我挑选的一个ascii码最小的字符，才能让所有字符都有，如果但凡再往右一点挑选最小的ascii码字符，当前遍历的这个字符就可能被我错过了</p>
+<p>这个时候就说明从 前面一直到当前位置i，必须要决定一下了，决定什么呢？</p>
+<p>决定谁的ascii码最小，</p>
+<p>找到最小的ascii码之后呢，就保留当前选的，然后把其他的重复字符都删除掉。</p>
+<p>剩下的 string[i: ] 继续决策，递归进行，继续生成新的Counter</p>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

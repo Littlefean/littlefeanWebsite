@@ -1,0 +1,248 @@
+/**
+  我的初始化
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  overflow-y: auto;
+}
+body::-webkit-scrollbar {
+  width: 14px;
+  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 4px;
+  scrollbar-arrow-color: red;
+  /*background-color: #fff;*/
+}
+body::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 100px;
+  /*-webkit-box-shadow: inset 0 0 5px yellow;*/
+  background: rgba(255, 255, 255, 0.2);
+  scrollbar-arrow-color: rgba(255, 255, 255, 0.2);
+}
+body::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  /*-webkit-box-shadow: inset 0 0 10px rgba(0, 0, 255, 0.9);*/
+  border: solid 2px rgba(255, 255, 255, 0.4);
+  border-radius: 100px;
+  background: rgba(0, 0, 0, 0.1);
+}
+/***
+ 有关中心恒星的样式
+ */
+#centerStar {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-5px) translateY(-5px);
+  border-radius: 100px;
+  box-shadow: 0 0 10px yellow;
+  background-color: white;
+}
+/**
+ 和旋转有关的css动画
+ */
+@keyframes planetRound {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes planetRoundR {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}
+@keyframes rotate-frame {
+  0% {
+    transform: rotateX(45deg) rotateY(0deg) rotateZ(30deg);
+  }
+  100% {
+    transform: rotateX(45deg) rotateY(360deg) rotateZ(30deg);
+  }
+}
+/**
+ 星空画布的样式
+ */
+.canvasTmp {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  overflow: hidden;
+}
+.starWay {
+  width: 80%;
+  height: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: left center;
+}
+.slipStar {
+  width: 3px;
+  height: 3px;
+  border-radius: 100px;
+  position: absolute;
+  background-color: white;
+  animation-name: slideStar;
+  animation-duration: 6s;
+  animation-timing-function: cubic-bezier(0.99, 0, 1, 1);
+  animation-iteration-count: infinite;
+}
+@keyframes slideStar {
+  0% {
+    width: 0.2px;
+    height: 0.2px;
+    left: 0;
+  }
+  100% {
+    width: 7px;
+    height: 7px;
+    left: 100%;
+  }
+}
+.asteroid {
+  width: 30%;
+  height: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -5px;
+  transform-origin: left center;
+  animation-name: planetRound;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.asteroid .star {
+  right: 0;
+  top: 50%;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background-color: #fff;
+}
+body {
+  background-color: black;
+  color: white;
+  height: 1000px;
+}
+body h1 {
+  text-align: center;
+  line-height: 4em;
+}
+body .planets {
+  height: 100vh;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+body .planets .planet {
+  width: 10%;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  color: white;
+  text-align: center;
+  transform-origin: 0 50%;
+  animation-name: planetRound;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 0s;
+}
+body .planets .planet .container {
+  height: 0;
+  animation-name: planetRoundR;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-duration: 0s;
+}
+body .planets .planet .container .planetIcon {
+  width: 3px;
+  height: 3px;
+  margin: 5px auto;
+  border-radius: 1000px;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 101;
+  transition: all 0.2s;
+}
+body .planets .planet .container .planetIcon:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+body .planets .planet .container .planetIcon:hover ~ a {
+  opacity: 1;
+}
+body .planets .planet .container .planetIcon:hover ~ p {
+  visibility: visible;
+}
+body .planets .planet .container p {
+  font-size: 5px;
+  visibility: hidden;
+}
+body .planets .planet .container a {
+  opacity: 0.2;
+  display: block;
+  transition: all 0.2s;
+  height: 0;
+  margin-bottom: 20px;
+}
+body .planets .planet .container a:hover {
+  opacity: 1;
+}
+body .planets .planet .container a:hover ~ .planetIcon {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+body .orders {
+  width: 100%;
+  margin: 15px auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+body .orders .order {
+  width: 320px;
+  height: 150px;
+  display: block;
+  margin: 10px;
+}
+body .orders .order .title {
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+body .orders .order p {
+  font-size: 12px;
+  color: gray;
+}
+body .orders .order .iconBox {
+  width: 110px;
+  height: 110px;
+  margin-right: 20px;
+  float: left;
+  overflow: hidden;
+  border-radius: 30px;
+}
+body .orders .order .iconBox img {
+  width: 100%;
+  border-radius: 30px;
+  transition: all 0.5s;
+}
+body .orders .order:hover img {
+  transform: scale(1.2);
+}
+/*# sourceMappingURL=menu.css.map */

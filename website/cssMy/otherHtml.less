@@ -1,0 +1,77 @@
+@keyframes itemAni {
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+  25% {
+    transform: translateX(-10px) translateY(10px);
+  }
+  50% {
+    transform: translateX(10px) translateY(10px);
+  }
+  75% {
+    transform: translateX(-10px) translateY(-10px);
+  }
+  100% {
+    transform: translateX(0px) translateY(0px);
+  }
+}
+
+main {
+  h1, h2 {
+    text-align: center;
+    line-height: 2em;
+  }
+
+  .otherBox {
+    //outline: solid 1px red;
+    overflow: hidden;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+
+    .item {
+      display: block;
+      width: 100px;
+      height: 100px;
+      //outline: solid 1px;
+
+      margin: 20px;
+      float: left;
+      text-align: center;
+
+      animation-name: itemAni;
+      animation-duration: 5s;
+      animation-timing-function: linear;
+      animation-iteration-count: infinite;
+
+      &:hover {
+        cursor: pointer;
+      }
+
+      &:hover .itemIcon {
+        transform: scale(1.1);
+        box-shadow: yellow 0 0 20px;
+      }
+
+      &:hover h4 {
+        transform: scale(1.2);
+      }
+
+      .itemIcon {
+        width: 70px;
+        height: 70px;
+        background-color: skyblue;
+        border-radius: 20px;
+        transition: all 0.5s;
+        //border: solid 1px grey;
+
+      }
+
+      h4 {
+        transition: all 0.5s;
+        font-weight: normal;
+      }
+    }
+  }
+}
+

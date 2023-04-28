@@ -1,0 +1,297 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Ajax</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>学习笔记Ajax</h1>
+<hr />
+<h2>介绍</h2>
+<p>它可以在不刷新页面的情况下去读取数据：用户注册</p>
+<h2>使用方法</h2>
+<ol>
+<li>引入Ajax.js文件</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">script</span><span class="">&nbsp;</span><span class="na">src</span><span class="o">=</span><span class="s">"ajax.js"</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ol>
+<li>
+<p>写js</p>
+</li>
+<li></li>
+</ol>
+<h2>引例</h2>
+<h3>读取文件</h3>
+<p>在服务器上读取文件，并返回处理</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">var</span><span class="">&nbsp;</span><span class="nx">btn</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">'btn1'</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">btn</span><span class="p">.</span><span class="nx">onclick</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="kd">function</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">ajax</span><span class="p">(</span><span class="s1">'xxx.txt'</span><span class="p">,</span><span class="">&nbsp;</span><span class="kd">function</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">alert</span><span class="p">(</span><span class="nx">str</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span><span class="">&nbsp;</span><span class="kd">function</span><span class="p">(</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">alert</span><span class="p">(</span><span class="s2">"失败"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>注意：txt文件和html文件都是一样的编码，要么都是utf-8，要么都是gb2312</p>
+<h3>阻止缓存</h3>
+<p>为什么？因为当txt修改了之后，网站读取的可能还是原来的txt缓存文件，并没有刷新，对于一些显示股票价格什么的不利。IE缓存非常严重。</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="c1">//把'xxx.txt'改为
+</span><span class="s1">'xxx.txt?t='</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="nb">Date</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nx">getTime</span><span class="p">(</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h3>读取动态数据</h3>
+<p>txt变成了json、配合js的eval函数来解析数组实现</p>
+<h2>请求数据</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">form</span><span class="">&nbsp;</span><span class="na">action</span><span class="o">=</span><span class="s">"http://www.xxxx.com"</span><span class="">&nbsp;</span><span class="na">methord</span><span class="o">=</span><span class="s">"post"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;用户名</span><span class="p">&lt;</span><span class="nt">input</span><span class="">&nbsp;</span><span class="na">type</span><span class="o">=</span><span class="s">"text"</span><span class="">&nbsp;</span><span class="na">name</span><span class="o">=</span><span class="s">"username"</span><span class="">&nbsp;</span><span class="p">/</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;密码</span><span class="p">&lt;</span><span class="nt">input</span><span class="">&nbsp;</span><span class="na">type</span><span class="o">=</span><span class="s">"password"</span><span class="">&nbsp;</span><span class="na">name</span><span class="o">=</span><span class="s">"password"</span><span class="">&nbsp;</span><span class="p">/</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">input</span><span class="">&nbsp;</span><span class="na">type</span><span class="o">=</span><span class="s">"submit"</span><span class="">&nbsp;</span><span class="p">/</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="p">/</span><span class="nt">form</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<p>两种方式</p>
+<ol>
+<li>get：通过网址传递数据</li>
+</ol>
+<p>缺点：容量很小，网址不能很长、安全性非常差劲</p>
+<ol>
+<li>post：通过http Content传递数据（不通过网址）</li>
+</ol>
+<p>优点：容量大，可以有2G，安全性稍微好一点儿</p>
+<h2>Ajax具体使用</h2>
+<h3>使用步骤</h3>
+<ol>
+<li>创建Ajax对象</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="c1">//只兼容非IE6的浏览器
+</span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="kd">var</span><span class="">&nbsp;</span><span class="nx">oAjax</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="nx">XMLHttpRequest</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="c1">//IE6&nbsp;但是非IE６不兼容
+</span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="kd">var</span><span class="">&nbsp;</span><span class="nx">oAjax</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="nx">ActiveXObject</span><span class="p">(</span><span class="s2">"Microsoft.XMLHTTP"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<p>兼容：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="p">(</span><span class="nb">window</span><span class="p">.</span><span class="nx">XMLHttpRequest</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">var</span><span class="">&nbsp;</span><span class="nx">oAjax</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="nx">XMLHttpRequest</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="">&nbsp;</span><span class="k">else</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">var</span><span class="">&nbsp;</span><span class="nx">oAjax</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="nx">ActiveXObject</span><span class="p">(</span><span class="s2">"Microsoft.XMLHTTP"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ol>
+<li>连接到服务器</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="c1">//参数：1.方法&nbsp;2.文件名&nbsp;3.是否异步传输
+</span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nx">oAjax</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'GET'</span><span class="p">,</span><span class="">&nbsp;</span><span class="s1">'a.txt'</span><span class="p">,</span><span class="">&nbsp;</span><span class="kc">true</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nx">oAjax</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s1">'get'</span><span class="p">,</span><span class="">&nbsp;</span><span class="s1">'http//www.xxx.com'</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<p>同步和异步的区别：</p>
+<ul>
+<li>同步：一件一件来</li>
+<li>异步：多个事情一起做</li>
+</ul>
+<p>POST请求：</p>
+<p>请求格式1</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nx">oAjax</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"post"</span><span class="p">,</span><span class="">&nbsp;</span><span class="s1">'http://....'</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;设置请求包文&nbsp;set&nbsp;设置&nbsp;Request&nbsp;请求&nbsp;Header&nbsp;头
+</span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;参数：1.报文属性名称&nbsp;&nbsp;2.对应的值
+</span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nx">oAjax</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"Content-Type"</span><span class="p">,</span><span class="">&nbsp;</span><span class="s2">"application/x-www-form-urlencoded"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;send里面设置参数
+</span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;设置方法1&nbsp;【参数1&nbsp;=&nbsp;值1&nbsp;&&nbsp;参数2&nbsp;=&nbsp;值2】
+</span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nx">oAjax</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="s2">"name=vhangsan&age=20"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<p>请求格式2：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nx">oAjax</span><span class="p">.</span><span class="nx">open</span><span class="p">(</span><span class="s2">"post"</span><span class="p">,</span><span class="">&nbsp;</span><span class="s1">'http://....'</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;告诉服务器当前请求参数的格式是json，注意要讲json转为字符串
+</span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nx">oAjax</span><span class="p">.</span><span class="nx">setRequestHeader</span><span class="p">(</span><span class="s2">"Content-Type"</span><span class="p">,</span><span class="">&nbsp;</span><span class="s2">"application/json"</span><span class="p">)</span><span class="p">;</span><span class="">&nbsp;&nbsp;</span><span class="c1">//&nbsp;"text/plain"&nbsp;是纯字符串
+</span><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;JSON.stringfy()&nbsp;将json转为字符串
+</span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nx">oAjax</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">stringify</span><span class="p">(</span><span class="p">{</span><span class="nx">name</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'lisi'</span><span class="p">,</span><span class="">&nbsp;</span><span class="nx">age</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">50</span><span class="p">}</span><span class="p">)</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<p><strong>get请求只能提交第一种参数请求，传统网站也不支持json格式传参</strong></p>
+<p>概念补充：</p>
+<p>请求报文：</p>
+<p>http请求中传输的数据块是报文，包含：传送的数据、附加信息</p>
+<p>传输内容：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;请求方式：POST</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;请求地址：www...</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;请求内容："xxxxx..."</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ol>
+<li>发送请求</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nx">oAjax</span><span class="p">.</span><span class="nx">send</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ol>
+<li>接收返回值</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;方法2
+</span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nx">oAjax</span><span class="p">.</span><span class="nx">onreadystatechange</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="kd">function</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//浏览器和服务器进行到哪一步了
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="p">(</span><span class="nx">oAjax</span><span class="p">.</span><span class="nx">readyState</span><span class="">&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="mf">4</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;200代表成功了
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">if</span><span class="p">(</span><span class="nx">oAjax</span><span class="p">.</span><span class="nx">status</span><span class="">&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="mf">200</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//返回文本
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">alert</span><span class="p">(</span><span class="nx">oAjax</span><span class="p">.</span><span class="nx">responseText</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class=""> </span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;方法1
+</span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;货物服务器端基于客户端的响应数据
+</span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nx">oAjax</span><span class="p">.</span><span class="nx">onload</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="kd">function</span><span class="">&nbsp;</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;console.log(oAjax.responseText);
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">var</span><span class="">&nbsp;</span><span class="nx">res</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">JSON</span><span class="p">.</span><span class="nx">parse</span><span class="p">(</span><span class="nx">oAjax</span><span class="p">.</span><span class="nx">responseText</span><span class="p">)</span><span class="p">;</span><span class="">&nbsp;&nbsp;</span><span class="c1">//&nbsp;将json字符串转为JSON对象
+</span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<h2>Ajax状态码</h2>
+<p>ajax进行每一个过程都会又一个对应的数值，这个数值就是状态码</p>
+<ul>
+<li>0：请求未初始化，创建了对象但是还没有open</li>
+<li>1：请求已经建立，还没发送</li>
+<li>2：请求已经发送</li>
+<li>3：正在接收数据</li>
+<li>4：接收数据完成</li>
+</ul>
+<p>获取ajax状态码</p>
+<div class="code"><ol class="num-container"></ol><ol class="code-container"></ol></div>
+
+<p>当ajax状态码发生变化时触发事件</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">oAjax</span><span class="p">.</span><span class="nx">onreadystatechange</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="kd">function</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;事件处理函数
+</span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h2>Ajax错误处理</h2>
+<ol>
+<li>网络畅通，返回的结果不是预期结果</li>
+</ol>
+<p>oAjax.status 获取http状态码</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="p">(</span><span class="nx">oAjax</span><span class="p">.</span><span class="nx">status</span><span class="">&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="mf">400</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">alert</span><span class="p">(</span><span class="s2">"请求出错"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ol>
+<li>400：不是预期结果</li>
+<li>404：要检查地址是否错误</li>
+<li>
+<p>500：告诉后端说500，后端的问题</p>
+</li>
+<li>
+<p>网络中断，无法返回状态码</p>
+</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nx">oAjax</span><span class="p">.</span><span class="nx">onerror</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="kd">function</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">alert</span><span class="p">(</span><span class="s1">'网络中断，无法发送Ajax请求'</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<h3>ajax状态码 与 http状态码的区别</h3>
+<p>Ajax状态码：表示Ajax请求的过程状态，是ajax返回的</p>
+<p>Http状态码：表示请求的处理结果，是服务器端返回的</p>
+<p>​   </p>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

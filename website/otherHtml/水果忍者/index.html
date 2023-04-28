@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+<audio src="sound/抡气.mp3" id="fruitDestroySound" preload="auto"></audio>
+<audio src="sound/开枪.mp3" id="bomberDestroySound" preload="auto"></audio>
+<audio src="sound/浅野隼人%20-%20小手鞠.mp3" id="bgm" controls="controls" autoplay loop></audio>
+<div class="staticJuice"></div>
+<p>倒计时：<span class="countDown">60</span>s</p>
+<p id="scoreP">得分：<span id="scoreNum">0</span></p>
+<p id="lifeP">生命值：<span id="lifeNum">0</span></p>
+
+<canvas id="bgCanvas" width="1920" height="1080">
+</canvas>
+</body>
+
+
+<script src="index.js"></script>
+<script src="blade.js"></script>
+</html>

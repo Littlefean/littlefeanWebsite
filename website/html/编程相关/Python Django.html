@@ -1,0 +1,188 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Python Django</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>学习笔记Django</h1>
+<hr />
+<h2>创建项目</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">django-admin&nbsp;startproject&nbsp;项目名</span></div></div></li>
+</ol></div>
+
+<h2>设置项目</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;把英文改为中文</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">LANGUAGE_CODE</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="s1">'</span><span class="s1">zh-hans</span><span class="s1">'</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;把国际时区改为中国时区</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">TIME_ZONE</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="s1">'</span><span class="s1">Asia/Shanghai</span><span class="s1">'</span></div></div></li>
+</ol></div>
+
+<h3>取消post请求的防范措施</h3>
+<p>禁止掉 settings.py 中 MIDDLEWARE 中的 CsrfViewsMiddleWare 的中间件</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">MIDDLEWARE</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="p">[</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="c1">#&nbsp;'django.middleware.csrf.CsrfViewsMiddleware',</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">]</span></div></div></li>
+</ol></div>
+
+<p>解决同源请求问题</p>
+<p>https://blog.csdn.net/m0_43432638/article/details/108222869</p>
+<p>安装了一个新的库 <code>pip install django-cors-headers</code></p>
+<h2>测试启动服务</h2>
+<p>进入项目文件夹</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">python3&nbsp;manage.py&nbsp;runserver</span></div></div></li>
+</ol></div>
+
+<p>打开浏览器，输入 <code>http://127.0.0.1:8000</code> 可以看到启动页面（默认是监听的8000端口）</p>
+<p>任意端口号启动项目，这个是开了个80端口</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">python&nbsp;manage.py&nbsp;runserver&nbsp;0.0.0.0:80</span></div></div></li>
+</ol></div>
+
+<h2>关闭项目</h2>
+<p>在黑框下按 ctrl C</p>
+<h2>用pycharm打开这个项目</h2>
+<p>注意：要以打开这个目录文件夹为文件夹打开这个项目，不要在外面</p>
+<h2>视图函数</h2>
+<p>这些视图函数建议写到和urls.py同一个目录下新建一个py文件里面</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">.</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="n">views</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">urlpatterns</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="p">[</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">path</span><span class="p">(</span><span class="s1">'</span><span class="s1">'</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">views</span><span class="o">.</span><span class="n">getIndex</span><span class="p">)</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">path</span><span class="p">(</span><span class="s1">'</span><span class="s1">testBtn</span><span class="s1">'</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">views</span><span class="o">.</span><span class="n">testBtn</span><span class="p">)</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">path</span><span class="p">(</span><span class="s1">'</span><span class="s1">testBtn2</span><span class="s1">'</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">views</span><span class="o">.</span><span class="n">testBtn2</span><span class="p">)</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">]</span></div></div></li>
+</ol></div>
+
+<p>是一个接收http请求并且返回响应的一个def函数</p>
+<p>return的时候必须return的是HttpResponse对象</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">django</span><span class="nn">.</span><span class="nn">http</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="n">HttpResponse</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">xxx</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">html</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">&lt;html&gt;&lt;/html&gt;</span><span class="s2">"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="n">HttpResponse</span><span class="p">(</span><span class="n">html</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<p>在同名目录里有一个urls.py文件，</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">urlpatterns</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="p">[</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">path</span><span class="p">(</span><span class="s1">'</span><span class="s1">admin/</span><span class="s1">'</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">admin</span><span class="o">.</span><span class="n">site</span><span class="o">.</span><span class="n">urls</span><span class="p">)</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">]</span></div></div></li>
+</ol></div>
+
+<p>需要在这里添加</p>
+<p>左边的是请求地址，右边的视图函数</p>
+<h3>path的配置转换器</h3>
+<p>应对成百上千个页面，地址里只是数字变化了的情况</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">path</span><span class="p">(</span><span class="s1">'</span><span class="s1">page/&lt;int:pg&gt;</span><span class="s1">'</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">views</span><span class="o">.</span><span class="n">xxx</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;&lt;int:&gt;&nbsp;表示int类型</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;p&nbsp;表示给这个变量取了一个变量名，会传送到后面的视图函数里面去，传参的方式是关键字传参</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">xxx</span><span class="p">(</span><span class="n">request</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">pg</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="o">.</span><span class="o">.</span><span class="o">.</span></div></div></li>
+</ol></div>
+
+<p>转换器类型：</p>
+<ul>
+<li>int：匹配自然数</li>
+<li>str：非空字符串</li>
+<li>slug：ASCII码组成的比较短的字符串</li>
+<li>path：非空字段，包括路径分隔符</li>
+</ul>
+<p>注意：在path的那个列表里是按着顺序从前往后匹配的</p>
+<h3>re_path 路由配置</h3>
+<p><code>re_path(reg, view, name=xxx)</code> 唯一的区别就是第一个参数要匹配一个正则进去</p>
+<h2>get请求和post请求</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">test</span><span class="p">(</span><span class="n">request</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="">&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">GET</span><span class="s2">"</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;显示整个字典结构</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="p">[</span><span class="s1">'</span><span class="s1">a</span><span class="s1">'</span><span class="p">]</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;强行获取字典中a的内容，容易报错</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">getlist</span><span class="p">(</span><span class="s1">'</span><span class="s1">a</span><span class="s1">'</span><span class="p">)</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;强行获取字典中a的内容，返回的是一个列表</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="n">request</span><span class="o">.</span><span class="n">GET</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">'</span><span class="s1">c</span><span class="s1">'</span><span class="p">,</span><span class="">&nbsp;</span><span class="s1">'</span><span class="s1">noC</span><span class="s1">'</span><span class="p">)</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;温柔的获取一个内容，如果没有会返回一个默认值</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">pass</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">elif</span><span class="">&nbsp;</span><span class="n">request</span><span class="o">.</span><span class="n">method</span><span class="">&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">POST</span><span class="s2">"</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">pass</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="n">HttpResponse</span><span class="p">(</span><span class="s2">"</span><span class="s2">--</span><span class="s2">"</span><span class="p">)</span></div></div></li>
+</ol></div>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

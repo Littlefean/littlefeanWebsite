@@ -1,0 +1,250 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Python 暴力实验</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>暴力实验</h1>
+<hr />
+<p>环境：py3.7.2，pyCharm内运行同时开了百度云浏览器qq等其他应用程序</p>
+<p>此次实验的意义在于让我们对python暴力的速度心里有个谱。</p>
+<h2>探究循环内print对程序执行速度的影响</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">i</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">0</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">while</span><span class="">&nbsp;</span><span class="kc">True</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="o">+</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">1</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<p>一分钟之后打印到了：15234500</p>
+<p>如果改成这样</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">main</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">0</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">while</span><span class="">&nbsp;</span><span class="kc">True</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="o">+</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">1</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="o">%</span><span class="">&nbsp;</span><span class="mi">100</span><span class="">&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="mi">0</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="kc">None</span></div></div></li>
+</ol></div>
+
+<p>一分钟之后打印到了：588877600，速度是上一个的38倍</p>
+<p>继续降低打印频率</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">main</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">0</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">while</span><span class="">&nbsp;</span><span class="kc">True</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="o">+</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">1</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="o">%</span><span class="">&nbsp;</span><span class="mi">10000</span><span class="">&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="mi">0</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="kc">None</span></div></div></li>
+</ol></div>
+
+<p>一分钟之后到了：761820000，速度是每一步都打印的50倍，总体提升的幅度减小了</p>
+<p>再继续降低打印频率</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">main</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">0</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">while</span><span class="">&nbsp;</span><span class="kc">True</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="o">+</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">1</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="o">%</span><span class="">&nbsp;</span><span class="mi">1000000</span><span class="">&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="mi">0</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="kc">None</span></div></div></li>
+</ol></div>
+
+<p>一分钟之后到了：824000000，速度是第一次实验的54倍，速度提升效果已经不明显了。</p>
+<p>一分钟可以遍历800..00（8后8个零） 这么多次</p>
+<h4>结论：</h4>
+<p>如果每一步都打印，会拖慢50倍左右</p>
+<h2>for循环比while循环快吗</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">main</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">for</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">range</span><span class="p">(</span><span class="mi">1000000000000</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="kc">None</span></div></div></li>
+</ol></div>
+
+<p>一分钟之后遍历到了：14596281，相比while循环，居然还慢了5%</p>
+<h2>列表推导式更快吗</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">timer</span><span class="p">(</span><span class="n">func</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">def</span><span class="">&nbsp;</span><span class="nf">newFunc</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">t1</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">time</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">func</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="n">time</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">-</span><span class="">&nbsp;</span><span class="n">t1</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="n">newFunc</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nd">@timer</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">main</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">arr</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="p">[</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">for</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">range</span><span class="p">(</span><span class="mi">500000</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">arr</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">i</span><span class="">&nbsp;</span><span class="o">*</span><span class="o">*</span><span class="">&nbsp;</span><span class="mi">2</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="kc">None</span></div></div></li>
+</ol></div>
+
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="mf">0</span><span class="mf">.17652654647827148</span></div></div></li>
+</ol></div>
+
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nd">@timer</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">main</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;arr&nbsp;=&nbsp;[]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;for&nbsp;i&nbsp;in&nbsp;range(500000):</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;arr.append(i&nbsp;**&nbsp;2)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">arr</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="p">[</span><span class="n">i</span><span class="">&nbsp;</span><span class="o">*</span><span class="o">*</span><span class="">&nbsp;</span><span class="mi">2</span><span class="">&nbsp;</span><span class="k">for</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">range</span><span class="p">(</span><span class="mi">500000</span><span class="p">)</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="kc">None</span></div></div></li>
+</ol></div>
+
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="mf">0</span><span class="mf">.15957307815551758</span></div></div></li>
+</ol></div>
+
+<p>只快了一点点 0.02秒，扩大数据量发现也依然只是快0.02秒</p>
+<h2>空for循环测试</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nd">@timer</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">main</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">for</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">range</span><span class="p">(</span><span class="mi">800000000</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">pass</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="kc">None</span></div></div></li>
+</ol></div>
+
+<p>13.081990480422974秒</p>
+<p>14.064324378967285</p>
+<p>如果里面添加一个判断语句</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nd">@timer</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">main</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">for</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">range</span><span class="p">(</span><span class="mi">800000000</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="o">%</span><span class="">&nbsp;</span><span class="mi">2</span><span class="">&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="mi">0</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">pass</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">pass</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="kc">None</span></div></div></li>
+</ol></div>
+
+<p>37.41891169548035，速度变慢了2.6倍</p>
+<p>如果改成两个pass，是不是两个pass都会执行</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nd">@timer</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">main</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">for</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">range</span><span class="p">(</span><span class="mi">800000000</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">pass</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">pass</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="kc">None</span></div></div></li>
+</ol></div>
+
+<p>13.391043901443481秒，似乎不会</p>
+<p>经过测试发现即使加了20个pass也还是13秒左右</p>
+<p>如果把pass改成点点点</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nd">@timer</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">main</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">for</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">range</span><span class="p">(</span><span class="mi">800000000</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="o">.</span><span class="o">.</span><span class="o">.</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="kc">None</span></div></div></li>
+</ol></div>
+
+<p>13.304449796676636，依然如此</p>
+<p>多加了20行的点点点，还是13.175700902938843，13秒左右，貌似点点点还比pass更快。</p>
+<p>其他语句比较速度</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nd">@timer</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">main</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">for</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">range</span><span class="p">(</span><span class="mi">800000000</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">arr</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="p">[</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="kc">None</span></div></div></li>
+</ol></div>
+
+<p>26.918959379196167</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nd">@timer</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">main</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">for</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">range</span><span class="p">(</span><span class="mi">800000000</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">a</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">1</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="kc">None</span></div></div></li>
+</ol></div>
+
+<p>15.657132625579834</p>
+<p>声明一个变量的速度要快于声明list的速度</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nd">@timer</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">main</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">a</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">0</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">for</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">range</span><span class="p">(</span><span class="mi">800000000</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">a</span><span class="">&nbsp;</span><span class="o">+</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">1</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="kc">None</span></div></div></li>
+</ol></div>
+
+<p>33.9800968170166</p>
+<p>如果是累加就又慢了</p>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

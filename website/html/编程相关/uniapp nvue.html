@@ -1,0 +1,253 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>uniapp nvue</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>学习笔记 uniapp nvue</h1>
+<hr />
+<h2>相比vue</h2>
+<ul>
+<li>native是本地的意思，性能更高</li>
+<li>组件更多</li>
+</ul>
+<p>但是有些时候性能不如vue高：</p>
+<ul>
+<li>canvas画布</li>
+<li>不支持媒体查询，动态横竖屏切换不方便</li>
+</ul>
+<h2>新建nvue界面</h2>
+<p>Hbuder：</p>
+<p>文件 新建 uniapp页面 创建nvue界面</p>
+<p>hbuder中不需要修改pages.json文件</p>
+<h2>开发页面</h2>
+<h3>template</h3>
+<p>模板写法和数据绑定与vue相同</p>
+<h3>style</h3>
+<p>并非所有浏览器的css均支持，布局模型只支持flex布局</p>
+<h3>script</h3>
+<p>写法同vue，并且支持三种API：</p>
+<ul>
+<li>nvue API</li>
+<li>uni API</li>
+<li>plus API</li>
+</ul>
+<h2>与vue的细节区别</h2>
+<ol>
+<li>只能用 <code>v-if</code> 不能用 <code>v-show</code></li>
+<li>默认竖排，改的话还得改manifest.json文件</li>
+<li>文字内容必须写在 <code>&lt;text&gt;</code> 里面</li>
+<li>class进行绑定只支持数组写法</li>
+<li>不支持使用ts</li>
+</ol>
+<h3>css方面</h3>
+<ol>
+<li>只能使用flex布局只能使用flex布局</li>
+<li>布局没有百分比，没有媒体查询，横竖屏容易出问题，建议锁定方向</li>
+<li>不支持背景图，但可以用 <code>image</code> 组件配合层级关系实现</li>
+<li>只能使用class选择器，并且不能写选择器连接符</li>
+<li>各组件在安卓默认透明，尽量设置 <code>background-color</code> 否则可能重影</li>
+<li>安卓端尽量少用圆角，性能不好</li>
+<li>不能在style中引入字体文件</li>
+<li>css不支持 <code>1px red solid</code> 这种简写</li>
+</ol>
+<h2>样式</h2>
+<h3>盒子模型</h3>
+<p>和原生css盒子模型差不多</p>
+<ul>
+<li>nvue盒模型的 <code>box-sizing</code> 默认为 <code>border-box</code></li>
+<li>安卓nvue只支持 <code>overflow:hidden</code></li>
+<li>iOS 上，nvue支持 <code>overflow:hidden</code> 和 <code>overflow:visible</code>，默认是 <code>overflow:visible</code></li>
+</ul>
+<h3>弹性盒模型</h3>
+<p>默认的，不需要手动为元素添加 <code>display: flex;</code> 属性</p>
+<h3>position定位</h3>
+<p>默认相对定位</p>
+<p>定位只有：相对、绝对、固定、粘性</p>
+<h3>过渡动画</h3>
+<p>大部分和原生一样</p>
+<h3>变形</h3>
+<p>大部分也和原生一样</p>
+<h3>伪类</h3>
+<table>
+<thead>
+<tr>
+<th>参数名</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>active</td>
+<td>所有组件都支持</td>
+</tr>
+<tr>
+<td>focus</td>
+<td>只有 <code>input</code> 组件和 <code>textarea</code> 组件支持</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td>只有 <code>input</code> 组件和 <code>textarea</code> 组件支持</td>
+</tr>
+<tr>
+<td>enabled</td>
+<td>只有 <code>input</code> 组件和 <code>textarea</code> 组件支持</td>
+</tr>
+</tbody>
+</table>
+<p>加了伪类的会覆盖不加伪类的</p>
+<h3>文字</h3>
+<p>只有 text 标签才能设置文字大小的功能，大部分和原生一样</p>
+<h2>API</h2>
+<h3>dom</h3>
+<p>引入app原生插件</p>
+<div class="code"><ol class="num-container"></ol><ol class="code-container"></ol></div>
+
+<h4>addRule</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="c1">//type:&nbsp;要加载的类型
+</span><span class="c1">//contentObject：加载内容的对象
+</span><span class="nx">addRule</span><span class="p">(</span><span class="nx">type</span><span class="p">,</span><span class="">&nbsp;</span><span class="nx">contentObject</span><span class="p">)</span><span class="p">{</span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>加载自定义字体</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="k">export</span><span class="">&nbsp;</span><span class="k">default</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">beforeCreate</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">const</span><span class="">&nbsp;</span><span class="nx">domModule</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">requireNativePlugin</span><span class="p">(</span><span class="s1">'dom'</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">domModule</span><span class="p">.</span><span class="nx">addRule</span><span class="p">(</span><span class="s1">'fontFace'</span><span class="p">,</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="s1">'fontFamily'</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"myIconfont"</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="s1">'src'</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"url('http://at.alicdn.com/t/font_2234252_v3hj1klw6k9.ttf')"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">.</span><span class="nc">my-iconfont</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">font-family</span><span class="p">:</span><span class="n">myIconfont</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">font-size</span><span class="p">:</span><span class="mi">60</span><span class="n">rpx</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">color</span><span class="p">:</span><span class="">&nbsp;</span><span class="mh">#00AAFF</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h4>scrollToElement</h4>
+<p>让页面滚动到 要滚动的节点 对应的组件</p>
+<h3>animation</h3>
+<p>用来在组件上执行动画</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">view</span><span class="">&nbsp;</span><span class="na">ref</span><span class="o">=</span><span class="s">"test"</span><span class="">&nbsp;</span><span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">"动画方法名"</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"box-item"</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div><div class="line-numbers"><div class="line-num" data-line-num="19"></div></div><div class="line-numbers"><div class="line-num" data-line-num="20"></div></div><div class="line-numbers"><div class="line-num" data-line-num="21"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">const</span><span class="">&nbsp;</span><span class="nx">animation</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">requireNativePlugin</span><span class="p">(</span><span class="s1">'animation'</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">export</span><span class="">&nbsp;</span><span class="k">default</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">methods</span><span class="o">:</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">动画方法名</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">var</span><span class="">&nbsp;</span><span class="nx">testEl</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="nx">$refs</span><span class="p">.</span><span class="nx">test</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">animation</span><span class="p">.</span><span class="nx">transition</span><span class="p">(</span><span class="nx">testEl</span><span class="p">,</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">styles</span><span class="o">:</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">backgroundColor</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'#007AFF'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">transform</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'translate(100px,&nbsp;80px)'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">transformOrigin</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'center&nbsp;center'</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">duration</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">800</span><span class="p">,</span><span class="">&nbsp;</span><span class="c1">//ms
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">timingFunction</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'ease'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">delay</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">0</span><span class="">&nbsp;</span><span class="c1">//ms
+</span><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span><span class="p">(</span><span class="p">)</span><span class="p">=&gt;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">showToast</span><span class="p">(</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">title</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'finished'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">icon</span><span class="o">:</span><span class="s1">'none'</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h2>nvue和vue通信</h2>
+<h3>共享数据变量</h3>
+<p>全局变量全端通用，写在 <code>export default</code> 中</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="err">g</span><span class="err">l</span><span class="err">o</span><span class="err">b</span><span class="err">a</span><span class="err">l</span><span class="err">D</span><span class="err">a</span><span class="kc">ta</span><span class="p">:</span><span class="">&nbsp;</span><span class="p">{</span><span class="">&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="p">:</span><span class="">&nbsp;</span><span class="err">'</span><span class="kc">te</span><span class="err">x</span><span class="kc">t</span><span class="err">'</span><span class="">&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">},</span></div></div></li>
+</ol></div>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

@@ -1,0 +1,17 @@
+.asteroid {
+  height: 5px;
+  width: 50%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-top: -2.5px;
+  transform-origin: left center;
+  outline: solid 1px darkred;
+}
+.asteroid .star {
+  right: 0;
+  width: 1px;
+  height: 1px;
+  background-color: #fff;
+}
+/*# sourceMappingURL=asteroid.css.map */

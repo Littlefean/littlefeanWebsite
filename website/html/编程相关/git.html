@@ -1,0 +1,249 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>git</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>学习笔记git</h1>
+<hr />
+<h2>初始化git</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">config</span><span class="">&nbsp;</span><span class="o">-</span><span class="o">-</span><span class="k">global</span><span class="">&nbsp;</span><span class="n">user</span><span class="o">.</span><span class="n">name</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">littlefean</span><span class="s2">"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">config</span><span class="">&nbsp;</span><span class="o">-</span><span class="o">-</span><span class="k">global</span><span class="">&nbsp;</span><span class="n">user</span><span class="o">.</span><span class="n">email</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">....@123.com</span><span class="s2">"</span></div></div></li>
+</ol></div>
+
+<h2>git中的文件结构</h2>
+<ul>
+<li>
+<p>未跟踪</p>
+</li>
+<li>
+<p>已跟踪</p>
+</li>
+</ul>
+<p>纳入了版本控制的文件，在上一次快照中有它们的记录</p>
+<ul>
+<li>已修改 modified</li>
+<li>已暂存 staged</li>
+<li>已提交 committed</li>
+</ul>
+<p><img alt="" src="lifecycle.png" /></p>
+<h2>设置工作区文件夹为仓库</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;先在cmd种进入相应文件夹下</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">init</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;会在该文件夹下生成.git隐藏文件夹，其中包括两部分，一个是暂存，另一个是分支</span></div></div></li>
+</ol></div>
+
+<h2>查看</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;进入到路径下</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">status</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;他会展示出未跟踪的文件</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">add</span><span class="">&nbsp;</span><span class="o">.</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;把工作区里的所有文件推进暂存区（跟踪某个文件）</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">commit</span><span class="">&nbsp;</span><span class="o">-</span><span class="n">m</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">add&nbsp;to&nbsp;files</span><span class="s2">"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;把暂存区的文件提交到版本库并添加一条说明信息</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">commit</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;Esc，退出输入状态。</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">:</span><span class="n">wq</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;写好之后输入:wq&nbsp;(我去)结束并提交</span></div></div></li>
+</ol></div>
+
+<h2>远程仓库</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div><div class="line-numbers"><div class="line-num" data-line-num="19"></div></div><div class="line-numbers"><div class="line-num" data-line-num="20"></div></div><div class="line-numbers"><div class="line-num" data-line-num="21"></div></div><div class="line-numbers"><div class="line-num" data-line-num="22"></div></div><div class="line-numbers"><div class="line-num" data-line-num="23"></div></div><div class="line-numbers"><div class="line-num" data-line-num="24"></div></div><div class="line-numbers"><div class="line-num" data-line-num="25"></div></div><div class="line-numbers"><div class="line-num" data-line-num="26"></div></div><div class="line-numbers"><div class="line-num" data-line-num="27"></div></div><div class="line-numbers"><div class="line-num" data-line-num="28"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;我的远程仓库</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">https</span><span class="p">:</span><span class="o">/</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Littlefean</span><span class="o">/</span><span class="n">EverydayEmail</span><span class="o">.</span><span class="n">git</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;创建一个远程仓库</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">remote</span><span class="">&nbsp;</span><span class="n">add</span><span class="">&nbsp;</span><span class="n">自己给远程远程仓库命名一个英文名</span><span class="">&nbsp;</span><span class="n">https</span><span class="p">:</span><span class="o">/</span><span class="o">/</span><span class="o">.</span><span class="o">.</span><span class="o">.</span><span class="o">.</span><span class="o">.</span><span class="o">.</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;master是一个默认分值的名字</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">push</span><span class="">&nbsp;</span><span class="n">远程仓库英文名</span><span class="">&nbsp;</span><span class="n">master</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">push</span><span class="">&nbsp;</span><span class="n">origin</span><span class="">&nbsp;</span><span class="n">littlefean</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;查看所有已有的远程仓库地址</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">remote</span><span class="">&nbsp;</span><span class="o">-</span><span class="n">v</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;下载文件</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">pull</span><span class="">&nbsp;</span><span class="n">远程仓库英文名</span><span class="">&nbsp;</span><span class="n">master</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">fetch</span><span class="">&nbsp;</span><span class="n">https</span><span class="p">:</span><span class="o">/</span><span class="o">/</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">Rutubet</span><span class="o">/</span><span class="n">CrAuto</span><span class="o">.</span><span class="n">git</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;重叠仓库</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">checkout</span><span class="">&nbsp;</span><span class="o">-</span><span class="n">b</span><span class="">&nbsp;</span><span class="n">feature</span><span class="">&nbsp;</span><span class="n">origin</span><span class="o">/</span><span class="n">feature</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;注意：克隆仅仅在初始本地仓库的时候使用</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">clone</span><span class="">&nbsp;</span><span class="n">https</span><span class="p">:</span><span class="o">/</span><span class="o">/</span><span class="o">.</span><span class="o">.</span><span class="o">.</span><span class="o">.</span><span class="o">.</span><span class="o">.</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;切换从远程仓库里克隆过来的一个分支</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;因为默认是master分支，但是其他分支是不会显示出来的，所以要用下面的指令来进行切换分支</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">checkout</span><span class="">&nbsp;</span><span class="o">-</span><span class="o">-</span><span class="n">track</span><span class="">&nbsp;</span><span class="n">origin</span><span class="o">/</span><span class="n">littlefean</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;删除一个分支</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">branch</span><span class="">&nbsp;</span><span class="o">-</span><span class="n">d</span><span class="">&nbsp;</span><span class="n">littlefean</span></div></div></li>
+</ol></div>
+
+<h2>分支</h2>
+<p>主分支为master分支，这个一般是发布版的稳定的分支、然而一般开发的时候不会轻易往master分支上放东西，会往开发用的分支上放东西</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;查看所有分支</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">branch</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;创建分支</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">branch</span><span class="">&nbsp;</span><span class="n">dev</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;展示后前面带一个&nbsp;*&nbsp;的表示是当前的有效分支</span></div></div></li>
+</ol></div>
+
+<h3>切换分支</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">checkout</span><span class="">&nbsp;</span><span class="n">分支名</span></div></div></li>
+</ol></div>
+
+<p>注意，切换到某一个分支的时候，工作区里的文件内容会发生改变</p>
+<h3>查看分支的提交记录</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;查看简略模式的分支提交记录</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">log</span><span class="">&nbsp;</span><span class="o">-</span><span class="o">-</span><span class="n">oneline</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;查看完整的详细的分支提交记录</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">log</span></div></div></li>
+</ol></div>
+
+<h3>分支合并</h3>
+<p>主要代码</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;合并分支</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">merge</span><span class="">&nbsp;</span><span class="n">另一个分支的名字</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;查看分支合并图形</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">log</span><span class="">&nbsp;</span><span class="o">-</span><span class="o">-</span><span class="n">online</span><span class="">&nbsp;</span><span class="o">-</span><span class="o">-</span><span class="n">graph</span></div></div></li>
+</ol></div>
+
+<p>主要过程</p>
+<ol>
+<li>提交当前的副分支</li>
+<li>从副分支切到主分支上</li>
+<li>把副分支的内容合并到主分支上</li>
+</ol>
+<p>快速合并（fast-forward），触发条件：主分支没动，副分支动了，主分支上的指针直接移动到了副分支上</p>
+<p>三方合并：绝大多数的状态</p>
+<h4>合并冲突</h4>
+<p>含有冲突的文件会出现以下内容</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&lt;&lt;&lt;&lt;&lt;&lt;&lt;&nbsp;HEAD</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">hello&nbsp;master(分支前的内容)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">==============</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">word&nbsp;dev&nbsp;update（另一个分支更改的内容）</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&gt;&gt;&gt;&gt;&gt;&gt;&gt;&nbsp;Dev</span></div></div></li>
+</ol></div>
+
+<p>过程：</p>
+<ol>
+<li>合并文件</li>
+<li>解决冲突</li>
+<li>再次提交</li>
+</ol>
+<p>取消跟踪</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">git</span><span class="">&nbsp;</span><span class="n">rm</span><span class="">&nbsp;</span><span class="o">-</span><span class="o">-</span><span class="n">cached</span><span class="">&nbsp;</span><span class="n">a</span><span class="o">.</span><span class="n">txt</span></div></div></li>
+</ol></div>
+
+<h2>在IDEA中使用git</h2>
+<ol>
+<li>首先在项目的根目录下新建一个文件 <code>.gitignore</code> </li>
+</ol>
+<p>这个文件里写</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;.idea</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;*.iml</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;target</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;*.class</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;*.jar</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;*.war</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ol>
+<li>点击菜单 "VCS" --- "Commit"</li>
+</ol>
+<p>弹出菜单, 方框全部勾选</p>
+<h3>将本地git仓库提交到远程</h3>
+<ol>
+<li>复制远程仓库地址</li>
+<li>点击 "VCS" --- "Git" --- "push"</li>
+</ol>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

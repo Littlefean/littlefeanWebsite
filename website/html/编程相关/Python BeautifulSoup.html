@@ -1,0 +1,258 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Python BeautifulSoup</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>BeautifulSoup</h1>
+<hr />
+<h2>三种库：</h2>
+<hr />
+<table>
+<thead>
+<tr>
+<th>库</th>
+<th>使用方法</th>
+<th>优点</th>
+<th>缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Python标准库</td>
+<td></td>
+<td>内置，速度适中</td>
+<td>版本更新不稳定</td>
+</tr>
+<tr>
+<td>lxml</td>
+<td></td>
+<td>速度快</td>
+<td>需要C语言库</td>
+</tr>
+<tr>
+<td>html5lib</td>
+<td></td>
+<td>容错强，稳定</td>
+<td>速度慢</td>
+</tr>
+</tbody>
+</table>
+<p>提示：优先推荐用lxml，如果出现了问题，再使用html5lib</p>
+<h2>基本使用：</h2>
+<hr />
+<h4>步骤</h4>
+<ol>
+<li>导入BeautifulSoup类</li>
+<li>传递初始化参数，并初始化</li>
+<li>创建类对象，操作对象获取解析、提取数据</li>
+</ol>
+<h4>举例</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">bs4</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="n">BeautifulSoup</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">soup</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">markup</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">features</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h6>参数解释：</h6>
+<p>markup：被解析的html字符串或者文件内容</p>
+<p>features：解析器类型，可以自己指定，不写则默认解析器</p>
+<h6>第一个参数使用方式两种：</h6>
+<p>使用字符串变量</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">bs4</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="n">BeautifulSoup</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">soup</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_str</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<p>使用open函数打开</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">bs4</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="n">BeautifulSoup</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">soup</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="nb">open</span><span class="p">(</span><span class="n">index</span><span class="o">.</span><span class="n">html</span><span class="p">)</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h4>选择器分类：</h4>
+<ul>
+<li>节点选择器</li>
+<li>方法选择器</li>
+<li>CSS选择器</li>
+</ul>
+<h2>节点选择器</h2>
+<hr />
+<h3>选取元素的方法</h3>
+<h4>格式：</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">bs4</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="n">BeautifulSoup</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">soup</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_str</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nb">print</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">titile</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;会把html文件里的titile部分打印出来</span></div></div></li>
+</ol></div>
+
+<p>注意：当html中存在多个相同的节点的时候，会提取第一个节点</p>
+<h3>提取信息的方法</h3>
+<h4>获取名称</h4>
+<p>格式：<code>soup.tag.name</code></p>
+<p>返回值：字符串</p>
+<p>例如：<code>my_name = soup.a.name</code></p>
+<h4>获取属性</h4>
+<p>格式：<code>soup.tag.attrs</code></p>
+<p>返回值：字典</p>
+<p>例如：<code>soup.a.attrs</code></p>
+<p>结果：<code>{'herf': 'https...', 'class':['sister'], 'id': 'link1'}</code></p>
+<h4>获取内容</h4>
+<p>格式：<code>soup.tag.string</code></p>
+<p>返回值：字符串</p>
+<p>例如：<code>print(soup.tag.string)</code></p>
+<h3>嵌套选择的方法</h3>
+<p>格式：<code>soup.tag.tag</code></p>
+<p>例如：<code>soup.head.title</code></p>
+<h3>关联选择的方法</h3>
+<h4>子节点：</h4>
+<p>格式：soup.tag.contents</p>
+<p>返回值：列表</p>
+<p>注意：返回的结果是第一层子节点</p>
+<p>格式：soup.tag.children</p>
+<p>返回值：生成器</p>
+<p>注意：需要使用for循环来遍历这个生成器，获取的结果是直接的子节点</p>
+<h4>子孙节点：</h4>
+<p>​   soup.tag.descendants</p>
+<h4>父节点：</h4>
+<p>​   soup.tag.parent</p>
+<h4>祖先节点：</h4>
+<p>​   soup.tag.parents</p>
+<h4>兄弟节点：</h4>
+<p>获取后面一个节点：</p>
+<p>​   soup.tag.next_sibling</p>
+<p>获取后面所有的节点：</p>
+<p>​   soup.tag.next_siblings</p>
+<p>获取前面的节点：</p>
+<p>​   soup.tag..previous_sibling</p>
+<p>获取前面所有的节点：</p>
+<p>​   soup.tag.previous_siblings</p>
+<h2>CSS选择器</h2>
+<hr />
+<h3>基础用法</h3>
+<h4>类选择器</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nb">print</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">"</span><span class="s2">.className1&nbsp;.className2</span><span class="s2">"</span><span class="p">)</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;根据类名往下获取</span></div></div></li>
+</ol></div>
+
+<h4>标签选择器</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nb">print</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">"</span><span class="s2">ul&nbsp;li</span><span class="s2">"</span><span class="p">)</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;根据标签名往下获取</span></div></div></li>
+</ol></div>
+
+<h4>id选择器</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nb">print</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">"</span><span class="s2">#list-2&nbsp;li</span><span class="s2">"</span><span class="p">)</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h3>嵌套选择</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="k">for</span><span class="">&nbsp;</span><span class="n">ul</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="n">soup</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">"</span><span class="s2">ul</span><span class="s2">"</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="n">ul</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="nb">type</span><span class="p">(</span><span class="n">ul</span><span class="p">)</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="n">ul</span><span class="o">.</span><span class="n">select</span><span class="p">(</span><span class="s2">"</span><span class="s2">li</span><span class="s2">"</span><span class="p">)</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;打印ul内部的li</span></div></div></li>
+</ol></div>
+
+<h3>属性获取</h3>
+<h3>文本获取</h3>
+<p>用string和strings属性来获取</p>
+<h2>方法选择器</h2>
+<hr />
+<h3>find_all()方法</h3>
+<p>举例：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">bs4</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="n">BeautifulSoup</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">soup</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html_str</span><span class="p">,</span><span class="">&nbsp;</span><span class="s1">'</span><span class="s1">lxml</span><span class="s1">'</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;获取span标签，字符串</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nb">print</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">"</span><span class="s2">span</span><span class="s2">"</span><span class="p">)</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;获取span标签，正则表达式&nbsp;模型对象</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">import</span><span class="">&nbsp;</span><span class="nn">re</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">reg</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="s1">'</span><span class="s1">^sp</span><span class="s1">'</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nb">print</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">reg</span><span class="p">)</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;获取a和span标签&nbsp;列表</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nb">print</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="p">[</span><span class="s1">'</span><span class="s1">a</span><span class="s1">'</span><span class="p">,</span><span class="">&nbsp;</span><span class="s1">'</span><span class="s1">span</span><span class="s1">'</span><span class="p">]</span><span class="p">)</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;True的方法&nbsp;递归获取所有标签</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nb">print</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="p">)</span></div></div></li>
+</ol></div>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

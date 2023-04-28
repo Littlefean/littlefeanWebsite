@@ -1,0 +1,781 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Uniapp-Api</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>Uniapp Api</h1>
+<hr />
+<h2>基础</h2>
+<ul>
+<li>
+<p>日志打印</p>
+</li>
+<li>
+<p>log：如同传统web</p>
+</li>
+<li>
+<p>其他日志还有info，warn，error</p>
+</li>
+<li>
+<p>定时器</p>
+</li>
+<li>
+<p>同传统js</p>
+</li>
+<li>
+<p>uni.base64ToArrayBuffer</p>
+</li>
+</ul>
+<p>将 Base64 字符串转成 数组缓存对象</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;</span><span class="kd">const</span><span class="">&nbsp;</span><span class="nx">base64</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="s1">'test'</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="kd">const</span><span class="">&nbsp;</span><span class="nx">arrayBuffer</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">base64ToArrayBuffer</span><span class="p">(</span><span class="nx">base64</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ul>
+<li>uni.arrayBufferToBase64</li>
+</ul>
+<p>数组转字符串</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;</span><span class="kd">const</span><span class="">&nbsp;</span><span class="nx">arrayBuffer</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="nx">Uint8Array</span><span class="p">(</span><span class="p">[</span><span class="mf">55</span><span class="p">,</span><span class="">&nbsp;</span><span class="mf">55</span><span class="p">,</span><span class="">&nbsp;</span><span class="mf">55</span><span class="p">]</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="kd">const</span><span class="">&nbsp;</span><span class="nx">base64</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">arrayBufferToBase64</span><span class="p">(</span><span class="nx">arrayBuffer</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ul>
+<li>
+<p>应用级事件</p>
+</li>
+<li>
+<p>uni.onPageNotFound  监听应用要打开的页面不存在事件</p>
+</li>
+<li>uni.onError  监听小程序错误事件</li>
+<li>uni.onAppShow  监听应用切前台事件</li>
+<li>uni.onAppHide  监听应用切后台事件</li>
+<li>uni.offPageNotFound  取消监听应用要打开的页面不存在事件</li>
+<li>uni.offError  取消监听应用错误事件</li>
+<li>uni.offAppShow  取消监听小程序切前台事件</li>
+<li>uni.offAppHide  取消监听小程序切后台事件</li>
+</ul>
+<h2>网络</h2>
+<ul>
+<li>发起请求  发起网络请求</li>
+</ul>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">url</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'https://www.example.com/request'</span><span class="p">,</span><span class="">&nbsp;</span><span class="c1">//仅为示例，并非真实接口地址。
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">data</span><span class="o">:</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">text</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'uni.request'</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">header</span><span class="o">:</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="s1">'custom-header'</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'hello'</span><span class="">&nbsp;</span><span class="c1">//自定义请求头信息
+</span><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">success</span><span class="o">:</span><span class="">&nbsp;</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">=&gt;</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">data</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="nx">text</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="s1">'request&nbsp;success'</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ul>
+<li>
+<p>上传、下载</p>
+</li>
+<li>
+<p>uni.uploadFile(OBJECT)</p>
+</li>
+<li>
+<p>uni.downloadFile(OBJECT)</p>
+</li>
+<li>
+<p>SocketTask</p>
+</li>
+<li>
+<p>SocketTask.onMessage  监听 WebSocket 接受到服务器的消息事件</p>
+</li>
+<li>SocketTask.send  通过 WebSocket 连接发送数据</li>
+<li>SocketTask.close  关闭 WebSocket 连接</li>
+<li>SocketTask.onOpen  监听 WebSocket 连接打开事件</li>
+<li>SocketTask.onClose  监听 WebSocket 连接关闭事件</li>
+<li>SocketTask.onError  监听 WebSocket 错误事件</li>
+</ul>
+<h2>页面跳转</h2>
+<ul>
+<li>uni.navigateTo  保留当前页面，跳转到应用内的某个页面</li>
+<li>uni.redirectTo  关闭当前页面，跳转到应用内的某个页面</li>
+<li>uni.reLaunch  关闭所有页面，打开到应用内的某个页面</li>
+<li>uni.switchTab  跳转到 tabBar 页面，并关闭其他所有非 tabBar 页面</li>
+<li>uni.navigateBack  关闭当前页面，返回上一页面或多级页面</li>
+<li>uni.preloadPage  预加载页面</li>
+</ul>
+<h2>媒体</h2>
+<ul>
+<li>图片</li>
+<li>uni.chooseImage  从本地相册选择图片或使用相机拍照</li>
+<li>uni.previewImage  预览图片</li>
+<li>uni.getImageInfo  获取图片信息</li>
+<li>uni.saveImageToPhotosAlbum  保存图片到系统相册</li>
+<li>uni.compressImage  压缩图片</li>
+<li>文件</li>
+<li>uni.chooseFile   从本地选择文件</li>
+<li>wx.chooseMessageFile  从微信聊天会话中选择文件</li>
+<li>视频</li>
+<li>uni.chooseVideo  拍摄视频或从手机相册中选视频，返回视频的临时文件路径</li>
+<li>uni.chooseMedia  拍摄或从手机相册中选择图片或视频</li>
+<li>uni.saveVideoToPhotosAlbum  保存视频到系统相册</li>
+<li>uni.getVideoInfo  获取视频详细信息</li>
+<li>uni.compressVideo  压缩视频</li>
+<li>uni.openVideoEditor  打开视频编辑器</li>
+<li>
+<p>视频组件控制</p>
+</li>
+<li>
+<p>uni.createVideoContext  创建并返回 video 上下文 videoContext 对象</p>
+</li>
+<li>富文本</li>
+<li>
+<p>editorContext  editor 组件对应的 editorContext 实例</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">onEditorReady</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li></p>
+</li>
+</ul>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">createSelectorQuery</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nx">select</span><span class="p">(</span><span class="s1">'#editor'</span><span class="p">)</span><span class="p">.</span><span class="nx">context</span><span class="p">(</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">=&gt;</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="nx">editorCtx</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">res</span><span class="p">.</span><span class="nx">context</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span><span class="p">.</span><span class="nx">exec</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<ul>
+<li>
+<p>editorContext.format  修改样式</p>
+</li>
+<li>
+<p>editorContext.insertDivider  插入分割线</p>
+</li>
+<li>
+<p>editorContext.insertImage  插入图片</p>
+</li>
+<li>
+<p>editorContext.insertText   覆盖当前选区，设置一段文本</p>
+</li>
+<li>
+<p>editorContext.setContents   初始化编辑器内容，hmlt和delta同时存在时仅delta生效</p>
+</li>
+<li>
+<p>editorContext.getContents   获取编辑器内容</p>
+</li>
+<li>
+<p>editorContext.clear   清空编辑器内容</p>
+</li>
+<li>
+<p>editorContext.removeFormat   清除当前选区的样式</p>
+</li>
+<li>
+<p>editorContext.undo   撤销</p>
+</li>
+<li>
+<p>editorContext.redo   恢复</p>
+</li>
+</ul>
+<h2>键盘</h2>
+<ul>
+<li>uni.hideKeyboard   隐藏软键盘</li>
+<li>uni.onKeyboardHeightChange   监听键盘高度变化</li>
+</ul>
+<h2>界面</h2>
+<ul>
+<li>交互反馈</li>
+<li>
+<p>uni.showToast  显示消息提示框</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">showToast</span><span class="p">(</span><span class="p">{</span></div></div></li></p>
+</li>
+</ul>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">title</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'标题'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">duration</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">2000</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<ul>
+<li>
+<p>uni.hideToast  隐藏消息提示框</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">hideToast</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li></p>
+</li>
+</ul>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<ul>
+<li>
+<p>uni.showLoading  显示 loading 提示框</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">showLoading</span><span class="p">(</span><span class="p">{</span></div></div></li></p>
+</li>
+</ul>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">title</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'加载中'</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<ul>
+<li>
+<p>uni.hideLoading  隐藏 loading 提示框</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">showLoading</span><span class="p">(</span><span class="p">{</span></div></div></li></p>
+</li>
+</ul>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">title</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'加载中'</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">setTimeout</span><span class="p">(</span><span class="kd">function</span><span class="">&nbsp;</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">hideLoading</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span><span class="">&nbsp;</span><span class="mf">2000</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<ul>
+<li>
+<p>uni.showModal   显示模态弹窗</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">showModal</span><span class="p">(</span><span class="p">{</span></div></div></li></p>
+</li>
+</ul>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">title</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'提示'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">content</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'这是一个模态弹窗'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">success</span><span class="o">:</span><span class="">&nbsp;</span><span class="kd">function</span><span class="">&nbsp;</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">confirm</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'用户点击确定'</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="">&nbsp;</span><span class="k">else</span><span class="">&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">cancel</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'用户点击取消'</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<ul>
+<li>
+<p>uni.showActionSheet   从底部向上弹出操作菜单</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">showActionSheet</span><span class="p">(</span><span class="p">{</span></div></div></li></p>
+</li>
+</ul>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">itemList</span><span class="o">:</span><span class="">&nbsp;</span><span class="p">[</span><span class="s1">'A'</span><span class="p">,</span><span class="">&nbsp;</span><span class="s1">'B'</span><span class="p">,</span><span class="">&nbsp;</span><span class="s1">'C'</span><span class="p">]</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">success</span><span class="o">:</span><span class="">&nbsp;</span><span class="kd">function</span><span class="">&nbsp;</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'选中了第'</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">tapIndex</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="mf">1</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="s1">'个按钮'</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">fail</span><span class="o">:</span><span class="">&nbsp;</span><span class="kd">function</span><span class="">&nbsp;</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">errMsg</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<ul>
+<li>设置导航条</li>
+<li>
+<p>uni.setNavigationBarTitle   动态设置当前页面的标题</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">setNavigationBarTitle</span><span class="p">(</span><span class="p">{</span></div></div></li></p>
+</li>
+</ul>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">title</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'新的标题'</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<ul>
+<li>
+<p>uni.setNavigationBarColor   设置页面导航条颜色</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">setNavigationBarColor</span><span class="p">(</span><span class="p">{</span></div></div></li></p>
+</li>
+</ul>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">frontColor</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'#ffffff'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">backgroundColor</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'#ff0000'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">animation</span><span class="o">:</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">duration</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">400</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">timingFunc</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'easeIn'</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<ul>
+<li>
+<p>uni.showNavigationBarLoading   在当前页面显示导航条加载动画</p>
+</li>
+<li>
+<p>uni.hideNavigationBarLoading   在当前页面隐藏导航条加载动画</p>
+</li>
+<li>
+<p>uni.hideHomeButton   隐藏返回首页按钮</p>
+</li>
+<li>
+<p>设置TabBar</p>
+</li>
+<li>
+<p>uni.setTabBarItem   动态设置 tabBar 某一项的内容</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">setTabBarItem</span><span class="p">(</span><span class="p">{</span></div></div></li></p>
+</li>
+</ul>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">index</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">0</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">text</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'text'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">iconPath</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'/path/to/iconPath'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">selectedIconPath</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'/path/to/selectedIconPath'</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<ul>
+<li>
+<p>uni.setTabBarStyle   动态设置 tabBar 的整体样式</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">setTabBarStyle</span><span class="p">(</span><span class="p">{</span></div></div></li></p>
+</li>
+</ul>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">color</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'#FF0000'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">selectedColor</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'#00FF00'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">backgroundColor</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'#0000FF'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">borderStyle</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'white'</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<ul>
+<li>
+<p>uni.hideTabBar   隐藏 tabBar</p>
+</li>
+<li>
+<p>uni.showTabBar   显示 tabBar</p>
+</li>
+<li>
+<p>uni.setTabBarBadge   为 tabBar 某一项的右上角添加文本</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">setTabBarBadge</span><span class="p">(</span><span class="p">{</span></div></div></li></p>
+</li>
+</ul>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">index</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">0</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">text</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'1'</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<ul>
+<li>
+<p>uni.removeTabBarBadge   移除 tabBar 某一项右上角的文本</p>
+</li>
+<li>
+<p>uni.showTabBarRedDot   显示 tabBar 某一项的右上角的红点</p>
+</li>
+<li>
+<p>uni.hideTabBarRedDot    隐藏 tabBar 某一项的右上角的红点</p>
+</li>
+<li>
+<p>uni.onTabBarMidButtonTap    监听中间按钮的点击事件</p>
+</li>
+<li>
+<p>背景</p>
+</li>
+<li>
+<p>uni.setBackgroundColor   动态设置窗口的背景色</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">setBackgroundColor</span><span class="p">(</span><span class="p">{</span></div></div></li></p>
+</li>
+</ul>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">backgroundColor</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'#ffffff'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">backgroundColorTop</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'#222222'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">backgroundColorBottom</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'#333333'</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<ul>
+<li>
+<p>uni.setBackgroundTextStyle    动态设置下拉背景字体、loading 图的样式</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">setBackgroundTextStyle</span><span class="p">(</span><span class="p">{</span></div></div></li></p>
+</li>
+</ul>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">textStyle</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'dark'</span><span class="">&nbsp;</span><span class="c1">//&nbsp;下拉背景字体、loading&nbsp;图的样式为dark
+</span><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<ul>
+<li>
+<p>动画</p>
+</li>
+<li>
+<p>uni.createAnimation   创建一个动画实例</p>
+</li>
+<li>
+<p>滚动</p>
+</li>
+<li>
+<p>uni.pageScrollTo   将页面滚动到目标位置</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">pageScrollTo</span><span class="p">(</span><span class="p">{</span></div></div></li></p>
+</li>
+</ul>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">scrollTop</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">0</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">duration</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">300</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<ul>
+<li>窗口</li>
+<li>
+<p>uni.onWindowResize   监听窗口尺寸变化事件</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">onWindowResize</span><span class="p">(</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">=&gt;</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li></p>
+</li>
+</ul>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'变化后的窗口宽度='</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="nx">res</span><span class="p">.</span><span class="nx">size</span><span class="p">.</span><span class="nx">windowWidth</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'变化后的窗口高度='</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="nx">res</span><span class="p">.</span><span class="nx">size</span><span class="p">.</span><span class="nx">windowHeight</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<ul>
+<li>
+<p>uni.offWindowResize   取消监听窗口尺寸变化事件</p>
+</li>
+<li>
+<p>宽屏适配</p>
+</li>
+<li>
+<p>uni.setTopWindowStyle    设置 topWindow 的样式</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">setTopWindowStyle</span><span class="p">(</span><span class="p">{</span></div></div></li></p>
+</li>
+</ul>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">height</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'100px'</span><span class="p">,</span><span class="">&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">backgroundColor</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'red'</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<ul>
+<li>
+<p>uni.setLeftWindowStyle    设置 leftWindow 的样式</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">setLeftWindowStyle</span><span class="p">(</span><span class="p">{</span></div></div></li></p>
+</li>
+</ul>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">width</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'500px'</span><span class="p">,</span><span class="">&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">backgroundColor</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'blue'</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;同上
+</span><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<ul>
+<li>
+<p>uni.setRightWindowStyle    设置 rightWindow 的样式</p>
+</li>
+<li>
+<p>字体</p>
+</li>
+<li>
+<p>uni.loadFontFace   动态加载网络字体，文件地址需为下载类型</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">loadFontFace</span><span class="p">(</span><span class="p">{</span></div></div></li></p>
+</li>
+</ul>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">family</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'Bitstream&nbsp;Vera&nbsp;Serif&nbsp;Bold'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">source</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'url("https://sungd.github.io/Pacifico.ttf")'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">success</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'success'</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<ul>
+<li>下拉刷新</li>
+<li>
+<p>onPullDownRefresh</p>
+<p>在 js 中定义 onPullDownRefresh 处理函数（和onLoad等生命周期函数同级），监听该页面用户下拉刷新事件。</p>
+</li>
+<li>
+<p>uni.startPullDownRefresh</p>
+<p>开始下拉刷新，调用后触发下拉刷新动画，效果与用户手动下拉刷新一致</p>
+</li>
+<li>
+<p>uni.stopPullDownRefresh</p>
+<p>停止当前页面下拉刷新</p>
+</li>
+<li>
+<p>媒体查询</p>
+</li>
+<li>
+<p>uni.createMediaQueryObserver  </p>
+<p>创建并返回一个 <code>MediaQueryObserver</code> 对象实例。</p>
+</li>
+<li>
+<p>MediaQueryObserver 对象的方法列表</p>
+</li>
+</ul>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div><div class="line-numbers"><div class="line-num" data-line-num="19"></div></div><div class="line-numbers"><div class="line-num" data-line-num="20"></div></div><div class="line-numbers"><div class="line-num" data-line-num="21"></div></div><div class="line-numbers"><div class="line-num" data-line-num="22"></div></div><div class="line-numbers"><div class="line-num" data-line-num="23"></div></div><div class="line-numbers"><div class="line-num" data-line-num="24"></div></div><div class="line-numbers"><div class="line-num" data-line-num="25"></div></div><div class="line-numbers"><div class="line-num" data-line-num="26"></div></div><div class="line-numbers"><div class="line-num" data-line-num="27"></div></div><div class="line-numbers"><div class="line-num" data-line-num="28"></div></div><div class="line-numbers"><div class="line-num" data-line-num="29"></div></div><div class="line-numbers"><div class="line-num" data-line-num="30"></div></div><div class="line-numbers"><div class="line-num" data-line-num="31"></div></div><div class="line-numbers"><div class="line-num" data-line-num="32"></div></div><div class="line-numbers"><div class="line-num" data-line-num="33"></div></div><div class="line-numbers"><div class="line-num" data-line-num="34"></div></div><div class="line-numbers"><div class="line-num" data-line-num="35"></div></div><div class="line-numbers"><div class="line-num" data-line-num="36"></div></div><div class="line-numbers"><div class="line-num" data-line-num="37"></div></div><div class="line-numbers"><div class="line-num" data-line-num="38"></div></div><div class="line-numbers"><div class="line-num" data-line-num="39"></div></div><div class="line-numbers"><div class="line-num" data-line-num="40"></div></div><div class="line-numbers"><div class="line-num" data-line-num="41"></div></div><div class="line-numbers"><div class="line-num" data-line-num="42"></div></div><div class="line-numbers"><div class="line-num" data-line-num="43"></div></div><div class="line-numbers"><div class="line-num" data-line-num="44"></div></div><div class="line-numbers"><div class="line-num" data-line-num="45"></div></div><div class="line-numbers"><div class="line-num" data-line-num="46"></div></div><div class="line-numbers"><div class="line-num" data-line-num="47"></div></div><div class="line-numbers"><div class="line-num" data-line-num="48"></div></div><div class="line-numbers"><div class="line-num" data-line-num="49"></div></div><div class="line-numbers"><div class="line-num" data-line-num="50"></div></div><div class="line-numbers"><div class="line-num" data-line-num="51"></div></div><div class="line-numbers"><div class="line-num" data-line-num="52"></div></div><div class="line-numbers"><div class="line-num" data-line-num="53"></div></div><div class="line-numbers"><div class="line-num" data-line-num="54"></div></div><div class="line-numbers"><div class="line-num" data-line-num="55"></div></div><div class="line-numbers"><div class="line-num" data-line-num="56"></div></div><div class="line-numbers"><div class="line-num" data-line-num="57"></div></div><div class="line-numbers"><div class="line-num" data-line-num="58"></div></div><div class="line-numbers"><div class="line-num" data-line-num="59"></div></div><div class="line-numbers"><div class="line-num" data-line-num="60"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">view</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"content"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">view</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">""</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;要求页面最小宽度&nbsp;375px，&nbsp;且页面宽度最大&nbsp;500px，是否匹配:&nbsp;{{matches}}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;要求屏幕方向为纵向，是否匹配:&nbsp;{{landscape}}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">template</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class=""></span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">let</span><span class="">&nbsp;</span><span class="nx">landscapeOb</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">export</span><span class="">&nbsp;</span><span class="k">default</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">data</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">matches</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">false</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">landscape</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">false</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">mediaQueryOb</span><span class="o">:</span><span class="">&nbsp;</span><span class="kc">null</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">onLoad</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;和&nbsp;UI&nbsp;相关的&nbsp;api&nbsp;在组件&nbsp;mountd&nbsp;后执行
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">mounted</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="nx">testMediaQueryObserver</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="nx">landscapeObserver</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">methods</span><span class="o">:</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">testMediaQueryObserver</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="nx">mediaQueryOb</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">createMediaQueryObserver</span><span class="p">(</span><span class="k">this</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="nx">mediaQueryOb</span><span class="p">.</span><span class="nx">observe</span><span class="p">(</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">minWidth</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">375</span><span class="p">,</span><span class="">&nbsp;&nbsp;</span><span class="c1">//页面最小宽度&nbsp;375px
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">maxWidth</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">500</span><span class="">&nbsp;&nbsp;</span><span class="c1">//页面宽度最大&nbsp;500px
+</span><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span><span class="">&nbsp;</span><span class="nx">matches</span><span class="">&nbsp;</span><span class="p">=&gt;</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="nx">matches</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">matches</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">landscapeObserver</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">landscapeOb</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">createMediaQueryObserver</span><span class="p">(</span><span class="k">this</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">landscapeOb</span><span class="p">.</span><span class="nx">observe</span><span class="p">(</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">orientation</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'landscape'</span><span class="">&nbsp;&nbsp;</span><span class="c1">//屏幕方向为纵向
+</span><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span><span class="">&nbsp;</span><span class="nx">matches</span><span class="">&nbsp;</span><span class="p">=&gt;</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="nx">landscape</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">matches</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">destroyed</span><span class="">&nbsp;</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="nx">mediaQueryOb</span><span class="p">.</span><span class="nx">disconnect</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">//组件销毁时停止监听
+</span><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">landscapeOb</span><span class="p">.</span><span class="nx">disconnect</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">.</span><span class="nc">content</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">text-align</span><span class="p">:</span><span class="">&nbsp;</span><span class="kc">center</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">height</span><span class="p">:</span><span class="">&nbsp;</span><span class="mi">400</span><span class="n">upx</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">style</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<h2>页面和窗体</h2>
+<ul>
+<li>
+<p>页面</p>
+</li>
+<li>
+<p>getCurrentPages()</p>
+<p>获取当前页面栈的实例，以数组形式按栈的顺序给出，第一个元素为首页，最后一个元素为当前页面。</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">var</span><span class="">&nbsp;</span><span class="nx">pages</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">getCurrentPages</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li></p>
+</li>
+</ul>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">var</span><span class="">&nbsp;</span><span class="nx">page</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">pages</span><span class="p">[</span><span class="nx">pages</span><span class="p">.</span><span class="nx">length</span><span class="">&nbsp;</span><span class="o">-</span><span class="">&nbsp;</span><span class="mf">1</span><span class="p">]</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;#ifdef&nbsp;APP-PLUS
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">var</span><span class="">&nbsp;</span><span class="nx">currentWebview</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">page</span><span class="p">.</span><span class="nx">$getAppWebview</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">currentWebview</span><span class="p">.</span><span class="nx">id</span><span class="p">)</span><span class="p">;</span><span class="c1">//获得当前webview的id
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">currentWebview</span><span class="p">.</span><span class="nx">isVisible</span><span class="p">(</span><span class="p">)</span><span class="p">)</span><span class="p">;</span><span class="c1">//查询当前webview是否可见
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;#endif
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<ul>
+<li>
+<p>$getAppWebview()</p>
+<p>得到当前webview的对象实例</p>
+</li>
+<li>
+<p>页面通讯</p>
+</li>
+<li>
+<p>uni.$emit  触发全局的自定义事件</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s1">'update'</span><span class="p">,</span><span class="p">{</span><span class="nx">msg</span><span class="o">:</span><span class="s1">'页面更新'</span><span class="p">}</span><span class="p">)</span></div></div></li></p>
+</li>
+</ul>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<ul>
+<li>
+<p>uni.$on  监听全局的自定义事件</p>
+<p><div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">$on</span><span class="p">(</span><span class="s1">'update'</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="p">{</span></div></div></li></p>
+</li>
+</ul>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'监听到事件来自&nbsp;update&nbsp;，携带参数&nbsp;msg&nbsp;为：'</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="nx">data</span><span class="p">.</span><span class="nx">msg</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<p></ol></div></p>
+<ul>
+<li>
+<p>uni.$once  监听全局的自定义事件 。但仅触发一次</p>
+</li>
+<li>
+<p>uni.$off  移除全局自定义事件监听器</p>
+</li>
+<li>
+<p>subNVue原生子窗体</p>
+</li>
+<li>
+<p>uni.getSubNVueById  通过 <code>ID</code> 获取 <code>subNVues</code> 原生子窗体的实例</p>
+</li>
+<li>uni.getCurrentSubNVue  在一个subnvue窗体的nvue页面代码中，获取当前 <code>subNVues</code> 原生子窗体的实例</li>
+<li>subNVue.show  显示原生子窗体</li>
+<li>subNVue.hide  隐藏原生子窗体</li>
+<li>subNVue.setStyle  设置原生子窗体的样式</li>
+</ul>
+<h2>文件</h2>
+<ul>
+<li>uni.saveFile</li>
+</ul>
+<p>保存文件到本地</p>
+<ul>
+<li>uni.getSavedFileList</li>
+</ul>
+<p>获取本地已保存的文件列表。</p>
+<ul>
+<li>uni.getSavedFileInfo</li>
+</ul>
+<p>获取本地文件的文件信息。此接口只能用于获取已保存到本地的文件。</p>
+<ul>
+<li>uni.removeSavedFile</li>
+</ul>
+<p>删除本地存储的文件。</p>
+<ul>
+<li>uni.getFileInfo</li>
+</ul>
+<p>获取文件信息</p>
+<ul>
+<li>uni.openDocument</li>
+</ul>
+<p>新开页面打开文档，支持格式：doc, xls, ppt, pdf, docx, xlsx, pptx</p>
+<h2>绘画</h2>
+<ul>
+<li>uni.createOffscreenCanvas</li>
+</ul>
+<p>创建离屏 canvas 实例</p>
+<ul>
+<li>uni.createCanvasContext(canvasId, this)</li>
+</ul>
+<p>创建 <code>canvas</code> 绘图上下文</p>
+<ul>
+<li>uni.canvasToTempFilePath</li>
+</ul>
+<p>导出图片</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">canvasToTempFilePath</span><span class="p">(</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">x</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">100</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">y</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">200</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">width</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">50</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">height</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">50</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">destWidth</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">100</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">destHeight</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">100</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">canvasId</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'myCanvas'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">success</span><span class="o">:</span><span class="">&nbsp;</span><span class="kd">function</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;在H5平台下，tempFilePath&nbsp;为&nbsp;base64
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">.</span><span class="nx">tempFilePath</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="">&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ul>
+<li>uni.canvasPutImageData</li>
+</ul>
+<p>将像素数据绘制到画布</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;</span><span class="kd">const</span><span class="">&nbsp;</span><span class="nx">data</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="nx">Uint8ClampedArray</span><span class="p">(</span><span class="p">[</span><span class="mf">255</span><span class="p">,</span><span class="">&nbsp;</span><span class="mf">0</span><span class="p">,</span><span class="">&nbsp;</span><span class="mf">0</span><span class="p">,</span><span class="">&nbsp;</span><span class="mf">255</span><span class="p">]</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">canvasPutImageData</span><span class="p">(</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">canvasId</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'myCanvas'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">x</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">0</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">y</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">0</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">width</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">1</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">data</span><span class="o">:</span><span class="">&nbsp;</span><span class="nx">data</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">success</span><span class="p">(</span><span class="nx">res</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ul>
+<li>uni.canvasGetImageData</li>
+</ul>
+<p>以数组的方式返回画布隐含的像素信息</p>
+<ul>
+<li>CanvasContext</li>
+</ul>
+<p>绘图</p>
+<ul>
+<li>CanvasGradient</li>
+</ul>
+<p>创建一个颜色的渐变点</p>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

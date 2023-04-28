@@ -1,0 +1,197 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Java 异常</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>异常</h1>
+<hr />
+<h2>概念</h2>
+<hr />
+<p>异常是一个类</p>
+<h2>异常体系</h2>
+<hr />
+<p>顶层父类：Throwable</p>
+<p>子类：</p>
+<h3>Error</h3>
+<p>错误</p>
+<p>（工程师不能处理，只能避免）</p>
+<h3>Exception</h3>
+<p>编译期异常</p>
+<p>RuntimeException（运行期异常）</p>
+<p>（使用不当导致，可以避免）</p>
+<h2>Throw关键字</h2>
+<hr />
+<h4>解释</h4>
+<p>异常处理的第一种方式：交给别人处理</p>
+<h4>作用</h4>
+<p>在指定方法中抛出特定异常</p>
+<h4>格式</h4>
+<p>throw new xxxExcpetion ("异常产生的原因");</p>
+<h4>注意</h4>
+<ol>
+<li>
+<p>throw 关键字必须写在方法的声明处</p>
+</li>
+<li>
+<p>throw 后面new的对象必须是exception，或者其子类</p>
+</li>
+<li>
+<p>throw 关键字抛出指定异常对象，我们就必须处理这个异常对象</p>
+</li>
+</ol>
+<p>​    两种处理方式：</p>
+<p>​    throw关键字后边创建的是RuntimeException或者是其子类对象，可以不处理，交给JVM处理（打印异常）</p>
+<p>​    throw关键字后边创建的是编译异常（写代码时候报错）我们就必须处理这个异常，要么抛出要么trycatch</p>
+<p>参数非空判断：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="k">if</span><span class="p">(</span><span class="n">obj</span><span class="">&nbsp;</span><span class="o">=</span><span class="o">=</span><span class="">&nbsp;</span><span class="kc">null</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">throw</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">NullPointerException</span><span class="p">(</span><span class="s">"</span><span class="s">参数传递对象空</span><span class="s">"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">Objects</span><span class="p">.</span><span class="na">requireNonNull</span><span class="p">(</span><span class="n">obj</span><span class="p">,</span><span class="">&nbsp;</span><span class="s">"</span><span class="s">错误提示</span><span class="s">"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<h2>try...catch关键字</h2>
+<hr />
+<h4>注意：</h4>
+<p>try中可能会抛出多个异常对像，使用多个catch来处理</p>
+<h4>格式</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="k">try</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="c1">//可能产生异常的代码
+</span><span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="n">定义一个异常变量</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//异常处理
+</span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h2>异常处理方法</h2>
+<hr />
+<p>Throwable类中定义了三个异常处理的方法</p>
+<div class="code"><ol class="num-container"></ol><ol class="code-container"></ol></div>
+
+<p>举例：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="k">try</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">readFile</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span><span class="k">catch</span><span class="">&nbsp;</span><span class="p">(</span><span class="n">IOException</span><span class="">&nbsp;</span><span class="n">e</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="na">getMessage</span><span class="p">(</span><span class="p">)</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="p">;</span><span class="">  </span><span class="c1">//结束方法，为了不执行try以后的方法
+</span><span class="p">}</span><span class="k">finally</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//无论是否出现异常都会执行
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//注意：尽量不要在finally里面写return
+</span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h2>子父类异常</h2>
+<hr />
+<p>如果父类方法抛出了多个异常，子类重写这个方法时：</p>
+<p>​       抛出和父类相同的异常</p>
+<p>​       父类异常的子类</p>
+<p>​       不抛出异常</p>
+<p>父类方法没有抛出异常，子类重写该方法也不能抛出异常，只能捕获处理</p>
+<h4>注意：</h4>
+<p>父类异常什么样，子类异常就什么样</p>
+<h2>自定义异常</h2>
+<hr />
+<p>java提供的异常类不够我们使用需要我们提供一些异常类</p>
+<h4>格式：</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">class</span><span class="">&nbsp;</span><span class="nc">XXXExpection</span><span class="">&nbsp;</span><span class="kd">extends</span><span class="">&nbsp;</span><span class="n">Expection</span><span class="">&nbsp;</span><span class="o">|</span><span class="">&nbsp;</span><span class="n">RuntimeExpection</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="c1">//添加空参构造方法
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//添加一个带异常信息的构造方法
+</span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h4>注意：</h4>
+<ol>
+<li>
+<p>自定义异常类一般都是以Exception结尾，说明是一个异常类</p>
+</li>
+<li>
+<p>自定义异常类必须继承两者其一</p>
+</li>
+</ol>
+<p>继承Exception：如果方法内部抛出了编译器异常，就必须处理这个异常，要么throws，要么try，catch</p>
+<p>继承RuntimeException：自定义的异常类就是一个运行期异常，无需处理，交给虚拟机处理</p>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

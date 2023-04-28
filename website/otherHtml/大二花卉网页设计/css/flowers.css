@@ -1,0 +1,172 @@
+:root {
+    --myPink: #D9A99A;
+    --lightPink: #FEF6F0;
+    --bgColor: #A6B09F;
+    --lightColor: #c7d1c0;
+    --darkColor: #525c4b;
+    --contentHeight: 3900px;
+}
+
+body {
+    background-color: var(--bgColor);
+}
+
+main {
+    height: var(--contentHeight);
+}
+
+/* 左侧区域 */
+
+main .left {
+    width: 25%;
+    height: var(--contentHeight);
+    float: left;
+    /* background-color: #fff; */
+}
+
+main .left .menu {
+    height: 430px;
+    width: 300px;
+    margin-left: 40px;
+    margin-top: 40px;
+    position: fixed;
+    border-top-left-radius: 50px;
+    box-shadow: var(--darkColor) 5px 5px 15px;
+    background-color: white;
+    overflow: hidden;
+}
+main .left .menu h1 {
+    background-color: var(--darkColor);
+    text-align: center;
+    color: var(--lightColor);
+    font-family: '宋体';
+    letter-spacing: 0.2em;
+    line-height: 60px;
+}
+main .left .menu ul {
+    list-style: none;
+    /* background-color: red; */
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+}
+main .menu a {
+    text-decoration: none;
+    color: var(--darkColor);
+}
+main .left .menu ul li {
+    line-height: 60px;
+    text-align: center;
+    transition: all 0.2s;
+}
+main .left .menu ul li:hover {
+    font-size: 20px;
+    /* text-indent: 2em; */
+    background-color: var(--lightColor);
+    cursor: pointer;
+}
+/* 右侧区域 */
+
+main .right {
+    width: 75%;
+    height: var(--contentHeight);
+    float: left;
+    /* background-color: gray; */
+}
+
+main .right .title-comment {
+    width: 80%;
+    /* height: 120px; */
+    margin-top: 80px;
+    margin-left: 20px;
+    padding-bottom: 25px;
+    border-top-left-radius: 50px;
+    background-color: white;
+    box-shadow: var(--darkColor) 5px 5px 15px;
+}
+main .right .title-comment:nth-child(1) {
+    margin-top: 40px;
+}
+
+main .right .title-comment h1 {
+    position: relative;
+    top: -20px;
+    left: 40px;
+    background-color: white;
+    display: block;
+    width: 200px;
+    padding-left: 20px;
+    box-shadow: var(--bgColor) 2px 2px 5px;
+    border-top-left-radius: 30px;
+    font-family: '宋体';
+    letter-spacing: 0.15em;
+    line-height: 60px;
+}
+main .right .title-comment p {
+    position: relative;
+    left: 50px;
+    color: var(--darkColor);
+    text-indent: 2em;
+    display: block;
+    width: 90%;
+}
+main .right .show {
+    width: 80%;
+    /* height: 100px; */
+    /* background-color: red; */
+    margin-left: 20px;
+    margin-top: 20px;
+}
+main .right .show .aline {
+    height: 180px;
+    margin-top: 20px;
+    /* background-color: orange; */
+}
+main .right .show .aline:nth-child(1) {
+    margin-top: 0px;
+}
+main .right .show .aline .box {
+    width: 180px;
+    height: 100%;
+    margin-left: 51px;
+    float: left;
+    overflow: hidden;
+    /* background-color: pink; */
+    border-top-left-radius: 40px;
+    box-shadow: var(--darkColor) 5px 5px 15px;
+    transition: all 0.2s;
+}
+main .right .show .aline .box:nth-child(1) {
+    margin-left: 0px;
+}
+main .right .show .aline .box:hover {
+    transform: scale(1.1) rotate(1deg);
+}
+
+main .right .show .aline .box p {
+    text-align: center;
+    line-height: 20px;
+    background-color: rgba(0, 0, 0, 0.294);
+    color: white;
+    line-height: 40px;
+    position: relative;
+    top: 140px;
+    z-index: 20;
+    transition: all 0.2s;
+}
+main .right .show .aline .box:hover p{
+    background-color: rgba(0, 0, 0, 0.616);
+}
+main .right .show .aline .box img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    top: -40px;
+    z-index: 10;
+    opacity: 0.8;
+    transition: all 0.2s;
+}
+main .right .show .aline .box:hover img{
+    transform: scale(1.1);
+    opacity: 1;
+}

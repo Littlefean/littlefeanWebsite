@@ -1,0 +1,148 @@
+@font-face {
+  font-family: "lovely";
+  src: url("../font/comicbd.ttf");
+}
+@font-face {
+  font-family: "han";
+  src: url("../font/方正粗黑宋简体.ttf");
+}
+@keyframes fade {
+  from {
+    opacity: 0.3;
+  }
+  to {
+    opacity: 1;
+  }
+}
+html {
+  font-size: 10px;
+}
+.top-box {
+  width: 80%;
+  height: 60rem;
+  position: relative;
+  margin: 0 auto;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+.top-box .imgdiv {
+  display: none;
+  animation: fade 1.5s;
+}
+.top-box .imgdiv img {
+  height: 60rem;
+  display: block;
+  margin: 0 auto;
+}
+.top-box .imgdiv .title {
+  height: 8rem;
+  width: 96rem;
+  position: absolute;
+  left: 50%;
+  margin-left: -48rem;
+  text-align: center;
+  font-size: 4rem;
+  line-height: 8rem;
+  color: #f2f2f2;
+  background-color: rgba(53, 53, 53, 0.295);
+  font-weight: 700;
+  bottom: 0;
+}
+.top-box .dotdiv {
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  bottom: -1.5rem;
+}
+.top-box .dotdiv .dot {
+  width: 10rem;
+  height: 0.7rem;
+  display: inline-block;
+  background: rgba(226, 54, 41, 0.5);
+  margin: 0 0.2rem;
+}
+.top-box .dotdiv .active {
+  background-color: #3c2601;
+}
+.top-box #arrow {
+  position: absolute;
+  top: 50%;
+  margin-top: -30px;
+  width: 100%;
+  opacity: 0.3;
+  transition: opacity 2s;
+}
+.top-box #arrow img {
+  cursor: pointer;
+}
+.top-box:hover #arrow {
+  opacity: 0.9;
+}
+.main-content {
+  width: 80%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.main-content .left,
+.main-content .middle,
+.main-content .right {
+  width: 33.333%;
+  height: 100%;
+  float: left;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+.main-content .left img,
+.main-content .middle img,
+.main-content .right img {
+  width: 100%;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+  box-shadow: rgba(128, 128, 128, 0.37) 0px 0px 0px;
+  transition: all 0.5s;
+}
+.main-content .left img:hover,
+.main-content .middle img:hover,
+.main-content .right img:hover {
+  transform: translateY(-1.5rem);
+  box-shadow: rgba(128, 128, 128, 0.37) 5px 5px 15px;
+}
+.main-content .left .fimg,
+.main-content .middle .fimg,
+.main-content .right .fimg {
+  margin-bottom: 0;
+}
+.main-content .left p,
+.main-content .middle p,
+.main-content .right p {
+  text-align: center;
+  font-size: 2rem;
+  line-height: 2em;
+  font-family: 'han';
+}
+.main-content .middle .text {
+  width: 100%;
+  background-color: #f8f8f8;
+  box-sizing: border-box;
+  padding: 5rem;
+  margin-bottom: 15rem;
+  box-shadow: rgba(128, 128, 128, 0.37) 0px 0px 0px;
+  transition: all 0.5s;
+}
+.main-content .middle .text h1 {
+  text-align: center;
+  font-family: 'han';
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1.3em;
+}
+.main-content .middle .text p {
+  text-indent: 2em;
+  line-height: 2em;
+  text-align: left;
+  color: #8f8f8f;
+}
+.main-content .middle .text:hover {
+  transform: translateY(-1.5rem);
+  box-shadow: rgba(128, 128, 128, 0.37) 5px 5px 15px;
+}

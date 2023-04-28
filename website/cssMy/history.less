@@ -1,0 +1,84 @@
+@import "myInit";
+@import "centerStar";
+@import "myKeyframes";
+@import "canvasStartSky";
+
+body {
+  background-color: black;
+  color: white;
+
+  .mainTitle {
+    text-align: center;
+    line-height: 4em;
+  }
+
+  .studyItems {
+    width: 80%;
+    margin: 0 auto;
+    // 一天应该高 10~20px
+    height: 3650px;
+    //border: solid 1px;
+    position: relative;
+
+    .timeLine {
+
+      height: 100%;
+      width: 20%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      //outline: solid 1px pink;
+      opacity: 0.2;
+    }
+
+    .timeScale {
+      @w: 120px;
+      width: 120%;
+      left: -@w;
+      position: absolute;
+      border-top: solid 1px;
+      border-color: rgba(255, 255, 255, 0.3);
+      padding-top: 5px;
+      font-family: Consolas, serif;
+      font-weight: lighter;
+      //outline: solid 1px pink;
+    }
+
+    .mdItem {
+      //width: 20%;
+      min-height: 30px;
+      position: absolute;
+      //outline: solid 1px;
+      background-color: rgba(8, 158, 197, 0.5);
+      transition: all 0.2s;
+      user-select: none;
+
+      &:hover {
+        z-index: 100;
+        background-color: rgba(8, 158, 197, 1);
+
+        h3 {
+          background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        .startT, .endT, i, b {
+          visibility: visible;
+        }
+      }
+
+      h3 {
+        width: 200%;
+        //position: absolute;
+        font-size: 15px;
+        line-height: 2em;
+        font-weight: normal;
+      }
+
+      .startT, .endT, i, b {
+        visibility: hidden;
+        width: 200%;
+      }
+    }
+  }
+
+}

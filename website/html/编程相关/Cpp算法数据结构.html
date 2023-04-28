@@ -1,0 +1,164 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Cpp算法数据结构</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>C++算法工具</h1>
+<hr />
+<h2>STL</h2>
+<p>standard template library 标准模板库</p>
+<p>给数据结构和算法建立一套标准</p>
+<p>广义上分为：容器、算法、迭代器</p>
+<p>容器和算法通过迭代器无缝连接</p>
+<h3>六大组件</h3>
+<ol>
+<li>容器：vector、list、deque、set、map</li>
+</ol>
+<p>可以分为序列式容器、关联式容器两种</p>
+<ol>
+<li>算法：sort、find、copy、for_each</li>
+</ol>
+<p>质变算法：会改变元素内容</p>
+<p>非质变算法：查找遍历计数，不影响改变</p>
+<ol>
+<li>迭代器</li>
+</ol>
+<p>算法通过迭代器访问容器中的元素</p>
+<p>每个容器都有自己专属的迭代器</p>
+<ol>
+<li>
+<p>仿函数</p>
+</li>
+<li>
+<p>适配器</p>
+</li>
+<li>
+<p>空间适配器</p>
+</li>
+</ol>
+<h3>vector数组</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">解析代码块内容出错，按没有代码处理，里面的代码没了！</span></div></div></li>
+</ol></div>
+
+<h3>排序</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">解析代码块内容出错，按没有代码处理，里面的代码没了！</span></div></div></li>
+</ol></div>
+
+<p>降序排列</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">解析代码块内容出错，按没有代码处理，里面的代码没了！</span></div></div></li>
+</ol></div>
+
+<h4>嵌套Vector</h4>
+<p>。。。</p>
+<h3>String容器</h3>
+<p>string的本质是一个类，只是内部在维护着一个C语言风格的char*。</p>
+<p>P198</p>
+<p>https://www.bilibili.com/video/BV1et411b73Z?p=198&amp;spm_id_from=pageDriver</p>
+<h3>map 哈希表</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">解析代码块内容出错，按没有代码处理，里面的代码没了！</span></div></div></li>
+</ol></div>
+
+<p>map改变排序规则和set差不多</p>
+<p>遍历set</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="k">for</span><span class="">&nbsp;</span><span class="p">(</span><span class="k">auto</span><span class="">&nbsp;</span><span class="n">item</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">m1</span><span class="p">.</span><span class="n">begin</span><span class="p">(</span><span class="p">)</span><span class="p">;</span><span class="">&nbsp;</span><span class="n">item</span><span class="">&nbsp;</span><span class="o">!</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">m1</span><span class="p">.</span><span class="n">end</span><span class="p">(</span><span class="p">)</span><span class="p">;</span><span class="">&nbsp;</span><span class="n">item</span><span class="o">+</span><span class="o">+</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">cout</span><span class="">&nbsp;</span><span class="o">&lt;</span><span class="o">&lt;</span><span class="">&nbsp;</span><span class="n">item</span><span class="o">-</span><span class="o">&gt;</span><span class="n">first</span><span class="">&nbsp;</span><span class="o">&lt;</span><span class="o">&lt;</span><span class="">&nbsp;</span><span class="n">item</span><span class="o">-</span><span class="o">&gt;</span><span class="n">second</span><span class="">&nbsp;</span><span class="o">&lt;</span><span class="o">&lt;</span><span class="">&nbsp;</span><span class="n">endl</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h3>set 集合</h3>
+<p>二叉树实现的，不允许重复</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">解析代码块内容出错，按没有代码处理，里面的代码没了！</span></div></div></li>
+</ol></div>
+
+<p>更改排序规则</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">解析代码块内容出错，按没有代码处理，里面的代码没了！</span></div></div></li>
+</ol></div>
+
+<p>vscode 配置c++</p>
+<p>https://wenku.baidu.com/view/54372be0d6bbfd0a79563c1ec5da50e2534dd144.html</p>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

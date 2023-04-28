@@ -1,0 +1,203 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@keyframes flash {
+  0% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+.colorTest {
+  filter: hue-rotate(30deg);
+}
+.lightDiv {
+  position: relative;
+  perspective: 150px;
+  overflow: hidden;
+  background-color: black;
+  outline: solid 1px white;
+  margin: 0 auto;
+  width: 1200px;
+  height: 600px;
+}
+.lightDiv .light1 {
+  position: absolute;
+  transform-style: preserve-3d;
+  opacity: 0.9;
+  filter: blur(30px);
+  animation-name: flash;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  background-image: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  width: 150px;
+  height: 500px;
+  margin-left: 200px;
+  margin-top: 50px;
+  transform-origin: center center;
+  transform: rotateX(16deg);
+}
+.lightDiv .light2 {
+  position: absolute;
+  transform-style: preserve-3d;
+  opacity: 0.9;
+  filter: blur(30px);
+  animation-name: flash;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  background-image: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  width: 128px;
+  height: 595px;
+  margin-left: 61px;
+  margin-top: 132px;
+  transform-origin: center top;
+  transform: rotateZ(-15deg);
+}
+.lightDiv .light3 {
+  position: absolute;
+  transform-style: preserve-3d;
+  opacity: 0.9;
+  filter: blur(30px);
+  animation-name: flash;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  background-image: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  width: 115px;
+  height: 467px;
+  margin-left: 273px;
+  margin-top: 155px;
+  transform-origin: center top;
+  transform: rotateZ(-10deg);
+}
+.lightDiv .light4 {
+  position: absolute;
+  transform-style: preserve-3d;
+  opacity: 0.9;
+  filter: blur(30px);
+  animation-name: flash;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  background-image: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  width: 108px;
+  height: 467px;
+  margin-left: 319px;
+  margin-top: 505px;
+  transform-origin: center top;
+  transform: rotateZ(-157deg);
+}
+.lightDiv .light5 {
+  position: absolute;
+  transform-style: preserve-3d;
+  opacity: 0.9;
+  filter: blur(30px);
+  animation-name: flash;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  background-image: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  width: 120px;
+  height: 377px;
+  margin-left: 570px;
+  margin-top: 223px;
+  transform-origin: center top;
+  transform: rotateZ(0deg);
+}
+.lightDiv .light6 {
+  position: absolute;
+  transform-style: preserve-3d;
+  opacity: 0.9;
+  filter: blur(30px);
+  animation-name: flash;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  border-radius: 50%;
+  background-image: radial-gradient(circle at center center, #ffffff, rgba(255, 255, 255, 0) 100%);
+  width: 120px;
+  height: 120px;
+  margin-left: 570px;
+  margin-top: 223px;
+  transform-origin: center top;
+  transform: rotateZ(180deg);
+}
+.lightDiv .light7 {
+  position: absolute;
+  transform-style: preserve-3d;
+  opacity: 0.9;
+  filter: blur(30px);
+  animation-name: flash;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  background-image: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  width: 120px;
+  height: 377px;
+  margin-left: 694px;
+  margin-top: 168px;
+  transform-origin: center top;
+  transform: rotateZ(-92deg);
+}
+.lightDiv .light8 {
+  position: absolute;
+  transform-style: preserve-3d;
+  opacity: 0.9;
+  filter: blur(30px);
+  animation-name: flash;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  background-image: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  width: 120px;
+  height: 495px;
+  margin-left: 982px;
+  margin-top: 146px;
+  transform-origin: center top;
+  transform: rotateZ(45deg);
+}
+.lightDiv .light9 {
+  position: absolute;
+  transform-style: preserve-3d;
+  opacity: 0.9;
+  filter: blur(30px);
+  animation-name: flash;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  background-image: linear-gradient(to bottom, #ffffff, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
+  border-top-left-radius: 100%;
+  border-top-right-radius: 100%;
+  width: 120px;
+  height: 495px;
+  margin-left: 680px;
+  margin-top: 446px;
+  transform-origin: center top;
+  transform: rotateZ(-90deg);
+}
+body {
+  background-color: black;
+}
+/*# sourceMappingURL=test.css.map */

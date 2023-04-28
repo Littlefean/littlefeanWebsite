@@ -1,0 +1,137 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Python 底层原理探索</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>python底层原理</h1>
+<hr />
+<h2>list原理</h2>
+<p>推荐看：《深入Python编程》</p>
+<p>推荐看视频：https://www.bilibili.com/video/BV1wh411D7Nx?spm_id_from=333.337.search-card.all.click</p>
+<p>像讲相声一样讲了List的底层原理</p>
+<h3>看完视频的收获：</h3>
+<ol>
+<li>CPython的底层C实现代码是可以从官网下载的。</li>
+<li>创建列表会向freelist[80]缓存区里拿一个出来，del销毁列表也会把列表放到缓存区里。</li>
+<li>列表之所以能存储不同的类型，可以理解成存放指针的数组。</li>
+<li>列表的扩容是有一个公式的，不是指数扩容，太费内存了。而是相对缓和的一个曲线。这个扩容公式里，使用了位运算 &gt;&gt;3、&amp;、~。来提高运算的速度。向右移动三位相当于除以8。</li>
+<li>如果列表里的数据量比列表实际容量的一半还小，就会发生缩容。</li>
+<li>列表pop最后一个元素的时候没有擦除最后一个数据，只是把列表的长度减去1了。这样更快，在频繁的pop中更快。再新加进来直接覆盖数据就行。</li>
+<li>列表清空的时候会让每一个元素的引用计数-1，其实还是O(n)。</li>
+</ol>
+<h2>tuple原理</h2>
+<p>推荐看</p>
+<p>https://www.bilibili.com/video/BV1sV411n7nr?spm_id_from=333.337.search-card.all.click</p>
+<p>夺命四连问：</p>
+<ol>
+<li>空元组的内存地址都是一样的</li>
+<li>元组转换为元组内存地址还是一样的</li>
+<li>列表转元组，元素的内存地址又是一样的</li>
+<li>元组销毁再创建，内存地址有时候相同有时候不同</li>
+</ol>
+<p>收获</p>
+<ol>
+<li>创建元组的底层实现分为创建空元组还是创建了有东西的元组</li>
+<li><code>tuple((1, 2, 3))</code> 无效工，相当于引用计数器+1，所以内存地址还是一样的</li>
+<li>可迭代对象里有一个 __lenght_hint()方法，可以猜这个可迭代对象有多长，可迭代对象本身是不知道有多少个的，只能一个一个去迭代。</li>
+<li>所有的对象都会在一个双向环状链表里，用来做内存管理</li>
+<li>tuple的销毁缓存，有一个重要的指标就是这个元组的长度，如果新创建了一个长度为3的元组，刚好有长度为3元组的缓存，就可以直接用缓存的。删除是假删除。</li>
+</ol>
+<h2>Dict原理</h2>
+<p>视频：</p>
+<p>https://www.bilibili.com/video/BV1Hq4y1r7Y8?spm_id_from=333.337.search-card.all.click</p>
+<p>收获：</p>
+<ol>
+<li>字典占用空间大、典型的空间换时间</li>
+<li>键查询速度很快</li>
+<li>python字典对象核心是散列表，不是什么红黑树。本质上底层是用C数组实现的。散列表，稀疏数组。</li>
+<li>往字典里添加键会导致扩容，导致散列次序发生变化，不要在遍历字典的同时进行添加键值对和删除键值对。</li>
+<li>添加元素的时候：给key取hash得数字，再给这个数字区二进制，三位三位从二进制的低位到高位取，将三位二进制数转成十进制数，得到对应索引，如果数组索引位置是空的就放进去，如果不是空的就继续取新的三位，如果取完了都没有找到空位置，就让数组扩容，扩大2倍，然后再取二进制的时候就是四个四个取了。因为三位二进制对应的是0~7，四位对应的就扩大两倍了。</li>
+</ol>
+<h2>is 和 ==</h2>
+<p>is 比较的是内存地址是否相等，== 比较的是两个东西的值是否相等</p>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

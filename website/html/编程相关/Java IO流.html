@@ -1,0 +1,291 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Java IO流</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>IO流</h1>
+<h2>概述</h2>
+<p>输入是input，输出是output，输入是硬盘到内存，输出是内存到硬盘</p>
+<p>所有的流都在java.io包下</p>
+<h2>顶级父类们</h2>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>输入流</th>
+<th>输出流</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字节流</td>
+<td>字节输入流InputStream</td>
+<td>字节输出流OutputStream</td>
+</tr>
+<tr>
+<td>字符流</td>
+<td>字符输入流Reader</td>
+<td>字符输出流Writer</td>
+</tr>
+</tbody>
+</table>
+<h2>字节流</h2>
+<hr />
+<h3>字节输出流【OutputStream】</h3>
+<h4>介绍</h4>
+<p>此抽象类是表示输出字节流的所有类的超类</p>
+<h4>方法摘要</h4>
+<p>定义了一些子类共性的成员方法</p>
+<div class="code"><ol class="num-container"></ol><ol class="code-container"></ol></div>
+
+<h4>子类介绍</h4>
+<ul>
+<li>ByteArrayOutputStream</li>
+<li>FileOutputStream （重点研究）</li>
+<li>FilterOutputStream</li>
+<li>ObjectOutputStream</li>
+<li>PipedOutputStream 管道流</li>
+</ul>
+<h4>构造方法</h4>
+<div class="code"><ol class="num-container"></ol><ol class="code-container"></ol></div>
+
+<p>作用：</p>
+<ol>
+<li>创建一个此类的对象</li>
+<li>会根据参数代表的文件/文件路径创建一个空文件</li>
+<li>会把对象指向创建好的文件</li>
+</ol>
+<p>使用步骤：</p>
+<ol>
+<li>
+<p>创建一个FileOutputStream对象，构造方法中传入参数</p>
+</li>
+<li>
+<p>调用对象的方法write，把数据写入到文件中</p>
+</li>
+<li>
+<p>释放资源（占用内存提高效率）</p>
+</li>
+</ol>
+<p>举例</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="n">psvm</span><span class="">&nbsp;</span><span class="kd">throws</span><span class="">&nbsp;</span><span class="n">IOExpections</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;   </span><span class="n">FileOutputStream</span><span class="">&nbsp;</span><span class="n">fos</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">FileOutputStream</span><span class="p">(</span><span class="s">"</span><span class="s">...</span><span class="s">\\</span><span class="s">a.txt</span><span class="s">"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">fos</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="mi">96</span><span class="p">)</span><span class="p">;</span><span class="">    </span><span class="c1">//注意：写数字是对应ASCII的内容
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">fos</span><span class="p">.</span><span class="na">close</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<p>写入字符串的方法：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kt">byte</span><span class="o">[</span><span class="o">]</span><span class="">&nbsp;</span><span class="n">bytes</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="s">"</span><span class="s">你好</span><span class="s">"</span><span class="p">.</span><span class="na">getBytes</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">fos</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">bytes</span><span class="p">)</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<p>换行的方法：</p>
+<ul>
+<li>windows："\r\n"</li>
+<li>Linux:/n</li>
+<li>mav:/r</li>
+</ul>
+<h3>字节输入流【IutputStream】</h3>
+<h4>介绍</h4>
+<p>此抽象类是表示输入字节流的所有类的超类</p>
+<h4>方法摘要</h4>
+<div class="code"><ol class="num-container"></ol><ol class="code-container"></ol></div>
+
+<h4>子类介绍</h4>
+<p>FileInputStream （重点研究）</p>
+<h4>使用步骤</h4>
+<ol>
+<li>创建FileInputStream对象，构造方法中绑定要读取的数据源</li>
+<li>使用FileInputStream对象中的read方法读取文件</li>
+<li>释放资源</li>
+</ol>
+<p>举例</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">psvm</span><span class="">&nbsp;</span><span class="kd">throws</span><span class="">&nbsp;</span><span class="n">IOExpection</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="n">FileInputStream</span><span class="">&nbsp;</span><span class="n">fis</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">FileInputStream</span><span class="p">(</span><span class="s">"</span><span class="s">a.txt</span><span class="s">"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//读取一个字节并返回
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">len</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">fis</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">len</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//读取结束之后指针会往后移动一个字节
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">len</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">fis</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">sout</span><span class="p">(</span><span class="n">len</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//如果读取到了末尾，会返回-1
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">len</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="o">-</span><span class="mi">1</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//释放资源
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">fis</span><span class="p">.</span><span class="na">close</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>读取全部内容的优化</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">psvm</span><span class="">&nbsp;</span><span class="kd">throws</span><span class="">&nbsp;</span><span class="n">IOExpection</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="n">FileInputStream</span><span class="">&nbsp;</span><span class="n">fis</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">FileInputStream</span><span class="p">(</span><span class="s">"</span><span class="s">a.txt</span><span class="s">"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">len</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">0</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">while</span><span class="p">(</span><span class="">&nbsp;</span><span class="p">(</span><span class="n">len</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">fis</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="p">)</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">!</span><span class="o">=</span><span class="">&nbsp;</span><span class="o">-</span><span class="mi">1</span><span class="">&nbsp;</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">sout</span><span class="p">(</span><span class="p">(</span><span class="kt">char</span><span class="p">)</span><span class="n">len</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">fis</span><span class="p">.</span><span class="na">close</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>利用数组一次读取多个字节</p>
+<p>作用：</p>
+<ul>
+<li>起到缓冲作用，存储每次读取到的多个字节</li>
+<li>数组的长度一般定义为1024（1KB）或者1024的整数倍</li>
+</ul>
+<p>方法返回值int是什么？</p>
+<p>代码实例：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">psvm</span><span class="">&nbsp;</span><span class="kd">throws</span><span class="">&nbsp;</span><span class="n">IOExpection</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">FileInputStream</span><span class="">&nbsp;</span><span class="n">fis</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">FileInputStream</span><span class="p">(</span><span class="s">"</span><span class="s">a.txt</span><span class="s">"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kt">byte</span><span class="o">[</span><span class="o">]</span><span class="">&nbsp;</span><span class="n">bytes</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="kt">byte</span><span class="o">[</span><span class="mi">1024</span><span class="o">]</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">len</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">0</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">while</span><span class="p">(</span><span class="">&nbsp;</span><span class="p">(</span><span class="n">len</span><span class="o">=</span><span class="n">fis</span><span class="p">.</span><span class="na">read</span><span class="p">(</span><span class="n">bytes</span><span class="p">)</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">!</span><span class="o">=</span><span class="">&nbsp;</span><span class="o">-</span><span class="mi">1</span><span class="">&nbsp;</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">sout</span><span class="p">(</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">String</span><span class="p">(</span><span class="n">bytes</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">0</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">len</span><span class="p">)</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h2>字符流</h2>
+<hr />
+<h3>字符输入流【Reader】</h3>
+<p>介绍：字符输入流最顶层的父类是：Reader</p>
+<h4>共性的成员方法</h4>
+<div class="code"><ol class="num-container"></ol><ol class="code-container"></ol></div>
+
+<h4>类的介绍</h4>
+<p>java.io.FileReader extends InputStreamReader extends Reader</p>
+<p>FileReader:文件字符输入流</p>
+<p>作用：把硬盘文件中的数据以字符的方式读取到内存中</p>
+<h4>构造方法</h4>
+<div class="code"><ol class="num-container"></ol><ol class="code-container"></ol></div>
+
+<h4>字符输入流使用步骤</h4>
+<ol>
+<li>创建对象，绑定读取数据源</li>
+<li>使用read方法读取文件</li>
+<li>释放资源</li>
+</ol>
+<h3>字符输出流【Writer】</h3>
+<p>介绍：重点研究子类FileWriter，文件字符输出流</p>
+<h4>成员方法：</h4>
+<div class="code"><ol class="num-container"></ol><ol class="code-container"></ol></div>
+
+<h4>构造方法：</h4>
+<div class="code"><ol class="num-container"></ol><ol class="code-container"></ol></div>
+
+<h4>字符输出流的使用步骤</h4>
+<ol>
+<li>创建FileWriter对象，构造方法中绑定要写入数据的目的地</li>
+<li>使用FileWriter中的方法write，把数据写入到内存缓冲区中（字符转换为字节的过程）<strong>这里不一样</strong></li>
+<li>使用FileWriter中的flush，把内存缓冲区的数据刷新到文件中</li>
+<li>释放资源</li>
+</ol>
+<h1>IO异常的处理</h1>
+<h2>JDK1.7之前的处理异常</h2>
+<p>格式：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">//提高变量的作用域，让finally可以使用
+</span><span class="n">FileWriter</span><span class="">&nbsp;</span><span class="n">fw</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="kc">null</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">try</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//可能会出现异常的代码
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">fw</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">FileWriter</span><span class="p">(</span><span class="s">"</span><span class="s">a.txt</span><span class="s">"</span><span class="p">,</span><span class="">&nbsp;</span><span class="kc">true</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">fw</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="s">"</span><span class="s">helloWord</span><span class="s">"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="n">IOExpection</span><span class="">&nbsp;</span><span class="n">e</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//异常的处理逻辑
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">e</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span><span class="k">finally</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//一定会执行的代码
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">if</span><span class="p">(</span><span class="n">fw</span><span class="">&nbsp;</span><span class="o">!</span><span class="o">=</span><span class="">&nbsp;</span><span class="kc">null</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">try</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="n">fw</span><span class="p">.</span><span class="na">close</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="k">catch</span><span class="p">(</span><span class="n">IOExpection</span><span class="">&nbsp;</span><span class="n">e</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">e</span><span class="p">.</span><span class="na">printStackTrace</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

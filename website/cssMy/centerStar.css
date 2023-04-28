@@ -1,0 +1,12 @@
+#centerStar {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-5px) translateY(-5px);
+  border-radius: 100px;
+  box-shadow: 0 0 10px yellow;
+  background-color: white;
+}
+/*# sourceMappingURL=centerStar.css.map */

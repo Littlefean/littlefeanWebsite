@@ -1,0 +1,1123 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Java</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>学习笔记Java</h1>
+<hr />
+<h2>概念了解</h2>
+<h3>JVM</h3>
+<p>java虚拟机，保证在三个系统里面都能翻译运行</p>
+<h3>JRE</h3>
+<p>运行环境、核心类库</p>
+<h3>JDK</h3>
+<p>包含JRE，程序开发工具包</p>
+<p>我们想要运行已有java程序，只需要安装jre</p>
+<p>我们想要开发全新java程序，必须安装jdk</p>
+<h2>开头</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">class</span><span class="">&nbsp;</span><span class="nc">Hello</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">static</span><span class="">&nbsp;</span><span class="kt">void</span><span class="">&nbsp;</span><span class="nf">main</span><span class="p">(</span><span class="n">String</span><span class="o">[</span><span class="o">]</span><span class="">&nbsp;</span><span class="n">args</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">         </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="s">"</span><span class="s">Hello,&nbsp;world</span><span class="s">"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="p">}</span><span class="">&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h3>注意</h3>
+<p>第一行的类名必须和文件名一样，大小写也一样</p>
+<p>这个类名是java中所有源代码的基本组织单位</p>
+<h2>标识符</h2>
+<h3>命名规则</h3>
+<p>包含：26字母，0~9数字，美元符号$，下划线_</p>
+<p>开头：不能以数字开头</p>
+<p>不能是关键字</p>
+<h3>命名规范</h3>
+<p>常量：全大写下划线</p>
+<p>类名：大驼峰</p>
+<p>变量、函数名：小驼峰</p>
+<h2>常量</h2>
+<h3>字符串常量</h3>
+<p>例如： "abc"   "Hello"</p>
+<p>记住：48 - ‘0’ 65 - ‘A’    97 - ‘a’</p>
+<h3>整数常量</h3>
+<p>例如： 100 200</p>
+<h3>浮点数常量</h3>
+<p>例如： 2.5</p>
+<h3>字符常量</h3>
+<p>例如： 'A'     'b' '中'</p>
+<p>注意：必须用单引号，并且可以是一个中文字符。单引号中不可以不写数据</p>
+<h3>布尔常量</h3>
+<p>例如： true    false</p>
+<p>注意：只有两种取值</p>
+<h3>空常量</h3>
+<p>写法： null</p>
+<p>注意：它代表没有任何数据，不能直接用来打印输出 </p>
+<h2>数据类型</h2>
+<h3>基本数据类型</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="n">整数型</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="n">类型名称</span><span class="">   </span><span class="n">占用字节</span><span class="">       </span><span class="n">取值范围</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="kt">byte</span><span class="">      </span><span class="mi">1</span><span class="">         </span><span class="o">-</span><span class="mi">128</span><span class="o">+</span><span class="mi">128</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="kt">short</span><span class="">     </span><span class="mi">2</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="kt">int</span><span class="">           </span><span class="mi">4</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="kt">long</span><span class="">      </span><span class="mi">8</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="n">浮点型</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="kt">float</span><span class="">     </span><span class="mi">2</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="kt">double</span><span class="">        </span><span class="mi">8</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="n">字符型</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="kt">char</span><span class="">      </span><span class="mi">2</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="n">布尔</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="kt">boolean</span><span class="">       </span><span class="mi">1</span></div></div></li>
+</ol></div>
+
+<h4>注意：</h4>
+<p>浮点数默认类型是double，如果一定要使用float类型，需要加上一个后缀F</p>
+<p>整数默认类型是int，如果一定要使用long类型，需要加上一个后缀L
+    long num = 1000000000L</p>
+<h3>引用数据类型</h3>
+<ul>
+<li>
+<p>字符串</p>
+</li>
+<li>
+<p>数组</p>
+</li>
+<li>
+<p>类</p>
+</li>
+<li>
+<p>接口</p>
+</li>
+<li>
+<p>Lamba</p>
+</li>
+</ul>
+<h2>变量</h2>
+<h3>声明</h3>
+<p>注意：不能使用没有赋值的变量</p>
+<h3>多个变量声明</h3>
+<p>int x = 10, y = 20, z = 30;</p>
+<h2>数据类型转换</h2>
+<h3>自动类型转换</h3>
+<p>范围从小到大，隐式</p>
+<h3>强制类型转换</h3>
+<p>范围从大到小，显式</p>
+<h4>写法：</h4>
+<p>​   范围小的类型 变量名 = （范围小的类型） 原本范围大的数据；</p>
+<p>​   int num = (int)100L;</p>
+<h4>注意：</h4>
+<p>​   byte、short、char、三种类型在运算的时候，都会被首先提升为int类型，然后再计算</p>
+<p>​   对于byte、short、char、三种类型来说，如果右侧赋值的数值没有超过范围，那么javac编译器将会自动隐含地为我们补上一个(byte)(short)(char)</p>
+<h2>运算符</h2>
+<h3>算数运算符</h3>
+<p>加法：</p>
+<p>任何数据类型和字符串进行连接的时候，结果都会变成字符串</p>
+<p>​   <code>System.out.println(str + 20 + 30);</code>    结果是str2030；不是50</p>
+<h3>赋值运算</h3>
+<h3>比较运算</h3>
+<h3>逻辑运算</h3>
+<p>与、或、非</p>
+<h3>三元运算符</h3>
+<p>数据类型 变量名 = 条件判断？表达式A：表达式B；</p>
+<h4>解释：</h4>
+<p>​   如果条件成立，那么将A赋值给变量，否则赋值B给左边变量</p>
+<h4>例如：</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">a</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">10</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">b</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">20</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">max</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">a</span><span class="">&nbsp;</span><span class="o">&gt;</span><span class="">&nbsp;</span><span class="n">b</span><span class="">&nbsp;</span><span class="o">?</span><span class="">&nbsp;</span><span class="n">a</span><span class="">&nbsp;</span><span class="p">:</span><span class="">&nbsp;</span><span class="n">b</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<h4>注意：</h4>
+<p>​   同时保证表达式A和表达式B符合左侧数据类型的要求</p>
+<h2>方法</h2>
+<h4>写法：</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">static</span><span class="">&nbsp;</span><span class="kt">void</span><span class="">&nbsp;</span><span class="nf">fangFaMing</span><span class="p">(</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="n">方法体</span><span class="err">；</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h4>调用：</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="n">fangFaMing</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<h4>无返回值的方法：</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">static</span><span class="">&nbsp;</span><span class="kt">void</span><span class="">&nbsp;</span><span class="nf">fangFaMing</span><span class="p">(</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="k">return</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="c1">//可以写一个空的return
+</span><span class="">  </span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h3>方法重载</h3>
+<p>可以声明多个名称一样但是参数不一样的方法。调用的时候看参数来匹配对应的方法</p>
+<h4>方法重载的因素：</h4>
+<ul>
+<li>
+<p>​ 参数个数不同</p>
+</li>
+<li>
+<p>​ 参数类型不同</p>
+</li>
+<li>
+<p>​ 参数的多类型顺序不同</p>
+</li>
+</ul>
+<h4>无关因素：</h4>
+<ul>
+<li>
+<p>​ 与参数的名称无关</p>
+</li>
+<li>
+<p>​ 与参数的返回值类型无关</p>
+</li>
+<li>
+<p>​ 与修饰符public static 无关</p>
+</li>
+</ul>
+<h2>选择结构</h2>
+<h3>写法：</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="k">switch</span><span class="p">(</span><span class="n">变量</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="k">case</span><span class="">&nbsp;</span><span class="mi">1</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="n">语句</span><span class="err">；</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="k">break</span><span class="err">；</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="k">case</span><span class="">&nbsp;</span><span class="mi">2</span><span class="err">：</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="err">…</span><span class="err">…</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h3>注意：</h3>
+<p>case标签不可以重复</p>
+<p>小括号里只能是：基本数据类型：byte、short、char、int；引用数据类型：String字符串、enum枚举；</p>
+<h2>IDEA快捷操作</h2>
+<h3>缩写：</h3>
+<pre><code>psvm        开头定式
+sout        输出语句
+5.fori      for循环5次
+</code></pre>
+<h3>快捷键（windows）</h3>
+<pre><code>多行注释：Ctrl+Shift+/
+整理格式：Ctrl+Alt+L     （可能和QQ锁定快捷键冲突）
+删除一行：Ctrl+Y
+代码修复：Alt+Enter
+移动当前代码行：Alt+Shift+↑↓
+自动生成代码：Alt+Ins  （面向对象时用）
+</code></pre>
+<h2>数组</h2>
+<h3>特点</h3>
+<ul>
+<li>
+<p>引用数据类型</p>
+</li>
+<li>
+<p>多个数据类型必须统一</p>
+</li>
+<li>
+<p>数组长度在程序运行期间不可以改变</p>
+</li>
+</ul>
+<h3>两种初始化的方式</h3>
+<ol>
+<li>静态初始化 指定长度</li>
+<li>动态初始化 指定内容</li>
+</ol>
+<h3>动态初始化数组的格式</h3>
+<p><code>数据类型[] 数组名称 = new 数据类型[数组长度]；</code></p>
+<h4>例如：</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="kt">int</span><span class="o">[</span><span class="o">]</span><span class="">&nbsp;</span><span class="n">arrayA</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="kt">int</span><span class="o">[</span><span class="mi">300</span><span class="o">]</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<h4>拆分：</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="kt">int</span><span class="o">[</span><span class="o">]</span><span class="">&nbsp;</span><span class="n">arrayA</span><span class="err">；</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="n">arrayA</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="kt">int</span><span class="o">[</span><span class="mi">300</span><span class="o">]</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<h3>静态初始化数组基本格式</h3>
+<h4>标准格式：</h4>
+<p>​   数据类型[] 数组名称 = new 数据类型{元素1， 元素2， 元素……}；</p>
+<h4>省略格式：</h4>
+<p>​   数据类型[] 数组名称 = {元素1， 元素2， 元素……}；</p>
+<h4>注意：</h4>
+<p>​   静态初始化的省略格式不能拆分成两个步骤</p>
+<h3>访问元素进行获取</h3>
+<p>直接打印数组</p>
+<p>​   得到的是数组对应的内存地址哈希值</p>
+<p>动态数组访问没赋值直接访问</p>
+<p>​   得到的元素是元素类型对应的默认值</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="kt">int</span><span class="">           </span><span class="mi">0</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="kt">float</span><span class="">     </span><span class="mf">0.0</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="kt">boolean</span><span class="">       </span><span class="kc">false</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="kt">char</span><span class="">      </span><span class="sc">'\u0000'</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="n">引用类型</span><span class="">   </span><span class="kc">null</span></div></div></li>
+</ol></div>
+
+<p>​   注意事项：静态初始化其实也有默认值的过程,只不过系统自动马上将默认值替换成为了大括号当中的具体数值。</p>
+<h3>数组长度</h3>
+<p>获取</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">变量名</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">数组名</span><span class="p">.</span><span class="na">length</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<p>注意：</p>
+<p>​   程序运行期间，数组的长度不可以改变</p>
+<h3>输出数组：</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">数组名</span><span class="p">.</span><span class="na">fori</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">用JDK提供的类</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="kn">import</span><span class="">&nbsp;</span><span class="nn">java.util.Arrays</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="n">System</span><span class="p">.</span><span class="na">out</span><span class="p">.</span><span class="na">println</span><span class="p">(</span><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">array</span><span class="p">)</span><span class="p">)</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<h3>函数传递数组 参数：</h3>
+<p>（数组作为参数，传递进去的其实是地址值）</p>
+<h3>函数传递数组 返回值：</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">static</span><span class="">&nbsp;</span><span class="kt">int</span><span class="o">[</span><span class="o">]</span><span class="">&nbsp;</span><span class="nf">函数名</span><span class="p">(</span><span class="n">参数</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p">.</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="kt">int</span><span class="o">[</span><span class="o">]</span><span class="">&nbsp;</span><span class="n">数组名</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="p">{</span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p">}</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="k">return</span><span class="">&nbsp;</span><span class="n">数组</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="err">（</span><span class="n">数组作为返回值</span><span class="err">，</span><span class="n">返回的其实也是数组的地址值</span><span class="err">）</span></div></div></li>
+</ol></div>
+
+<h2>内存划分</h2>
+<h3>栈 stack ：</h3>
+<p>存放的都是方法中的变量</p>
+<p>局部变量: 方法的参数,或者是方法{ }内部的变量</p>
+<p>作用域: 一旦超出作用域,立刻从栈内存当中消失。</p>
+<h3>堆 heap：</h3>
+<p>凡是new出来的东西，都在堆当中</p>
+<p>特点</p>
+<p>堆里面的东西都有一个16进制地址值</p>
+<p>堆里面的数据的默认值是数据类型的默认值</p>
+<h3>方法区 Meathod Area ：</h3>
+<p>存储.class相关信息，包含方法的信息</p>
+<h3>本地方法栈 Native Method Stack：</h3>
+<p>与操作系统相关</p>
+<h3>寄存器 pc Register ：</h3>
+<p>与CPU相关，性能非常高</p>
+<h2>面向对象</h2>
+<h3>叫法</h3>
+<p>成员变量：类属性</p>
+<p>成员方法：类方法</p>
+<h3>注意事项</h3>
+<ol>
+<li>成员变量是直接定义在类当中的，在方法外边</li>
+<li>成员方法不要写static关键字</li>
+</ol>
+<h3>类创建</h3>
+<p>创建步骤：</p>
+<blockquote>
+<p>​ 1 导包：指出需要使用的类在什么位置/</p>
+<p>​     import 包名称.类名称</p>
+<p>​     （对于和当前类属于同一个包的情况，可以省略导包语句不写）</p>
+<p>​ 2 创建：    </p>
+<p>​     类名称 对象名 = new 类名称（）；</p>
+<p>​ 3 使用</p>
+<p>​     3.1 使用成员变量</p>
+<p>​         对象名.成员变量名</p>
+<p>​     3.2 使用成员方法</p>
+<p>​         对象名.成员方法名
+</p>
+</blockquote>
+<p>​   注意事项：</p>
+<p>​       如果成员变量没有赋值，那么将会有一个默认值，规则和数组一样</p>
+<h3>私有属性</h3>
+<p>访问：间接方法访问，在类里面定义一个geter/setter方法来传递数据</p>
+<p>私有化写法：</p>
+<p>​   private int age = 10；</p>
+<p>写法规范：</p>
+<ul>
+<li>
+<p>必须叫setXxx/getXxx;</p>
+</li>
+<li>
+<p>必须有返回值没参数/有参数没返回值</p>
+</li>
+</ul>
+<p>注意：</p>
+<p>​   布尔数据类型的获取不叫getXxx;叫isXxx；</p>
+<h3>构造方法</h3>
+<p>概念：构造方法是专门用来创建对象的方法，当我们通过关键字new来创建对象时，其实就是在调用构造方法。</p>
+<p>格式：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="kd">public</span><span class="">&nbsp;</span><span class="n">类名称</span><span class="err">（</span><span class="n">参数类型</span><span class="">&nbsp;</span><span class="n">参数名称</span><span class="err">）</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="n">方法体</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="c1">//全参构造
+</span><span class="">  </span><span class="kd">public</span><span class="">&nbsp;</span><span class="nf">ClassName</span><span class="">&nbsp;</span><span class="p">(</span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">age</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">String</span><span class="">&nbsp;</span><span class="n">name</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">age</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">name</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>注意事项：</p>
+<ol>
+<li>
+<p>构造方法抿成必须和类名称完全一样</p>
+</li>
+<li>
+<p>构造方法不写返回值类型，连void也不写</p>
+</li>
+<li>
+<p>构造方法不能return一个具体的返回值</p>
+</li>
+<li>
+<p>如果没有编写任何构造方法，编译器默认赠送一个空的构造方法</p>
+</li>
+<li>
+<p>构造方法也是可以重载的</p>
+</li>
+</ol>
+<h3>静态关键字</h3>
+<p>静态成员变量</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">class</span><span class="">&nbsp;</span><span class="nc">Student</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">private</span><span class="">&nbsp;</span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">age</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">private</span><span class="">&nbsp;</span><span class="n">String</span><span class="">&nbsp;</span><span class="n">name</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">static</span><span class="">&nbsp;</span><span class="n">String</span><span class="">&nbsp;</span><span class="n">room</span><span class="p">;</span><span class=""> </span><span class="c1">//可以统一修改
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">private</span><span class="">&nbsp;</span><span class="kd">static</span><span class="">&nbsp;</span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">idCounter</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">0</span><span class="p">;</span><span class="">&nbsp;&nbsp;</span><span class="c1">//可以用来做计数器
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="">&nbsp;</span><span class="nf">Student</span><span class="p">(</span><span class="n">String</span><span class="">&nbsp;</span><span class="n">name</span><span class="p">,</span><span class="">&nbsp;</span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">age</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="na">name</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">name</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="na">age</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">age</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="na">id</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="o">+</span><span class="o">+</span><span class="n">idCounter</span><span class="p">;</span><span class="">  </span><span class="c1">//构造一个，计数器就加一个
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h4>说明：</h4>
+<p>一旦使用static修饰成员方法，那么这就成为了静态方法。静态方法不属于对象，而是属于类的。</p>
+<p>对于静态方法来说，可以通过对象名进行调用，也可以通过类名称来进行调用，但是更推荐类名称来进行调用，因为使用对象名调用容易让你误以为他是一个普通方法</p>
+<h4>注意：</h4>
+<ol>
+<li>
+<p><strong>静态方法不能直接访问非静态成员变量！</strong>因为在内存当中是先有的静态内容，后有的非静态内容</p>
+</li>
+<li>
+<p><strong>静态方法中不能用 this</strong> 。原因：this代表当前对象，通过谁调用的方法。谁就是当前对象。</p>
+</li>
+</ol>
+<h3>静态代码块</h3>
+<p>格式：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="n">class</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="kd">static</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="c1">//静态代码块的内容
+</span><span class="">  </span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>特点：当<strong>第一次</strong>用到本类时，静态代码块执行<strong>唯一的一次</strong></p>
+<p>注意：静态内容总是优先于非静态内容，所以静态代码块比构造方法先执行</p>
+<h3>类的继承</h3>
+<h4>写法：</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">class</span><span class="">&nbsp;</span><span class="nc">父类名称</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="err">…</span><span class="err">…</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">class</span><span class="">&nbsp;</span><span class="nc">子类名称</span><span class="">&nbsp;</span><span class="kd">extends</span><span class="">&nbsp;</span><span class="n">父类名称</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="err">…</span><span class="err">…</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h4>成员变量的访问特点：</h4>
+<ol>
+<li>
+<p>子类对象能够访问父类对象的成员变量</p>
+</li>
+<li>
+<p>如果父类子类成员变量重名，则优先是本类里的变量</p>
+</li>
+<li>
+<p>子类方法使用了重名变量名，优先是子类的</p>
+</li>
+</ol>
+<h4>三种区分：(子类当中)</h4>
+<ol>
+<li>局部变量：</li>
+</ol>
+<p><code>System.out.println(num);</code></p>
+<ol>
+<li>本类成员变量：</li>
+</ol>
+<p><code>System.out.println(this.num);</code></p>
+<ol>
+<li>父类成员变量：</li>
+</ol>
+<p><code>System.out.println(super.num);</code></p>
+<h4>方法的重写：Override</h4>
+<h5>与重载的区分</h5>
+<p>​   重写（Override）：方法的名称一样，参数列表一样。覆盖</p>
+<p>​   重载（Overload）：方法的名称一样，参数不一样。</p>
+<h5>写法</h5>
+<p>​       <code>@Override</code></p>
+<p>​       写在方法前面，用来检测是不是有效的正确覆盖重写（不写，只要满足要求，也是正确的）</p>
+<h5>注意</h5>
+<p>​       子类方法的返回值必须 ≤ 父类方法的返回值 范围</p>
+<p>​               java.lang.Object类是所有类的公共最高父类（祖宗类），java.lang.String是obj的子类</p>
+<p>​       子类方法的权限必须 ≥ 父类方法的权限修饰符</p>
+<p>​               public &gt; protected &gt; (default) &gt; private</p>
+<p>​       备注：(defult)不是关键字，而是什么都不写，留空。</p>
+<h4>构造方法的访问特点：</h4>
+<h5>规则：</h5>
+<ol>
+<li>
+<p>创建子类时，父类构造方法先执行，后执行子类构造方法。因为：子类构造方法中有一个默认隐含的super()调用，所以一定是先父后子的构造方法</p>
+</li>
+<li>
+<p>父类构造方法有参数时，子类构造方法里面加一个super(对应的参数)。即：子类构造可以通过super关键字来调用父类重载构造</p>
+</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">class</span><span class="">&nbsp;</span><span class="nc">Zi</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="">&nbsp;</span><span class="nf">Fu</span><span class="p">(</span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">n</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">super</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="p">;</span><span class="">&nbsp;</span><span class="c1">//这里
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ol>
+<li>
+<p>super 的父类构造调用，必须是子类构造方法的第一个语句。不能一个子类构造调用多次super构造。</p>
+</li>
+<li>
+<p>无参构造调用本类的有参构造时，使用<code>this(对应参数);</code> 但是只能调用父类或者子类的一种，不能无限套娃</p>
+</li>
+</ol>
+<h5>总结：</h5>
+<p>​       子类必须调用父类构造方法，不写则赠送<code>super();</code> 写了则用写的指定的super调用，super只能有一个，还必须是第一个。</p>
+<h4>总结：</h4>
+<ol>
+<li>
+<p>java语言是单继承的</p>
+</li>
+<li>
+<p>java语言是多级继承</p>
+</li>
+<li>
+<p>多个子类可以有相同的父类</p>
+</li>
+</ol>
+<h3>抽象方法和类：</h3>
+<h4>规则：</h4>
+<ol>
+<li>抽象方法：加上abstract关键字，然后去掉大括号，直接分号结束。</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">abstract</span><span class="">&nbsp;</span><span class="kt">void</span><span class="">&nbsp;</span><span class="nf">sayHello</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ol>
+<li>抽象类：抽象方法所在的类，必须是抽象类才行。class之前加一个abstract即可</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">abstract</span><span class="">&nbsp;</span><span class="kd">class</span><span class="">&nbsp;</span><span class="nc">Animal</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">abstract</span><span class="">&nbsp;</span><span class="kt">void</span><span class="">&nbsp;</span><span class="nf">eat</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="">&nbsp;</span><span class="kt">void</span><span class="">&nbsp;</span><span class="nf">normalMethord</span><span class="p">(</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<h4>使用：</h4>
+<ol>
+<li>
+<p>不能直接创建new抽象类对象</p>
+</li>
+<li>
+<p>必须用一个子类来<strong>继承</strong>抽象类</p>
+</li>
+<li>
+<p>子类必须覆盖重写父类当中所有的抽象方法 </p>
+</li>
+</ol>
+<h4>子类覆盖重写抽象方法：</h4>
+<p>​   子类去掉抽象方法的abstract关键字，然后补充上方法体大括号</p>
+<h4>注意：</h4>
+<p>​   一个抽象类不一定含有抽象方法，只要保证抽象方法所在的类是抽象类即可。</p>
+<h2>Scanner类</h2>
+<h3>功能：</h3>
+<p>​   实现键盘数据输入到程序中
+---写法：</p>
+<p>​   1 导包
+​       <code>import java.util.Scanner;</code></p>
+<p>​   2 创建
+​       <code>Scanner sc = new Scanner(System.in);</code></p>
+<p>​   3 使用
+​       <code>int num = sc.nextInt();</code>
+<code>​      String name = sc.next();</code></p>
+<h3>使用匿名对象的写法：</h3>
+<p>​   <code>int num = new Scanner(System.in).nextInt();</code></p>
+<h2>Random类</h2>
+<h3>写法</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">import</span><span class="">&nbsp;</span><span class="nn">java.util.Random</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">Random</span><span class="">&nbsp;</span><span class="n">r</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">Random</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kt">int</span><span class="">&nbsp;</span><span class="n">num</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">r</span><span class="p">.</span><span class="na">nextInt</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<h3>注意：</h3>
+<p>如果不屑参数，则在全部范围内取随机值</p>
+<h3>范围 [  )</h3>
+<p>Random r = new Random(10);</p>
+<p>取值是从0到9</p>
+<h2>Math类</h2>
+<h3>介绍：</h3>
+<p>于数学相关的工具类，有大量的静态方法</p>
+<h3>方法：</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">static</span><span class="">&nbsp;</span><span class="kt">double</span><span class="">&nbsp;</span><span class="nf">abs</span><span class="p">(</span><span class="kt">double</span><span class="">&nbsp;</span><span class="n">num</span><span class="p">)</span><span class="p">;</span><span class="">    </span><span class="n">获取绝对值</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">static</span><span class="">&nbsp;</span><span class="kt">double</span><span class="">&nbsp;</span><span class="nf">ceil</span><span class="p">(</span><span class="kt">double</span><span class="">&nbsp;</span><span class="n">num</span><span class="p">)</span><span class="p">;</span><span class="">   </span><span class="n">向上取整</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">static</span><span class="">&nbsp;</span><span class="kt">double</span><span class="">&nbsp;</span><span class="nf">floor</span><span class="p">(</span><span class="kt">double</span><span class="">&nbsp;</span><span class="n">num</span><span class="p">)</span><span class="p">;</span><span class="">  </span><span class="n">向下取整</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">static</span><span class="">&nbsp;</span><span class="kt">long</span><span class="">&nbsp;</span><span class="nf">round</span><span class="p">(</span><span class="kt">double</span><span class="">&nbsp;</span><span class="n">num</span><span class="p">)</span><span class="p">;</span><span class="">    </span><span class="n">四舍五入</span></div></div></li>
+</ol></div>
+
+<h3>常量</h3>
+<p><code>Math.PI</code></p>
+<h2>Arrays类</h2>
+<h3>介绍：</h3>
+<p>一个于数组相关的工具类，里面提供了大量的静态方法，用来实现数组常见的操作。</p>
+<h3>参数数组转字符串</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">static</span><span class="">&nbsp;</span><span class="n">String</span><span class="">&nbsp;</span><span class="nf">toString</span><span class="p">(</span><span class="n">数组</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">Arrays</span><span class="p">.</span><span class="na">toString</span><span class="p">(</span><span class="n">数组</span><span class="p">)</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<h3>按照默认升序，对数组元素进行排序</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">static</span><span class="">&nbsp;</span><span class="kt">void</span><span class="">&nbsp;</span><span class="nf">sort</span><span class="p">(</span><span class="n">数组</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">Arrays</span><span class="p">.</span><span class="na">sout</span><span class="p">(</span><span class="n">数组</span><span class="p">)</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<p>小技巧：</p>
+<p>​   数组名.fori：快捷键循环i次</p>
+<p>​   数组名.forr：倒着循环 </p>
+<h2>对象数组</h2>
+<h3>写法：</h3>
+<p><code>类名[] 对象数组名 = new 类名();</code></p>
+<h2>ArrayList集合</h2>
+<h3>区别</h3>
+<p>数组的长度不可以发生改变</p>
+<p>ArrayList的集合长度是可以发生变化的</p>
+<h3>写法</h3>
+<p><code>ArrayList&lt;String&gt; list = new ArrayList&lt;&gt;();</code></p>
+<p>备注：从jdk 1.7+开始，右侧尖括号里面不写内容，但是尖括号本身还是要写内容的。</p>
+<p>添加：<code>list.add("小明");</code></p>
+<h3>集合存储基本数据</h3>
+<p>注意：如果希望集合中存储基本数据类型，必须使用包装类</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">基本来行</span><span class="">  </span><span class="nf">包装类</span><span class="">   </span><span class="p">(</span><span class="n">引用类型</span><span class="err">，</span><span class="n">包装类都位于java</span><span class="p">.</span><span class="na">lang包下</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kt">byte</span><span class="">       </span><span class="n">Byte</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kt">short</span><span class="">      </span><span class="n">Short</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kt">int</span><span class="">            </span><span class="n">Integer</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kt">long</span><span class="">       </span><span class="n">Long</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kt">float</span><span class="">      </span><span class="n">Float</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kt">double</span><span class="">     </span><span class="n">Double</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kt">char</span><span class="">       </span><span class="n">Character</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kt">boolean</span><span class="">        </span><span class="n">Boolean</span></div></div></li>
+</ol></div>
+
+<p>写法：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span><span class="">&nbsp;</span><span class="n">listC</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">ArrayList</span><span class="o">&lt;</span><span class="o">&gt;</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="n">listC</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="n">listC</span><span class="p">.</span><span class="na">add</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<h2>字符串</h2>
+<h3>特点</h3>
+<ol>
+<li>字符串的内容永远不可变</li>
+<li>正是因为字符串不可改变，所以字符串是可以共享使用的。</li>
+<li>字符串效果上相当于是char[]字符数组，但是底层原理是byte[]字节数组。</li>
+</ol>
+<h3>创建字符串的3+1种方式</h3>
+<ol>
+<li><code>public String();</code>                   创建一个空白字符串，不含任何内容。</li>
+<li><code>public String(char[] array);</code> 根据字符数组的内容来创建字符串。</li>
+<li><code>public String(byte[] array);</code> 根据字符数组的内容来创建字符串。 </li>
+</ol>
+<h3>字符串常量池</h3>
+<p>解释：程序中直接写上的双引号字符串，就在字符串常量池当中。</p>
+<p>对于基本类型来说，==是进行数值的比较。</p>
+<p>对于引用类型来说，==是进行地址值的比较。</p>
+<h3>字符串的比较</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">str1</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">str2</span><span class="p">)</span><span class="p">;</span><span class="">   </span><span class="c1">//返回一个布尔值
+</span><span class="s">"</span><span class="s">hello</span><span class="s">"</span><span class="p">.</span><span class="na">equals</span><span class="p">(</span><span class="n">str1</span><span class="p">)</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<p>注意：如果比较一个常量字符串，一个变量字符串，推荐常量字符串写在前面</p>
+<p>因为引用数据类型是空的就会出现空指针异常</p>
+<div class="code"><ol class="num-container"></ol><ol class="code-container"></ol></div>
+
+<h3>字符串的获取</h3>
+<ol>
+<li>获取字符串长度</li>
+</ol>
+<p>​    <code>public int length();</code></p>
+<p>​    获取字符串当中含有的字符个数</p>
+<ol>
+<li>连接字符串</li>
+</ol>
+<p>​    <code>public String concat(String str);</code></p>
+<p>​    将当前字符串和参数字符串拼接成为返回值新的字符串（连接到后面）</p>
+<ol>
+<li>获取制定位置的索引字符</li>
+</ol>
+<p>​    <code>public char charAt(int index);</code></p>
+<ol>
+<li>查到参数字符串在本字符串首次出现的索引位置，如果没有，返回-1值</li>
+</ol>
+<p>​    <code>public int indexOf(String str);</code></p>
+<h3>字符串截取</h3>
+<ol>
+<li>某一点向后全部</li>
+</ol>
+<p>​    <code>public String substring(int index);</code></p>
+<p>​    截取从参数位置一直到字符串末尾，返回新字符串</p>
+<ol>
+<li>两点之间 [ , )</li>
+</ol>
+<p>​    <code>public String substring(int begin, int end);</code></p>
+<p>​    截取从begin开始，一直到end结束，中间的字符串。</p>
+<h3>字符串转换相关方法</h3>
+<ol>
+<li>将字符串拆分成字符数组作为返回值</li>
+</ol>
+<p>​    <code>public char[] toCharArray();</code></p>
+<ol>
+<li>获取当前字符串底层的字节数组</li>
+</ol>
+<p>​    <code>public byte[] getBytes();</code></p>
+<ol>
+<li>将所有出现的老字符串替换成为新字符串，返回替换之后的结果新字符串。</li>
+</ol>
+<p>​    <code>public String replace( CharSequence oldString, CharSequence newString);</code></p>
+<h3>字符串分割的方法</h3>
+<p><code>public String[] split(String regex);</code></p>
+<p>按照参数的规则，讲字符串切分成若干部分</p>
+<p>如果按照英文句点“.”进行切分，必须写“\.”（两个反斜杠）</p>
+<h2>接口</h2>
+<h3>定义写法：</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">interface</span><span class="">&nbsp;</span><span class="nc">接口名称</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h3>接口中可包含内容：</h3>
+<ul>
+<li>
+<p>java7:</p>
+</li>
+<li>
+<p>常量</p>
+</li>
+<li>
+<p>抽象方法</p>
+</li>
+<li>
+<p>java8:</p>
+</li>
+<li>
+<p>默认方法</p>
+</li>
+<li>
+<p>静态方法</p>
+</li>
+<li>
+<p>java9:</p>
+</li>
+<li>
+<p>私有方法</p>
+</li>
+</ul>
+<h3>接口的抽象方法定义：</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">interface</span><span class="">&nbsp;</span><span class="nc">MyInterfaceAbstract</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">abstract</span><span class="">&nbsp;</span><span class="kt">void</span><span class="">&nbsp;</span><span class="nf">methodAbs</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>注意事项：</p>
+<ol>
+<li>
+<p>接口当中的抽象方法，修饰符必须是两个固定的关键字：<code>public abstract</code></p>
+</li>
+<li>
+<p>这两个关键字修饰符，可以选择性的省略。（初学不推荐）</p>
+</li>
+</ol>
+<h3>接口抽象方法使用步骤：</h3>
+<ol>
+<li>接口不能直接使用，必须有一个“实现类”来“实现”该接口</li>
+</ol>
+<p>​    格式：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">class</span><span class="">&nbsp;</span><span class="nc">实现类名称</span><span class="">&nbsp;</span><span class="kd">implements</span><span class="">&nbsp;</span><span class="n">接口名称</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="err">…</span><span class="err">…</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<ol>
+<li>接口的实现类必须覆盖重写接口中所有的抽象方法。</li>
+</ol>
+<p>​    实现：去掉abstract关键字，加上方法体大括号</p>
+<ol>
+<li>创建实现类的对象，进行使用。</li>
+</ol>
+<p>注意事项：</p>
+<p>​   如果实现类没有覆盖重写接口种所有的抽象方法，那么这个实现类自己就必须是抽象类。</p>
+<h3>接口默认方法 定义：</h3>
+<p>简介：java8开始，默认方法被允许</p>
+<p>格式：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">interface</span><span class="">&nbsp;</span><span class="nc">MyInterface</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="">&nbsp;</span><span class="k">default</span><span class="">&nbsp;</span><span class="n">返回值类型</span><span class="">&nbsp;</span><span class="nf">方法名称</span><span class="p">(</span><span class="n">参数列表</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="err">…</span><span class="err">…</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>备注：接口当中默认的方法，可以解决接口升级的问题</p>
+<p>注意：</p>
+<ol>
+<li>
+<p>接口的默认方法，可以通过接口实现列对象，直接调用。</p>
+</li>
+<li>
+<p>接口的默认方法，也可以被接口实现类进行覆盖重写。</p>
+</li>
+</ol>
+<h3>接口的静态方法定义：</h3>
+<p>简介：java8开始，接口中允许定义静态方法。</p>
+<p>格式：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">interface</span><span class="">&nbsp;</span><span class="nc">MyInterface</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">static</span><span class="">&nbsp;</span><span class="n">返回值类型</span><span class="">&nbsp;</span><span class="n">方法名称</span><span class="err">（</span><span class="n">参数列表</span><span class="err">）</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="err">…</span><span class="err">…</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>提示：就是将abstract或者default换成static即可，带上方法体。</p>
+<p>注意：不能通过接口实现类对象来调用接口当中的静态方法。</p>
+<p>正确用法：通过接口名称，直接调用其中的静态方法。</p>
+<p>格式：接口名称.静态方法名(参数);</p>
+<h3>接口的私有方法定义：</h3>
+<p>背景：java9开始，接口当中允许定义私有方法。</p>
+<p>普通私有方法：解决多个默认方法之间代码重复问题</p>
+<p>静态私有方法：解决多个静态方法之间代码重复问题</p>
+<p>格式：</p>
+<p>​   普通私有方法：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">       </span><span class="kd">private</span><span class="">&nbsp;</span><span class="n">返回值类型</span><span class="">&nbsp;</span><span class="nf">方法名称</span><span class="p">(</span><span class="n">参数列表</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">         </span><span class="err">…</span><span class="err">…</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>​   静态私有方法：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">       </span><span class="kd">private</span><span class="">&nbsp;</span><span class="kd">static</span><span class="">&nbsp;</span><span class="n">返回值类型</span><span class="">&nbsp;</span><span class="nf">方法名称</span><span class="p">(</span><span class="n">参数列表</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">         </span><span class="err">…</span><span class="err">…</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h3>接口常量定义和使用：</h3>
+<p>介绍：</p>
+<p>接口中也可以定义“成员变量”，但是必须使用public static final 三个关键字进行修饰。从效果上看，这其实就是接口的【常量】</p>
+<p>格式：<code>public static final 数据类型 常量名称 = 数据值；</code></p>
+<p>注意：常量不能变，常量必须赋值，写法完全大写</p>
+<h3>一个类多个接口的实现：</h3>
+<p>格式：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class=""> </span><span class="nx">public</span><span class="">&nbsp;</span><span class="kd">class</span><span class="">&nbsp;</span><span class="nx">实现类</span><span class="">&nbsp;</span><span class="nx">implements</span><span class="">&nbsp;</span><span class="nx">接口1</span><span class="err">，</span><span class="">&nbsp;</span><span class="nx">接口2</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="err">…</span><span class="err">…</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>注意：</p>
+<ul>
+<li>
+<p>​ 如果实现类所实现的多个接口中有重复的抽象方法，只需要覆盖重写一次即可。</p>
+</li>
+<li>
+<p>​ 如果有漏的抽象方法没覆盖，那么实现类必须是一个抽象类。</p>
+</li>
+<li>
+<p>​ 实现类一定要冲突的默认方法进行重写。</p>
+</li>
+<li>
+<p>​ 父类方法和接口的默认方法冲突了，父类优先。</p>
+</li>
+</ul>
+<h3>接口的多继承</h3>
+<p>继承关系：</p>
+<ol>
+<li>
+<p>类 类，单继承</p>
+</li>
+<li>
+<p>类 接口，多继承</p>
+</li>
+<li>
+<p>接口 接口，多继承</p>
+</li>
+</ol>
+<p>注意事项：</p>
+<ol>
+<li>
+<p>多个父接口当中的抽象方法如果重复，没关系</p>
+</li>
+<li>
+<p>多个接口当中的默认方法如果重复，那么子接口必须进行默认方法的覆盖重写，而且带着defult关键字。</p>
+</li>
+</ol>
+<h2>多态</h2>
+<p>介绍：</p>
+<p>​   代码当中体现多态性，其实就是一句话：父类引用指向子类对象</p>
+<p>格式：</p>
+<p>​   <code>父类名称 对象名 = new 子类名称（）；</code></p>
+<p>​   或者</p>
+<p>​   <code>接口名称 对象名 = new 实现类名称（）；</code></p>
+<p>口诀：</p>
+<p>​   看右边new的是谁就运行谁。</p>
+<h3>多态中成员变量的特点：</h3>
+<ol>
+<li>直接通过对象名称访问成员变量：看等号左边是谁，优先用谁，没有则想上找。</li>
+<li>间接通过成员方法访问成员变量：看该方法属于谁，优先用谁，没有则想上找。</li>
+</ol>
+<h3>成员方法的使用特点：</h3>
+<p>口诀：</p>
+<p>​   成员变量：编译看左边，运行还看左边。</p>
+<p>​   成员方法：编译看左边，运行看右边。</p>
+<h3>多态的好处：</h3>
+<p>new的左边看起来一样了。</p>
+<h2>类的转型</h2>
+<h3>向上转型</h3>
+<p><code>接口或父类名 新的对象名 = new 子类名（）；</code></p>
+<h3>向下转型</h3>
+<h3>instanceof关键字转型</h3>
+<p>注意：</p>
+<p>​   向下转型一定要用if判断，否则可能会出现异常。</p>
+<h2>final关键字</h2>
+<h3>常见四种用法</h3>
+<ol>
+<li>
+<p>修饰类</p>
+</li>
+<li>
+<p>修饰方法</p>
+</li>
+<li>
+<p>修饰局部变量</p>
+</li>
+<li>
+<p>修饰成员变量</p>
+</li>
+</ol>
+<h3>final类</h3>
+<p>写法：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">final</span><span class="">&nbsp;</span><span class="kd">class</span><span class="">&nbsp;</span><span class="nc">类名称</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="err">…</span><span class="err">…</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>含义：太监类</p>
+<h3>final 成员方法</h3>
+<p>写法：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="kd">public</span><span class="">&nbsp;</span><span class="kd">final</span><span class="">&nbsp;</span><span class="kt">void</span><span class="">&nbsp;</span><span class="nf">method</span><span class="p">(</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="err">…</span><span class="err">…</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>含义：</p>
+<p>​   当final关键字用来修饰一个方法的时候，这个方法就是最终方法，也就是不能被覆盖重写。</p>
+<h3>final 局部变量</h3>
+<p>写法：</p>
+<p>​   <code>final int a = 50;</code></p>
+<p>含义：</p>
+<p>​   变量不可以被修改</p>
+<h3>final 成员变量</h3>
+<p>含义：不可变</p>
+<p>注意：</p>
+<ol>
+<li>
+<p>由于成员变量具有默认值，所以用了final之后必须手动赋值，不会再给默认值了。</p>
+</li>
+<li>
+<p>对于final 的成员变量，要么使用直接赋值，要么通过构造方法赋值。</p>
+</li>
+<li>
+<p>必须保证类当中所有重构方法，getter和setter，都会最终对final赋值不重复。</p>
+</li>
+</ol>
+<h2>四种权限修饰符</h2>
+<h3>比较：</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">       </span><span class="kd">public</span><span class="">    </span><span class="o">&gt;</span><span class="">   </span><span class="kd">protected</span><span class=""> </span><span class="o">&gt;</span><span class="">   </span><span class="p">(</span><span class="k">default</span><span class="p">)</span><span class="">    </span><span class="o">&gt;</span><span class="">   </span><span class="kd">private</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">同一个类</span><span class="">  </span><span class="n">可访</span><span class="">         </span><span class="n">可访</span><span class="">         </span><span class="n">可访</span><span class="">         </span><span class="n">可访</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">同一个包</span><span class="">  </span><span class="n">可访</span><span class="">         </span><span class="n">可访</span><span class="">         </span><span class="n">可访</span><span class="">         </span><span class="n">禁止</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">不同包子类</span><span class=""> </span><span class="n">可访</span><span class="">         </span><span class="n">可访</span><span class="">         </span><span class="n">禁止</span><span class="">         </span><span class="n">禁止</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">不同包非子类</span><span class="">    </span><span class="n">可访</span><span class="">         </span><span class="n">禁止</span><span class="">         </span><span class="n">禁止</span><span class="">         </span><span class="n">禁止</span></div></div></li>
+</ol></div>
+
+<h2>内部类</h2>
+<h3>含义：</h3>
+<p>如果一个事物的内部包含另一个事物，那么这就是一个类内部包含另一个类。</p>
+<h3>例如：</h3>
+<p>身体和心脏的关系、汽车和发动机的关系</p>
+<h3>成员内部类</h3>
+<p>定义格式：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="n">修饰符</span><span class="err">：</span><span class="kd">class</span><span class="">&nbsp;</span><span class="nc">外部类名称</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="n">修饰符</span><span class="">&nbsp;</span><span class="kd">class</span><span class="">&nbsp;</span><span class="nc">内部类名称</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">         </span><span class="err">…</span><span class="err">…</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>注意：内用外可以随意访问。外用内要借助内部类对象。</p>
+<p>内部类的使用：</p>
+<ol>
+<li>
+<p>间接方式：在外部类的方法当中，使用内部类；然后main只是调用外部类的方法。</p>
+</li>
+<li>
+<p>直接方式：公式</p>
+</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="n">类名称</span><span class="">&nbsp;</span><span class="n">对象名</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">类名称</span><span class="err">（</span><span class="err">）</span><span class="err">；</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="n">外部类名称</span><span class="p">.</span><span class="na">内部类名称</span><span class="">&nbsp;</span><span class="n">对象名</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">外部类名称</span><span class="err">（</span><span class="err">）</span><span class="p">.</span><span class="na">new</span><span class="">&nbsp;</span><span class="n">内部类名称</span><span class="err">（</span><span class="err">）</span><span class="err">；</span></div></div></li>
+</ol></div>
+
+<p>内部类的同名变量访问：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="n">修饰符</span><span class="err">：</span><span class="kd">class</span><span class="">&nbsp;</span><span class="nc">Outer</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">num</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">10</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="n">修饰符</span><span class="">&nbsp;</span><span class="kd">class</span><span class="">&nbsp;</span><span class="nc">Inner</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">         </span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">num</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">20</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">         </span><span class="kd">public</span><span class="">&nbsp;</span><span class="kt">void</span><span class="">&nbsp;</span><span class="n">method</span><span class="">&nbsp;</span><span class="nf">Inner</span><span class="p">(</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">             </span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">num</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">30</span><span class="p">;</span><span class="">   </span><span class="c1">//内部类方法的局部变量    
+</span><span class="">              </span><span class="n">sout</span><span class="p">(</span><span class="n">num</span><span class="p">)</span><span class="p">;</span><span class="">     </span><span class="c1">//局部变量，就近原则
+</span><span class="">              </span><span class="n">sout</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="na">num</span><span class="p">)</span><span class="p">;</span><span class="">     </span><span class="c1">//外部类的成员变量
+</span><span class="">              </span><span class="n">sout</span><span class="p">(</span><span class="n">Outer</span><span class="p">.</span><span class="na">this</span><span class="p">.</span><span class="na">num</span><span class="p">)</span><span class="p">;</span><span class="c1">//外部类变量的使用
+</span><span class="">          </span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>注意：如果出现了重名现象，那么格式是：外部类名称.this.外部类成员变量名</p>
+<h3>局部内部类</h3>
+<p>说明：如果一个类是定义在一个方法内部的，那么这就是一个局部内部类。</p>
+<p>“局部”：只有当前所属的方法才能使用它，出了这个方法外面就不饿能用了。</p>
+<p>定义格式：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="n">修饰符</span><span class="">&nbsp;</span><span class="kd">class</span><span class="">&nbsp;</span><span class="nc">外部类名称</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="n">修饰符</span><span class="">&nbsp;</span><span class="n">返回值类型</span><span class="">&nbsp;</span><span class="n">外部类方法名称</span><span class="err">（</span><span class="n">参数列表</span><span class="err">）</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">         </span><span class="kd">class</span><span class="">&nbsp;</span><span class="nc">局部内部类名称</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">             </span><span class="err">…</span><span class="err">…</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">         </span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>注意：局部内部类，如果希望访问所在的方法的局部变量，那么这个局部变量必须是【有效final的】。</p>
+<p>原因：</p>
+<ol>
+<li>
+<p>new出来的对象在堆内存当中</p>
+</li>
+<li>
+<p>局部变量是跟着方法走的，在栈内存当中</p>
+</li>
+<li>
+<p>方法运行结束后，立刻出栈，局部变量就会立刻消失。</p>
+</li>
+<li>
+<p>但是new出来的对象回在对当中持续存在，知道垃圾回收消失。</p>
+</li>
+</ol>
+<h3>匿名内部类***</h3>
+<p>说明：</p>
+<p>如果接口的实现类（或者是父类的子类）只需要使用唯一的一次，那么这种情况下就可以省略掉该定义，而改为使用【匿名内部类】</p>
+<p>格式：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="n">接口名称</span><span class="">&nbsp;</span><span class="n">对象名</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">接口名称</span><span class="err">（</span><span class="err">）</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="c1">//覆盖重写所有抽象方法
+</span><span class="">  </span><span class="p">}</span><span class="err">；</span><span class="">    </span><span class="c1">//分号不能丢
+</span><span class="">  </span><span class="n">对象名</span><span class="p">.</span><span class="na">成员方法名</span><span class="err">；</span></div></div></li>
+</ol></div>
+
+<p>注意：</p>
+<ol>
+<li>
+<p>在创建对象的时候，只能使用唯一一次，如果希望多次创建对象，而且类的内容一样的话，那么久必须使用单独定义的实现类了。</p>
+</li>
+<li>
+<p>匿名对象在【调用方法】的时候，只能调用唯一一次，如果希望同一个对象调用两次方法，那么必须给对象起个名字。</p>
+</li>
+<li>
+<p>匿名内部类是省略了【实现类/子类】，但是匿名对象是省略了【对象名称】</p>
+</li>
+</ol>
+<h3>类作为成员变量类型：如String</h3>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

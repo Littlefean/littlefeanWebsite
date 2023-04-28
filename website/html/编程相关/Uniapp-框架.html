@@ -1,0 +1,539 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Uniapp-框架</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>uniapp框架学习</h1>
+<hr />
+<h2>全局配置 pages.json</h2>
+<p>pages.json是全局文件，在里面进行全局配置</p>
+<h3>globalStyle</h3>
+<p>状态栏、导航条、标题、窗口背景色</p>
+<p>（与pages里的style写法相同）</p>
+<p>注意</p>
+<ol>
+<li>支付宝小程序使用<code>titleImage</code>时必须使用<code>https</code></li>
+<li><code>globalStyle</code>中设置的<code>titleImage</code>也会覆盖掉<code>pages</code>-&gt;<code>style</code>内的设置文字标题</li>
+<li>用 <code>maxWidth</code> 时，页面内fixed元素需要使用--window-left,--window-right来保证布局位置正确</li>
+</ol>
+<h3>topWindow、leftWindow、rightWindow</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>属性</th>
+<th>值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>配置页面路径</td>
+<td>path</td>
+<td></td>
+<td>字符串类型</td>
+</tr>
+<tr>
+<td>配置窗口表现</td>
+<td>style</td>
+<td></td>
+<td>和pageStyle差不多</td>
+</tr>
+<tr>
+<td>显示规则</td>
+<td>matchMedia</td>
+<td><code>{"minWidth": 768}</code></td>
+<td>是一个对象</td>
+</tr>
+</tbody>
+</table>
+<h3>pages</h3>
+<p>pages接收一个数组，数组里的每一个元素都是一个对象，该对象含有path和style属性</p>
+<p>注意：</p>
+<ul>
+<li>pages节点的第一项为应用入口页（即首页）</li>
+<li><strong>应用中新增/减少页面</strong>，都需要对 pages 数组进行修改</li>
+<li>文件名<strong>不需要写后缀</strong>，框架会自动寻找路径下的页面资源</li>
+</ul>
+<p>示例：pages.json文件里要添加的内容</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="s2">"pages"</span><span class="o">:</span><span class="">&nbsp;</span><span class="p">[</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="s2">"path"</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"pages/index/index"</span><span class="p">,</span><span class="">&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="s2">"style"</span><span class="o">:</span><span class="">&nbsp;</span><span class="p">{</span><span class="">&nbsp;</span><span class="p">...</span><span class="">&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="s2">"path"</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"pages/login/login"</span><span class="p">,</span><span class="">&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="s2">"style"</span><span class="o">:</span><span class="">&nbsp;</span><span class="p">{</span><span class="">&nbsp;</span><span class="p">...</span><span class="">&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h4>style</h4>
+<p>用于设置每个页面的状态栏、导航条、标题、窗口背景色，会覆盖 globalStyle 中相同的配置项</p>
+<p>示例</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="s2">"pages"</span><span class="o">:</span><span class="">&nbsp;</span><span class="p">[</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="s2">"path"</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"pages/index/index"</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="s2">"style"</span><span class="o">:</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="s2">"navigationBarTitleText"</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"首页"</span><span class="p">,</span><span class="">&nbsp;&nbsp;</span><span class="c1">//设置页面标题文字
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="s2">"enablePullDownRefresh"</span><span class="o">:</span><span class="kc">true</span><span class="">&nbsp;&nbsp;</span><span class="c1">//开启下拉刷新
+</span><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">...</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>属性名</th>
+<th>属性值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>导航栏-背景颜色</td>
+<td>navigationBarBackgroundColor</td>
+<td>#00ccff</td>
+<td>十六进制颜色</td>
+</tr>
+<tr>
+<td>导航栏-标题颜色</td>
+<td>navigationBarTextStyle</td>
+<td>pink</td>
+<td>字符串颜色</td>
+</tr>
+<tr>
+<td>导航栏-文字内容</td>
+<td>navigationBarTitleText</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>导航栏-阴影</td>
+<td>navigationBarShadow</td>
+<td>yellow</td>
+<td>字符串颜色</td>
+</tr>
+<tr>
+<td>导航栏-样式</td>
+<td>navigationStyle</td>
+<td></td>
+<td>默认是  <code>'default'</code></td>
+</tr>
+<tr>
+<td>导航栏-图片地址</td>
+<td>titleImage</td>
+<td></td>
+<td>会替换文字标题</td>
+</tr>
+<tr>
+<td>导航栏-透明设置</td>
+<td>transparentTitle</td>
+<td></td>
+<td>always 一直透明 / auto 滑动自适应 / none 不透明</td>
+</tr>
+<tr>
+<td>导航栏-点击穿透</td>
+<td>titlePenetrate</td>
+<td>NO</td>
+<td></td>
+</tr>
+<tr>
+<td>页面-是否滚动</td>
+<td>disableScroll</td>
+<td></td>
+<td>布尔值</td>
+</tr>
+<tr>
+<td>窗口-背景颜色</td>
+<td>backgroundColor</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>下拉背景</td>
+<td>backgroundTextStyle</td>
+<td></td>
+<td>仅有<code>dark</code>/<code>light</code></td>
+</tr>
+<tr>
+<td>页面-是否下拉刷新</td>
+<td>enablePullDownRefresh</td>
+<td></td>
+<td>布尔值</td>
+</tr>
+<tr>
+<td>页面-上拉触顶距离</td>
+<td>onReachBottomDistance</td>
+<td>50</td>
+<td>单位是px</td>
+</tr>
+<tr>
+<td>页面-最大宽度</td>
+<td></td>
+<td>1190 默认</td>
+<td>单位是px</td>
+</tr>
+<tr>
+<td>顶部窗口-背景颜色</td>
+<td>backgroundColorTop</td>
+<td></td>
+<td>十六进制颜色</td>
+</tr>
+<tr>
+<td>底部窗口-背景颜色</td>
+<td>backgroundColorBottom</td>
+<td></td>
+<td>十六进制</td>
+</tr>
+<tr>
+<td>端样式-app</td>
+<td>app-plus</td>
+<td></td>
+<td>编译到App平台的特定样式</td>
+</tr>
+<tr>
+<td>端样式-h5</td>
+<td>h5</td>
+<td></td>
+<td>编译到h5端的特定样式</td>
+</tr>
+</tbody>
+</table>
+<h5>app端的特定样式</h5>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>属性名</th>
+<th>属性值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>窗口-背景颜色</td>
+<td>background</td>
+<td>#FFFFFF</td>
+<td>十六进制</td>
+</tr>
+<tr>
+<td>窗口-动画效果</td>
+<td>animationType</td>
+<td>pop-in</td>
+<td>有pop-in和pop-out</td>
+</tr>
+<tr>
+<td>窗口-动画时间</td>
+<td>animationDuration</td>
+<td>300 默认</td>
+<td>窗口显示动画持续时间，单位毫秒</td>
+</tr>
+<tr>
+<td>导航栏</td>
+<td>titleNView</td>
+<td></td>
+<td>Obj类型</td>
+</tr>
+<tr>
+<td>原生子窗体</td>
+<td>subNVues</td>
+<td></td>
+<td>Obj类型</td>
+</tr>
+<tr>
+<td>页面-是否回弹</td>
+<td>bounce</td>
+<td></td>
+<td>为 "none" 时关闭效果</td>
+</tr>
+<tr>
+<td>页面-是否侧滑返回</td>
+<td>popGesture</td>
+<td>close 默认</td>
+<td>close启用，none禁止</td>
+</tr>
+<tr>
+<td>页面-下拉刷新</td>
+<td>pullToRefresh</td>
+<td></td>
+<td>Obj类型</td>
+</tr>
+<tr>
+<td>键盘-弹出模式</td>
+<td>softinputMode</td>
+<td></td>
+<td>adjustResize、adjustPan 两种模式</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>tabBar</h3>
+<p>应用是一个多 tab 应用，可以通过 tabBar 配置项指定一级导航栏，以及 tab 切换时显示的对应页</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">"tabBar"</span><span class="p">:</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">"color"</span><span class="p">:</span><span class="">&nbsp;</span><span class="s2">"#7A7E83"</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">"selectedColor"</span><span class="p">:</span><span class="">&nbsp;</span><span class="s2">"#3cc51f"</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">"borderStyle"</span><span class="p">:</span><span class="">&nbsp;</span><span class="s2">"black"</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">"backgroundColor"</span><span class="p">:</span><span class="">&nbsp;</span><span class="s2">"#ffffff"</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">/</span><span class="err">/</span><span class="err">只</span><span class="err">能</span><span class="err">配</span><span class="err">置</span><span class="err">最</span><span class="err">少</span><span class="mi">2</span><span class="err">个</span><span class="err">、</span><span class="err">最</span><span class="err">多</span><span class="mi">5</span><span class="err">个</span><span class="">&nbsp;</span><span class="kc">ta</span><span class="err">b</span><span class="err">，</span><span class="kc">ta</span><span class="err">b</span><span class="">&nbsp;</span><span class="err">按</span><span class="err">数</span><span class="err">组</span><span class="err">的</span><span class="err">顺</span><span class="err">序</span><span class="err">排</span><span class="err">序</span><span class="err">。</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">"list"</span><span class="p">:</span><span class="">&nbsp;</span><span class="p">[{</span><span class="">&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">"pagePath"</span><span class="p">:</span><span class="">&nbsp;</span><span class="s2">"pages/component/index"</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">"iconPath"</span><span class="p">:</span><span class="">&nbsp;</span><span class="s2">"static/image/icon_component.png"</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">"selectedIconPath"</span><span class="p">:</span><span class="">&nbsp;</span><span class="s2">"static/image/icon_component_HL.png"</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">"text"</span><span class="p">:</span><span class="">&nbsp;</span><span class="s2">"组件"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">},</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">"pagePath"</span><span class="p">:</span><span class="">&nbsp;</span><span class="s2">"pages/API/index"</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">"iconPath"</span><span class="p">:</span><span class="">&nbsp;</span><span class="s2">"static/image/icon_API.png"</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">"selectedIconPath"</span><span class="p">:</span><span class="">&nbsp;</span><span class="s2">"static/image/icon_API_HL.png"</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">"text"</span><span class="p">:</span><span class="">&nbsp;</span><span class="s2">"接口"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h3>condition</h3>
+<p>启动模式配置，仅开发期间生效，用于模拟直达页面的场景，如：小程序转发后，用户点击所打开的页面。</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="s2">"condition"</span><span class="o">:</span><span class="">&nbsp;</span><span class="p">{</span><span class="">&nbsp;</span><span class="c1">//模式配置，仅开发期间生效
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="s2">"current"</span><span class="o">:</span><span class="">&nbsp;</span><span class="mf">0</span><span class="p">,</span><span class="">&nbsp;</span><span class="c1">//当前激活的模式（list&nbsp;的索引项）
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="s2">"list"</span><span class="o">:</span><span class="">&nbsp;</span><span class="p">[</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="s2">"name"</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"swiper"</span><span class="p">,</span><span class="">&nbsp;</span><span class="c1">//模式名称
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="s2">"path"</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"pages/component/swiper/swiper"</span><span class="p">,</span><span class="">&nbsp;</span><span class="c1">//启动页面，必选
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="s2">"query"</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"interval=4000&autoplay=false"</span><span class="">&nbsp;</span><span class="c1">//启动参数，在页面的onLoad函数里面得到。
+</span><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="s2">"name"</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"test"</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="s2">"path"</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"pages/component/switch/switch"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h2>mainfest.json</h2>
+<p>配置文件，指定应用的名称、图标、权限</p>
+<h2>自定义条件编译 package.json</h2>
+<p>实现自定义条件编译平台（如钉钉小程序、微信服务号等平台）</p>
+<p>扩展配置用法（去掉注释）</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div><div class="line-numbers"><div class="line-num" data-line-num="19"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">/</span><span class="err">*</span><span class="err">*</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">p</span><span class="err">a</span><span class="err">c</span><span class="err">k</span><span class="err">a</span><span class="err">g</span><span class="err">e</span><span class="err">.</span><span class="err">j</span><span class="err">s</span><span class="err">o</span><span class="kc">n</span><span class="err">其</span><span class="err">它</span><span class="err">原</span><span class="err">有</span><span class="err">配</span><span class="err">置</span><span class="">&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">*</span><span class="err">/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">"uni-app"</span><span class="p">:</span><span class="">&nbsp;</span><span class="p">{</span><span class="err">/</span><span class="err">/</span><span class="">&nbsp;</span><span class="err">扩</span><span class="err">展</span><span class="err">配</span><span class="err">置</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">"scripts"</span><span class="p">:</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">"custom-platform"</span><span class="p">:</span><span class="">&nbsp;</span><span class="p">{</span><span class="">&nbsp;</span><span class="err">/</span><span class="err">/</span><span class="err">自</span><span class="err">定</span><span class="err">义</span><span class="err">编</span><span class="err">译</span><span class="err">平</span><span class="err">台</span><span class="err">配</span><span class="err">置</span><span class="err">，</span><span class="err">可</span><span class="err">通</span><span class="err">过</span><span class="err">c</span><span class="err">l</span><span class="err">i</span><span class="err">方</span><span class="err">式</span><span class="err">调</span><span class="err">用</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">"title"</span><span class="p">:</span><span class="s2">"自定义扩展名称"</span><span class="p">,</span><span class="">&nbsp;</span><span class="err">/</span><span class="err">/</span><span class="">&nbsp;</span><span class="err">在</span><span class="err">H</span><span class="err">B</span><span class="err">u</span><span class="err">i</span><span class="err">l</span><span class="err">d</span><span class="err">e</span><span class="err">r</span><span class="err">X</span><span class="err">中</span><span class="err">会</span><span class="err">显</span><span class="err">示</span><span class="err">在</span><span class="">&nbsp;</span><span class="err">运</span><span class="err">行</span><span class="err">/</span><span class="err">发</span><span class="err">行</span><span class="">&nbsp;</span><span class="err">菜</span><span class="err">单</span><span class="err">中</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">"BROWSER"</span><span class="p">:</span><span class="s2">""</span><span class="p">,</span><span class="">&nbsp;&nbsp;</span><span class="err">/</span><span class="err">/</span><span class="err">运</span><span class="err">行</span><span class="err">到</span><span class="err">的</span><span class="err">目</span><span class="err">标</span><span class="err">浏</span><span class="err">览</span><span class="err">器</span><span class="err">，</span><span class="err">仅</span><span class="err">当</span><span class="err">U</span><span class="err">N</span><span class="err">I</span><span class="err">_</span><span class="err">P</span><span class="err">L</span><span class="err">A</span><span class="err">T</span><span class="err">F</span><span class="err">O</span><span class="err">R</span><span class="err">M</span><span class="err">为</span><span class="err">h</span><span class="mi">5</span><span class="err">时</span><span class="err">有</span><span class="err">效</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">"env"</span><span class="p">:</span><span class="">&nbsp;</span><span class="p">{</span><span class="err">/</span><span class="err">/</span><span class="err">环</span><span class="err">境</span><span class="err">变</span><span class="err">量</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">"UNI_PLATFORM"</span><span class="p">:</span><span class="">&nbsp;</span><span class="s2">""</span><span class="">&nbsp;&nbsp;</span><span class="err">/</span><span class="err">/</span><span class="err">基</span><span class="err">准</span><span class="err">平</span><span class="err">台</span><span class="">&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">},</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">"define"</span><span class="p">:</span><span class="">&nbsp;</span><span class="p">{</span><span class="">&nbsp;</span><span class="err">/</span><span class="err">/</span><span class="err">自</span><span class="err">定</span><span class="err">义</span><span class="err">条</span><span class="err">件</span><span class="err">编</span><span class="err">译</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">"CUSTOM-CONST"</span><span class="p">:</span><span class="">&nbsp;</span><span class="kc">true</span><span class="">&nbsp;</span><span class="err">/</span><span class="err">/</span><span class="err">自</span><span class="err">定</span><span class="err">义</span><span class="err">条</span><span class="err">件</span><span class="err">编</span><span class="err">译</span><span class="err">常</span><span class="err">量</span><span class="err">，</span><span class="err">建</span><span class="err">议</span><span class="err">为</span><span class="err">大</span><span class="err">写</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h2>vue.config.js</h2>
+<p>可选的配置文件，一般用于配置 webpack 等编译选项</p>
+<p>注意：仅vue页面生效</p>
+<h2>uni.scss</h2>
+<p>方便整体控制应用的风格</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">style</span><span class="">&nbsp;</span><span class="na">lang</span><span class="o">=</span><span class="s">"scss"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="p">/</span><span class="nt">style</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<h2>App.vue</h2>
+<p>uni-app的主组件，所有页面都是在<code>App.vue</code>下进行切换的，是页面入口文件。但<code>App.vue</code>本身不是页面，这里不能编写视图元素。</p>
+<p>这个文件的作用包括：调用应用生命周期函数、配置全局样式、配置全局的存储globalData</p>
+<h2>main.js</h2>
+<p>uni-app的入口文件，主要作用是初始化<code>vue</code>实例、定义全局组件、使用需要的插件如vuex。</p>
+<h2>框架接口</h2>
+<h3>console</h3>
+<ul>
+<li>log </li>
+<li>debug </li>
+<li>info</li>
+<li>warn</li>
+<li>error</li>
+</ul>
+<h3>定时器</h3>
+<p>和js类似</p>
+<h4>setTimeout</h4>
+<p>设置定时器，到期后执行回调函数</p>
+<h4>clearTimeout</h4>
+<p>取消一个定时器</p>
+<h4>setInterval</h4>
+<p>设置要给永不停息的定时器，不停的执行回调函数</p>
+<h4>clearInterval</h4>
+<p>取消永不停息的定时器</p>
+<h3>生命周期</h3>
+<h4>应用生命周期</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class=""></span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;只能在App.vue里监听应用的生命周期
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">export</span><span class="">&nbsp;</span><span class="k">default</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;初始化完成
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">onLaunch</span><span class="o">:</span><span class="">&nbsp;</span><span class="kd">function</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'App&nbsp;Launch'</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;启动
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">onShow</span><span class="o">:</span><span class="">&nbsp;</span><span class="kd">function</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'App&nbsp;Show'</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;从前台进入后台
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">onHide</span><span class="o">:</span><span class="">&nbsp;</span><span class="kd">function</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'App&nbsp;Hide'</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<h4>页面生命周期</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">onPageScroll</span><span class="">&nbsp;</span><span class="o">:</span><span class="">&nbsp;</span><span class="kd">function</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//nvue暂不支持滚动监听，可用bindingx代替
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"滚动距离为："</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="nx">e</span><span class="p">.</span><span class="nx">scrollTop</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span><span class="p">,</span></div></div></li>
+</ol></div>
+
+<h4>组件生命周期</h4>
+<h3>页面</h3>
+<h4>getApp()</h4>
+<p>获取当前应用实例，一般用于获取globalData </p>
+<h4>getCurrentPages()</h4>
+<p>于获取当前页面栈的实例，以数组形式按栈的顺序给出，第一个元素为首页，最后一个元素为当前页面。</p>
+<h4>$getAppWebview()</h4>
+<p>可以得到当前webview的对象实例</p>
+<h3>页面通讯</h3>
+<ol>
+<li>uni.$emit</li>
+</ol>
+<p>触发全局自定义事件</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">$emit</span><span class="p">(</span><span class="s1">'update'</span><span class="p">,</span><span class="p">{</span><span class="nx">msg</span><span class="o">:</span><span class="s1">'页面更新'</span><span class="p">}</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ol>
+<li>uni.$on</li>
+</ol>
+<p>监听全局自定义事件</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">$on</span><span class="p">(</span><span class="s1">'update'</span><span class="p">,</span><span class="">&nbsp;</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'监听到事件来自&nbsp;update&nbsp;，携带参数&nbsp;msg&nbsp;为：'</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="nx">data</span><span class="p">.</span><span class="nx">msg</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ol>
+<li>uni.$once</li>
+</ol>
+<p>监听全局的自定义事件。事件可以由 uni.$emit 触发，但是只触发一次，在第一次触发之后移除监听器。</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nx">uni</span><span class="p">.</span><span class="nx">$once</span><span class="p">(</span><span class="s1">'update'</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">data</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'监听到事件来自&nbsp;update&nbsp;，携带参数&nbsp;msg&nbsp;为：'</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="nx">data</span><span class="p">.</span><span class="nx">msg</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ol>
+<li>uni.$off</li>
+</ol>
+<p>移除全局自定义事件监听器</p>
+<p>注意</p>
+<ul>
+<li>如果没有提供参数，则移除所有的事件监听器；</li>
+<li>如果只提供了事件，则移除该事件所有的监听器；</li>
+<li>如果同时提供了事件与回调，则只移除这个回调的监听器；</li>
+<li>提供的回调必须跟$on的回调为同一个才能移除这个回调的监听器；</li>
+</ul>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

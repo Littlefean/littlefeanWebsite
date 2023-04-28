@@ -1,0 +1,185 @@
+/**
+  我的初始化
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  overflow-y: auto;
+}
+body::-webkit-scrollbar {
+  width: 14px;
+  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 4px;
+  scrollbar-arrow-color: red;
+  /*background-color: #fff;*/
+}
+body::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 100px;
+  /*-webkit-box-shadow: inset 0 0 5px yellow;*/
+  background: rgba(255, 255, 255, 0.2);
+  scrollbar-arrow-color: rgba(255, 255, 255, 0.2);
+}
+body::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  /*-webkit-box-shadow: inset 0 0 10px rgba(0, 0, 255, 0.9);*/
+  border: solid 2px rgba(255, 255, 255, 0.4);
+  border-radius: 100px;
+  background: rgba(0, 0, 0, 0.1);
+}
+/***
+ 有关中心恒星的样式
+ */
+#centerStar {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-5px) translateY(-5px);
+  border-radius: 100px;
+  box-shadow: 0 0 10px yellow;
+  background-color: white;
+}
+/**
+ 和旋转有关的css动画
+ */
+@keyframes planetRound {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes planetRoundR {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}
+@keyframes rotate-frame {
+  0% {
+    transform: rotateX(45deg) rotateY(0deg) rotateZ(30deg);
+  }
+  100% {
+    transform: rotateX(45deg) rotateY(360deg) rotateZ(30deg);
+  }
+}
+/**
+ 星空画布的样式
+ */
+.canvasTmp {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  overflow: hidden;
+}
+.starWay {
+  width: 80%;
+  height: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: left center;
+}
+.slipStar {
+  width: 3px;
+  height: 3px;
+  border-radius: 100px;
+  position: absolute;
+  background-color: white;
+  animation-name: slideStar;
+  animation-duration: 6s;
+  animation-timing-function: cubic-bezier(0.99, 0, 1, 1);
+  animation-iteration-count: infinite;
+}
+@keyframes slideStar {
+  0% {
+    width: 0.2px;
+    height: 0.2px;
+    left: 0;
+  }
+  100% {
+    width: 7px;
+    height: 7px;
+    left: 100%;
+  }
+}
+body {
+  background-color: black;
+  color: white;
+}
+body .mainTitle {
+  text-align: center;
+  line-height: 4em;
+}
+body .studyItems {
+  width: 80%;
+  margin: 0 auto;
+  height: 3650px;
+  position: relative;
+}
+body .studyItems .timeLine {
+  height: 100%;
+  width: 20%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.2;
+}
+body .studyItems .timeScale {
+  width: 120%;
+  left: -120px;
+  position: absolute;
+  border-top: solid 1px;
+  border-color: rgba(255, 255, 255, 0.3);
+  padding-top: 5px;
+  font-family: Consolas, serif;
+  font-weight: lighter;
+}
+body .studyItems .mdItem {
+  min-height: 30px;
+  position: absolute;
+  background-color: rgba(8, 158, 197, 0.5);
+  transition: all 0.2s;
+  user-select: none;
+}
+body .studyItems .mdItem:hover {
+  z-index: 100;
+  background-color: #089ec5;
+}
+body .studyItems .mdItem:hover h3 {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+body .studyItems .mdItem:hover .startT,
+body .studyItems .mdItem:hover .endT,
+body .studyItems .mdItem:hover i,
+body .studyItems .mdItem:hover b {
+  visibility: visible;
+}
+body .studyItems .mdItem h3 {
+  width: 200%;
+  font-size: 15px;
+  line-height: 2em;
+  font-weight: normal;
+}
+body .studyItems .mdItem .startT,
+body .studyItems .mdItem .endT,
+body .studyItems .mdItem i,
+body .studyItems .mdItem b {
+  visibility: hidden;
+  width: 200%;
+}
+/*# sourceMappingURL=history.css.map */

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<!-- 
+    鼠标控制练习
+    2020年10月8日
+    by littlefean
+ -->
+<html lang="zh-CN">
+
+<head>
+    <title>鼠标控制练习</title>
+    <style>
+        :root {
+            --barrelLength: 250px;
+            --barrelWidth: 20px;
+        }
+
+        /* 枪 */
+        #gun {
+            width: var(--barrelLength);
+            height: var(--barrelWidth);
+            background-color: gray;
+            position: absolute;
+            left: 500px;
+            top: 300px;
+            transform: rotate(99deg);
+        }
+
+        /* 枪头 */
+        #gun .muzzle {
+            width: var(--barrelWidth);
+            height: var(--barrelWidth);
+            background-color: rgb(83, 83, 83);
+            float: right;
+        }
+
+        .bullet {
+            height: var(--barrelWidth);
+            width: var(--barrelWidth);
+            background-color: brown;
+            border: rgb(83, 83, 83);
+            border-width: 5px;
+            border-radius: 100px;
+            position: absolute;
+            left: 20px;
+            top: 20px;
+        }
+
+        #ground {
+            width: 1000px;
+            height: 1000px;
+            background-color: skyblue;
+            margin: 0 auto;
+            /* 文字 */
+            font-size: 20px;
+            color: balck;
+            text-indent: 2em;
+            line-height: 50px;
+            user-select: none;
+        }
+
+        /* 水平竖直参考线 */
+        #xline {
+            height: 1px;
+            width: 1000px;
+            background-color: #000;
+            position: absolute;
+            top: 310px;
+        }
+
+        #yline {
+            height: 1000px;
+            width: 1px;
+            position: absolute;
+            left: 700px;
+            background-color: #000;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="gun">
+        <div class="muzzle"></div>
+    </div>
+    <div id="ground">
+        鼠标晃动控制炮口瞄准方向，
+        点击鼠标发射炮弹，
+        点击位置距离炮位置越远，发射速度越快，
+        WASD键控制炮台上下左右移动。
+    </div>
+    <!-- <div id="xline"></div>
+    <div id="yline"></div> -->
+    <script>
+        //设置枪的参数
+        var gun = document.getElementById("gun");
+        var mouseLoc;   //时时刻刻获取鼠标位置并保存到变量mouseLoc中
+        var gunRotate;
+        //鼠标移动时：获取鼠标的位置并更新炮管
+        document.onmousemove = function (e) {
+            mouseLoc = { 'x': e.pageX, 'y': e.pageY };
+            gunRotate = getGunRotateByMouse("gun", mouseLoc);
+            setGunRotate(gunRotate);
+        };
+        //按下键盘时：炮管会跟着移动
+        document.onkeypress = function (e) {
+            var keyNum = window.event ? e.keyCode : e.which;
+            // console.log(keyNum);
+            var gun = document.getElementById("gun");
+            var step = 10;
+            switch (keyNum) {
+                case 119:
+                    gun.style.top = gun.offsetTop - step + 'px';
+                    // console.log("up");
+                    break;
+                case 115:
+                    gun.style.top = gun.offsetTop + step + 'px';
+                    // console.log("down");
+                    break;
+                case 97:
+                    gun.style.left = gun.offsetLeft - step + 'px';
+                    // console.log("left");
+                    break;
+                case 100:
+                    gun.style.left = gun.offsetLeft + step + 'px';
+                    // console.log("right");
+                    break;
+            }
+        };
+        //鼠标点击时
+        document.onclick = function (e) {
+            //创建一个子弹
+            var bullet = document.createElement("div");
+            bullet.setAttribute("class", "bullet");
+            var gun = document.getElementById("gun");
+            var gunCenterY = (gun.offsetTop * 2 + gun.offsetHeight) / 2;
+            var gunCenterX = (gun.offsetLeft * 2 + gun.offsetWidth) / 2;
+            bullet.style.left = gunCenterX
+            bullet.style.top = gunCenterY
+            var dx = (mouseLoc.x - gunCenterX) / 50;
+            var dy = (mouseLoc.y - gunCenterY) / 50;
+            //子弹在场地中
+            var ground = document.getElementById("ground");
+            ground.appendChild(bullet);
+            //设定并执行动画
+            var t = 0;
+            var shootAni = setInterval(function () {
+                // console.log("s");
+                t++;
+                bullet.style.left = gunCenterX + t * dx + 'px';
+                bullet.style.top = gunCenterY + t * dy + 'px';
+                // console.log(t*dx);
+                if (t >= 200) {
+                    bullet.remove();
+                    clearInterval(shootAni);
+                }
+            }, 10);
+        };
+
+        /**
+         * 设置枪支的旋转角度
+         * 参数ro是css属性值
+         */
+        function setGunRotate(ro) {
+            document.getElementById("gun").style.transform = "rotate(" + ro + "deg)";
+        }
+        /**
+         * 根据Id和鼠标位置参数获得枪应该转向的角度
+         * gunIdName：枪的Id名，字符串
+         * mouse：鼠标位置，字典形式
+         * return：角度
+         */
+        function getGunRotateByMouse(gunIdName, mouse) {
+            var gun = document.getElementById(gunIdName);
+            var gunCenterY = (gun.offsetTop * 2 + gun.offsetHeight) / 2;
+            var gunCenterX = (gun.offsetLeft * 2 + gun.offsetWidth) / 2;
+            var dy = mouse.y - gunCenterY;
+            var dx = mouse.x - gunCenterX;
+            var a = Math.atan(dy / dx);
+            // console.log(a);
+            if (mouse.x > gunCenterX) {
+                return a * 60;
+            } else {
+                return 180 + a * 60;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main_4.css">
+    <link rel="stylesheet" href="css/lightPosition.css">
+    <link rel="stylesheet" href="css/backgroundImgPosition.css">
+</head>
+<body>
+<audio src="sounds/sound.mp3" class="noteSound"></audio>
+<!--触摸 11000 -->
+<div class="touch"></div>
+<div class="endTitle">懂生活的智慧光</div>
+<!--周围遮挡物  9000 -->
+<div class="roundMask">
+    <img src="img/background/roundMask.png" alt="">
+</div>
+<!--时钟-->
+<div class="lock">
+    <div class="dig dig1">
+        <img class="bar b1" src="img/digit/bar.png" alt="">
+        <img class="bar b2" src="img/digit/bar.png" alt="">
+        <img class="bar b3" src="img/digit/bar.png" alt="">
+        <img class="bar b4" src="img/digit/bar.png" alt="">
+        <img class="bar b5" src="img/digit/bar.png" alt="">
+        <img class="bar b6" src="img/digit/bar.png" alt="">
+        <img class="bar b7" src="img/digit/bar.png" alt="">
+    </div>
+    <div class="dig dig2">
+        <img class="bar b1" src="img/digit/bar.png" alt="">
+        <img class="bar b2" src="img/digit/bar.png" alt="">
+        <img class="bar b3" src="img/digit/bar.png" alt="">
+        <img class="bar b4" src="img/digit/bar.png" alt="">
+        <img class="bar b5" src="img/digit/bar.png" alt="">
+        <img class="bar b6" src="img/digit/bar.png" alt="">
+        <img class="bar b7" src="img/digit/bar.png" alt="">
+    </div>
+    <div class="dig dig3">
+        <div class="digBlock blk1"></div>
+        <div class="digBlock blk2"></div>
+    </div>
+    <div class="dig dig4">
+        <img class="bar b1" src="img/digit/bar.png" alt="">
+        <img class="bar b2" src="img/digit/bar.png" alt="">
+        <img class="bar b3" src="img/digit/bar.png" alt="">
+        <img class="bar b4" src="img/digit/bar.png" alt="">
+        <img class="bar b5" src="img/digit/bar.png" alt="">
+        <img class="bar b6" src="img/digit/bar.png" alt="">
+        <img class="bar b7" src="img/digit/bar.png" alt="">
+    </div>
+    <div class="dig dig5">
+        <img class="bar b1" src="img/digit/bar.png" alt="">
+        <img class="bar b2" src="img/digit/bar.png" alt="">
+        <img class="bar b3" src="img/digit/bar.png" alt="">
+        <img class="bar b4" src="img/digit/bar.png" alt="">
+        <img class="bar b5" src="img/digit/bar.png" alt="">
+        <img class="bar b6" src="img/digit/bar.png" alt="">
+        <img class="bar b7" src="img/digit/bar.png" alt="">
+    </div>
+</div>
+<div class="btn"></div>
+<!--文案-->
+<div class="doc">
+    <div class="words w1" style="opacity: 0">城市慷慨亮了整夜光 <br>晨曦渐渐唤醒了生活。</div>
+    <div class="words w2" style="opacity: 0">发光不是太阳的专利<br>
+        我是说<br>
+        你我也可以
+    </div>
+    <div class="words w3" style="opacity: 0">这世界上有两种最耀眼的光，<br>
+        一种是太阳，<br>
+        一种是你努力的模样
+    </div>
+    <div class="words w4" style="opacity: 0">若心有所向<br>
+        平凡的日子也会泛着光
+    </div>
+    <div class="words w5" style="opacity: 0">在黑暗的某一处<br>
+        总会有一束光<br>
+        等着我们去追逐
+    </div>
+    <div class="words w6" style="opacity: 0">我喜欢的事物<br> 有光<br> 光而不耀
+    </div>
+    <div class="words w7" style="opacity: 0">我们走进夜海，<br>
+        去打捞遗失的繁星。
+    </div>
+    <div class="words w8" style="opacity: 0">没关系<br> 我一直会温柔地陪伴你，<br>去抵抗世界的黑暗
+    </div>
+    <div class="words w9" style="opacity: 0">别怕<br> 我永远跟随与你，<br>为你改变眼前的世界
+    </div>
+</div>
+<!--遥控器部分-->
+<div class="control">
+    <div class="led opening"></div>
+    <img src="img/control/dengpao.png" alt="" class="pannelBtn pb1">
+    <img src="img/control/taiyang-copy.png" alt="" class="pannelBtn pb2">
+    <img src="img/control/aixin.png" alt="" class="pannelBtn pb3">
+    <img src="img/control/树木.png" alt="" class="pannelBtn pb4">
+    <img src="img/control/moonyueliang.png" alt="" class="pannelBtn night">
+    <img src="img/control/on.png" alt="" class="pannelBtn pbOn">
+    <img src="img/control/OFF.png" alt="" class="pannelBtn pbOff">
+    <img src="img/control/pannel.png" alt="" class="mainPannel">
+    <div class="lightBtn">
+        <img src="img/control/-.png" alt="" class="sub">
+        <img src="img/control/亮度.png" alt="" class="lightLogo">
+        <img src="img/control/+.png" alt="" class="plus">
+    </div>
+</div>
+
+<!--边框黑框 -->
+<main class="img-wrap">
+    <div class="mask"></div>
+    <img class="light p1" style="opacity: 0" src="img/light/7.png" alt="">
+    <img class="light p2" style="opacity: 0" src="img/light/9.png" alt="">
+    <img class="light p3" style="opacity: 0" src="img/light/12.png" alt="">
+    <img class="light p4" style="opacity: 0" src="img/light/16.png" alt="">
+    <img class="light p5" style="opacity: 0" src="img/light/19.png" alt="">
+    <img class="light p6" style="opacity: 0" src="img/light/21.png" alt="">
+    <img class="light p7" style="opacity: 0" src="img/light/23.png" alt="">
+    <img class="light p8" style="opacity: 0" src="img/light/24.png" alt="">
+    <img class="light p9" style="opacity: 0" src="img/light/1.png" alt="">
+    <!--    bg-->
+    <img class="bg bg1" style="display: block; z-index: 201" src="img/background/small/7：00.png" alt="">
+    <img class="bg bg2" style="display: none" src="img/background/small/9：00.png" alt="">
+    <img class="bg bg3" style="display: none" src="img/background/small/12：00.png" alt="">
+    <img class="bg bg4" style="display: none" src="img/background/small/16：00.png" alt="">
+    <img class="bg bg5" style="display: none" src="img/background/small/19：00.png" alt="">
+    <img class="bg bg6" style="display: none" src="img/background/small/21：00.png" alt="">
+    <img class="bg bg7" style="display: none" src="img/background/small/23：00.png" alt="">
+    <img class="bg bg8" style="display: none" src="img/background/small/24：00.png" alt="">
+    <img class="bg bg9" style="display: none" src="img/background/small/1：00.png" alt="">
+    <!--    wiz-->
+    <img class="bg bg10" style="display: none" src="img/wiz.jpg" alt="">
+    <!--    bgMask 背景是模糊的东西-->
+    <img class="maskBg maskBg1" style="display: block" src="img/background/small/7：00.png" alt="">
+    <img class="maskBg maskBg2" style="display: none" src="img/background/small/9：00.png" alt="">
+    <img class="maskBg maskBg3" style="display: none" src="img/background/small/12：00.png" alt="">
+    <img class="maskBg maskBg4" style="display: none" src="img/background/small/16：00.png" alt="">
+    <img class="maskBg maskBg5" style="display: none" src="img/background/small/19：00.png" alt="">
+    <img class="maskBg maskBg6" style="display: none" src="img/background/small/21：00.png" alt="">
+    <img class="maskBg maskBg7" style="display: none" src="img/background/small/23：00.png" alt="">
+    <img class="maskBg maskBg8" style="display: none" src="img/background/small/24：00.png" alt="">
+    <img class="maskBg maskBg9" style="display: none" src="img/background/small/1：00.png" alt="">
+</main>
+</body>
+</html>
+<script src="js/functionTools.js"></script>
+<script src="js/digt.js"></script>
+<script src="js/wordsData.js"></script>
+<script src="js/lightColorData.js"></script>
+<script src="js/maskData.js"></script>
+<script src="js/main_4.js"></script>

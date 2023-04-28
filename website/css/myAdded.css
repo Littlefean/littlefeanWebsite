@@ -1,0 +1,386 @@
+/**
+ 基于 mys.less
+ 我增加的 关于 md 的 css
+ 此次样式用于 笔记内容页面
+ */
+/**
+  我的初始化
+ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+body {
+  overflow-y: auto;
+}
+body::-webkit-scrollbar {
+  width: 14px;
+  /*高宽分别对应横竖滚动条的尺寸*/
+  height: 4px;
+  scrollbar-arrow-color: red;
+  /*background-color: #fff;*/
+}
+body::-webkit-scrollbar-thumb {
+  /*滚动条里面小方块*/
+  border-radius: 100px;
+  /*-webkit-box-shadow: inset 0 0 5px yellow;*/
+  background: rgba(255, 255, 255, 0.2);
+  scrollbar-arrow-color: rgba(255, 255, 255, 0.2);
+}
+body::-webkit-scrollbar-track {
+  /*滚动条里面轨道*/
+  /*-webkit-box-shadow: inset 0 0 10px rgba(0, 0, 255, 0.9);*/
+  border: solid 2px rgba(255, 255, 255, 0.4);
+  border-radius: 100px;
+  background: rgba(0, 0, 0, 0.1);
+}
+/***
+ 有关中心恒星的样式
+ */
+#centerStar {
+  width: 10px;
+  height: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-5px) translateY(-5px);
+  border-radius: 100px;
+  box-shadow: 0 0 10px yellow;
+  background-color: white;
+}
+/**
+ 和旋转有关的css动画
+ */
+@keyframes planetRound {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
+@keyframes planetRoundR {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(-360deg);
+  }
+}
+@keyframes rotate-frame {
+  0% {
+    transform: rotateX(45deg) rotateY(0deg) rotateZ(30deg);
+  }
+  100% {
+    transform: rotateX(45deg) rotateY(360deg) rotateZ(30deg);
+  }
+}
+/**
+ 星空画布的样式
+ */
+.canvasTmp {
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+  overflow: hidden;
+}
+.starWay {
+  width: 80%;
+  height: 10px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: left center;
+}
+.slipStar {
+  width: 3px;
+  height: 3px;
+  border-radius: 100px;
+  position: absolute;
+  background-color: white;
+  animation-name: slideStar;
+  animation-duration: 6s;
+  animation-timing-function: cubic-bezier(0.99, 0, 1, 1);
+  animation-iteration-count: infinite;
+}
+@keyframes slideStar {
+  0% {
+    width: 0.2px;
+    height: 0.2px;
+    left: 0;
+  }
+  100% {
+    width: 7px;
+    height: 7px;
+    left: 100%;
+  }
+}
+/**
+ 我个人增加的媒体查询
+ */
+@media screen and (max-width: 1024px) {
+  body main {
+    width: 100%;
+    /* ol li code, ul li  */
+  }
+  body main > ul {
+    padding-left: 4em;
+  }
+  body main > ul > li {
+    margin-bottom: 0.5em;
+    font-size: 40px;
+    line-height: 1.5em;
+  }
+  body main > ol {
+    padding-left: 4em;
+  }
+  body main > ol > li {
+    margin-bottom: 0.5em;
+    font-size: 40px;
+    line-height: 1.5em;
+  }
+  body main code {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    color: lightsalmon;
+    font-weight: normal;
+    background-color: black;
+    border: solid 2px gray;
+    border-radius: 20px;
+  }
+  body main > blockquote {
+    padding-top: 4em;
+    padding-bottom: 4em;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-left-width: 0.7em;
+    border-top-left-radius: 10%;
+  }
+  body main > blockquote > p {
+    font-size: 40px;
+    text-indent: 0;
+  }
+  body main .code .code-container {
+    overflow-x: scroll;
+    padding-left: 0.5em;
+  }
+  body main .code .code-container .line {
+    margin-left: 0;
+  }
+  body main .code .code-container .line .highlight-code {
+    width: 1500px;
+  }
+  body main .code .code-container .line .highlight-code .code-line span {
+    line-height: 1.5em;
+    font-size: 35px;
+  }
+  body main pre {
+    overflow-x: scroll;
+  }
+  body main pre code {
+    font-size: 40px !important;
+  }
+  body main table {
+    overflow-x: scroll;
+  }
+  body main table th,
+  body main table td {
+    font-size: 40px;
+    border-width: 2px;
+    background-color: transparent;
+  }
+  body main table tr td code {
+    background-color: black;
+  }
+  p {
+    font-size: 45px;
+    text-indent: 2em;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 2em;
+  }
+  h1 {
+    text-align: center;
+    font-size: 70px;
+    line-height: 6em;
+  }
+  h2 {
+    text-align: center;
+    font-size: 65px;
+    line-height: 4em;
+  }
+  h3 {
+    font-size: 65px;
+    line-height: 3em;
+  }
+  h4 {
+    font-size: 55px;
+  }
+  h5 {
+    font-size: 50px;
+  }
+  h6 {
+    font-size: 45px;
+  }
+}
+html {
+  background-color: black;
+}
+html body {
+  background-color: transparent;
+}
+html main {
+  padding: 4em;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+html main > pre > code {
+  line-height: 1.5em;
+  font-family: "Consolas", sans-serif;
+  font-size: 1rem;
+  background-color: transparent;
+}
+html main iframe {
+  width: 100%;
+  height: 100vh;
+}
+#changeStyle {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  padding: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.1s;
+  color: whitesmoke;
+  background-color: transparent;
+  border: 1px whitesmoke solid;
+  border-radius: 5px;
+}
+#changeStyle:hover {
+  transform: scale(1.1);
+}
+#changeStyle:active {
+  transform: scale(0.9);
+}
+::selection {
+  /* 选中是绿色的个性 */
+  color: lawngreen;
+  background-color: black;
+}
+.code-container {
+  padding-left: 3em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: #333333;
+  font-family: "Consolas", sans-serif;
+  font-weight: lighter;
+}
+.code-container li {
+  list-style-type: none;
+  text-decoration: none;
+}
+.code-line span {
+  white-space: pre;
+}
+.code-line .kd {
+  color: #cc7832;
+}
+.code-line .nx {
+  color: #9876aa;
+}
+.code-line .nt {
+  color: #4c9bd5;
+}
+.code-line .nn {
+  color: #ce9178;
+}
+.code-line .na {
+  color: #9cdcfe;
+}
+.code-line .nd {
+  color: #d7ba7d;
+}
+.code-line .kc {
+  color: #ce9178;
+}
+.code-line .c {
+  color: #629755;
+}
+.code-line .cp {
+  color: #bbb529;
+}
+.code-line .c1 {
+  color: #808080;
+}
+.code-line .nb {
+  color: #908b25;
+}
+.code-line .cm {
+  color: #629755;
+}
+.code-line .cpf,
+.code-line .sc,
+.code-line .s,
+.code-line .s2,
+.code-line .s1,
+.code-line .sr,
+.code-line .sd {
+  color: #6a8759;
+}
+.code-line .se {
+  color: #aa4926;
+}
+.code-line .kt,
+.code-line .k {
+  color: #cc7832;
+}
+.code-line .nf {
+  color: #ffc562;
+}
+.code-line .mi,
+.code-line .mf {
+  color: #6897bb;
+}
+.code-line .bp {
+  color: #9876aa;
+}
+.code-line .sa,
+.code-line .si {
+  color: #629755;
+}
+.code-line .fm {
+  color: #b200b2;
+}
+.code-line .k {
+  color: #cc7832;
+}
+.code-line .nc {
+  color: #ffc562;
+}
+.code-line .kn {
+  color: #cc7832;
+}
+pre {
+  padding-left: 3em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: #333333;
+  font-family: "Consolas", sans-serif;
+  font-weight: lighter;
+}
+pre li {
+  list-style-type: none;
+  text-decoration: none;
+}
+/*# sourceMappingURL=myAdded.css.map */

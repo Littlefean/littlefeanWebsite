@@ -1,0 +1,310 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Python Flask</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>学习笔记Flask</h1>
+<hr />
+<p>模板代码</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">flask</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="n">Flask</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;创建一个app对象，传递参数</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">app</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'</span><span class="s1">/</span><span class="s1">'</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">index</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">hello&nbsp;flask</span><span class="s2">"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">main</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">app</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="kc">None</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">if</span><span class="">&nbsp;</span><span class="vm">__name__</span><span class="">&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">__main__</span><span class="s2">"</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">main</span><span class="p">(</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<p>开启debug模式</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">app</span><span class="o">.</span><span class="n">debug</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="kc">True</span></div></div></li>
+</ol></div>
+
+<h2>JSON 问题</h2>
+<p>返回字典会默认转JSON字符串</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">"</span><span class="s2">JSON_AS_ASCII</span><span class="s2">"</span><span class="p">]</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="kc">False</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;为了能够正常的显示</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'</span><span class="s1">/</span><span class="s1">'</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">index</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="p">{</span><span class="s2">"</span><span class="s2">a</span><span class="s2">"</span><span class="p">:</span><span class="">&nbsp;</span><span class="mi">1</span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>在根目录下创建一个 <code>config.py</code> 文件</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;config.py</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;这里面的就都可以写进来了</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">JSON_AS_ASCII</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="kc">False</span></div></div></li>
+</ol></div>
+
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">import</span><span class="">&nbsp;</span><span class="nn">config</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">app</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="o">.</span><span class="n">from_object</span><span class="p">(</span><span class="n">config</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<p>flask内置json转化</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;引入的时候</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">flask</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="n">Flask</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">jsonify</span><span class="">&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'</span><span class="s1">/</span><span class="s1">'</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">index</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="n">jsonfiy</span><span class="p">(</span><span class="o">.</span><span class="o">.</span><span class="o">.</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h2>url问题</h2>
+<p>url_for 函数，会大量使用</p>
+<p>能够把url字符串标准化</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">flask</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="n">flask</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">url_for</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;url_for</span></div></div></li>
+</ol></div>
+
+<h2>网页重定向</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">flask</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="n">url_for</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">redirect</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'</span><span class="s1">/</span><span class="s1">'</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">index</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="n">redirect</span><span class="p">(</span><span class="n">url_for</span><span class="p">(</span><span class="s2">"</span><span class="s2">某一个方法的名字</span><span class="s2">"</span><span class="p">)</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'</span><span class="s1">/abc</span><span class="s1">'</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">某一个方法</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="o">.</span><span class="o">.</span><span class="o">.</span></div></div></li>
+</ol></div>
+
+<h2>渲染模板</h2>
+<p>新建一个交templates的文件夹，里面放html</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">app.py</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">templates</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> about.html</span></div></div></li>
+</ol></div>
+
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">flask</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="n">Flask</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">render_template</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">hello</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="n">render_template</span><span class="p">(</span><span class="s2">"</span><span class="s2">about.html</span><span class="s2">"</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<p>模板字符串渲染</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="">{{&nbsp;username&nbsp;}}</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">flask</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="n">Flask</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">render_template</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">hello</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="n">render_template</span><span class="p">(</span><span class="s2">"</span><span class="s2">about.html</span><span class="s2">"</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">username</span><span class="o">=</span><span class="s2">"</span><span class="s2">abc</span><span class="s2">"</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h2>请求</h2>
+<p>让设置是get还是post</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'</span><span class="s1">/</span><span class="s1">'</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">methods</span><span class="o">=</span><span class="p">[</span><span class="s1">'</span><span class="s1">GET</span><span class="s1">'</span><span class="p">,</span><span class="">&nbsp;</span><span class="s1">'</span><span class="s1">POST</span><span class="s1">'</span><span class="p">]</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;get、post都可以了</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">index</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">hello&nbsp;flask</span><span class="s2">"</span></div></div></li>
+</ol></div>
+
+<p>动态传递参数</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'</span><span class="s1">/orders/&lt;order_id&gt;</span><span class="s1">'</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">get_order_id</span><span class="p">(</span><span class="n">order_id</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;这个参数的类型默认就是字符串</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">order_id</span><span class="si">}</span><span class="s2">"</span></div></div></li>
+</ol></div>
+
+<p>限制参数</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s1">'</span><span class="s1">/orders/&lt;int:order_id&gt;</span><span class="s1">'</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;int:&nbsp;设置为指定的类型</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">get_order_id</span><span class="p">(</span><span class="n">order_id</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">order_id</span><span class="si">}</span><span class="s2">"</span></div></div></li>
+</ol></div>
+
+<p>这个意思是我在浏览器里输入的是 <code>'/orders/&lt;int:order_id&gt;'</code> 我在这个函数处理就能拿到这个数字了</p>
+<h2>数据库</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">SQLAlchemy</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">Flask</span><span class="o">-</span><span class="n">SQLAlchemy</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">pymysql</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;连接数据库的一个库</span></div></div></li>
+</ol></div>
+
+<p>一开始需要写的代码</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div><div class="line-numbers"><div class="line-num" data-line-num="19"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">sqlalchemy</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="n">create_engine</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">HOSTNAME</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">127.0.0.1</span><span class="s2">"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">PORT</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">3306</span><span class="s2">"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">DATABASE</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">xt_flask</span><span class="s2">"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">USERNAME</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">root</span><span class="s2">"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">PASSWORD</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">*****</span><span class="s2">"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">BD_URI</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="sa">f</span><span class="s2">"</span><span class="s2">mysql+pymysql://</span><span class="si">{</span><span class="n">USERNAME</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">PASSWORD</span><span class="si">}</span><span class="s2">@</span><span class="si">{</span><span class="n">HOSTNAME</span><span class="si">}</span><span class="s2">:</span><span class="si">{</span><span class="n">PORT</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">DATABASE</span><span class="si">}</span><span class="s2">?charset=utf8</span><span class="s2">"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">app</span><span class="o">.</span><span class="n">config</span><span class="p">[</span><span class="s2">"</span><span class="s2">SQLALCHEMY_DATABASE_URI</span><span class="s2">"</span><span class="p">]</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">DB_URI</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">db</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;传入</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">hello</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">engine</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">db</span><span class="o">.</span><span class="n">get_engine</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">with</span><span class="">&nbsp;</span><span class="n">engine</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="k">as</span><span class="">&nbsp;</span><span class="n">conn</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">rse</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">conn</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"</span><span class="s2">select&nbsp;1</span><span class="s2">"</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="o">.</span><span class="n">fetchone</span><span class="p">(</span><span class="p">)</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">hello</span><span class="s2">"</span></div></div></li>
+</ol></div>
+
+<h3>增删改查</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div><div class="line-numbers"><div class="line-num" data-line-num="19"></div></div><div class="line-numbers"><div class="line-num" data-line-num="20"></div></div><div class="line-numbers"><div class="line-num" data-line-num="21"></div></div><div class="line-numbers"><div class="line-num" data-line-num="22"></div></div><div class="line-numbers"><div class="line-num" data-line-num="23"></div></div><div class="line-numbers"><div class="line-num" data-line-num="24"></div></div><div class="line-numbers"><div class="line-num" data-line-num="25"></div></div><div class="line-numbers"><div class="line-num" data-line-num="26"></div></div><div class="line-numbers"><div class="line-num" data-line-num="27"></div></div><div class="line-numbers"><div class="line-num" data-line-num="28"></div></div><div class="line-numbers"><div class="line-num" data-line-num="29"></div></div><div class="line-numbers"><div class="line-num" data-line-num="30"></div></div><div class="line-numbers"><div class="line-num" data-line-num="31"></div></div><div class="line-numbers"><div class="line-num" data-line-num="32"></div></div><div class="line-numbers"><div class="line-num" data-line-num="33"></div></div><div class="line-numbers"><div class="line-num" data-line-num="34"></div></div><div class="line-numbers"><div class="line-num" data-line-num="35"></div></div><div class="line-numbers"><div class="line-num" data-line-num="36"></div></div><div class="line-numbers"><div class="line-num" data-line-num="37"></div></div><div class="line-numbers"><div class="line-num" data-line-num="38"></div></div><div class="line-numbers"><div class="line-num" data-line-num="39"></div></div><div class="line-numbers"><div class="line-num" data-line-num="40"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">db</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">SQLAlchemy</span><span class="p">(</span><span class="n">app</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;传入</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">class</span><span class="">&nbsp;</span><span class="nc">Article</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Model</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">__tablename__</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">article</span><span class="s2">"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">id</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Integer</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">primary_key</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">autoincrement</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">title</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">String</span><span class="p">(</span><span class="mi">200</span><span class="p">)</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">content</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">db</span><span class="o">.</span><span class="n">Column</span><span class="p">(</span><span class="n">db</span><span class="o">.</span><span class="n">Text</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">nullable</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">db</span><span class="o">.</span><span class="n">create_all</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nd">@app</span><span class="o">.</span><span class="n">route</span><span class="p">(</span><span class="s2">"</span><span class="s2">/article</span><span class="s2">"</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">article_view</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;添加</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">Article</span><span class="p">(</span><span class="n">title</span><span class="o">=</span><span class="s2">"</span><span class="s2">钢铁是怎样炼成的</span><span class="s2">"</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">content</span><span class="o">=</span><span class="s2">"</span><span class="s2">xxx</span><span class="s2">"</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;这里没有传入id，是因为设置了&nbsp;autoincrement=True</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;会有id的自动增长</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">article</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;查询</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;filter_by&nbsp;会返回列表，必须要取零</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">article</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">Article</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="n">article</span><span class="o">.</span><span class="n">title</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;修改数据</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">article</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">Article</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">article</span><span class="o">.</span><span class="n">content</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">yyy</span><span class="s2">"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;删除</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">Article</span><span class="o">.</span><span class="n">query</span><span class="o">.</span><span class="n">filter_by</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">delete</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">db</span><span class="o">.</span><span class="n">session</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">数据操作成功</span><span class="s2">"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="o">.</span><span class="o">.</span><span class="o">.</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<h2>cookie</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">flask</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="n">Flask</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">Response</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">request</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">session</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">app</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">Flask</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nd">@app</span><span class="o">.</span><span class="n">rou</span><span class="o">.</span><span class="o">.</span><span class="o">.</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">setCookie</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">res</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">Response</span><span class="p">(</span><span class="s2">"</span><span class="s2">cookieSet</span><span class="s2">"</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">res</span><span class="o">.</span><span class="n">set_cookie</span><span class="p">(</span><span class="s2">"</span><span class="s2">userID</span><span class="s2">"</span><span class="p">,</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">xxx</span><span class="s2">"</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="n">res</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="o">.</span><span class="o">.</span><span class="o">.</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">getCookie</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;获取</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">uid</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">request</span><span class="o">.</span><span class="n">cookies</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">"</span><span class="s2">userID</span><span class="s2">"</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<p>谷歌浏览器查看cookie，点击url左边的小感叹号找到它</p>
+<h2>session</h2>
+<p>https://www.bilibili.com/video/BV17r4y1y7jJ?p=24&amp;spm_id_from=pageDriver&amp;vd_source=b98966bad03edbeb686fcc182eadb01c</p>
+<h2>自己搜的小问题</h2>
+<p>开启跨域访问</p>
+<p>https://www.jianshu.com/p/3a9cf8aa6aa9</p>
+<p>socketIO，全双工通信</p>
+<p>https://blog.csdn.net/weixin_40406241/article/details/121380116</p>
+<p>还得安装一个 simple-websocket 第三方库</p>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

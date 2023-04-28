@@ -1,0 +1,95 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+body {
+  background: black;
+  transition: background-color 1s;
+  position: relative;
+}
+body .flashBtn {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background: yellow;
+  opacity: 0.8;
+  border-radius: 50%;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  transition: all 0.5s;
+  filter: blur(20px);
+  animation-duration: 1s;
+  animation-name: flash;
+  animation-iteration-count: infinite;
+}
+body main {
+  width: 1457px;
+  margin: 0 auto;
+  height: 792px;
+  outline: solid 1px white;
+  position: relative;
+  overflow: hidden;
+  transform-origin: top center;
+  transform: scale(1);
+}
+body main .mask {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  z-index: 1000;
+  border: 3px solid white;
+  box-shadow: 0 0 0 1000px #000000;
+  filter: blur(50px);
+  transition: all 0.8s;
+}
+body main .bg {
+  transition: all 1s;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  outline: solid 2px;
+}
+body main .bg10 {
+  left: 728.5px;
+  top: 396px;
+  margin-left: -529.5px;
+  margin-top: -375px;
+}
+body main .maskBg {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  filter: blur(30px);
+}
+body main .light {
+  transition: all 0.5s;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  transform: scale(0.4);
+}
+body main img {
+  position: absolute;
+}
+/*# sourceMappingURL=main_3.css.map */

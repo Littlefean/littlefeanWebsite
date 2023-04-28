@@ -1,0 +1,117 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes flash {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@imgW: 1059px;
+@imgH: 750px;
+body {
+  background: black;
+  transition: background-color 1s;
+  //overflow: hidden;
+  @mainW: 1457px;
+  @mainH: 792px;
+  position: relative;
+
+  .flashBtn {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background: yellow;
+    opacity: 0.8;
+    border-radius: 50%;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    transition: all 0.5s;
+
+    filter: blur(20px);
+    animation-duration: 1s;
+    animation-name: flash;
+    animation-iteration-count: infinite;
+
+  }
+
+  main {
+
+    width: @mainW;
+    //width: 100%;
+    margin: 0 auto;
+    height: @mainH;
+    outline: solid 1px white;
+    position: relative;
+    overflow: hidden;
+    transform-origin: top center;
+    transform: scale(1);
+
+    .mask {
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      z-index: 1000;
+      border: 3px solid white;
+      box-shadow: 0 0 0 1000px rgba(0, 0, 0, 1);
+      filter: blur(50px);
+      transition: all 0.8s;
+
+    }
+
+
+    .bg {
+      transition: all 1s;
+      animation-name: fadeIn;
+      animation-duration: 1s;
+      outline: solid 2px;
+    }
+
+    .bg10 {
+      left: @mainW*0.5;
+      top: @mainH*0.5;
+      margin-left: -@imgW*0.5;
+      margin-top: -@imgH*0.5;
+    }
+
+    .maskBg {
+      width: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      filter: blur(30px);
+    }
+
+    .light {
+      transition: all 0.5s;
+      animation-name: fadeIn;
+      animation-duration: 1s;
+      transform: scale(0.4);
+    }
+
+    img {
+      position: absolute;
+    }
+
+  }
+}

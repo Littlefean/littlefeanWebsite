@@ -1,0 +1,76 @@
+
+@font-face {
+  font-family: "impact";
+  src: url("../fonts/impact.woff");
+}
+
+body {
+  color: white;
+  background-color: black;
+
+  .mainTitle {
+    text-align: center;
+    line-height: 4em;
+  }
+
+  .logs {
+    width: 80%;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.3);
+
+    .item {
+      width: 20%;
+      min-width: 200px;
+      height: 100px;
+      margin: 15px;
+      padding: 20px;
+      //outline: solid 1px;
+      position: relative;
+      text-align: center;
+
+      background-color: black;
+
+      .time {
+        @w: 100px;
+        width: @w;
+        height: 100%;
+        padding: 10px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        //outline: solid 1px;
+        transform: translateX(-@w);
+        font-family: "impact", serif;
+
+        color: black;
+        background-color: rgba(247, 151, 29, 1);
+        filter: hue-rotate(0deg); // 旋转色相
+        .icon {
+          position: absolute;
+          right: 0;
+          top: 0;
+        }
+
+        span {
+          font-size: 18px;
+        }
+
+        .year, .t {
+          display: block;
+          text-align: center;
+        }
+
+        .month {
+          margin-right: 4px;
+        }
+
+        .month, .day {
+          font-size: 32px;
+        }
+      }
+    }
+  }
+}
+a {
+  color: #ffa500;
+}

@@ -1,0 +1,327 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>算法经验</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>算法经验</h1>
+<hr />
+<h2>循环简化</h2>
+<p>筛选项</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">arr</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">2</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">3</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">1231</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">4</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">check</span><span class="p">(</span><span class="n">item</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="n">item</span><span class="">&nbsp;</span><span class="o">&lt;</span><span class="">&nbsp;</span><span class="mi">100</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;小于100的，保留</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="kc">True</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">else</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="kc">False</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">for</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">filter</span><span class="p">(</span><span class="n">check</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">arr</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<p><code>ifilterfalse</code> 和上面的刚好是相反的</p>
+<h2>二分查找</h2>
+<p>最右边的那个数要注意一下</p>
+<p>python实现了二分查找</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">import</span><span class="">&nbsp;</span><span class="nn">bisect</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">arr</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">2</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">5</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">5</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">6</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">7</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">8</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nb">print</span><span class="p">(</span><span class="n">bisect</span><span class="o">.</span><span class="n">bisect_left</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">5</span><span class="p">)</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nb">print</span><span class="p">(</span><span class="n">bisect</span><span class="o">.</span><span class="n">bisect_right</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">5</span><span class="p">)</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nb">print</span><span class="p">(</span><span class="n">bisect</span><span class="o">.</span><span class="n">bisect_right</span><span class="p">(</span><span class="n">arr</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">6</span><span class="p">)</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h2>数论</h2>
+<p>初等数论中经典的结论包括<a href="https://baike.baidu.com/item/算术基本定理">算术基本定理</a>、<a href="https://baike.baidu.com/item/欧几里得">欧几里得</a>的<a href="https://baike.baidu.com/item/质数">质数</a>无限证明、中国剩余定理、<a href="https://baike.baidu.com/item/欧拉定理">欧拉定理</a>（其特例是<a href="https://baike.baidu.com/item/费马小定理">费马小定理</a>）、<a href="https://baike.baidu.com/item/高斯">高斯</a>的<a href="https://baike.baidu.com/item/二次互反律">二次互反律</a>， 勾股方程的<a href="https://baike.baidu.com/item/商高定理">商高定理</a>、<a href="https://baike.baidu.com/item/佩尔方程">佩尔方程</a>的连分数求解法等等。</p>
+<h3>算术基本定理</h3>
+<p>任何一个大于1的<a href="https://baike.baidu.com/item/自然数/385394">自然数</a> N,如果N不为<strong><a href="https://baike.baidu.com/item/质数/263515">质数</a></strong>，那么N可以唯一分解成有限个质数的乘积</p>
+<p>任何大于1的数都可由2和3相加组成</p>
+<h3>发现的求余运算的性质</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;求余分配律</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">(</span><span class="n">a</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="n">b</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">%</span><span class="">&nbsp;</span><span class="n">c</span><span class="">&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="n">a</span><span class="">&nbsp;</span><span class="o">%</span><span class="">&nbsp;</span><span class="n">c</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="n">b</span><span class="">&nbsp;</span><span class="o">%</span><span class="">&nbsp;</span><span class="n">c</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;乘积的结果求余，==&nbsp;把每一个数字都求余再乘积，最后再求余</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">(</span><span class="n">a</span><span class="">&nbsp;</span><span class="o">*</span><span class="">&nbsp;</span><span class="n">b</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">%</span><span class="">&nbsp;</span><span class="n">c</span><span class="">&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="p">[</span><span class="">&nbsp;</span><span class="p">(</span><span class="n">a</span><span class="">&nbsp;</span><span class="o">%</span><span class="">&nbsp;</span><span class="n">c</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">*</span><span class="">&nbsp;</span><span class="p">(</span><span class="n">b</span><span class="">&nbsp;</span><span class="o">%</span><span class="">&nbsp;</span><span class="n">c</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">]</span><span class="">&nbsp;</span><span class="o">%</span><span class="">&nbsp;</span><span class="n">c</span></div></div></li>
+</ol></div>
+
+<p>python实现了最大公约数</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">import</span><span class="">&nbsp;</span><span class="nn">math</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nb">print</span><span class="p">(</span><span class="n">math</span><span class="o">.</span><span class="n">gcd</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">123</span><span class="p">)</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<p>裴蜀定理(重要推论) : a,b互质的充分必要条件是存在整数x,y使ax+by=1.</p>
+<p>两个不能被n整除的数字相乘之后是有可能被n整除的。比如8*9=72,72可以被6整除</p>
+<p>0%任何数都=0</p>
+<h2>广度优先搜索</h2>
+<p>注意记录走过的位置，防止重复，否则会造成队列无限循环</p>
+<h2>栈</h2>
+<p>什么时候用栈?括号题，还有一维直线上的碰撞问题</p>
+<p><a href="https://leetcode-cn.com/problems/XagZNi/">剑指 Offer II 037. 小行星碰撞</a></p>
+<h2>环形序列问题</h2>
+<p>尝试想想把两个一样的序列拼成一起试一试</p>
+<p><img alt="image.png" src="https://pic.leetcode-cn.com/1639228731-hwXkOI-image.png" /></p>
+<h2>数组相关算法</h2>
+<h3>前缀和</h3>
+<p>快速前缀和写法</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">itertools</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="o">*</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">arr</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">0</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">0</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">0</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">0</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">1</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">arr</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nb">list</span><span class="p">(</span><span class="n">accumulate</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nb">print</span><span class="p">(</span><span class="n">arr</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h3>求一个数组的子数组的最大和是多少</h3>
+<p>力扣题号53， https://leetcode.cn/problems/maximum-subarray/</p>
+<p>只要求结果，不用告诉是具体子数组在哪里，所以可以用动态规划</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="k">class</span><span class="">&nbsp;</span><span class="nc">Solution</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">def</span><span class="">&nbsp;</span><span class="nf">maxSubArray</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">nums</span><span class="p">:</span><span class="">&nbsp;</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">-</span><span class="o">&gt;</span><span class="">&nbsp;</span><span class="nb">int</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">dp</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="">&nbsp;</span><span class="o">*</span><span class="">&nbsp;</span><span class="nb">len</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">dp</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">res</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">nums</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">for</span><span class="">&nbsp;</span><span class="n">i</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">n</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">nums</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="mi">0</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">continue</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="">&nbsp;</span><span class="o">-</span><span class="">&nbsp;</span><span class="mi">1</span><span class="p">]</span><span class="">&nbsp;</span><span class="o">&lt;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">0</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;如果从前面到现在已经小于0了，或者等于零了，前面的部分就不要要了</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">else</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="">&nbsp;</span><span class="o">-</span><span class="">&nbsp;</span><span class="mi">1</span><span class="p">]</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="n">nums</span><span class="p">[</span><span class="n">i</span><span class="p">]</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">res</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nb">max</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">dp</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="n">res</span></div></div></li>
+</ol></div>
+
+<h3>求一个数组的子数组的最大乘积是多少</h3>
+<p>https://leetcode.cn/problems/maximum-product-subarray/</p>
+<h3>查找和为某一个值的连续子数组</h3>
+<p>要么滑动窗口，要么用前缀和+Counter哈希表。详见leetcode 剑指offer专项提升版的数组部分。</p>
+<h3>数组临近最大</h3>
+<p>用单调栈</p>
+<p>https://leetcode-cn.com/problems/iIQa4I/</p>
+<h3>二维数组</h3>
+<p>二维数组正确写法和错误写法</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">n</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">10</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">arr</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="p">[</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="">&nbsp;</span><span class="o">*</span><span class="">&nbsp;</span><span class="n">n</span><span class="">&nbsp;</span><span class="k">for</span><span class="">&nbsp;</span><span class="n">_</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">range</span><span class="p">(</span><span class="n">n</span><span class="p">)</span><span class="p">]</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;正确</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">arr</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="p">[</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="">&nbsp;</span><span class="o">*</span><span class="">&nbsp;</span><span class="n">n</span><span class="p">]</span><span class="">&nbsp;</span><span class="o">*</span><span class="">&nbsp;</span><span class="n">n</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;错误，每一行都是重复引用，改一个全变了</span></div></div></li>
+</ol></div>
+
+<h3>差分</h3>
+<p>——以O(1)的时间批量增加减少数组里的一段数值</p>
+<p>来自：蓝桥杯——三体攻击</p>
+<p>https://www.csdn.net/tags/MtTaIgxsNDM5NjEtYmxvZwO0O0OO0O0O.html</p>
+<p>讲解：</p>
+<p>https://blog.csdn.net/weixin_46660078/article/details/109409512?utm_medium=distribute.pc_aggpage_search_result.none-task-blog-2~aggregatepage~first_rank_ecpm_v1~rank_v31_ecpm-2-109409512.pc_agg_new_rank&amp;utm_term=%E4%B8%89%E4%BD%93%E6%94%BB%E5%87%BB&amp;spm=1000.2123.3001.4430</p>
+<h3>分割等和子集</h3>
+<p>转化成01背包问题，力扣题号416</p>
+<h2>回文字符串</h2>
+<p>要想到双指针的思路</p>
+<p>剑指 Offer II 019. 最多删除一个字符得到回文 (https://leetcode-cn.com/problems/RQku0D/)</p>
+<h2>递归问题</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">import</span><span class="">&nbsp;</span><span class="nn">sys</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">sys</span><span class="o">.</span><span class="n">setrecursionlimit</span><span class="p">(</span><span class="mi">5000</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<p>递归一定要考虑递归深度！</p>
+<h3>python递归缓存</h3>
+<p>来自竞赛题 https://leetcode-cn.com/problems/longest-path-with-different-adjacent-characters/</p>
+<p>在dfs函数上面加<code>@lru_cache(None)</code>  能通过</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div><div class="line-numbers"><div class="line-num" data-line-num="19"></div></div><div class="line-numbers"><div class="line-num" data-line-num="20"></div></div><div class="line-numbers"><div class="line-num" data-line-num="21"></div></div><div class="line-numbers"><div class="line-num" data-line-num="22"></div></div><div class="line-numbers"><div class="line-num" data-line-num="23"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="k">class</span><span class="">&nbsp;</span><span class="nc">Solution</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">def</span><span class="">&nbsp;</span><span class="nf">longestPath</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">parent</span><span class="p">:</span><span class="">&nbsp;</span><span class="n">List</span><span class="p">[</span><span class="nb">int</span><span class="p">]</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">s</span><span class="p">:</span><span class="">&nbsp;</span><span class="nb">str</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">-</span><span class="o">&gt;</span><span class="">&nbsp;</span><span class="nb">int</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">d</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="p">{</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">for</span><span class="">&nbsp;</span><span class="n">i</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">n</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">enumerate</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="n">n</span><span class="">&nbsp;</span><span class="ow">not</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="n">d</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">d</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nb">set</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="ow">not</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="n">d</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nb">set</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">d</span><span class="p">[</span><span class="n">n</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">i</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">n</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@lru_cache</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">def</span><span class="">&nbsp;</span><span class="nf">dfs</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">last</span><span class="p">)</span><span class="p">:</span><span class="c1">#当前节点和上一节点</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="o">-</span><span class="mi">1</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="mi">0</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">res</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">0</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">for</span><span class="">&nbsp;</span><span class="n">j</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="n">d</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="n">s</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="">&nbsp;</span><span class="o">!=</span><span class="">&nbsp;</span><span class="n">s</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="">&nbsp;</span><span class="ow">and</span><span class="">&nbsp;</span><span class="n">j</span><span class="">&nbsp;</span><span class="o">!=</span><span class="">&nbsp;</span><span class="n">last</span><span class="p">:</span><span class="c1">#字符不同，且上下连通节点不同</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">res</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nb">max</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">dfs</span><span class="p">(</span><span class="n">j</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">i</span><span class="p">)</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="n">res</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="mi">1</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">res</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">0</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">for</span><span class="">&nbsp;</span><span class="n">k</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">parent</span><span class="p">)</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">res</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nb">max</span><span class="p">(</span><span class="n">res</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">dfs</span><span class="p">(</span><span class="n">k</span><span class="p">,</span><span class="">&nbsp;</span><span class="kc">None</span><span class="p">)</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="n">res</span></div></div></li>
+</ol></div>
+
+<h2>几何专题</h2>
+<p>解决凸包问题</p>
+<p>https://leetcode-cn.com/problems/erect-the-fence/solution/an-zhuang-zha-lan-by-leetcode-solution-75s3/</p>
+<p>给出一堆点，找矩形，可以枚举对角线（矩形是平行坐标轴的）</p>
+<p>https://leetcode-cn.com/problems/minimum-area-rectangle/solution/zui-xiao-mian-ji-ju-xing-by-leetcode/</p>
+<p>给出一堆点，找旋转矩形，可以枚举三角形，看看加上第四个点是否构成矩形</p>
+<p>https://leetcode-cn.com/problems/minimum-area-rectangle-ii/solution/zui-xiao-mian-ji-ju-xing-ii-by-leetcode/</p>
+<p>海伦公式求三角形面积：S=√p(p-a)(p-b)(p-c)，abc是三个边长，p是半周长，计算p，周长别忘了除以2</p>
+<h2>图论</h2>
+<p>拓扑排序要弄清楚，弄成入度的邻接表还是出度的邻接表，不同的题出法不一样。</p>
+<h3>并查集</h3>
+<p>剑指 Offer II 116</p>
+<p>并查集可以直接用一个数组表示。索引表示成员编号，项表示这个成员的头头，或者次头头。</p>
+<p>注意：并查集的连接操作：让某一个成员从了某一个成员，是要找到某个成员的首领，让他的首领从了另一个成员的首领！！！，不是直接让某一个成员从了某一个成员。这样就成了一个成员脱离了一个组织跑到另一个组织里去了。</p>
+<p>最后还要把整个路径压缩一遍。</p>
+<h2>位运算</h2>
+<p>等效位运算</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;除2&nbsp;等效成&nbsp;位运算</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="mi">16</span><span class="">&nbsp;</span><span class="o">/</span><span class="o">/</span><span class="">&nbsp;</span><span class="mi">2</span><span class="">&nbsp;&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="mi">16</span><span class="">&nbsp;</span><span class="o">&gt;&gt;</span><span class="">&nbsp;</span><span class="mi">1</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;mol2&nbsp;等效位运算</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">n</span><span class="">&nbsp;</span><span class="o">%</span><span class="">&nbsp;</span><span class="mi">2</span><span class="">&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="n">n</span><span class="">&nbsp;</span><span class="o">&</span><span class="">&nbsp;</span><span class="mi">1</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;2^n</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="mi">2</span><span class="">&nbsp;</span><span class="o">*</span><span class="o">*</span><span class="">&nbsp;</span><span class="n">n</span><span class="">&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="mi">1</span><span class="">&nbsp;</span><span class="o">&lt;&lt;</span><span class="">&nbsp;</span><span class="n">n</span></div></div></li>
+</ol></div>
+
+<h2>高精度小数</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div><div class="line-numbers"><div class="line-num" data-line-num="19"></div></div><div class="line-numbers"><div class="line-num" data-line-num="20"></div></div><div class="line-numbers"><div class="line-num" data-line-num="21"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;-*-&nbsp;encoding:&nbsp;utf-8&nbsp;-*-</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="sd">"""
+PyCharm&nbsp;试题&nbsp;历届真题&nbsp;循环小数【第十一届】【决赛】【研究生组】
+2022年06月14日
+by&nbsp;littlefean
+"""</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">import</span><span class="">&nbsp;</span><span class="nn">decimal</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">typing</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="o">*</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">decimal</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="o">*</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">main</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">decimal</span><span class="o">.</span><span class="n">getcontext</span><span class="p">(</span><span class="p">)</span><span class="o">.</span><span class="n">prec</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">20</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">N</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">100</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">for</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">N</span><span class="">&nbsp;</span><span class="o">-</span><span class="">&nbsp;</span><span class="mi">1</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">for</span><span class="">&nbsp;</span><span class="n">j</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">range</span><span class="p">(</span><span class="n">i</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">N</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">f</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">Decimal</span><span class="p">(</span><span class="n">i</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">/</span><span class="">&nbsp;</span><span class="n">Decimal</span><span class="p">(</span><span class="n">j</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">/</span><span class="si">{</span><span class="n">j</span><span class="si">}</span><span class="s2">"</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">f</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="kc">None</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">if</span><span class="">&nbsp;</span><span class="vm">__name__</span><span class="">&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">__main__</span><span class="s2">"</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">main</span><span class="p">(</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h2>小问题</h2>
+<p>字典不能一边遍历一边删除</p>
+<p>最大最小可以提</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nb">min</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">b</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="mi">1</span><span class="">&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="nb">min</span><span class="p">(</span><span class="n">a</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">b</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="mi">1</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<p>区分同时赋值和不同时赋值</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="k">class</span><span class="">&nbsp;</span><span class="nc">Solution</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">def</span><span class="">&nbsp;</span><span class="nf">minimumOperations</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">leaves</span><span class="p">:</span><span class="">&nbsp;</span><span class="nb">str</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">-</span><span class="o">&gt;</span><span class="">&nbsp;</span><span class="nb">int</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="n">leaves</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="">&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="s1">'</span><span class="s1">y</span><span class="s1">'</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">r</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">ry</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">ryr</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="nb">float</span><span class="p">(</span><span class="s1">'</span><span class="s1">inf</span><span class="s1">'</span><span class="p">)</span><span class="p">,</span><span class="">&nbsp;</span><span class="nb">float</span><span class="p">(</span><span class="s1">'</span><span class="s1">inf</span><span class="s1">'</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">else</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">r</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">ry</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">ryr</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">0</span><span class="p">,</span><span class="">&nbsp;</span><span class="nb">float</span><span class="p">(</span><span class="s1">'</span><span class="s1">inf</span><span class="s1">'</span><span class="p">)</span><span class="p">,</span><span class="">&nbsp;</span><span class="nb">float</span><span class="p">(</span><span class="s1">'</span><span class="s1">inf</span><span class="s1">'</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">for</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="nb">len</span><span class="p">(</span><span class="n">leaves</span><span class="p">)</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="n">leaves</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="">&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="s1">'</span><span class="s1">r</span><span class="s1">'</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;r&nbsp;=&nbsp;r</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;ry&nbsp;=&nbsp;min(r,&nbsp;ry)&nbsp;+&nbsp;1</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;ryr&nbsp;=&nbsp;min(ry,&nbsp;ryr)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">r</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">ry</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">ryr</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">r</span><span class="p">,</span><span class="">&nbsp;</span><span class="nb">min</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">ry</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="nb">min</span><span class="p">(</span><span class="n">ry</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">ryr</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">else</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;r&nbsp;=&nbsp;r&nbsp;+&nbsp;1</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;ry&nbsp;=&nbsp;min(r,&nbsp;ry)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;ryr&nbsp;=&nbsp;min(ry,&nbsp;ryr)&nbsp;+&nbsp;1</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">r</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">ry</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">ryr</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">r</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="nb">min</span><span class="p">(</span><span class="n">r</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">ry</span><span class="p">)</span><span class="p">,</span><span class="">&nbsp;</span><span class="nb">min</span><span class="p">(</span><span class="n">ry</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">ryr</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="mi">1</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="n">ryr</span></div></div></li>
+</ol></div>
+
+<p>不能拆成三个，因为这是在循环里</p>
+<p>python待研究的语法：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nb">all</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">functools</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="n">reduce</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">reduce</span><span class="p">(</span><span class="p">)</span></div></div></li>
+</ol></div>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

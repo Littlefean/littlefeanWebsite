@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        canvas {
+            outline: solid 1px white;
+        }
+
+        body {
+            height: 100vh;
+            width: 100%;
+            background-color: black;
+        }
+    </style>
+</head>
+
+<body>
+<canvas>
+
+</canvas>
+</body>
+<script>
+    function randColor() {
+        let r = Math.random() * 255;
+        let g = Math.random() * 255;
+        let b = Math.random() * 255;
+        return `rgb(${r}, ${g}, ${b})`;
+    }
+
+    let body = document.querySelector("body");
+
+    let can = document.querySelector("canvas");
+    can.setAttribute("width", body.clientWidth + "px");
+    can.setAttribute("height", body.clientHeight + "px");
+    let ctx = can.getContext("2d");
+
+
+
+    class Vector {
+        /**
+         *
+         * @param x {Number}
+         * @param y {Number}
+         */
+        constructor(x, y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        add(other) {
+            this.x += other.x;
+            this.y += other.y;
+        }
+
+        multiple(n) {
+            return new Vector(this.x * n, this.y * n);
+        }
+    }
+
+    class Ball {
+        constructor(pos, speed) {
+            this.pos = pos;
+            this.speed = speed;
+        }
+
+        static randInit() {
+
+        }
+    }
+
+    // console.log(ctx.canvas.width, ctx.canvas.height);
+    setInterval(() => {
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        ctx.fillStyle = randColor();
+        ctx.fillRect(body.clientWidth * Math.random(), body.clientHeight * Math.random(), 40, 40);
+    }, 50);
+</script>
+</html>

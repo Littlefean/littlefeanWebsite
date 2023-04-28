@@ -1,0 +1,309 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>uniapp vue</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>uniapp vue</h1>
+<hr />
+<h2>与 传统vue的差异</h2>
+<ul>
+<li>新增：<code>uni-app</code> 除了支持Vue实例的生命周期，还支持<strong>应用生命周期</strong>以及<strong>页面生命周期</strong>。</li>
+<li>受限：相比web平台，在小程序和App端部分功能受限，</li>
+<li>uni-app 完整支持 Vue 模板语法。</li>
+<li>App端可以使用更多的vue特性</li>
+</ul>
+<h2>模板语法</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">view</span><span class="p">&gt;</span><span class="">Message:&nbsp;{{&nbsp;msg&nbsp;}}</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="p">/</span><span class="nt">template</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class=""></span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;直接使用&nbsp;es6&nbsp;的语法来创建一个&nbsp;vue的都西昂
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">export</span><span class="">&nbsp;</span><span class="k">default</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;data&nbsp;由&nbsp;属性字典&nbsp;变成了&nbsp;方法
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">data</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;返回一个字典
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">msg</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'Hello&nbsp;Vue!'</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;methods&nbsp;不变
+</span><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">methods</span><span class="o">:</span><span class="">&nbsp;</span><span class="p">{</span><span class="">&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">changetextvalue</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span><span class="">&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="nx">textvalue</span><span class="o">=</span><span class="s2">"789"</span><span class="c1">//这里修改textvalue的值，页面自动刷新为789&nbsp;&nbsp;
+</span><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="p">}</span><span class="">&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<h2>指令</h2>
+<p><code>v-bind</code> 与传统类似，可以用 <code>:</code> 来缩写</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">image</span><span class="">&nbsp;</span><span class="na">v-bind:src</span><span class="o">=</span><span class="s">"imgUrl"</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">image</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c">&lt;!--</span><span class="c">&nbsp;缩写&nbsp;</span><span class="c">--&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">image</span><span class="">&nbsp;</span><span class="na">:src</span><span class="o">=</span><span class="s">"imgUrl"</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">image</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<p><code>v-on</code> 与传统一样，可以用修饰符 <code>@</code> 来缩写</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="c">&lt;!--</span><span class="c">&nbsp;完整语法&nbsp;</span><span class="c">--&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">view</span><span class="">&nbsp;</span><span class="na">v-on:click</span><span class="o">=</span><span class="s">"doSomething"</span><span class="p">&gt;</span><span class="">点击</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c">&lt;!--</span><span class="c">&nbsp;缩写&nbsp;</span><span class="c">--&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">view</span><span class="">&nbsp;</span><span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">"doSomething"</span><span class="p">&gt;</span><span class="">点击</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<p><code>v-once</code> 与传统一样，保证只渲染一次 （h5 、小程序 不支持）</p>
+<p><code>v-html</code> 与传统一样，将标签内的内容设置为 该属性的字符串值，（h5 app 微信小程序均支持，微信小程序会转化为富文本）</p>
+<h2>data属性</h2>
+<p>必须直接让 <code>data()</code> 函数返回一个对象 这个对象不能用 const 声明，导致多个组件实例对象数据相互影响</p>
+<h2>class与style绑定</h2>
+<h3>:class= 字典</h3>
+<p>与传统一样，v-bind绑定class对象，可以实时动态切换，也可以与普通的class共存</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">view</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"已有普通类名"</span><span class="">&nbsp;</span><span class="na">:class</span><span class="o">=</span><span class="s">"{&nbsp;类名1:&nbsp;data里的布尔值,&nbsp;'类名2':&nbsp;data里的布尔值&nbsp;}"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;222</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<h3>:class= 数组</h3>
+<p>与传统一样，class=" 可以写成一个数组 "</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">view</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"static"</span><span class="">&nbsp;</span><span class="na">:class</span><span class="o">=</span><span class="s">"[已有普通类名1&nbsp;,&nbsp;已有普通类名2]"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;111</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<p>可以像传统一样进行三元表达式的动态绑定</p>
+<h2>条件渲染</h2>
+<p>和传统一样</p>
+<p>v-if 和 v-show 的区别 也和传统一样</p>
+<h2>列表渲染</h2>
+<p>v-for</p>
+<h3>遍历字典</h3>
+<ol>
+<li>参数1：元素别名</li>
+<li>参数2：键名</li>
+<li>参数3：索引</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">view</span><span class="">&nbsp;</span><span class="na">v-for</span><span class="o">=</span><span class="s">"(value,&nbsp;name,&nbsp;index)&nbsp;in&nbsp;object"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;{{&nbsp;index&nbsp;}}.&nbsp;{{&nbsp;name&nbsp;}}:&nbsp;{{&nbsp;value&nbsp;}}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<p>和传统一样</p>
+<p>希望每一项保持自己特征，需要使用 <code>:key</code> 来指定列表中项目的唯一的标识符。</p>
+<h3>在组件上使用</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">my-component</span><span class="">&nbsp;</span><span class="na">v-for</span><span class="o">=</span><span class="s">"item&nbsp;in&nbsp;items"</span><span class="">&nbsp;</span><span class="na">:key</span><span class="o">=</span><span class="s">"item.id"</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">my-component</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<p>在组件上使用for的时候，key是必须要有的</p>
+<h2>事件处理</h2>
+<p><code>v-on</code> 监听DOM事件</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">button</span><span class="">&nbsp;</span><span class="na">v-on:事件名</span><span class="o">=</span><span class="s">"执行代码&nbsp;||&nbsp;函数"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="p">/</span><span class="nt">button</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<p>注意：如果是函数要写到methods里面</p>
+<p>可以内置，也可以用 <code>$event</code> 和传统一样</p>
+<h3>事件修饰符</h3>
+<p>v-on 提供的:</p>
+<ul>
+<li><code>.stop</code>: 各平台均支持， 阻止事件冒泡，在非 H5 端同时也会阻止事件的默认行为</li>
+<li><code>.native</code>: 监听原生事件，仅 H5 支持</li>
+<li><code>.prevent</code>: 仅 H5 支持</li>
+<li><code>.capture</code>: 仅 H5 支持</li>
+<li><code>.self</code>: 仅 H5 支持</li>
+<li><code>.once</code>: 仅 H5 支持</li>
+<li><code>.passive</code>: 仅 H5 支持</li>
+</ul>
+<p>注意：修饰符的顺序有讲究，用 <code>v-on:click.prevent.self</code> 会阻止所有的点击，而 <code>v-on:click.self.prevent</code> 只会阻止对元素自身的点击。</p>
+<h3>事件映射表</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div><div class="line-numbers"><div class="line-num" data-line-num="19"></div></div><div class="line-numbers"><div class="line-num" data-line-num="20"></div></div><div class="line-numbers"><div class="line-num" data-line-num="21"></div></div><div class="line-numbers"><div class="line-num" data-line-num="22"></div></div><div class="line-numbers"><div class="line-num" data-line-num="23"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="err">/</span><span class="err">/</span><span class=""> </span><span class="err">W</span><span class="err">E</span><span class="err">B</span><span class="">&nbsp;</span><span class="err">事</span><span class="err">件</span><span class="">    </span><span class="p">:</span><span class="">&nbsp;</span><span class="err">u</span><span class="kc">n</span><span class="err">i</span><span class="mi">-</span><span class="err">a</span><span class="err">p</span><span class="err">p</span><span class="">&nbsp;</span><span class="err">事</span><span class="err">件</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">c</span><span class="err">l</span><span class="err">i</span><span class="err">c</span><span class="err">k</span><span class="p">:</span><span class="">&nbsp;</span><span class="err">'</span><span class="kc">ta</span><span class="err">p</span><span class="err">'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kc">t</span><span class="err">o</span><span class="err">u</span><span class="err">c</span><span class="err">h</span><span class="err">s</span><span class="kc">tart</span><span class="p">:</span><span class="">&nbsp;</span><span class="err">'</span><span class="kc">t</span><span class="err">o</span><span class="err">u</span><span class="err">c</span><span class="err">h</span><span class="err">s</span><span class="kc">tart</span><span class="err">'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kc">t</span><span class="err">o</span><span class="err">u</span><span class="err">c</span><span class="err">h</span><span class="err">m</span><span class="err">o</span><span class="err">v</span><span class="err">e</span><span class="p">:</span><span class="">&nbsp;</span><span class="err">'</span><span class="kc">t</span><span class="err">o</span><span class="err">u</span><span class="err">c</span><span class="err">h</span><span class="err">m</span><span class="err">o</span><span class="err">v</span><span class="err">e</span><span class="err">'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kc">t</span><span class="err">o</span><span class="err">u</span><span class="err">c</span><span class="err">h</span><span class="err">c</span><span class="err">a</span><span class="kc">n</span><span class="err">c</span><span class="err">e</span><span class="err">l</span><span class="p">:</span><span class="">&nbsp;</span><span class="err">'</span><span class="kc">t</span><span class="err">o</span><span class="err">u</span><span class="err">c</span><span class="err">h</span><span class="err">c</span><span class="err">a</span><span class="kc">n</span><span class="err">c</span><span class="err">e</span><span class="err">l</span><span class="err">'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kc">t</span><span class="err">o</span><span class="err">u</span><span class="err">c</span><span class="err">h</span><span class="err">e</span><span class="kc">n</span><span class="err">d</span><span class="p">:</span><span class="">&nbsp;</span><span class="err">'</span><span class="kc">t</span><span class="err">o</span><span class="err">u</span><span class="err">c</span><span class="err">h</span><span class="err">e</span><span class="kc">n</span><span class="err">d</span><span class="err">'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kc">ta</span><span class="err">p</span><span class="p">:</span><span class="">&nbsp;</span><span class="err">'</span><span class="kc">ta</span><span class="err">p</span><span class="err">'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">l</span><span class="err">o</span><span class="kc">n</span><span class="err">g</span><span class="kc">ta</span><span class="err">p</span><span class="p">:</span><span class="">&nbsp;</span><span class="err">'</span><span class="err">l</span><span class="err">o</span><span class="kc">n</span><span class="err">g</span><span class="kc">ta</span><span class="err">p</span><span class="err">'</span><span class="p">,</span><span class="">&nbsp;</span><span class="err">/</span><span class="err">/</span><span class="err">推</span><span class="err">荐</span><span class="err">使</span><span class="err">用</span><span class="err">l</span><span class="err">o</span><span class="kc">n</span><span class="err">g</span><span class="err">p</span><span class="err">r</span><span class="err">e</span><span class="err">s</span><span class="err">s</span><span class="err">代</span><span class="err">替</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">i</span><span class="kc">n</span><span class="err">p</span><span class="err">u</span><span class="kc">t</span><span class="p">:</span><span class="">&nbsp;</span><span class="err">'</span><span class="err">i</span><span class="kc">n</span><span class="err">p</span><span class="err">u</span><span class="kc">t</span><span class="err">'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">c</span><span class="err">h</span><span class="err">a</span><span class="kc">n</span><span class="err">g</span><span class="err">e</span><span class="p">:</span><span class="">&nbsp;</span><span class="err">'</span><span class="err">c</span><span class="err">h</span><span class="err">a</span><span class="kc">n</span><span class="err">g</span><span class="err">e</span><span class="err">'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">s</span><span class="err">u</span><span class="err">b</span><span class="err">m</span><span class="err">i</span><span class="kc">t</span><span class="p">:</span><span class="">&nbsp;</span><span class="err">'</span><span class="err">s</span><span class="err">u</span><span class="err">b</span><span class="err">m</span><span class="err">i</span><span class="kc">t</span><span class="err">'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">b</span><span class="err">l</span><span class="err">u</span><span class="err">r</span><span class="p">:</span><span class="">&nbsp;</span><span class="err">'</span><span class="err">b</span><span class="err">l</span><span class="err">u</span><span class="err">r</span><span class="err">'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kc">f</span><span class="err">o</span><span class="err">c</span><span class="err">u</span><span class="err">s</span><span class="p">:</span><span class="">&nbsp;</span><span class="err">'</span><span class="kc">f</span><span class="err">o</span><span class="err">c</span><span class="err">u</span><span class="err">s</span><span class="err">'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">r</span><span class="err">e</span><span class="err">s</span><span class="err">e</span><span class="kc">t</span><span class="p">:</span><span class="">&nbsp;</span><span class="err">'</span><span class="err">r</span><span class="err">e</span><span class="err">s</span><span class="err">e</span><span class="kc">t</span><span class="err">'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">c</span><span class="err">o</span><span class="kc">nf</span><span class="err">i</span><span class="err">r</span><span class="err">m</span><span class="p">:</span><span class="">&nbsp;</span><span class="err">'</span><span class="err">c</span><span class="err">o</span><span class="kc">nf</span><span class="err">i</span><span class="err">r</span><span class="err">m</span><span class="err">'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">c</span><span class="err">o</span><span class="err">l</span><span class="err">u</span><span class="err">m</span><span class="kc">n</span><span class="err">c</span><span class="err">h</span><span class="err">a</span><span class="kc">n</span><span class="err">g</span><span class="err">e</span><span class="p">:</span><span class="">&nbsp;</span><span class="err">'</span><span class="err">c</span><span class="err">o</span><span class="err">l</span><span class="err">u</span><span class="err">m</span><span class="kc">n</span><span class="err">c</span><span class="err">h</span><span class="err">a</span><span class="kc">n</span><span class="err">g</span><span class="err">e</span><span class="err">'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">l</span><span class="err">i</span><span class="kc">ne</span><span class="err">c</span><span class="err">h</span><span class="err">a</span><span class="kc">n</span><span class="err">g</span><span class="err">e</span><span class="p">:</span><span class="">&nbsp;</span><span class="err">'</span><span class="err">l</span><span class="err">i</span><span class="kc">ne</span><span class="err">c</span><span class="err">h</span><span class="err">a</span><span class="kc">n</span><span class="err">g</span><span class="err">e</span><span class="err">'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">e</span><span class="err">r</span><span class="err">r</span><span class="err">o</span><span class="err">r</span><span class="p">:</span><span class="">&nbsp;</span><span class="err">'</span><span class="err">e</span><span class="err">r</span><span class="err">r</span><span class="err">o</span><span class="err">r</span><span class="err">'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">s</span><span class="err">c</span><span class="err">r</span><span class="err">o</span><span class="err">l</span><span class="err">l</span><span class="kc">t</span><span class="err">o</span><span class="err">u</span><span class="err">p</span><span class="err">p</span><span class="err">e</span><span class="err">r</span><span class="p">:</span><span class="">&nbsp;</span><span class="err">'</span><span class="err">s</span><span class="err">c</span><span class="err">r</span><span class="err">o</span><span class="err">l</span><span class="err">l</span><span class="kc">t</span><span class="err">o</span><span class="err">u</span><span class="err">p</span><span class="err">p</span><span class="err">e</span><span class="err">r</span><span class="err">'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">s</span><span class="err">c</span><span class="err">r</span><span class="err">o</span><span class="err">l</span><span class="err">l</span><span class="kc">t</span><span class="err">o</span><span class="err">l</span><span class="err">o</span><span class="err">w</span><span class="err">e</span><span class="err">r</span><span class="p">:</span><span class="">&nbsp;</span><span class="err">'</span><span class="err">s</span><span class="err">c</span><span class="err">r</span><span class="err">o</span><span class="err">l</span><span class="err">l</span><span class="kc">t</span><span class="err">o</span><span class="err">l</span><span class="err">o</span><span class="err">w</span><span class="err">e</span><span class="err">r</span><span class="err">'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">s</span><span class="err">c</span><span class="err">r</span><span class="err">o</span><span class="err">l</span><span class="err">l</span><span class="p">:</span><span class="">&nbsp;</span><span class="err">'</span><span class="err">s</span><span class="err">c</span><span class="err">r</span><span class="err">o</span><span class="err">l</span><span class="err">l</span><span class="err">'</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h2>表单控件绑定</h2>
+<p><code>v-model</code> 实现双向绑定 和传统一样</p>
+<h2>计算属性</h2>
+<h4>getter</h4>
+<p>模板语法</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="k">export</span><span class="">&nbsp;</span><span class="k">default</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">data</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">message</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'Hello'</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;计算属性在这里
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">computed</span><span class="o">:</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;计算属性的&nbsp;getter
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">reversedMessage</span><span class="p">(</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;翻转字符串
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="nx">message</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span><span class="p">.</span><span class="nx">reverse</span><span class="p">(</span><span class="p">)</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="s1">''</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>使用计算属性</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">view</span><span class="p">&gt;</span><span class="">Computed&nbsp;reversed&nbsp;message:&nbsp;"{{&nbsp;reversedMessage&nbsp;}}"</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<p>大括号里写computed属性里的方法名，不加小括号</p>
+<h4>setter</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">view</span><span class="p">&gt;</span><span class="">{{&nbsp;fullName&nbsp;}}</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<p>当手动修改属性的值时，触发setter函数，执行自己写的操作</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">data</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">firstName</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'Foo'</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">lastName</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'Bar'</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">computed</span><span class="o">:</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">fullName</span><span class="o">:</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;getter
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">get</span><span class="p">(</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="nx">firstName</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="s1">'&nbsp;'</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="nx">lastName</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;setter
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">set</span><span class="p">(</span><span class="nx">newValue</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">var</span><span class="">&nbsp;</span><span class="nx">names</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">newValue</span><span class="p">.</span><span class="nx">split</span><span class="p">(</span><span class="s1">'&nbsp;'</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="nx">firstName</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">names</span><span class="p">[</span><span class="mf">0</span><span class="p">]</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">this</span><span class="p">.</span><span class="nx">lastName</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">names</span><span class="p">[</span><span class="nx">names</span><span class="p">.</span><span class="nx">length</span><span class="">&nbsp;</span><span class="o">-</span><span class="">&nbsp;</span><span class="mf">1</span><span class="p">]</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>这个可以自己写名字，写好的名字会被解析，然后存到date里面，同时date里面的数据也可以展示出来，这就是setter和getter</p>
+<p>计算属性能够进行响应式依赖进行缓存</p>
+<p>使用场景：<strong>被多次依赖的时候</strong>可以用这个，带缓存的，减轻压力</p>
+<h2>监听器 watch</h2>
+<p>vue将会在实例化的时候调用<code>$watch()</code> ，遍历 <code>watch</code> 对象的每一个 <code>property</code> 。</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div><div class="line-numbers"><div class="line-num" data-line-num="19"></div></div><div class="line-numbers"><div class="line-num" data-line-num="20"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">&lt;</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="p">&lt;</span><span class="nt">input</span><span class="">&nbsp;</span><span class="na">type</span><span class="o">=</span><span class="s">"text"</span><span class="">&nbsp;</span><span class="na">v-model</span><span class="o">=</span><span class="s">"word"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="p">/</span><span class="nt">template</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class=""></span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">export</span><span class="">&nbsp;</span><span class="k">default</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">data</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">word</span><span class="o">:</span><span class="">&nbsp;</span><span class="s1">'word'</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">watch</span><span class="o">:</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="cm">/*&nbsp;使用watch来响应数据的变化&nbsp;*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">word</span><span class="p">(</span><span class="nx">newVal</span><span class="p">,</span><span class="">&nbsp;</span><span class="nx">oldVal</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'最新值是：'</span><span class="o">+</span><span class="nx">newVal</span><span class="p">,</span><span class="s2">"原来的值是："</span><span class="o">+</span><span class="">&nbsp;</span><span class="nx">oldVal</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="p">/</span><span class="nt">script</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

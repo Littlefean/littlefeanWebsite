@@ -1,0 +1,127 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>js DOM</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <p>学习笔记Js BOM</p>
+<hr />
+<p><strong>HTML 中的所有内容，甚至注释，都会成为 DOM 的一部分。</strong></p>
+<p>一共有 <a href="https://dom.spec.whatwg.org/#node">12 种节点类型</a>。实际上，我们通常用到的是其中的 4 种：</p>
+<ol>
+<li><code>document</code> — DOM 的“入口点”。</li>
+<li>元素节点 — HTML 标签，树构建块。</li>
+<li>文本节点 — 包含文本。</li>
+<li>注释 — 有时我们可以将一些信息放入其中，它不会显示，但 JS 可以从 DOM 中读取它。</li>
+<li>属性也是一种节点</li>
+</ol>
+<p>使用location.herf</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">alert</span><span class="p">(</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="p">)</span><span class="p">;</span><span class="">&nbsp;</span><span class="c1">//&nbsp;显示当前&nbsp;URL
+</span><span class="k">if</span><span class="">&nbsp;</span><span class="p">(</span><span class="nx">confirm</span><span class="p">(</span><span class="s2">"Go&nbsp;to&nbsp;Wikipedia?"</span><span class="p">)</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="s2">"https://wikipedia.org"</span><span class="p">;</span><span class="">&nbsp;</span><span class="c1">//&nbsp;将浏览器重定向到另一个&nbsp;URL
+</span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h2>DOM操作</h2>
+<h3>获取</h3>
+<p>获取节点</p>
+<p>id获取、query方式获取、class类名获取的是一个序列。标签名获取，获取到一个节点之后还可以继续通过这个节点获取他的子节点，也用相同的方式</p>
+<h3>改</h3>
+<p>修改节点的style、class类名、属性值、给节点添加事件</p>
+<h4>设置自定义属性</h4>
+<p>data-自己自定义的名字</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">div</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"series"</span><span class="">&nbsp;</span><span class="na">data-count</span><span class="o">=</span><span class="s">"12"</span><span class="">&nbsp;</span><span class="na">data-lastUpdate</span><span class="o">=</span><span class="s">"2022-02-11&nbsp;19:52:23"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<p>js里</p>
+<div class="code"><ol class="num-container"></ol><ol class="code-container"></ol></div>
+
+<h3>增加节点</h3>
+<p>先创建节点，再把创建的节点增加到document里面</p>
+<p>不一定非得创建元素节点，也可以创建纯文本节点，createTextNode</p>
+<p>H5开发APP，创建文档碎片 createDocumentFragment</p>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

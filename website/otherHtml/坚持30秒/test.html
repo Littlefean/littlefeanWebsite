@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>form study</title>
+</head>
+
+<body>
+<form action="index.html" method="get" name="info">
+    <label>
+        用户名：
+        <input type="text" name="user" size="30" value="userABC">
+    </label> <br>
+    <label>
+        密码：
+        <input type="password" name="pwd">
+    </label> <br>
+
+    <label>
+        性别：
+        <input type="radio" name="gender" value="1">
+    </label>111
+    <label>
+        111
+        <input type="radio" name="gender" value="2">
+    </label>222
+    <label>
+        222
+        <input type="radio" name="gender" value="3">
+    </label>333
+    <br>
+    <label>
+        爱好：
+        <input type="checkbox" name="favor" value="1">
+    </label>111
+    <label>
+        111
+        <input type="checkbox" name="favor" value="2">
+    </label>222
+    <input type="checkbox" name="favor" value="3">333
+    <br>
+    技能： <input type="checkbox" name="favor" value="1">111
+    <input type="checkbox" name="favor" value="2">222
+    <input type="checkbox" name="favor" value="3">333
+    <br>
+    建议：<textarea name="add">1231321321321</textarea>
+    <br>
+    选择你喜欢的书
+    <select name="fbook" id="t">
+        <optgroup label="国内">
+            <option value="xyj">西游记</option>
+            <option value="sgyjyi">三国演义</option>
+        </optgroup>
+        <optgroup label="国外">
+            <option value="xyj1">111</option>
+            <option value="sgyjyi2">222</option>
+        </optgroup>
+    </select>
+
+    <br><input type="submit" value="提交提交">
+    <br><input type="reset" value="重新填写">
+    <br><input type="button" onclick="info.submit()">
+    <meter value="98" min="0" max="100" low="60" high="90" optimum="50"></meter>
+    <meter value="34" min="0" max="100" low="60" high="90" optimum="50"></meter>
+    <meter value="67" min="0" max="100" low="60" high="90" optimum="50"></meter>
+    <meter value="79" min="0" max="100" low="60" high="90" optimum="50"></meter>
+
+    <fieldset>
+        <legend>具有验证功能的表单</legend>
+        <label>
+            邮箱地址
+            <input type="email" name="email">
+            个人主页
+            <input type="url" name="personPage">
+            年龄：
+            <input type="number" name="age" min="0" max="200" step="10">
+            搜索
+            <input type="search" name="search">
+            颜色：<input type="color" name="cc">
+            data：<input type="date" name="date">
+        </label>
+    </fieldset>
+</form>
+</body>
+
+</html>

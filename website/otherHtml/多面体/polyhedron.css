@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.polyhedron {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  margin: 600px auto;
+  perspective: 800px;
+  outline: solid 1px red;
+}
+.polyhedron .rotateContainer {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -100px;
+  margin-top: -100px;
+  transform-style: preserve-3d;
+  transform-origin: 50% 50% 120.7px;
+  outline: solid 1px green;
+}
+.polyhedron .rotateContainer .slide {
+  outline: solid 1px;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.2);
+  transform-style: preserve-3d;
+  transition: all 0.2s;
+}
+.polyhedron .rotateContainer .slide:hover {
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 20px yellow;
+  width: 120px;
+  height: 120px;
+  cursor: pointer;
+}
+.polyhedron .rotateContainer .slide:active {
+  background-color: rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 20px orange;
+  width: 80px;
+  height: 80px;
+}
+.polyhedron .rotateContainer .s0 {
+  left: 50%;
+  top: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+}
+.polyhedron .rotateContainer .s0 .s1 {
+  right: -100%;
+}
+.polyhedron .rotateContainer .s0 .s1 .s11 {
+  right: -100%;
+}
+.polyhedron .rotateContainer .s0 .s1 .s11 .s12 {
+  top: -100%;
+  transform-origin: bottom center;
+  transform: rotateX(-45deg);
+}
+.polyhedron .rotateContainer .s0 .s1 .s11 .s111 {
+  right: -100%;
+}
+.polyhedron .rotateContainer .s0 .s1,
+.polyhedron .rotateContainer .s0 .s11,
+.polyhedron .rotateContainer .s0 .s111 {
+  transform-origin: left center;
+  transform: rotateY(-45deg);
+}
+.polyhedron .rotateContainer .s0 .s2 {
+  top: -100%;
+}
+.polyhedron .rotateContainer .s0 .s2 .s21 {
+  top: -100%;
+}
+.polyhedron .rotateContainer .s0 .s2 .s21 .s22 {
+  left: -100%;
+  transform-origin: right center;
+  transform: rotateY(45deg);
+}
+.polyhedron .rotateContainer .s0 .s2 .s21 .s211 {
+  top: -100%;
+}
+.polyhedron .rotateContainer .s0 .s2,
+.polyhedron .rotateContainer .s0 .s21,
+.polyhedron .rotateContainer .s0 .s211 {
+  transform-origin: bottom center;
+  transform: rotateX(-45deg);
+}
+.polyhedron .rotateContainer .s0 .s3 {
+  left: -100%;
+}
+.polyhedron .rotateContainer .s0 .s3 .s31 {
+  left: -100%;
+}
+.polyhedron .rotateContainer .s0 .s3 .s31 .s32 {
+  bottom: -100%;
+  transform-origin: top center;
+  transform: rotateX(45deg);
+}
+.polyhedron .rotateContainer .s0 .s3 .s31 .s311 {
+  left: -100%;
+}
+.polyhedron .rotateContainer .s0 .s3,
+.polyhedron .rotateContainer .s0 .s31,
+.polyhedron .rotateContainer .s0 .s311 {
+  transform-origin: right center;
+  transform: rotateY(45deg);
+}
+.polyhedron .rotateContainer .s0 .s4 {
+  bottom: -100%;
+}
+.polyhedron .rotateContainer .s0 .s4 .s41 {
+  bottom: -100%;
+}
+.polyhedron .rotateContainer .s0 .s4 .s41 .s42 {
+  right: -100%;
+  transform-origin: left center;
+  transform: rotateY(-45deg);
+}
+.polyhedron .rotateContainer .s0 .s4 .s41 .s411 {
+  bottom: -100%;
+}
+.polyhedron .rotateContainer .s0 .s4,
+.polyhedron .rotateContainer .s0 .s41,
+.polyhedron .rotateContainer .s0 .s411 {
+  transform-origin: top center;
+  transform: rotateX(45deg);
+}
+/*# sourceMappingURL=polyhedron.css.map */

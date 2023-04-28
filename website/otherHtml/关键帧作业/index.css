@@ -1,0 +1,396 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@keyframes rotate-frame {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes leftTopText {
+  0% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+  10% {
+    transform: translateX(10px);
+    opacity: 1;
+  }
+  25% {
+    transform: translateX(20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(-10px);
+    opacity: 0;
+  }
+}
+@keyframes rightDownText {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+  35% {
+    transform: translateX(-10px);
+    opacity: 1;
+  }
+  50% {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(10px);
+    opacity: 0;
+  }
+}
+@keyframes centerText {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  65% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  85% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+body .work1 {
+  height: 600px;
+}
+body .work1 .block {
+  border: 10px solid #ebebeb;
+  background-color: #dfdfdf;
+  width: 600px;
+  height: 300px;
+  margin: 0 auto;
+  position: relative;
+}
+body .work1 .block .text {
+  font-family: "Times New Roman", serif;
+  font-weight: bolder;
+  position: absolute;
+  font-size: 20px;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+body .work1 .block .text1 {
+  left: 15px;
+  top: 15px;
+  animation-name: leftTopText;
+}
+body .work1 .block .text2 {
+  right: 15px;
+  bottom: 15px;
+  animation-name: rightDownText;
+}
+body .work1 .block .text3 {
+  font-size: 40px;
+  left: 50%;
+  top: 50%;
+  width: 300px;
+  height: 100px;
+  line-height: 100px;
+  margin-left: -150px;
+  margin-top: -50px;
+  animation-name: centerText;
+}
+body .work2 {
+  height: 600px;
+  outline: solid 1px;
+  /*n2*/
+  /* n3 */
+}
+body .work2 > div {
+  width: 150px;
+  height: 150px;
+  float: left;
+  margin: 5px;
+}
+body .work2 .cube {
+  background-color: gray;
+  color: white;
+  width: 150px;
+  height: 150px;
+  position: relative;
+}
+body .work2 .cube p {
+  position: absolute;
+  width: 100%;
+  height: 25px;
+  line-height: 25px;
+  margin-top: -12.5px;
+  text-align: center;
+  top: 50%;
+  font-size: 20px;
+}
+body .work2 .cube .circle {
+  border-radius: 50%;
+  border: solid 5px white;
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  left: 50%;
+  top: 50%;
+  margin-left: -60px;
+  margin-top: -60px;
+  animation-name: rotate-frame;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+body .work2 .cube .circle .egg {
+  width: 15px;
+  height: 15px;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  margin-left: -10px;
+}
+body .work2 .boxgreen {
+  background-color: #30bf82;
+}
+body .work2 .boxgreen div {
+  width: 100px;
+  height: 10px;
+  background-color: #fbfbfb;
+  margin: 5px;
+}
+body .work2 .boxgreen .g1 {
+  margin-top: 20px;
+  animation: an1 2s infinite -0.5s alternate linear;
+}
+body .work2 .boxgreen .g2 {
+  animation: an1 1.5s infinite -0.2s alternate linear;
+}
+body .work2 .boxgreen .g3 {
+  animation: an1 1.2s infinite -0.5s alternate linear;
+}
+body .work2 .boxgreen .g4 {
+  animation: an1 2s infinite alternate linear;
+}
+body .work2 .boxgreen .g5 {
+  animation: an1 1.5s infinite -1s alternate linear;
+}
+body .work2 .boxgreen .g6 {
+  animation: an1 2.2s infinite -0.2s alternate linear;
+}
+body .work2 .boxgreen p {
+  color: #fbfbfb;
+  font-family: Calibri;
+  text-align: center;
+}
+@keyframes an1 {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100px;
+  }
+}
+body .work2 .boxpurple {
+  background-color: #592780;
+  position: relative;
+}
+@keyframes rotate1 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(3600deg);
+  }
+}
+body .work2 .boxpurple .outcircle {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(#d8a6ff, #ffecee);
+  position: absolute;
+  top: 50px;
+  left: 50px;
+  border-radius: 50%;
+  animation: rotate1 0.1s infinite;
+}
+body .work2 .boxpurple .innercircle {
+  width: 40px;
+  height: 40px;
+  background-color: #592780;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  border-radius: 50%;
+}
+body .work2 .boxpurple p {
+  color: #d8a6ff;
+  font-family: Calibri;
+  text-align: center;
+  margin-top: 110px;
+}
+body .work2 .boxpurple .point:before,
+body .work2 .boxpurple .point:after,
+body .work2 .boxpurple .point {
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  animation: b1 1s infinite ease-in-out;
+}
+body .work2 .boxpurple .point {
+  margin-top: -6px;
+  margin-left: 115px;
+  font-size: 52px;
+  position: relative;
+  animation-delay: 0.3s;
+  background-color: #d8a6ff;
+}
+body .work2 .boxpurple .point:before {
+  left: -8px;
+}
+body .work2 .boxpurple .point:after {
+  left: 8px;
+  animation-delay: 0.6s;
+}
+body .work2 .boxpurple .point:before,
+body .work2 .boxpurple .point:after {
+  content: "";
+  position: absolute;
+  top: 0;
+}
+@keyframes b1 {
+  0%,
+  100% {
+    opacity: 0;
+    background-color: #d8a6ff;
+  }
+  50% {
+    opacity: 1;
+    background-color: #d8a6ff;
+  }
+}
+body .work2 .boxrouse {
+  background-color: #b50961;
+  position: relative;
+}
+@keyframes run {
+  0% {
+    left: 20px;
+    top: 60px;
+  }
+  5% {
+    left: 10px;
+    top: 40px;
+    width: 20px;
+    height: 20px;
+  }
+  10% {
+    left: 10px;
+    top: 40px;
+    width: 30px;
+    height: 15px;
+  }
+  25% {
+    left: 110px;
+    top: 40px;
+    width: 30px;
+    height: 15px;
+  }
+  30% {
+    left: 110px;
+    top: 60px;
+    width: 20px;
+    height: 20px;
+  }
+  100% {
+    left: 10px;
+    top: 60px;
+  }
+}
+body .work2 .boxrouse .r1 {
+  animation-delay: 0s;
+}
+body .work2 .boxrouse .r2 {
+  animation-delay: -0.4s;
+}
+body .work2 .boxrouse .r3 {
+  animation-delay: -0.8s;
+}
+body .work2 .boxrouse .r4 {
+  animation-delay: -1.2s;
+}
+body .work2 .boxrouse .r5 {
+  animation-delay: -1.6s;
+}
+body .work2 .boxrouse > div {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  position: absolute;
+  left: 10px;
+  top: 60px;
+  animation: run 2s linear infinite;
+}
+body .work2 .boxfouth {
+  background-color: #fafafa;
+  position: relative;
+}
+body .work2 .big {
+  width: 36px;
+  height: 36px;
+  border: 2px solid;
+  border-color: transparent #57077c;
+  border-radius: 50%;
+  position: absolute;
+  top: 57px;
+  left: 57px;
+  animation: bicircle 1s ease-in-out infinite;
+}
+body .work2 .small {
+  width: 16px;
+  height: 16px;
+  border: 2px solid;
+  border-color: transparent #57077c;
+  border-radius: 50%;
+  position: absolute;
+  top: 67px;
+  left: 67px;
+  animation: bicircle 1s ease-in-out infinite reverse;
+}
+@keyframes bicircle {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(0.5);
+  }
+  100% {
+    transform: rotate(360deg) scale(1);
+  }
+}
+/*# sourceMappingURL=index.css.map */

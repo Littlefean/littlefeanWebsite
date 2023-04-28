@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgb(30, 30, 30);
+  padding-top: 50px;
+}
+
+.folder {
+  margin: 5px;
+  padding: 15px 5px 1px 10px;
+  width: 500px;
+  box-sizing: content-box;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  border: solid 2px rgb(175, 177, 179);
+  background-color: rgb(50, 50, 50);
+  transition: all 0.5s;
+
+  &:hover {
+    background-color: rgb(80, 50, 60);
+    border-color: rgb(255, 255, 255);
+
+    > .folderName {
+      opacity: 1;
+      margin-left: 0.5em;
+    }
+
+    > .file {
+      //color: rgb(212, 212, 212);
+      color: white;
+      background-color: rgba(29, 75, 157, 0.7);
+    }
+  }
+
+  .folderName {
+    padding-left: 2em;
+    padding-right: 2em;
+
+    opacity: 0;
+    position: absolute;
+    height: 20px;
+    background-color: rgb(206, 145, 120);
+    left: 0;
+    top: -20px;
+    transition: all 0.5s;
+  }
+}
+
+
+.file {
+  width: 50px;
+  height: 20px;
+
+  margin: 3px;
+  padding: 5px;
+  font-size: 5px;
+  //color: rgb(128, 128, 128);
+  // 文字溢出会隐藏
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  color: white;
+  background-color: rgba(29, 75, 157, 0.5);
+  transition: all 0.5s;
+
+  &:hover {
+    width: auto;
+    overflow: visible;
+    z-index: 100;
+  }
+}

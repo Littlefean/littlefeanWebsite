@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Ai五子棋</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+<h1>Ai五子棋</h1>
+<main>
+    <div class="settings">
+        <h2>规则说明</h2>
+        <p>点击左侧棋盘上的小方块就可以下棋了</p>
+        <h2>棋局设置</h2>
+        <form action="">
+            <label>
+                棋子连接数量获胜条件：
+                <input type="number" min="3" max="10" value="5" id="combineNum">
+                棋盘宽度：<input type="number" min="5" max="100" value="15" id="W">
+                棋盘高度：<input type="number" min="5" max="100" value="15" id="H">
+                <input type="radio" name="first" value="true" id="HumanFirst">我先
+                <input type="radio" name="first" value="false" id="AiFirst">Ai先
+                <br>
+                设置AI：<select name="ais" id="chooseAi">
+                <option value="random">随机单步Ai</option>
+                <option value="random2">随机两步Ai</option>
+                <option value="random3">随机三步Ai</option>
+                <option value="random5">撒币Ai</option>
+                <option value="randomD">吞噬者</option>
+            </select>
+            </label>
+
+        </form>
+        <button id="submit">更新规则并开始</button>
+    </div>
+    <div class="board" id="board">
+        <!--        棋盘信息界面-->
+        <div class="data">
+            白色连接分数是：<span id="whiteScore"></span><br>
+            黑色连接分数是：<span id="blackScore"></span><br>
+        </div>
+        <!--        棋盘展示界面-->
+        <div class="lines">
+
+        </div>
+    </div>
+
+</main>
+</body>
+<script src="js/board.js"></script>
+<script src="js/Ai.js"></script>
+<script src="js/AiEntity.js"></script>
+<script src="js/index.js"></script>
+</html>

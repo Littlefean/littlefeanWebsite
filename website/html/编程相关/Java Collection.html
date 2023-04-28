@@ -1,0 +1,439 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Java Collection</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    笔记内容解析出现错误，如果你就是想看，可以将以下内容复制到markdown文档看，或者联系站长</br></br><pre># Collection
+
+---
+
+
+
+## Collection集合框架
+
+---
+
+```java
+Collection接口
+	List接口					//有序、允许重复、有索引
+		Vector集合
+		ArrayList集合
+		LinkedList集合
+	Set接口					//不允许重复、没有索引
+		TreeSet集合
+		HashSet集合
+			LinkedHashSet集合
+```
+
+
+
+#### 功能
+
+```java
+1 增		public boolean add(E e):			//把给定的对象添加到集合中
+2 清		public void clear():				//清空集合中的元素
+3 删		public boolean remove(E e):			//删除指定对象
+4 查		public boolean contains(E e):		//判断当前集合中是否包含给定对象
+5 空		public boolean isEmpty():			//判断当前集合是否为空
+6 转		public Object[] toArray():			//把集合中的元素转存到数组中
+```
+
+#### 语法
+
+```java
+	Collection<String> coll = new ArrayList<>();
+```
+
+
+
+## 泛型
+
+---
+
+#### 概念：
+
+​	未知数据类型，可以看作时一个变量，用来接收数据类型
+
+#### 泛型通配符：
+
+​	`ArrayList<?>`
+
+#### 泛型的上限：
+
+​	格式：`类名称 <? extends 类 > 对象名称`
+
+​	意义：只能接收该类极其子类
+
+#### 泛型的下限：
+
+​	格式：`类型名称 <? super 类 > 对象名称`
+
+​	意义：只能接收该类及其父类型
+
+
+
+## 增强for循环
+
+---
+
+#### 概念：
+
+​	专门用来遍历数组和集合，内部原理其实是一个Iterator迭代器，所以在遍历过程中不能进行增删操作
+
+#### 格式：
+
+```java
+	for ( 元素数据类型 变量 ：Collection集合或者数组 ) {
+		//操作
+	}
+```
+
+
+
+
+
+# List 
+
+---
+
+## ArrayList
+
+数组结构
+
+## LinkedList
+
+链表结构
+
+#### 特点：
+
+查询慢，增删快
+
+里面包含了大量操作首尾元素的方法
+
+#### 方法
+
+```java
+public void addFirst(E e);	//列表开头插入指定元素
+public void addLast(E e);	//列表结尾插入指定元素
+public void push(E e);		//将元素推入此列表表示的堆栈
+
+public E getFirst();	//返回此列表的第一个元素
+public E getLast();		//返回此列表的最后一个元素
+
+public E removeFirst();	//删除并返回列表第一个元素
+public E removeLast();	//删除并返回列表的最后一个元素
+public E pop();			//从此列表表示的堆栈弹出一个元素
+
+public boolean isEmpty();	//如果列表不包含元素，则返回true
+```
+
+## Vector
+
+单线程，比较慢
+
+
+
+# Set 
+
+---
+
+Set接口继承了Collection
+
+Set接口特点：
+
+1. 不允许元素重复
+2. 没有索引，没有带索引的方法，也不能使用普通的for循环遍历
+
+## HashSet
+
+---
+
+#### 特点
+
+1. 不允许元素重复
+2. 没有索引，没有带索引的方法，也不能使用普通的for循环遍历
+3. 无序集合，存储元素和取出元素的顺序有可能不一致
+4. 底层是一个哈希表结构（查询的速度非常快）
+
+#### 操作实例：
+
+```java
+Set<Integer> set = new HashSet<>();
+set.add(1);
+set.add(2);
+set.add(45);
+//使用迭代器遍历
+Iterator<Integer> it = set.iterator();
+while(it.hasNext()){
+    Integer n = it.next();
+    System.out.println(n);
+}
+//使用增强for遍历
+for (Integer i : set){
+    System.out.println(i);
+}
+```
+
+### HashSet 存储数据的结构（哈希表）
+
+重地，通话，两个字符串的哈希值是一样的（巧合）
+
+#### 介绍
+
+JDK1.8版本前：哈希表 = 数组+ 链表
+
+JKD1.8版本后：哈希表 = 数组 + 链表，或者，哈希表= 数组 + 红黑树
+
+#### 结构
+
+![image-20200722113739221](C:\Users\20281\AppData\Roaming\Typora\typora-user-images\image-20200722113739221.png)
+
+### HashSet 存储自定义类型元素
+
+给HashSet 存放自定义类型的元素时，需要重写对象中的hashCode和equals方法，建立自己的比较方式，才能保证集合对象中的对象唯一
+
+IDEA中的重写方法：Alt + Ins 选择equals() and hashCode() 然后一直点Next 直到Finish
+
+## LinkHashSet
+
+---
+
+是HashSet集合的子类
+
+#### 特点：
+
+底层是一个哈希表（数组+链表/红黑树）+ 链表：多了一条链表结构，保证元素有序
+
+有序，不允许重复
+
+
+
+## 可变参数
+
+#### 介绍
+
+JDK1.5之后出现的新特性
+
+#### 使用前提：
+
+当参数列表的数据类型已经确定，但是参数的个数不确定，使用可变参数
+
+#### 使用格式
+
+```java
+public static void test(int...varName){
+    //方法体
+}
+```
+
+#### 原理
+
+可变参数底层是数组，根据参数传递个数不同，会创建不同长度的数组，来存储这些参数
+
+传递参数的个数，可以01234……个
+
+#### 举例
+
+```java
+public static int add(int...arr){
+    int sum = 0;
+    //遍历每个数组，获取每个数组里的元素
+    for (int i : arr){
+        //累加求和
+        sum += i;
+    }
+    //返回求和结果
+    return sum;
+}
+```
+
+#### 注意事项
+
+1. 一个方法的参数列表只能有一个可变参数
+2. 如果方法的参数有多个，那么可变参数必须写在参数列表的末尾
+
+
+
+# 数据结构
+
+---
+
+## 常见的数据结构
+
+栈、队列、数组、链表、红黑树
+
+### 栈
+
+- 先进后出
+- 入口和出口在同一侧
+
+### 队列
+
+- 先进先出
+- 入口和出口在两侧
+
+### 数组
+
+特点：查询快，增删慢
+
+查询快的原因：数组的地址是连续的我们通过数组的首地址可以找到数组，通过数组的索引可以快速查找某一个元素
+
+增删慢的原因：数组的长度是固定的，想要增删就需要新创数组，并删除原有数组
+
+### 链表
+
+特点：查询慢，增删快
+
+查询慢的原因：链表的地址不是连续的，每次查询都需要从头查询
+
+增删快的原因：增删一个元素对整体结构没有影响，所以增删快。
+
+结构：`自己的地址`--`数据`--`下一个节点的地址`
+
+单项列表：链表中只有一条链子，不能保证元素的顺序（存储元素和取出元素的顺序有可能不一致）
+
+双向链表：链表中有两条链子，其中一条专门记录元素的顺序，是一个有序的集合
+
+### 树
+
+#### 二叉树
+
+分支不能超过两个
+
+#### 排序树/查找树
+
+在二叉树的基础上，元素是有大小顺序的，左子树小，右子树大
+
+举例：猜数小游戏
+
+#### 平衡树
+
+左孩子和右孩子数相等
+
+#### 红黑树
+
+趋近于平衡树
+
+![image-20200720165359647](C:\Users\20281\AppData\Roaming\Typora\typora-user-images\image-20200720165359647.png)
+
+
+
+# Collections
+
+---
+
+介绍：是集合工具类，用来对集合进行操作
+
+#### 常用方法：
+
+```java
+public static <T> boolean addAll(Collection<T> , T... elements)	//往集合里添加一些元素
+public static void shuffle(List<?> list)					//打乱集合的顺序
+public static <T> void sort(List<T> list)					//将集合中元素按照默认规则排序
+public static <T> void sort(List<T> list, Comparator<? super T> )//将集合元素按照指定规格排序
+```
+
+添加多个元素：
+
+```java
+ArrayList<String> list = new ArrayList<>();
+Colletions.addAll(list, "a", "b", "c", "d");
+System.out.println(list);
+```
+
+
+
+
+
+
+
+
+
+
+
+</pre>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

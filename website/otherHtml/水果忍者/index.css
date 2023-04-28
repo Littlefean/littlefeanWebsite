@@ -1,0 +1,162 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: wheat;
+  overflow: hidden;
+  position: relative;
+  height: 100vh;
+}
+body #scoreP {
+  text-align: center;
+  font-size: 100px;
+}
+body .shortText {
+  position: absolute;
+  z-index: -99;
+  font-size: 60px;
+  font-weight: bolder;
+  width: 400px;
+  height: 400px;
+  animation-name: textShow;
+  animation-iteration-count: 1;
+}
+body .staticJuice {
+  position: absolute;
+  background-color: orangered;
+  border-radius: 50%;
+  opacity: 0.2;
+  filter: blur(3px);
+  z-index: -100;
+}
+body .fruit,
+body .bomber,
+body .superFruit {
+  animation-name: fruitRotate;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-delay: 1s;
+}
+body .bomber {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  border-radius: 50%;
+  background-image: url("imgs/炸弹.png");
+  background-size: cover;
+}
+body .superBomber {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  border-radius: 50%;
+  background-image: url("imgs/大炸弹.png");
+  background-size: cover;
+}
+body .fruit {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  border-radius: 300px;
+  outline: solid 1px;
+  background-image: url("imgs/水果1.png");
+  background-size: cover;
+}
+body .fruit:hover {
+  cursor: pointer;
+}
+body .fruit .fragment {
+  width: 50%;
+  height: 100%;
+  position: absolute;
+  background-color: inherit;
+  border-radius: inherit;
+  filter: brightness(80%);
+  outline: solid 1px;
+  animation-name: fragmentFly;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+  animation-play-state: paused;
+}
+body .fruit .juice {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -50px;
+  margin-top: -50px;
+  border-radius: 1000px;
+  background-color: red;
+  opacity: 0;
+  animation-name: juiceSpread;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-play-state: paused;
+  animation-timing-function: linear;
+  outline: solid 1px;
+}
+body #bgCanvas {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1000;
+}
+@keyframes textShow {
+  from {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+}
+@keyframes boomBackground {
+  0% {
+    background-color: wheat;
+  }
+  1% {
+    background-color: gray;
+  }
+  100% {
+    background-color: wheat;
+  }
+}
+@keyframes juiceSpread {
+  0% {
+    opacity: 0;
+  }
+  1% {
+    opacity: 100%;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+    filter: blur(5px);
+  }
+}
+@keyframes fragmentFly {
+  from {
+    right: 0;
+    transform: rotate(360deg);
+  }
+  to {
+    right: 500px;
+    top: 1000px;
+  }
+}
+@keyframes fruitRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+/*# sourceMappingURL=index.css.map */

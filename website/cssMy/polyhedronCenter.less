@@ -1,0 +1,161 @@
+
+.polyhedron {
+  @cubeL: 40px; // 正方体的边长
+  @containerL: @cubeL * 2;
+
+  @iconBoxL: 100px;
+  width: @iconBoxL;
+  height: @iconBoxL;
+
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-(@iconBoxL/2)) translateY(-(@iconBoxL/2));
+  perspective: 800px;
+  //outline: solid 1px red;
+
+  .rotateContainer {
+
+    width: @containerL;
+    height: @containerL;
+    // 与旋转中心同心对齐
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -(@containerL / 2);
+    margin-top: -(@containerL / 2);
+
+    transform-style: preserve-3d;
+    transform-origin: 50% 50% (@cubeL/2)+(1.414/2*@cubeL);
+
+    transform: rotateX(60deg) rotateZ(30deg);
+    //outline: solid 1px green;
+
+    .slide {
+      outline: solid 2px skyblue;
+
+      width: @cubeL;
+      height: @cubeL;
+      position: absolute;
+      //background: transparent;
+      background-color: rgba(0, 0, 0, 0.2);
+      transform-style: preserve-3d;
+      transition: all 0.2s;
+
+      &:hover {
+        background-color: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 20px yellow;
+        width: @cubeL+5;
+        height: @cubeL+5;
+        cursor: pointer;
+      }
+
+      &:active {
+        background-color: rgba(0, 0, 0, 0.6);
+        box-shadow: 0 0 20px orange;
+        width: @cubeL - 5;
+        height: @cubeL - 5;
+      }
+    }
+
+    .s0 {
+      // 和基础旋转底面重中心对齐
+      left: 50%;
+      top: 50%;
+      margin-left: -(@cubeL / 2);
+      margin-top: -(@cubeL / 2);
+
+      .s1 {
+        right: -100%;
+
+        .s11 {
+          right: -100%;
+
+          .s12 {
+            top: -100%;
+            transform-origin: bottom center;
+            transform: rotateX(-45deg);
+          }
+
+          .s111 {
+            right: -100%;
+          }
+        }
+      }
+
+      .s1, .s11, .s111 {
+        transform-origin: left center;
+        transform: rotateY(-45deg);
+      }
+
+      .s2 {
+        top: -100%;
+
+        .s21 {
+          top: -100%;
+
+          .s22 {
+            left: -100%;
+            transform-origin: right center;
+            transform: rotateY(45deg);
+          }
+
+          .s211 {
+            top: -100%;
+          }
+        }
+      }
+
+      .s2, .s21, .s211 {
+        transform-origin: bottom center;
+        transform: rotateX(-45deg);
+      }
+
+      .s3 {
+        left: -100%;
+
+        .s31 {
+          left: -100%;
+
+          .s32 {
+            bottom: -100%;
+            transform-origin: top center;
+            transform: rotateX(45deg);
+          }
+
+          .s311 {
+            left: -100%;
+          }
+        }
+      }
+
+      .s3, .s31, .s311 {
+        transform-origin: right center;
+        transform: rotateY(45deg);
+      }
+
+      .s4 {
+        bottom: -100%;
+
+        .s41 {
+          bottom: -100%;
+
+          .s42 {
+            right: -100%;
+            transform-origin: left center;
+            transform: rotateY(-45deg);
+          }
+
+          .s411 {
+            bottom: -100%;
+          }
+        }
+      }
+
+      .s4, .s41, .s411 {
+        transform-origin: top center;
+        transform: rotateX(45deg);
+      }
+    }
+  }
+}

@@ -1,0 +1,160 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Python Tkinter</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h2>定式</h2>
+<h3>产生一个窗口</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">Tkinter</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="o">*</span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="c1">#引用Tk模块</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">root</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">Tk</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#初始化Tk()</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#进入消息循环</span></div></div></li>
+</ol></div>
+
+<h3>几个常用属性</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">Tkinter</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="o">*</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">root</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">Tk</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"</span><span class="s2">hello&nbsp;world</span><span class="s2">"</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">root</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s1">'</span><span class="s1">200x100</span><span class="s1">'</span><span class="p">)</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#是x&nbsp;不是*</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">root</span><span class="o">.</span><span class="n">resizable</span><span class="p">(</span><span class="n">width</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">height</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="">&nbsp;</span><span class="c1">#宽不可变,&nbsp;高可变,默认为True</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">(</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h3>控件</h3>
+<p>每个控件最后要加上<code>pack()</code>否则控件是无法显示的</p>
+<h4>Label</h4>
+<p>说明：标签</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">Label</span><span class="p">(</span><span class="n">根对象</span><span class="p">,</span><span class="">&nbsp;</span><span class="p">[</span><span class="n">属性列表</span><span class="p">]</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<ul>
+<li>
+<p>text　   要现实的文本</p>
+</li>
+<li>
+<p>bg　　  背景颜色</p>
+</li>
+<li>
+<p>font　   字体(颜色, 大小)</p>
+</li>
+<li>
+<p>width　 控件宽度</p>
+</li>
+<li>
+<p>height　控件高度</p>
+</li>
+</ul>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">Tkinter</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="o">*</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">root</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">Tk</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">root</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">"</span><span class="s2">hello&nbsp;world</span><span class="s2">"</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">root</span><span class="o">.</span><span class="n">geometry</span><span class="p">(</span><span class="s1">'</span><span class="s1">300x200</span><span class="s1">'</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">l</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">Label</span><span class="p">(</span><span class="n">root</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">text</span><span class="o">=</span><span class="s2">"</span><span class="s2">show</span><span class="s2">"</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">bg</span><span class="o">=</span><span class="s2">"</span><span class="s2">green</span><span class="s2">"</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">font</span><span class="o">=</span><span class="p">(</span><span class="s2">"</span><span class="s2">Arial</span><span class="s2">"</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">12</span><span class="p">)</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">width</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">height</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">l</span><span class="o">.</span><span class="n">pack</span><span class="p">(</span><span class="n">side</span><span class="o">=</span><span class="n">LEFT</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#这里的side可以赋值为LEFT&nbsp;&nbsp;RTGHT&nbsp;TOP&nbsp;&nbsp;BOTTOM</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">root</span><span class="o">.</span><span class="n">mainloop</span><span class="p">(</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h4>按钮</h4>
+<p>https://www.runoob.com/python/python-tk-button.html</p>
+<h2>特殊问题</h2>
+<h4>关闭窗口后子线程依旧在运行</h4>
+<p>给线程添加一个代码</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">t</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">threading</span><span class="o">.</span><span class="n">Thread</span><span class="p">(</span><span class="n">target</span><span class="o">=</span><span class="n">tick</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">t</span><span class="o">.</span><span class="n">setDaemon</span><span class="p">(</span><span class="kc">True</span><span class="p">)</span><span class="">&nbsp;&nbsp;</span><span class="c1">#&nbsp;此行代码解决关闭窗口后程序没有结束的bug</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">t</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<p>更改标签里面文字的内容</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">w2</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">text</span><span class="o">=</span><span class="sa">f</span><span class="s2">"</span><span class="s2">倒计时</span><span class="si">{</span><span class="mi">60</span><span class="">&nbsp;</span><span class="o">*</span><span class="">&nbsp;</span><span class="n">Settings</span><span class="p">[</span><span class="s1">'</span><span class="s1">frequency</span><span class="s1">'</span><span class="p">]</span><span class="">&nbsp;</span><span class="o">-</span><span class="">&nbsp;</span><span class="n">i</span><span class="si">}</span><span class="s2">s</span><span class="s2">"</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h4>设置控件样式</h4>
+<p>背景</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">top</span><span class="o">.</span><span class="n">configure</span><span class="p">(</span><span class="n">bg</span><span class="o">=</span><span class="s2">"</span><span class="s2">pink</span><span class="s2">"</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<p>控件是不能透明的，除非用canvas</p>
+<p>https://www.meiwen.com.cn/subject/njmmsctx.html</p>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

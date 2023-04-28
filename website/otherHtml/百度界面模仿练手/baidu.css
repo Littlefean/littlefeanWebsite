@@ -1,0 +1,115 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    /* border-width: 1px; */
+    /* border-style: solid; */
+}
+
+:root {
+    --baidu-color: #4E6EF2;
+    --baidu-color-dark: #4662D9;
+}
+
+html, body {
+    height: 100%;
+    /* 需要加上html，为了做出底条吸附在底端，不随放大缩小而出界的效果 */
+    /* 参考了：https://codepen.io/hu0950/pen/NObMPb?editors=1100#0 */
+}
+
+main {
+    position: relative;
+    min-height: 100%;
+    padding-bottom: 40px;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: var(--baidu-color);
+}
+
+#center-logo {
+    display: block;
+    margin: 0 auto;
+    margin-top: 120px;
+}
+
+#search-div {
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 654px;
+    height: 44px;
+}
+
+#search-div input {
+    height: 40px;
+    width: 527px;
+    border-color: var(--baidu-color);
+    border-width: 2px;
+    border-right-style: none;
+    padding-left: 15px;
+    font-size: 15px;
+    outline-style: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#search-div button {
+    display: block;
+    float: right;
+    height: 100%;
+    width: 110px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    background-color: var(--baidu-color);
+    font-size: 16px;
+    color: white;
+    border-style: none;
+    outline-style: none;
+}
+
+#search-div button:hover {
+    background-color: var(--baidu-color-dark);
+    cursor: pointer;
+}
+
+#buttom {
+    height: 40px;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
+}
+
+#buttom .left-content {
+    margin-left: 20px;
+    height: 40px;
+    width: 550px;
+    float: left;
+}
+
+#buttom .left-content a {
+    float: left;
+    margin-right: 20px;
+    margin-top: 10px;
+    font-size: 12px;
+}
+
+#buttom .right-content {
+    margin-right: 20px;
+    height: 40px;
+    width: 528px;
+    float: right;
+}
+
+#buttom .right-content a {
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 12px;
+}

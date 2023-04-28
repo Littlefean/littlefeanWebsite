@@ -1,0 +1,177 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Excl</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>学习笔记Excel</h1>
+<hr />
+<p>公式引用</p>
+<pre><code>单元格跨表格引用
+
+    =VLOOKUP(单元格坐标,表头,整数,FALSE)
+
+求和公式
+
+    =SUM(坐标:坐标)
+
+平均值公式
+
+    =AVRERAGE(坐标:坐标)
+
+显示最大值
+
+    =MAX(坐标:坐标)
+
+显示最小值
+
+    =MIN(坐标:坐标)
+</code></pre>
+<h2>教程视频地址</h2>
+<p>https://www.bilibili.com/video/BV19s411L7p7?p=3</p>
+<h2>复制粘贴</h2>
+<p>右键可以粘贴属性值，不用把样式粘贴进来</p>
+<h2>自动填充</h2>
+<p>不按ctrl直接拖，全是一个数值</p>
+<p>按住ctrl拖动，++1，等差数列</p>
+<p>等比序列：现选中好要填充的数据区域，点菜单栏里面的“编辑”，里面有一个下三角框按钮，设置等比参数。确定</p>
+<p>自动填充格式也会复制过来</p>
+<h2>单元格内容格式</h2>
+<p>设置格式：开始，数字，点对应的小图标，可以增加保留的小数位</p>
+<ul>
+<li>数字格式</li>
+<li>日期格式</li>
+<li>百分比格式</li>
+<li>分数格式</li>
+</ul>
+<p>如果小图标里的格式里没有想要的可以点数字面板右下角的小折角，弹出设置单元格格式窗口</p>
+<p>可以用 `ctrl+1 调出设置单元格格式的窗口</p>
+<h4>文本：</h4>
+<p>可以在“
+设置单元格格式”，对齐，里面有个文本控制，勾选缩小字体填充，字可以自动变小</p>
+<p>同样也可以自动换行，强制换行： <code>Alt+enter</code></p>
+<h2>条件格式</h2>
+<p>用于筛选数据</p>
+<p>开始——条件格式——弹出窗口：新建格式规则，设置数值和单元格格式。就可以了</p>
+<h2>单元格格式</h2>
+<h4>行高列宽</h4>
+<p>可以选中多个然后拖动，能够一起更改</p>
+<h4>隐藏</h4>
+<p>右键航标或者列表可以隐藏，双击双线可以取消隐藏</p>
+<h2>基础操作</h2>
+<h4>行列移动</h4>
+<p>现剪切一个行列，然后在另一个行列前面右键，插入剪切的单元格，不能直接ctrlV，会直接覆盖</p>
+<h4>框选的单元格</h4>
+<p>移动：直接鼠标拖动</p>
+<p>复制：ctrl+鼠标拖拽</p>
+<p>跨表格复制：ctrl+alt+鼠标拖拽<strong>边框</strong></p>
+<h2>工作簿</h2>
+<p>一个工作簿里有很多工作表</p>
+<p>工作表标签可以设置不同的颜色</p>
+<h4>隐藏</h4>
+<p>右键一个工作表可以隐藏</p>
+<p>取消隐藏：随便在一个工作表上右键取消隐藏，弹出框框</p>
+<h2>冻结</h2>
+<p>可以让某一片一直显示，不随着滚动而脱离屏幕</p>
+<p>视图——窗口——冻结窗格</p>
+<p>也可以在这里取消冻结</p>
+<h2>加密</h2>
+<h4>对工作簿加密</h4>
+<p>文件——信息——保护工作簿——用密码进行加密</p>
+<h4>对工作表保护</h4>
+<p>工作表上右键，保护工作表</p>
+<h2>排序</h2>
+<p>把标题也选中了</p>
+<p>开始——编辑——排序和筛选——自定义排序</p>
+<h2>多选框</h2>
+<p>框选单元格范围</p>
+<p>开始——数据——数据工具——数据验证——数据验证弹框——</p>
+<h2>打印</h2>
+<h4>打印预览</h4>
+<p>可以看到虚线表示打印范围</p>
+<p>文件——打印</p>
+<p>设置里，可以“将工作表调整为一页”</p>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

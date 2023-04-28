@@ -1,0 +1,2133 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>CSS</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>CSS 学习笔记</h1>
+<hr />
+<h2>CSS书写规范</h2>
+<h3>顺序</h3>
+<ol>
+<li>
+<p>布局位置属性(position, top, right, z-index, display, float等)</p>
+</li>
+<li>
+<p>自身大小盒子模型(width, height, padding, margin)</p>
+</li>
+<li>
+<p>文字系列(font, line-height, letter-spacing, color- text-align等)</p>
+</li>
+<li>
+<p>背景(background, border等)</p>
+</li>
+<li>
+<p>其他 CSS3(animation, transition等)</p>
+</li>
+</ol>
+<p>https://www.zhihu.com/question/19586885</p>
+<h2>相关属性</h2>
+<h3>大小</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>属性名</th>
+<th>单位</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>宽度</td>
+<td><code>width</code></td>
+<td>px</td>
+</tr>
+<tr>
+<td>高度</td>
+<td><code>height</code></td>
+<td>px</td>
+</tr>
+<tr>
+<td>行高</td>
+<td><code>line-height</code></td>
+<td>px</td>
+</tr>
+<tr>
+<td>最大高度</td>
+<td><code>max-height</code></td>
+<td></td>
+</tr>
+<tr>
+<td>最大宽度</td>
+<td><code>max-width</code></td>
+<td></td>
+</tr>
+<tr>
+<td>最小宽度</td>
+<td><code>min-width</code></td>
+<td></td>
+</tr>
+<tr>
+<td>最小高度</td>
+<td><code>min-height</code></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>分类</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>属性名</th>
+<th>特殊值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>它侧面其他可浮</td>
+<td>clear</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>指向它显示指针类</td>
+<td>cursor</td>
+<td>auto;alias;</td>
+<td>鼠标的样子放上去变了</td>
+</tr>
+<tr>
+<td>是否如何显示</td>
+<td>display</td>
+<td>inline;</td>
+<td>可以把li标签设置成一行，经常用于导航栏</td>
+</tr>
+<tr>
+<td>哪个方向浮动</td>
+<td>float</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>是否可见</td>
+<td>visibility</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>边框</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>属性名</th>
+<th>特殊值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>内边距</td>
+<td>padding</td>
+<td>10px</td>
+<td></td>
+</tr>
+<tr>
+<td>内边距</td>
+<td>padding-left</td>
+<td>2em</td>
+<td>悬挂缩进两字符</td>
+</tr>
+<tr>
+<td>边框</td>
+<td>border-style</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>边框</td>
+<td>border-left-style</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>边框宽度</td>
+<td>border-width</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>边框颜色</td>
+<td>border-color</td>
+<td>transparent(透明的)</td>
+<td></td>
+</tr>
+<tr>
+<td>单边框颜色</td>
+<td>border-top-color</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>边框圆角[3]</td>
+<td>border-radius</td>
+<td>10px</td>
+<td>四个值: ↖1 ↗2 ↘3 ↙4    两个值:  ↖↘1 ↗↙2</td>
+</tr>
+<tr>
+<td>边框阴影[3]</td>
+<td>box-shadow</td>
+<td>10px 10px 5px #00CCFF</td>
+<td>12位置3模糊4扩散。最后加<code>inset</code>关键字表示内阴影</td>
+</tr>
+<tr>
+<td>边框图片[3]</td>
+<td>border-image</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4>浏览器前缀</h4>
+<p>注意使用CSS3的时候最好加上浏览器前缀：</p>
+<ol>
+<li>
+<p>Firefox: <code>-moz-</code></p>
+</li>
+<li>
+<p>Chrome, Safari:<code>-webkit-</code></p>
+</li>
+<li>
+<p>Opera:<code>-o-</code></p>
+</li>
+<li>
+<p>IE:<code>-ms-</code></p>
+</li>
+</ol>
+<p>前缀并非都是需要的，但通常你加上这些前缀不会有副作用—只记住一条，把<strong>不带前缀的版本放到最后一行</strong></p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">-moz-box-shadow</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">10px</span><span class="">&nbsp;</span><span class="nt">10px</span><span class="">&nbsp;</span><span class="nt">5px</span><span class="">&nbsp;</span><span class="p">#</span><span class="nn">888888</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">-webkit-box-shadow</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">10px</span><span class="">&nbsp;</span><span class="nt">10px</span><span class="">&nbsp;</span><span class="nt">5px</span><span class="">&nbsp;</span><span class="p">#</span><span class="nn">888888</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">-o-box-shadow</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">10px</span><span class="">&nbsp;</span><span class="nt">10px</span><span class="">&nbsp;</span><span class="nt">5px</span><span class="">&nbsp;</span><span class="p">#</span><span class="nn">888888</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">box-shadow</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">10px</span><span class="">&nbsp;</span><span class="nt">10px</span><span class="">&nbsp;</span><span class="nt">5px</span><span class="">&nbsp;</span><span class="p">#</span><span class="nn">888888</span><span class="o">;</span></div></div></li>
+</ol></div>
+
+<h3>盒子模型</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>属性名</th>
+<th>特殊值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>外边距</td>
+<td>margin -bottom left top</td>
+<td>2px</td>
+<td>多个外边距会有重叠效果</td>
+</tr>
+<tr>
+<td>内边距</td>
+<td>padding-bottom left top</td>
+<td>2px</td>
+<td></td>
+</tr>
+<tr>
+<td>盒子大小[3]</td>
+<td>box-sizing</td>
+<td>border-box</td>
+<td>解决盒子大小计算问题，使得黑编剧和边框都算作宽高中</td>
+</tr>
+<tr>
+<td>内容</td>
+<td>content</td>
+<td>2px</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h4>四个值的顺序</h4>
+<ol>
+<li>四个值：上右下左</li>
+<li>三个值：上右下</li>
+<li>两个值：上右</li>
+<li>一个值：全部</li>
+</ol>
+<h4>内边距不撑开盒子</h4>
+<p><code>box-sizing: border-box;</code></p>
+<h4>居中对齐</h4>
+<ol>
+<li>水平居中：</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div><div class="line-numbers"><div class="line-num" data-line-num="19"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nt">position</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">fixed</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nt">margin-left</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">50</span><span class="o">%</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nt">left</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">-盒子宽度</span><span class="o">/</span><span class="nt">2</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nt">position</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">fixed</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nt">left</span><span class="p">:</span><span class="nd">50</span><span class="o">%</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nt">margin-left</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">-盒子宽度</span><span class="o">/</span><span class="nt">2</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nt">position</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">fixed</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nt">left</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">50</span><span class="o">%</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nt">transform</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">translateX</span><span class="o">(</span><span class="nt">-50</span><span class="o">%</span><span class="o">)</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="c">/*对于绝对定位的元素*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nt">margin</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">0</span><span class="">&nbsp;</span><span class="nt">auto</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nt">left</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">0</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nt">right</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">0</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="c">/*
+&nbsp;&nbsp;&nbsp;  2：将abllute元素放入relative中，设置relative元素margin:0&nbsp;auto;
+&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="c">/*
+&nbsp;&nbsp;&nbsp;  3：left:50%
+&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ol>
+<li>垂直居中</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nt">position</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">fixed</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nt">top</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">50</span><span class="o">%</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nt">margin-top</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">-盒子高度</span><span class="o">/</span><span class="nt">2</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<h4>嵌套块元素垂直外边距塌陷问题</h4>
+<p><code>回</code> 给子盒子上边距，父盒子外边距会塌陷</p>
+<p>解决办法：</p>
+<ol>
+<li>可以为父元素定义透明外边框</li>
+<li>可以为父元素定义上内边距</li>
+<li>可以为父元素添加<code>overflow:hidden</code>  (最常用)</li>
+</ol>
+<p>注意：行内元素尽量不要设置上下的外边距，没啥效果</p>
+<h3>文字</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>属性名</th>
+<th>特殊值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>字体颜色</td>
+<td>color:</td>
+<td>blue</td>
+<td></td>
+</tr>
+<tr>
+<td>大小</td>
+<td>font-size:</td>
+<td>50px | medium</td>
+<td>默认一般是16px</td>
+</tr>
+<tr>
+<td>字体</td>
+<td>font-family</td>
+<td>fantasy</td>
+<td>字体名称</td>
+</tr>
+<tr>
+<td>文本方向</td>
+<td>direction</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>行高</td>
+<td>line-height</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>字符间距</td>
+<td>letter-spacing</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>对齐文本</td>
+<td>text-aling</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>文本修饰</td>
+<td>text-decoration</td>
+<td></td>
+<td>下划线，上划线，删除线</td>
+</tr>
+<tr>
+<td>缩进首行</td>
+<td>text-indent</td>
+<td>2em</td>
+<td>缩进两字符，em相对字体大小，也可以写百分数</td>
+</tr>
+<tr>
+<td>字体加粗</td>
+<td>font-weight</td>
+<td>bold; bolder;</td>
+<td>默认为400，粗体是700.（100~900）</td>
+</tr>
+<tr>
+<td>字体倾斜</td>
+<td>font-style</td>
+<td>normal（取消em标签的倾斜）</td>
+<td></td>
+</tr>
+<tr>
+<td>字母</td>
+<td>text-transform</td>
+<td>capitalize; lowercase; uppercase;</td>
+<td></td>
+</tr>
+<tr>
+<td>设置文本方向</td>
+<td>unicode-bidi</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>设置垂直排列</td>
+<td>writing-mode</td>
+<td>tb-rl</td>
+<td></td>
+</tr>
+<tr>
+<td>空白处理方式</td>
+<td>white-space</td>
+<td>nowrap（强制一行），normal自动换行</td>
+<td></td>
+</tr>
+<tr>
+<td>文字溢出</td>
+<td>text-overflow</td>
+<td>ellipsis</td>
+<td>单行溢出的文字用省略号显示</td>
+</tr>
+<tr>
+<td>词间距</td>
+<td>word-spacing</td>
+<td>设置单词之间的距离（空白字符长）</td>
+<td></td>
+</tr>
+<tr>
+<td>阴影[3]</td>
+<td>text-shadow</td>
+<td>5px 5px 5px #FF00FF</td>
+<td>x偏移 y偏移 清晰度 背景颜色</td>
+</tr>
+<tr>
+<td>描边[3]</td>
+<td>text-stroke</td>
+<td>2px #FF0000;</td>
+<td></td>
+</tr>
+<tr>
+<td>换行方式1</td>
+<td>word-wrap</td>
+<td>break-word</td>
+<td>打破字幕强制换行</td>
+</tr>
+<tr>
+<td>换行方式2</td>
+<td>word-break</td>
+<td>break-all</td>
+<td>打破词的换行</td>
+</tr>
+<tr>
+<td>字不可选</td>
+<td>user-select</td>
+<td>none |text| all | element</td>
+<td></td>
+</tr>
+<tr>
+<td>大小写转换</td>
+<td>font-variant</td>
+<td>small-caps</td>
+<td>全部大写</td>
+</tr>
+<tr>
+<td>字体统一写法</td>
+<td>font</td>
+<td>倾斜 大小写 粗度 大小/行高 字体</td>
+<td>按照顺序写</td>
+</tr>
+<tr>
+<td>大小写转换</td>
+<td>text-transform</td>
+<td>up..均大写 low...均小写 cap...首大 none正常</td>
+<td></td>
+</tr>
+<tr>
+<td>空白处理</td>
+<td>white-space</td>
+<td></td>
+<td>换不换行，和并合并空白字符</td>
+</tr>
+</tbody>
+</table>
+<h4>单位</h4>
+<p>em：相对父元素的字体大小的单位，（em标签表示强调），16px / 16 = em</p>
+<p>rem：相对于html根元素的字体大小，可以做到统一修改的状态</p>
+<h3>图片</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>属性名</th>
+<th>特殊值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>透明度</td>
+<td>opacity</td>
+<td>0.5</td>
+<td>[0~1]之间，0完全透明</td>
+</tr>
+<tr>
+<td>背景图片定位</td>
+<td>background-position</td>
+<td>-20px -20px，还可以写center</td>
+<td>左边表示x，右边表示y</td>
+</tr>
+<tr>
+<td>背景图片固定</td>
+<td>background-attachment</td>
+<td>fixed表示固定背景</td>
+<td></td>
+</tr>
+<tr>
+<td>线性背景渐变</td>
+<td>linear-gradient(方向，颜色1, 颜色2);</td>
+<td>to right默认方向to bottom ，可以写10deg，0deg在12点方向然后顺时针增加</td>
+<td>在<code>background-image:</code> 里面写</td>
+</tr>
+<tr>
+<td>重复线性背景渐变</td>
+<td>repeating-linear-gradient(red, yellow 10%, green 20%);</td>
+<td>0%红色开始<strong>到</strong>10%处黄色<strong>到</strong>20%绿色结束，依次循环。</td>
+<td></td>
+</tr>
+<tr>
+<td>不渐变线性重复背景</td>
+<td><strong>repeating-linear-gradient</strong>( 45deg, yellow 0px, yellow 40px, black 40px, black 80px );</td>
+<td>黄色从0px开始到40px，黑色40px到80px</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>背景属性压缩格式：背景颜色 背景图片地址 背景平铺 背景图像滚动 背景图片位置</p>
+<h4>图片背景有空白缝隙的问题：</h4>
+<p><code>vertical-align:middle</code></p>
+<h4>径向渐变</h4>
+<h5>一般格式</h5>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">background-image</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">radial-gradient</span><span class="o">(</span><span class="nt">shape</span><span class="">&nbsp;</span><span class="nt">size</span><span class="">&nbsp;</span><span class="nt">at</span><span class="">&nbsp;</span><span class="nt">position</span><span class="o">,</span><span class="">&nbsp;</span><span class="nt">start-color</span><span class="o">,</span><span class="">&nbsp;</span><span class="o">.</span><span class="o">.</span><span class="o">.</span><span class="o">,</span><span class="">&nbsp;</span><span class="nt">last-color</span><span class="o">)</span><span class="">&nbsp;</span></div></div></li>
+</ol></div>
+
+<p>at position为圆心位置</p>
+<h6>size属性</h6>
+<ol>
+<li>closest-side （指定径向渐变的半径长度为从<strong>圆心</strong>到<strong>离圆心最近的边</strong>）</li>
+<li>closest-corner （指定径向渐变的半径长度为从<strong>圆心</strong>到<strong>离圆心最近的角</strong>）</li>
+<li>farthest-side （指定径向渐变的半径长度为从<strong>圆心</strong>到<strong>离圆心最远的边</strong>）</li>
+<li>farthest-corner （指定径向渐变的半径长度为从<strong>圆心</strong>到<strong>离圆心最远的角</strong>）</li>
+</ol>
+<h5>普通代码：</h5>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">background-image</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">radial-gradient</span><span class="o">(</span><span class="nt">circle</span><span class="o">,</span><span class="">&nbsp;</span><span class="nt">red</span><span class="o">,</span><span class="">&nbsp;</span><span class="nt">yellow</span><span class="o">,</span><span class="">&nbsp;</span><span class="nt">green</span><span class="o">)</span><span class="o">;</span></div></div></li>
+</ol></div>
+
+<h5>重复的径向渐变</h5>
+<h6>举例</h6>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">background-image</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">repeating-radial-gradient</span><span class="o">(</span><span class="nt">circle</span><span class="">&nbsp;</span><span class="nt">at</span><span class="">&nbsp;</span><span class="nt">0</span><span class="">&nbsp;</span><span class="nt">0</span><span class="o">,</span><span class="nt">red</span><span class="o">,</span><span class="">&nbsp;</span><span class="nt">yellow</span><span class="">&nbsp;</span><span class="nt">20</span><span class="o">%</span><span class="o">)</span><span class="o">;</span></div></div></li>
+</ol></div>
+
+<h3>链接</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>属性名</th>
+<th>特殊值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未被点击</td>
+<td>a:link{……}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>已被点击</td>
+<td>a:visited{……}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>鼠标划过</td>
+<td>a:hover{……}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>正在被点</td>
+<td>a:active{……}</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>下划线去掉</td>
+<td>text-decoration:</td>
+<td>none;</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>列表</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>属性名</th>
+<th>特殊值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>标签</td>
+<td>list-style-type:</td>
+<td>none disc circle square</td>
+<td></td>
+</tr>
+<tr>
+<td>项图片</td>
+<td>list-style-image:</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>标志位置</td>
+<td>list-style-position:</td>
+<td>inside; outside</td>
+<td>包含图标还是不包含</td>
+</tr>
+<tr>
+<td>类型</td>
+<td>list-style-type:</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>底线对齐</td>
+<td>vertical-align:</td>
+<td>middle</td>
+<td>设置图标 垂直方向的中间</td>
+</tr>
+</tbody>
+</table>
+<h3>表格</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>属性名</th>
+<th>特殊值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>边框tb,tr,th,td</td>
+<td>border:</td>
+<td>1px solid blue;</td>
+<td></td>
+</tr>
+<tr>
+<td>双变单边框tb</td>
+<td>border-collapse:</td>
+<td>collapse;</td>
+<td></td>
+</tr>
+<tr>
+<td>单元格宽tb</td>
+<td>width:</td>
+<td>400px;</td>
+<td></td>
+</tr>
+<tr>
+<td>单元格高tb</td>
+<td>height:</td>
+<td>400px;</td>
+<td></td>
+</tr>
+<tr>
+<td>内容居中tbrhd</td>
+<td>text-align:</td>
+<td>center;</td>
+<td></td>
+</tr>
+<tr>
+<td>背景颜色tbrhd</td>
+<td>background-color:</td>
+<td>aqua;</td>
+<td></td>
+</tr>
+<tr>
+<td>内边距</td>
+<td>padding:</td>
+<td>5px;</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>分栏</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>属性名</th>
+<th>特殊值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>栏数</td>
+<td>column-count:</td>
+<td>3;</td>
+<td></td>
+</tr>
+<tr>
+<td>间距</td>
+<td>column-gap:</td>
+<td>50px;</td>
+<td></td>
+</tr>
+<tr>
+<td>线条</td>
+<td>column-rule:</td>
+<td>5px outset #FF0000;</td>
+<td></td>
+</tr>
+<tr>
+<td>跨栏</td>
+<td>column-span</td>
+<td>1或者all</td>
+<td>元素要跨越多少列，默认1</td>
+</tr>
+<tr>
+<td>栏宽</td>
+<td>column-width</td>
+<td>100px</td>
+<td></td>
+</tr>
+<tr>
+<td>浏览器兼容</td>
+<td>-webkit-以上</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>轮廓</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>属性名</th>
+<th>特殊值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>边框线条</td>
+<td>outline-style:</td>
+<td>groove;</td>
+<td></td>
+</tr>
+<tr>
+<td>颜色</td>
+<td>outline-color:</td>
+<td>dotted;</td>
+<td></td>
+</tr>
+<tr>
+<td>粗细</td>
+<td>outline-width:</td>
+<td>20px;</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>注意：相比border不占空间</p>
+<h3>定位</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>属性名</th>
+<th>特殊值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>位置</td>
+<td>position:</td>
+<td>static;relative;absolute;fixed;</td>
+<td>静态（偏移量不起作用）、相对、绝对、固定浮动</td>
+</tr>
+<tr>
+<td>上偏移量</td>
+<td>top:</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>左偏移量</td>
+<td>left:</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>右偏移量</td>
+<td>right:</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>下偏移量</td>
+<td>bottom:</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>溢出发生的事</td>
+<td>overflow:</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>元素显示形状</td>
+<td>clip:</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>垂直对齐方式</td>
+<td>vertical-align:</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>元素堆叠顺序</td>
+<td>z-index:</td>
+<td></td>
+<td>默认是auto，相当于是0</td>
+</tr>
+</tbody>
+</table>
+<h4>relative 相对定位</h4>
+<p>相对于自己原来的位置进行偏移，但是位置还是占有原来的位置</p>
+<p>通常给绝对定位当爹的</p>
+<h4>absolute 绝对定位</h4>
+<p>如果没有父元素或者父元素没有定位，则以浏览器为准定位</p>
+<p>父元素可以添加 <code>position: relative</code> 属性 </p>
+<p>（子绝父相）</p>
+<h4>fixed 固定定位</h4>
+<p>相对于浏览器窗口位置定位，不随界面滚动而移动</p>
+<p>小技巧：定位在版心右侧的地方：</p>
+<ol>
+<li>先让固定定位的盒子 <code>left:50%</code> 走到浏览器可视区域版心一半的位置</li>
+<li>让固定定位的盒子 <code>margin-left:</code> 版心宽度一半的位置，多走版心宽度一半位置</li>
+</ol>
+<h4>flex 布局</h4>
+<p>原理</p>
+<ul>
+<li>父元素添加flex属性之后，子元素的float、clear、和vertical-aline属性都会失效</li>
+<li>伸缩布局==弹性布局==伸缩盒布局==弹性盒布局==flex布局</li>
+<li><code>display:flex</code> 的父元素叫 Flex容器，他的子元素 成为 Flex项目</li>
+</ul>
+<h5>父元素属性</h5>
+<h5>flex-direction：（主轴方向）</h5>
+<p>决定主轴方向，即项目（子元素）的排列方向。</p>
+<ol>
+<li>row（默认值）：从左到右</li>
+<li>row-reverse：从右向左</li>
+<li>column：主轴为垂直方向，起点在上端。</li>
+<li>column-reverse：主轴为垂直方向，起点在下端。</li>
+</ol>
+<h5>justify-content：（主轴 对齐方式）</h5>
+<ol>
+<li>flex-start（默认值）：左对齐</li>
+<li>flex-end：右对齐</li>
+<li>center： 居中</li>
+<li>space-between：两端对齐，项目之间的间隔都相等。</li>
+<li>space-around：每个项目两侧以相等的间隔环绕。</li>
+</ol>
+<h5>flex-wrap：（换行方式）</h5>
+<p>默认情况下，项目（子元素）排在一条线（又称”轴线”）上。如果一条轴线排不下，定义如何换行。</p>
+<ol>
+<li>nowrap（默认）：不换行。缩小元素大小</li>
+<li>wrap：换行，第一行在上方。</li>
+<li>wrap-reverse：换行，第一行在下方。</li>
+</ol>
+<h5>lign-items：（侧轴 对齐方式）</h5>
+<p>定义项目在交叉轴上如何对齐。</p>
+<ol>
+<li>
+<p>flex-start （默认值） ：交叉轴的起点对齐。</p>
+</li>
+<li>
+<p>flex-end：交叉轴的终点对齐。</p>
+</li>
+<li>
+<p>center：交叉轴的中点对齐。</p>
+</li>
+<li>
+<p>baseline: 项目的第一行文字的基线对齐。</p>
+</li>
+<li>
+<p>stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。</p>
+</li>
+</ol>
+<h5>align-content：（侧轴 对齐方式 多行）</h5>
+<p>定义有多根主轴（有多行）的对齐方式。如果项目只有一根主轴线，该属性不起作用。</p>
+<ol>
+<li>
+<p>flex-start ：与交叉轴的起点对齐。</p>
+</li>
+<li>
+<p>flex-end：与交叉轴的终点对齐。</p>
+</li>
+<li>
+<p>center：与交叉轴的中点对齐。</p>
+</li>
+<li>
+<p>space-between：与交叉轴两端对齐，轴线之间的间隔平均分布。</p>
+</li>
+<li>
+<p>space-around：每根轴线两侧的间隔都相等，相等间隔环绕。</p>
+</li>
+<li>
+<p>stretch（默认值）：占满整个交叉轴。</p>
+</li>
+</ol>
+<h5>flex-flow：（设置主轴 + 换行方式）</h5>
+<p>flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap。</p>
+<p>默认值为row nowrap</p>
+<h5>子元素属性</h5>
+<h5>order：</h5>
+<p>定义项目的排列顺序。数值越小，排列越靠前，默认为0。</p>
+<h5>flex-grow：</h5>
+<p>定义项目以扩大方式分配父盒子剩余空间所占比例份额，默认为0，即如果存在剩余空间，也不放大。</p>
+<h5>flex-shrink：</h5>
+<p>定义项目以缩小方式分配超出父盒子的空间所占比例份额，默认为1，即如果空间不足，该项目将缩小。将子元素宽度之和与父元素宽度的差值按照子元素 flex-basis的值分配给各个子元素，每个子元素原本宽度减去按比例分配的值，其剩余值为实际宽度。</p>
+<h5>flex-basis：</h5>
+<p>定义在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。它可以设为跟width或height属性一样的值（比如200px）。</p>
+<h5>flex：</h5>
+<p>flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。flex：none(伸缩特性失效)</p>
+<h5>align-self</h5>
+<p>align-self属性允许单个项目与其它项目不一样的对齐方式（交叉轴），可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性。除了auto，其它取值都与align-items属性完全一致。</p>
+<h4>sticky 粘性定位</h4>
+<p>相对定位和固定定位的混合</p>
+<p>该定位基于用户滚动的位置，可以在 position:relative 与 position:fixed 定位之间切换。先创建可以滚动的sticky元素，再设置滚动停止的目标位置。</p>
+<p>特点：</p>
+<ol>
+<li>定位点参照浏览器可视窗口</li>
+<li>粘性定位占有原先的位置（相对定位的特点）</li>
+<li>必须添加<code>top、left、right、bottom</code> 其中一个才能生效</li>
+</ol>
+<p>一开始是相对定位，等到滚动脱离的时候变成固定定位附着在浏览器边缘</p>
+<h4>static 静态定位</h4>
+<p>正常文档流</p>
+<h3>浮动</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>属性名</th>
+<th>特殊值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>脱离文档流</td>
+<td>float:</td>
+<td>left;right;</td>
+<td>有位置就往里塞的感觉</td>
+</tr>
+<tr>
+<td>取消浮动</td>
+<td>clear:</td>
+<td>left;right;</td>
+<td>取消某方向的浮动</td>
+</tr>
+</tbody>
+</table>
+<h4>清除浮动：</h4>
+<ol>
+<li>额外标签法</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">.</span><span class="nc">clear</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">clear</span><span class="p">:</span><span class="">&nbsp;</span><span class="kc">both</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">style</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">div</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"father"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">div</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">div</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"clear"</span><span class="p">&gt;</span><span class="">添加一个盒子并设置css</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">div</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<p>给子元素里添加</p>
+<ol>
+<li>
+<p><code>overflow: hidden</code> ：直接给父盒子添加的属性</p>
+</li>
+<li>
+<p>after伪类元素（额外标签法的升级版本）</p>
+</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">.</span><span class="nc">clearfix</span><span class="p">:</span><span class="nd">after</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">content</span><span class="p">:</span><span class="">&nbsp;</span><span class="s2">""</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">display</span><span class="p">:</span><span class="">&nbsp;</span><span class="kc">block</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">height</span><span class="p">:</span><span class="">&nbsp;</span><span class="mi">0</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">clear</span><span class="p">:</span><span class="">&nbsp;</span><span class="kc">both</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">visibility</span><span class="p">:</span><span class="">&nbsp;</span><span class="kc">hidden</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">.</span><span class="nc">clearfix</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c">/*&nbsp;IE6,7&nbsp;专有&nbsp;*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">*</span><span class="n">zoom</span><span class="p">:</span><span class="">&nbsp;</span><span class="mi">1</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<p>同时把 <code>clearfix</code>类名添加给给父盒子</p>
+<ol>
+<li>双伪元素清除浮动</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">.</span><span class="nc">clearfix</span><span class="p">:</span><span class="nd">before</span><span class="o">,</span><span class="">&nbsp;</span><span class="p">.</span><span class="nc">clearfix</span><span class="p">:</span><span class="nd">after</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">content</span><span class="p">:</span><span class="">&nbsp;</span><span class="s2">""</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">display</span><span class="p">:</span><span class="">&nbsp;</span><span class="kc">table</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">.</span><span class="nc">clearfix</span><span class="p">:</span><span class="nd">after</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">clear</span><span class="p">:</span><span class="">&nbsp;</span><span class="kc">both</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">.</span><span class="nc">clearfix</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">*</span><span class="n">zoom</span><span class="p">:</span><span class="">&nbsp;</span><span class="mi">1</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<p>优点：左右完全闭合的清除浮动</p>
+<ol>
+<li>配合less的mixin清除浮动</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">.</span><span class="nc">clearfix</span><span class="o">(</span><span class="o">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;加了小括号就不会当成一个类选择器了，这是正儿八经的混合
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">&</span><span class="err">:</span><span class="err">:</span><span class="err">a</span><span class="err">f</span><span class="err">t</span><span class="err">e</span><span class="err">r</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">content</span><span class="p">:</span><span class="">&nbsp;</span><span class="s2">""</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">display</span><span class="p">:</span><span class="">&nbsp;</span><span class="kc">block</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">clear</span><span class="p">:</span><span class="">&nbsp;</span><span class="kc">both</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<p>调用的时候：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">.</span><span class="nc">container</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">.</span><span class="err">c</span><span class="err">l</span><span class="err">e</span><span class="err">a</span><span class="err">r</span><span class="err">f</span><span class="err">i</span><span class="err">x</span><span class="err">(</span><span class="err">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<h3>2D3D变换：transform:+以下语句</h3>
+<p>变换中心点默认在矩形的中心点。</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">transform-origin</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">right</span><span class="">&nbsp;</span><span class="nt">bottom</span><span class="o">;</span><span class="">&nbsp;</span><span class="c">/*&nbsp;第一个参数是x，第二个是y&nbsp;*/</span></div></div></li>
+</ol></div>
+
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>属性名</th>
+<th>特殊值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2D平移</td>
+<td>translate();</td>
+<td>100px,100px</td>
+<td>第一个是x，第二个是Y，下方向是Y的正方向</td>
+</tr>
+<tr>
+<td>2D平移X</td>
+<td>translateX();</td>
+<td>100px</td>
+<td></td>
+</tr>
+<tr>
+<td>2D旋转</td>
+<td>rotate();</td>
+<td>180deg</td>
+<td></td>
+</tr>
+<tr>
+<td>2D缩放</td>
+<td>scale()</td>
+<td>1,2</td>
+<td>第一个是宽度倍数 第二个高度缩放倍数</td>
+</tr>
+<tr>
+<td>2D缩放X</td>
+<td>scaleX()</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>2D倾斜</td>
+<td>skew()</td>
+<td>20deg,20deg</td>
+<td></td>
+</tr>
+<tr>
+<td>2D倾斜X</td>
+<td>skewX()</td>
+<td>20deg</td>
+<td></td>
+</tr>
+<tr>
+<td>2D倾斜Y</td>
+<td>skewY()</td>
+<td>20deg</td>
+<td>把y轴按顺时针旋转一定角度，</td>
+</tr>
+<tr>
+<td>2D矩阵</td>
+<td>matrix()</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>3Dx旋转</td>
+<td>rotateX()</td>
+<td>20deg</td>
+<td></td>
+</tr>
+<tr>
+<td>3Dy旋转</td>
+<td>rotateY()</td>
+<td>20deg</td>
+<td></td>
+</tr>
+<tr>
+<td>变形基点</td>
+<td>transform-origin</td>
+<td>0 0</td>
+<td></td>
+</tr>
+<tr>
+<td>3D矢量旋转</td>
+<td>rotate3d(x,y,z,a)</td>
+<td>x y z数量 a角度</td>
+<td>x y z确定一个旋转轴矢量，然后根据左手定则绕轴旋转</td>
+</tr>
+<tr>
+<td>透视强度设置</td>
+<td>perspective</td>
+<td>1000px</td>
+<td>一般应用于父元素，越小透视越强</td>
+</tr>
+<tr>
+<td>safari chrome</td>
+<td></td>
+<td>webkit-transform:以上</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>IE</td>
+<td></td>
+<td>-ms-transform:</td>
+<td>360是IE的内核</td>
+</tr>
+<tr>
+<td>opera</td>
+<td></td>
+<td>-o-transform:</td>
+<td></td>
+</tr>
+<tr>
+<td>firefox</td>
+<td></td>
+<td>-moz-transform:</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3>动画过渡</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>属性名</th>
+<th>特殊值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>过渡名称</td>
+<td>transition-property:</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>过渡时长</td>
+<td>transition-duration:</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>过渡时间曲线</td>
+<td>transition-timing-function:</td>
+<td></td>
+<td>默认是 "ease"。</td>
+</tr>
+<tr>
+<td>过渡开始时间</td>
+<td>transition-delay:</td>
+<td>2s</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">div</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="k">width</span><span class="p">:</span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="k">height</span><span class="p">:</span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="kp">-webkit-</span><span class="k">transition</span><span class="p">:</span><span class="k">width</span><span class="">&nbsp;</span><span class="mi">2</span><span class="kt">s</span><span class="p">,</span><span class="k">height</span><span class="">&nbsp;</span><span class="mi">2</span><span class="kt">s</span><span class="p">,</span><span class="bp">-webkit-</span><span class="k">transform</span><span class="">&nbsp;</span><span class="mi">2</span><span class="kt">s</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="k">transition</span><span class="p">:</span><span class="k">width</span><span class="">&nbsp;</span><span class="mi">2</span><span class="kt">s</span><span class="p">,</span><span class="k">height</span><span class="">&nbsp;</span><span class="mi">2</span><span class="kt">s</span><span class="p">,</span><span class="k">transform</span><span class="">&nbsp;</span><span class="mi">2</span><span class="kt">s</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">div</span><span class="p">:</span><span class="nd">hover</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">width</span><span class="p">:</span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">height</span><span class="p">:</span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">transform</span><span class="p">:</span><span class="nb">rotate</span><span class="p">(</span><span class="mi">360</span><span class="kt">deg</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">webkit-transform</span><span class="p">:</span><span class="nb">rotate</span><span class="p">(</span><span class="mi">360</span><span class="kt">deg</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h4>动画设置</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div><div class="line-numbers"><div class="line-num" data-line-num="19"></div></div><div class="line-numbers"><div class="line-num" data-line-num="20"></div></div><div class="line-numbers"><div class="line-num" data-line-num="21"></div></div><div class="line-numbers"><div class="line-num" data-line-num="22"></div></div><div class="line-numbers"><div class="line-num" data-line-num="23"></div></div><div class="line-numbers"><div class="line-num" data-line-num="24"></div></div><div class="line-numbers"><div class="line-num" data-line-num="25"></div></div><div class="line-numbers"><div class="line-num" data-line-num="26"></div></div><div class="line-numbers"><div class="line-num" data-line-num="27"></div></div><div class="line-numbers"><div class="line-num" data-line-num="28"></div></div><div class="line-numbers"><div class="line-num" data-line-num="29"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">.</span><span class="nc">a</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">width</span><span class="p">:</span><span class="">&nbsp;</span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">height</span><span class="p">:</span><span class="">&nbsp;</span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">background-color</span><span class="p">:</span><span class="">&nbsp;</span><span class="kc">red</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">animation</span><span class="p">:</span><span class="">&nbsp;</span><span class="n">myan</span><span class="">&nbsp;</span><span class="mi">3</span><span class="kt">s</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">animation-iteration-count</span><span class="p">:</span><span class="">&nbsp;</span><span class="kc">infinite</span><span class="p">;</span><span class="">&nbsp;</span><span class="c">/*永远循环播放*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">@</span><span class="k">keyframes</span><span class="">&nbsp;</span><span class="nt">myan</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">0</span><span class="o">%</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">background-color</span><span class="p">:</span><span class="">&nbsp;</span><span class="kc">red</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">10</span><span class="o">%</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">background-color</span><span class="p">:</span><span class="">&nbsp;</span><span class="kc">orange</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">30</span><span class="o">%</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">background-color</span><span class="p">:</span><span class="">&nbsp;</span><span class="kc">green</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">50</span><span class="o">%</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">background-color</span><span class="p">:</span><span class="">&nbsp;</span><span class="kc">blue</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">100</span><span class="o">%</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">background-color</span><span class="p">:</span><span class="">&nbsp;</span><span class="kc">purple</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h3>滤镜</h3>
+<p>实例：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">img</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kp">-webkit-</span><span class="k">filter</span><span class="p">:</span><span class="">&nbsp;</span><span class="nb">blur</span><span class="p">(</span><span class="mi">5</span><span class="kt">px</span><span class="p">)</span><span class="p">;</span><span class="">&nbsp;</span><span class="c">/*&nbsp;Chrome,&nbsp;Safari,&nbsp;Opera&nbsp;*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">filter</span><span class="p">:</span><span class="">&nbsp;</span><span class="nb">blur</span><span class="p">(</span><span class="mi">5</span><span class="kt">px</span><span class="p">)</span><span class="p">;</span><span class="">&nbsp;</span><span class="c">/*高斯模糊*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>none</td>
+<td>默认值，没有效果。</td>
+</tr>
+<tr>
+<td>blur(px)</td>
+<td>给图像设置高斯模糊。"radius"一值设定高斯函数的标准差，或者是屏幕上以多少像素融在一起， 所以值越大越模糊；如果没有设定值，则默认是0；这个参数可设置css长度值，但不接受百分比值。</td>
+</tr>
+<tr>
+<td>brightness(%)</td>
+<td>给图片应用一种线性乘法，使其看起来更亮或更暗。如果值是0%，图像会全黑。值是100%，则图像无变化。其他的值对应线性乘数效果。值超过100%也是可以的，图像会比原来更亮。如果没有设定值，默认是1。</td>
+</tr>
+<tr>
+<td>contrast(%)</td>
+<td>调整图像的对比度。值是0%的话，图像会全黑。值是100%，图像不变。值可以超过100%，意味着会运用更低的对比。若没有设置值，默认是1。drop-shadow(h-shadow v-shadow blur spread color)  给图像设置一个阴影效果。阴影是合成在图像下面，可以有模糊度的，可以以特定颜色画出的遮罩图的偏移版本。</td>
+</tr>
+<tr>
+<td>grayscale(%)</td>
+<td>将图像转换为灰度图像。值定义转换的比例。值为100%则完全转为灰度图像，值为0%图像无变化。值在0%到100%之间，则是效果的线性乘子。若未设置，值默认是0；</td>
+</tr>
+<tr>
+<td>hue-rotate(deg)</td>
+<td>给图像应用色相旋转。"angle"一值设定图像会被调整的色环角度值。值为0deg，则图像无变化。若值未设置，默认值是0deg。该值虽然没有最大值，超过360deg的值相当于又绕一圈。</td>
+</tr>
+<tr>
+<td>invert(%)</td>
+<td>反转输入图像。值定义转换的比例。100%的价值是完全反转。值为0%则图像无变化。值在0%和100%之间，则是效果的线性乘子。 若值未设置，值默认是0。</td>
+</tr>
+<tr>
+<td>opacity(%)</td>
+<td>转化图像的透明程度。值定义转换的比例。值为0%则是完全透明，值为100%则图像无变化。值在0%和100%之间，则是效果的线性乘子，也相当于图像样本乘以数量。 若值未设置，值默认是1。该函数与已有的opacity属性很相似，不同之处在于通过filter，一些浏览器为了提升性能会提供硬件加速。</td>
+</tr>
+<tr>
+<td>saturate(%)</td>
+<td>转换图像饱和度。值定义转换的比例。值为0%则是完全不饱和，值为100%则图像无变化。其他值，则是效果的线性乘子。超过100%的值是允许的，则有更高的饱和度。 若值未设置，值默认是1。</td>
+</tr>
+<tr>
+<td>sepia(%)</td>
+<td>将图像转换为深褐色。值定义转换的比例。值为100%则完全是深褐色的，值为0%图像无变化。值在0%到100%之间，则是效果的线性乘子。若未设置，值默认是0；</td>
+</tr>
+<tr>
+<td>url()</td>
+<td>URL函数接受一个XML文件，该文件设置了 一个SVG滤镜，且可以包含一个锚点来指定一个具体的滤镜元素。例如：filter: url(svg-url#element-id)</td>
+</tr>
+</tbody>
+</table>
+<h2>CSS全局变量</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">:</span><span class="nd">root</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nv">--myColor</span><span class="p">:</span><span class="">&nbsp;</span><span class="mh">#00ccff</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nv">--h1Size</span><span class="p">:</span><span class="">&nbsp;</span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nv">--h2Size</span><span class="p">:</span><span class="">&nbsp;</span><span class="nb">calc</span><span class="p">(</span><span class="nf">var</span><span class="p">(</span><span class="nv">--h1Size</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">*</span><span class="">&nbsp;</span><span class="mf">0.85</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nv">--h3Size</span><span class="p">:</span><span class="">&nbsp;</span><span class="nb">calc</span><span class="p">(</span><span class="nf">var</span><span class="p">(</span><span class="nv">--h1Size</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">*</span><span class="">&nbsp;</span><span class="mf">0.70</span><span class="p">)</span><span class="p">;</span><span class="">&nbsp;&nbsp;</span><span class="c">/*calc来对变量做运算*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nv">--h4Size</span><span class="p">:</span><span class="">&nbsp;</span><span class="nb">calc</span><span class="p">(</span><span class="nf">var</span><span class="p">(</span><span class="nv">--h1Size</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">*</span><span class="">&nbsp;</span><span class="mf">0.65</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nv">--h5Size</span><span class="p">:</span><span class="">&nbsp;</span><span class="nb">calc</span><span class="p">(</span><span class="nf">var</span><span class="p">(</span><span class="nv">--h1Size</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">*</span><span class="">&nbsp;</span><span class="mf">0.45</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nv">--h6Size</span><span class="p">:</span><span class="">&nbsp;</span><span class="nb">calc</span><span class="p">(</span><span class="nf">var</span><span class="p">(</span><span class="nv">--h1Size</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">*</span><span class="">&nbsp;</span><span class="mf">0.35</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">.</span><span class="nc">main</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">width</span><span class="p">:</span><span class="">&nbsp;</span><span class="mi">1000</span><span class="kt">px</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">height</span><span class="p">:</span><span class="">&nbsp;</span><span class="mi">1000</span><span class="kt">px</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">margin</span><span class="p">:</span><span class="">&nbsp;</span><span class="mi">0</span><span class="">&nbsp;</span><span class="kc">auto</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">background-color</span><span class="p">:</span><span class="">&nbsp;</span><span class="nf">var</span><span class="p">(</span><span class="nv">--myColor</span><span class="p">,</span><span class="">&nbsp;</span><span class="mh">#ff0000</span><span class="p">)</span><span class="p">;</span><span class="">&nbsp;&nbsp;</span><span class="c">/*var来引用变量*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">h1</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">font-size</span><span class="p">:</span><span class="">&nbsp;</span><span class="nf">var</span><span class="p">(</span><span class="nv">--h1Size</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<hr />
+<h2>选择器</h2>
+<h3>选择器分组</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">h1</span><span class="o">,</span><span class="nt">h2</span><span class="o">,</span><span class="nt">h3</span><span class="o">,</span><span class="nt">h4</span><span class="o">,</span><span class="nt">h5</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="o">/</span><span class="o">/</span><span class="nt">给多个元素加上同一个样式</span></div></div></li>
+</ol></div>
+
+<h3>派生选择器</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">li</span><span class="">&nbsp;</span><span class="nt">strong</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>两个标签嵌套的，直接用空格写进去，空格是从属关系</p>
+<p>精髓：谁更具体，就优先表现谁</p>
+<h3>id选择器</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">#</span><span class="nn">id名称</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">#</span><span class="nn">id名称</span><span class="">&nbsp;</span><span class="nt">a</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span><span class=""> </span><span class="nt">只给id里面的a标签添加颜色</span></div></div></li>
+</ol></div>
+
+<h3>类选择器</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">.</span><span class="nc">类名称</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">.</span><span class="nc">类名称</span><span class="">&nbsp;</span><span class="nt">a</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">只给类里面的a标签添加颜色</span></div></div></li>
+</ol></div>
+
+<h3>属性选择器</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div><div class="line-numbers"><div class="line-num" data-line-num="19"></div></div><div class="line-numbers"><div class="line-num" data-line-num="20"></div></div><div class="line-numbers"><div class="line-num" data-line-num="21"></div></div><div class="line-numbers"><div class="line-num" data-line-num="22"></div></div><div class="line-numbers"><div class="line-num" data-line-num="23"></div></div><div class="line-numbers"><div class="line-num" data-line-num="24"></div></div><div class="line-numbers"><div class="line-num" data-line-num="25"></div></div><div class="line-numbers"><div class="line-num" data-line-num="26"></div></div><div class="line-numbers"><div class="line-num" data-line-num="27"></div></div><div class="line-numbers"><div class="line-num" data-line-num="28"></div></div><div class="line-numbers"><div class="line-num" data-line-num="29"></div></div><div class="line-numbers"><div class="line-num" data-line-num="30"></div></div><div class="line-numbers"><div class="line-num" data-line-num="31"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">css</span><span class="o">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c">/*&nbsp;选择有title属性的所有元素&nbsp;*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="o">[</span><span class="nt">title</span><span class="o">]</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">color</span><span class="p">:</span><span class="kc">blue</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c">/*&nbsp;选择有title属性&nbsp;且值未te的元素&nbsp;*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="o">[</span><span class="nt">title</span><span class="o">=</span><span class="nt">te</span><span class="o">]</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">color</span><span class="p">:</span><span class="kc">red</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c">/*&nbsp;选择有title属性&nbsp;且值包含te的元素&nbsp;*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="o">[</span><span class="nt">title</span><span class="o">~</span><span class="o">=</span><span class="nt">te</span><span class="o">]</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">color</span><span class="p">:</span><span class="kc">yellow</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c">/*&nbsp;选择有title属性&nbsp;且包含te且左右有“-”的元素&nbsp;*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="o">[</span><span class="nt">title</span><span class="o">|</span><span class="o">=</span><span class="nt">te</span><span class="o">]</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">color</span><span class="p">:</span><span class="kc">yellow</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c">/*&nbsp;选择有title属性&nbsp;且包含te且首字符相同的元素&nbsp;*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="o">[</span><span class="nt">title</span><span class="o">^</span><span class="o">=</span><span class="nt">te</span><span class="o">]</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">color</span><span class="p">:</span><span class="kc">yellow</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c">/*&nbsp;选择有title属性&nbsp;且包含te且末尾符相同的元素&nbsp;*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="o">[</span><span class="nt">title</span><span class="o">$</span><span class="o">=</span><span class="nt">te</span><span class="o">]</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">color</span><span class="p">:</span><span class="kc">yellow</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c">/*&nbsp;选择有title属性&nbsp;且包含te且包含它的所有元素&nbsp;*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="o">[</span><span class="nt">title</span><span class="o">*</span><span class="o">=</span><span class="nt">te</span><span class="o">]</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">color</span><span class="p">:</span><span class="kc">yellow</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">body</span><span class="o">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="o">&lt;</span><span class="nt">p</span><span class="">&nbsp;</span><span class="nt">title</span><span class="o">=</span><span class="s2">"te"</span><span class="o">&gt;</span><span class="nt">属性选择器</span><span class="o">&lt;</span><span class="nt">p</span><span class="o">&gt;</span></div></div></li>
+</ol></div>
+
+<p>注意：在IE6以及更早版本中不支持</p>
+<h3>总结</h3>
+<h4>元素选择器</h4>
+<p>​   最常见的选择器</p>
+<h4>选择器分组</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="nt">h1</span><span class="o">,</span><span class="nt">h2</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>​   逗号使用多个元素并列</p>
+<h4>类选择器</h4>
+<p>​   独立于文档元素的方式指定样式</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="p">.</span><span class="nc">class</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="nt">a</span><span class="">&nbsp;</span><span class="p">.</span><span class="nc">class</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">.</span><span class="nc">class</span><span class="">&nbsp;</span><span class="p">.</span><span class="nc">class</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">}</span><span class="">  </span><span class="nt">多类选择器</span><span class="err">【</span><span class="nt">并列的</span><span class="err">】</span></div></div></li>
+</ol></div>
+
+<h4>ID选择器</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="p">#</span><span class="nn">IdName</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>​   与类的区别：</p>
+<ol>
+<li>
+<p>ID只能在文档中使用一次类可以使用很多次</p>
+</li>
+<li>
+<p>ID选择器不能结合使用</p>
+</li>
+<li>
+<p>使用js的时候，需要用到id</p>
+</li>
+</ol>
+<h4>属性选择器</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="o">&lt;</span><span class="nt">p</span><span class="">&nbsp;</span><span class="nt">title</span><span class="o">=</span><span class="s2">""</span><span class="o">&gt;</span><span class="o">&lt;</span><span class="o">/</span><span class="nt">p</span><span class="o">&gt;</span><span class=""> </span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="o">[</span><span class="nt">title</span><span class="o">]</span><span class="p">{</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="o">&lt;</span><span class="nt">a</span><span class="">&nbsp;</span><span class="nt">herf</span><span class="o">=</span><span class="s2">"http:..."</span><span class="o">&gt;</span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="o">&lt;</span><span class="o">/</span><span class="nt">a</span><span class="o">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="o">[</span><span class="nt">herf</span><span class="o">=</span><span class="s2">"http:..."</span><span class="o">]</span><span class="p">{</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="o">[</span><span class="nt">title</span><span class="o">~</span><span class="o">=</span><span class="s2">"title"</span><span class="o">]</span><span class="p">{</span><span class="p">}</span><span class="">      </span><span class="o">/</span><span class="o">/</span><span class="nt">只要名称中包含这个词的就算</span></div></div></li>
+</ol></div>
+
+<h4>后代选择器</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="nt">p</span><span class="">&nbsp;</span><span class="nt">strong</span><span class="p">{</span><span class="p">}</span><span class="">       </span><span class="o">/</span><span class="o">/</span><span class="nt">递进</span><span class="">&nbsp;</span><span class="nt">用空格表示</span><span class="">&nbsp;</span><span class="nt">可以跨层</span></div></div></li>
+</ol></div>
+
+<h4>子元素选择器</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="nt">p</span><span class="o">&gt;</span><span class="nt">strong</span><span class="p">{</span><span class="p">}</span><span class="">        </span><span class="o">/</span><span class="o">/</span><span class="nt">逐层递进</span><span class="">&nbsp;</span><span class="nt">尖角号</span><span class="">&nbsp;</span><span class="nt">不能跨层</span></div></div></li>
+</ol></div>
+
+<h4>相邻兄弟选择器（串连选末尾择器）</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">style</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">p</span><span class="o">+</span><span class="nt">h5</span><span class="o">+</span><span class="nt">span</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">background-color</span><span class="p">:</span><span class="">&nbsp;</span><span class="kc">red</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="p">/</span><span class="nt">style</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">p</span><span class="p">&gt;</span><span class="">p</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">p</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span><span class="">h5</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">h5</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span><span class="">span</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">span</span><span class="p">&gt;</span><span class="">&nbsp;&nbsp;</span><span class="c">&lt;!--</span><span class="c">只有这个变红了，说明可以限制串：只选择p紧挨后面是h5紧挨后面是span的span元素</span><span class="c">--&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">h5</span><span class="p">&gt;</span><span class="">h5</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">h5</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span><span class="">span</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">span</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="nt">li</span><span class="o">+</span><span class="nt">li</span><span class="p">{</span><span class="p">}</span><span class="">          </span><span class="o">/</span><span class="o">/</span><span class="nt">第一个不用</span><span class="">&nbsp;</span><span class="nt">剩下的用</span></div></div></li>
+</ol></div>
+
+<h4>后面选择器</h4>
+<p>为所有相同的父元素中位于 p 元素之后的所有 ul 元素设置背景</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="nt">p</span><span class="o">~</span><span class="nt">ul</span><span class="p">{</span><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>相比 <code>+</code>来说限制更小，不用紧挨着就能选</p>
+<hr />
+<h2>使用字体</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">@</span><span class="k">font-face</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="nt">font-family</span><span class="o">:</span><span class="">&nbsp;</span><span class="s2">"han"</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="nt">src</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">url</span><span class="o">(</span><span class="s2">"../font/方正粗黑宋简体.ttf"</span><span class="o">)</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">div</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">font-family</span><span class="p">:</span><span class="">&nbsp;</span><span class="s2">"han"</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<hr />
+<h2>通配符</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">   </span><span class="o">*</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="k">margin</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">     </span><span class="k">padding</span><span class="p">:</span><span class="mi">0</span><span class="kt">px</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="o">/</span><span class="o">/</span><span class="nt">对所有的属性都起到效果</span></div></div></li>
+</ol></div>
+
+<hr />
+<h2>伪类</h2>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>名称</th>
+<th>特殊值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>未被访问的链接</td>
+<td>:link</td>
+<td>{}</td>
+<td></td>
+</tr>
+<tr>
+<td>被点过的链接</td>
+<td>:visited</td>
+<td>{}</td>
+<td></td>
+</tr>
+<tr>
+<td>鼠标悬停</td>
+<td>:hover</td>
+<td>{}</td>
+<td></td>
+</tr>
+<tr>
+<td>鼠标按下的时候</td>
+<td>:active</td>
+<td>{}</td>
+<td></td>
+</tr>
+<tr>
+<td>鼠标按下点过一次后</td>
+<td>:focus</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>当前活动的目标元素</td>
+<td>:target</td>
+<td></td>
+<td>一些跳转id链接会显示到</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>表单方面</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>被选中的radio checkbox</td>
+<td>:checked</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>默认状态的 单选多选项</td>
+<td>:default</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>元素被禁用的状态</td>
+<td>:disabled</td>
+<td></td>
+<td><code>disabled="disabled"</code></td>
+</tr>
+<tr>
+<td>和上面相反</td>
+<td>:enabled</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>元素的属性在区间内时候显示的样式</td>
+<td>:in-range</td>
+<td></td>
+<td><code>&lt;input type="number" min="5" max="10" value="7" /&gt;</code></td>
+</tr>
+<tr>
+<td>该元素值在指定区间之外时显示的样式</td>
+<td>:out-of-range</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>状态不确定的表单元素，用户还没操作过</td>
+<td>:indeterminate</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>表单元素值非法的时候的样式</td>
+<td>:invalid</td>
+<td></td>
+<td><code>&lt;input type="email" value="supportEmail" /&gt;</code></td>
+</tr>
+<tr>
+<td>表单元素值合法的时候的样式</td>
+<td>:valid</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>该表单元素是可选项的时候</td>
+<td>:optional</td>
+<td></td>
+<td><code>&lt;input required&gt;</code> 没加required是可选</td>
+</tr>
+<tr>
+<td>该表单元素是必填项的时候</td>
+<td>:required</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>选取设置了 “readonly” 属性的元素</td>
+<td>:read-only</td>
+<td></td>
+<td>火狐要加 -moz- 前缀</td>
+</tr>
+<tr>
+<td>选取设置非 “readonly” 属性的元素</td>
+<td>:read-write</td>
+<td></td>
+<td>适用于 input 和 textarea 元素</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>元素方面</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>选择器匹配文档根元素</td>
+<td>:root</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>该元素没有子元素的状态</td>
+<td>:empty</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>该元素的父元素下第一个子元素</td>
+<td>:first-child</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>该元素的父元素下最后一个元素</td>
+<td>:last-child</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>选择器匹配父元素下相同类型的子元素中的第一个</td>
+<td>:first-of-type</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>:last-of-type</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>找到第n个子元素</td>
+<td>:nth-child(n)</td>
+<td>(2n)或者(even)偶数行；（2n+1）(odd)奇数行</td>
+<td>不写n就是所有</td>
+</tr>
+<tr>
+<td>选择器匹配属于其元素的第 n 个子元素的每个元素</td>
+<td>:nth-last-child(n)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>:nth-last-of-type(n)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>:nth-of-type(n)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>当该元素的父元素只有该元素的时候</td>
+<td>:only-child</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>所有不是targ标签的元素</td>
+<td>:not(targ)</td>
+<td>p、h1、div</td>
+<td>冒号前面不用写东西</td>
+</tr>
+</tbody>
+</table>
+<p>链接顺序：</p>
+<p>记忆小方法：<strong>l</strong>o<strong>v</strong>e&amp;<strong>ha</strong>te；link，visited，hover，active</p>
+<h3>伪元素列表</h3>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>名称</th>
+<th>特殊值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>文字方面</strong></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>元素的第一个字符</td>
+<td>:first-letter</td>
+<td></td>
+<td>可以用于文字元素</td>
+</tr>
+<tr>
+<td>添加内容到元素前面</td>
+<td>::before</td>
+<td>{content:"xxx"}</td>
+<td>可以用于文字元素</td>
+</tr>
+<tr>
+<td>添加内容到元素后面</td>
+<td>::after</td>
+<td>{content:"xxx"}</td>
+<td>可以用于文字元素</td>
+</tr>
+<tr>
+<td>更改选择的时候的背景颜色</td>
+<td>::selection</td>
+<td>{background:red}默认是蓝色</td>
+<td>可以用于文字元素</td>
+</tr>
+<tr>
+<td>更改元素内容的第一行属性</td>
+<td>:frist-line</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>选取带有以指定值开头的 lang 属性的元素</td>
+<td>:lang(...)</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="c">/*&nbsp;鼠标&nbsp;*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">a</span><span class="p">:</span><span class="nd">link</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">color</span><span class="p">:</span><span class="">&nbsp;</span><span class="kc">red</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c">/*&nbsp;鼠标访问过的时候&nbsp;*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">a</span><span class="p">:</span><span class="nd">visited</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">color</span><span class="p">:</span><span class="">&nbsp;</span><span class="kc">gray</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c">/*&nbsp;鼠标放上去的时候&nbsp;*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">a</span><span class="p">:</span><span class="nd">hover</span><span class="p">{</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c">/*&nbsp;鼠标按下的时候&nbsp;*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">a</span><span class="p">:</span><span class="nd">active</span></div></div></li>
+</ol></div>
+
+<hr />
+<h2>CSS选择器优先级</h2>
+<h3>优先值</h3>
+<p><code>padding: 10px !important;</code> 后面加感叹号</p>
+<h3>优先级比较</h3>
+<ol>
+<li>!important 重要的  <code>正无穷</code></li>
+<li>行内样式 style=""  <code>1 0 0 0</code></li>
+<li>ID选择器  <code>0 1 0 0</code></li>
+<li>类选择器，伪类选择器  <code>0 0 1 0</code></li>
+<li>元素选择器  <code>0 0 0 1</code></li>
+<li>继承父元素的样式 或者 <code>*</code>  <code>0 0 0 0</code></li>
+</ol>
+<h3>原理</h3>
+<ul>
+<li>选择器相同，执行层叠性</li>
+<li>选择器不同，根据选择器权重执行</li>
+</ul>
+<h3>复合选择器权重叠加</h3>
+<div class="code"><ol class="num-container"></ol><ol class="code-container"></ol></div>
+
+<h3>注意问题</h3>
+<ul>
+<li>
+<p>内部style标签里的样式和外联link的css文件的样式其实是同等优先级的，关键就是看谁在下，优先级就高。下面的样式会覆盖上面样式里出现过的样式。</p>
+</li>
+<li>
+<p>如果css里又引用了一个另外的css，也就是css的头顶上写了一个 <code>@import "xxx.css"</code>，则先加载这个css里面的内容，再加载本css里面的内容，所以如果有重复的话，后加载的会覆盖以前的。</p>
+</li>
+<li>
+<p>如果有多个css引用了很多个二级css，很多二级css都引用了三级css，构成了一个树结构，那么加载（覆盖）顺序就是（文件行）从上到下，深度优先遍历的顺序。</p>
+</li>
+<li>
+<p>用js赋予某个元素样式是赋予该元素的内联样式，优先级比较高</p>
+</li>
+<li>
+<p>如果多个script代码，会按照从html文件里从上往下的顺序算，但是不能先于元素标签出现。</p>
+</li>
+<li>
+<p>如果要先于元素标签出现的位置写js代码，给该元素赋样式，外面要用 onload包起来</p>
+</li>
+</ul>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;</span><span class="nb">window</span><span class="p">.</span><span class="nx">onload</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="kd">function</span><span class="">&nbsp;</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">let</span><span class="">&nbsp;</span><span class="nx">a1</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".a1"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">a1</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">setProperty</span><span class="p">(</span><span class="s2">"color"</span><span class="p">,</span><span class="">&nbsp;</span><span class="s2">"yellow"</span><span class="p">,</span><span class="">&nbsp;</span><span class="s2">"important"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"end"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ul>
+<li>还可以用延迟设置来覆盖加载完毕的js赋予的样式</li>
+</ul>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;</span><span class="nx">setTimeout</span><span class="p">(</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">=&gt;</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kd">let</span><span class="">&nbsp;</span><span class="nx">a1</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">".a1"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">a1</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">setProperty</span><span class="p">(</span><span class="s2">"color"</span><span class="p">,</span><span class="">&nbsp;</span><span class="s2">"red"</span><span class="p">,</span><span class="">&nbsp;</span><span class="s2">"important"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"end&nbsp;red"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">}</span><span class="p">,</span><span class="">&nbsp;</span><span class="mf">1</span><span class="p">)</span><span class="p">;</span><span class="">&nbsp;</span><span class="c1">//&nbsp;延迟0.001s后&nbsp;覆盖以前的样式
+</span><span class="">&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<p>这从时间角度来看，也算是一种覆盖吧。</p>
+<h2>引用</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">@</span><span class="k">import</span><span class="">&nbsp;</span><span class="nt">url</span><span class="o">(</span><span class="s2">"外部样式表文件"</span><span class="o">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">@</span><span class="k">import</span><span class="">&nbsp;</span><span class="s2">"mystyle.css"</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<hr />
+<h2>响应式布局</h2>
+<h3>视口</h3>
+<p>移动端视口标记： <code>&lt;meta name="viewport"&gt;</code></p>
+<h3>视口设置</h3>
+<p><code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code></p>
+<ul>
+<li>width：控制 viewport 的大小</li>
+<li>initial-scale：初始缩放比例</li>
+<li>maximum-scale：允许用户缩放到的最大比例</li>
+<li>minimum-scale：允许用户缩放到的最小比例</li>
+<li>user-scalable：用户是否可以手动缩放。user-scalable = no，禁用缩放功能。</li>
+</ul>
+<h2>媒体查询</h2>
+<p>在css标签中写：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">@</span><span class="k">media</span><span class="">&nbsp;</span><span class="nt">mediatype</span><span class="">&nbsp;</span><span class="nt">and</span><span class="o">|</span><span class="nt">not</span><span class="o">|</span><span class="nt">only</span><span class="">&nbsp;</span><span class="o">(</span><span class="nt">media</span><span class="">&nbsp;</span><span class="nt">feature</span><span class="o">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">css-Code</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<ul>
+<li>@media 开头声明</li>
+<li>mediatype 媒体类型</li>
+<li>all 用于所有设备</li>
+<li>print 打印机和打印预览</li>
+<li>scree 用于电脑屏幕，平板电脑，智能手机</li>
+<li>关键字 and not only </li>
+<li>and：可以将多个媒体特性连接到一起，相当于“且”</li>
+<li>not：排除某个媒体类型</li>
+<li>only：指定某个特定的媒体类型</li>
+<li>media feature 媒体特性 必须有小括号包全</li>
+<li>最大宽度800px</li>
+</ul>
+<p>示例：屏幕宽度小于800的时候变成粉色</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">@</span><span class="k">media</span><span class="">&nbsp;</span><span class="nt">screen</span><span class="">&nbsp;</span><span class="nt">and</span><span class="">&nbsp;</span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">800px</span><span class="o">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nt">body</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">background-color</span><span class="p">:</span><span class="">&nbsp;</span><span class="kc">pink</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h4>引入资源</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">link</span><span class="">&nbsp;</span><span class="na">rel</span><span class="o">=</span><span class="s">"stylesheet"</span><span class="">&nbsp;</span><span class="na">media</span><span class="o">=</span><span class="s">"mediatype&nbsp;and|not|only&nbsp;(media&nbsp;feature)"</span><span class="">&nbsp;</span><span class="na">href</span><span class="o">=</span><span class="s">"mystylesheet.css"</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<p>建议：最好的方法是从小往大做</p>
+<p>引例：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="o">&lt;</span><span class="nt">link</span><span class="">&nbsp;</span><span class="nt">rel</span><span class="o">=</span><span class="s2">"stylesheet"</span><span class="">&nbsp;</span><span class="nt">media</span><span class="o">=</span><span class="s2">"screen&nbsp;and&nbsp;(min-width:&nbsp;320px)"</span><span class="">&nbsp;</span><span class="nt">href</span><span class="o">=</span><span class="s2">"mystylesheet320.css"</span><span class="o">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="o">&lt;</span><span class="nt">link</span><span class="">&nbsp;</span><span class="nt">rel</span><span class="o">=</span><span class="s2">"stylesheet"</span><span class="">&nbsp;</span><span class="nt">media</span><span class="o">=</span><span class="s2">"screen&nbsp;and&nbsp;(min-width:&nbsp;640px)"</span><span class="">&nbsp;</span><span class="nt">href</span><span class="o">=</span><span class="s2">"mystylesheet640.css"</span><span class="o">&gt;</span></div></div></li>
+</ol></div>
+
+<h4>响应式图片标记</h4>
+<p>目前兼容性还不是很好</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="nt">picture</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">source</span><span class="">&nbsp;</span><span class="na">media</span><span class="o">=</span><span class="s">"only&nbsp;screen&nbsp;and&nbsp;(min-width:&nbsp;650px)"</span><span class="">&nbsp;</span><span class="na">srcset</span><span class="o">=</span><span class="s">"img/pic1.png"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">source</span><span class="">&nbsp;</span><span class="na">media</span><span class="o">=</span><span class="s">"only&nbsp;screen&nbsp;and&nbsp;(min-width:&nbsp;465px)"</span><span class="">&nbsp;</span><span class="na">srcset</span><span class="o">=</span><span class="s">"img/pic21.png"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">img</span><span class="">&nbsp;</span><span class="na">src</span><span class="o">=</span><span class="s">"img/default.png"</span><span class="">&nbsp;&nbsp;</span><span class="na">style</span><span class="o">=</span><span class="s">"width:auto;"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">&lt;</span><span class="p">/</span><span class="nt">picture</span><span class="p">&gt;</span></div></div></li>
+</ol></div>
+
+<hr />
+<h2>Less语法</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nv">@border</span><span class="o">:</span><span class="">&nbsp;</span><span class="nt">5px</span><span class="">&nbsp;</span><span class="o">+</span><span class="">&nbsp;</span><span class="nt">5</span><span class="o">;</span><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">.</span><span class="nc">nav</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">.</span><span class="err">l</span><span class="err">o</span><span class="err">g</span><span class="err">o</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">width</span><span class="p">:</span><span class="">&nbsp;</span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h3>嵌套</h3>
+<p>伪类</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nt">a</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="err">&</span><span class="err">l</span><span class="err">i</span><span class="err">n</span><span class="err">k</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">color</span><span class="p">:</span><span class="">&nbsp;</span><span class="kc">blue</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<h3>运算</h3>
+<ol>
+<li>运算符号必须要隔开</li>
+<li>如果两个数参与运算，单位不一样，运算单位以前面的单位为准</li>
+<li>如果两个只有一个有单位，那么就是那个的单位</li>
+</ol>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

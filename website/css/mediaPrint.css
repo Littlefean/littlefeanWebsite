@@ -1,0 +1,46 @@
+@media print {
+  .CodeMirror div.CodeMirror-cursor {
+    visibility: hidden;
+  }
+}
+@media print {
+  .typora-export h1,
+  .typora-export h2,
+  .typora-export h3,
+  .typora-export h4,
+  .typora-export h5,
+  .typora-export h6 {
+    break-inside: avoid;
+  }
+}
+@media print {
+  body,
+  html {
+    border: 1px solid transparent;
+    height: 99%;
+    break-after: avoid;
+    break-before: avoid;
+    font-variant-ligatures: no-common-ligatures;
+  }
+  #write {
+    margin-top: 0;
+    padding-top: 0;
+    border-color: transparent !important;
+  }
+  .typora-export * {
+    -webkit-print-color-adjust: exact;
+  }
+  .typora-export #write {
+    break-after: avoid;
+  }
+  .typora-export #write::after {
+    height: 0;
+  }
+  .is-mac table {
+    break-inside: avoid;
+  }
+  .typora-export-show-outline .typora-export-sidebar {
+    display: none;
+  }
+}
+/*# sourceMappingURL=mediaPrint.css.map */

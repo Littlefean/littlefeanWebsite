@@ -1,0 +1,159 @@
+/**
+ 我个人增加的媒体查询
+ */
+// 0 ~ 1024
+@media screen and (max-width: 1024px) {
+
+  body {
+    main {
+      width: 100%;
+      // 有序列表
+      > ul {
+        padding-left: 4em;
+
+        > li {
+          margin-bottom: 0.5em;
+          font-size: 40px;
+          line-height: 1.5em;
+        }
+      }
+
+      // 无序列表
+      > ol {
+        padding-left: 4em;
+
+        > li {
+          margin-bottom: 0.5em;
+          font-size: 40px;
+          line-height: 1.5em;
+        }
+      }
+
+      /* ol li code, ul li  */
+
+      code {
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+        color: lightsalmon;
+        font-weight: normal;
+        background-color: black;
+        border: solid 2px gray;
+        border-radius: 20px;
+
+      }
+
+      // 引用
+      > blockquote {
+        padding-top: 4em;
+        padding-bottom: 4em;
+        background-color: rgba(255, 255, 255, 0.1);
+        border-left-width: 0.7em;
+        border-top-left-radius: 10%;
+
+        > p {
+          font-size: 40px;
+          text-indent: 0;
+        }
+      }
+
+      // 有关代码块
+      .code {
+        .code-container {
+          overflow-x: scroll;
+          //outline: solid 1px pink;
+          padding-left: 0.5em;
+          //height: 1000px;
+
+          .line {
+            margin-left: 0;
+
+            .highlight-code {
+              width: 1500px;
+
+              .code-line {
+                span {
+                  line-height: 1.5em;
+                  font-size: 35px;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      // 没有高亮颜色的代码块
+      pre {
+        overflow-x: scroll;
+
+        code {
+          font-size: 40px !important;
+
+        }
+      }
+
+      // 表格
+      table {
+
+        @lineH: 40px;
+        overflow-x: scroll;
+
+        th, td {
+          font-size: 40px;
+          border-width: 2px;
+          background-color: transparent;
+        }
+
+        tr {
+          td {
+
+            code {
+              background-color: black;
+            }
+          }
+
+          //background-color: hotpink;
+        }
+      }
+    }
+  }
+
+  p {
+    font-size: 45px;
+    text-indent: 2em;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    line-height: 2em;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 70px;
+    line-height: 6em;
+  }
+
+  h2 {
+    text-align: center;
+    font-size: 65px;
+    line-height: 4em;
+  }
+
+  h3 {
+    font-size: 65px;
+    line-height: 3em;
+  }
+
+  h4 {
+    font-size: 55px;
+  }
+
+  h5 {
+    font-size: 50px;
+  }
+
+  h6 {
+    font-size: 45px;
+  }
+
+
+}

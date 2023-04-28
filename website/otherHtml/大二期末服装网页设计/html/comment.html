@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>期末作业之服装网页设计</title>
+	<link rel="stylesheet" href="../css/nav.css">
+	<link rel="stylesheet" href="../css/comment.css">
+	<link rel="stylesheet" href="../css/footer.css">
+	<link rel="stylesheet" href="../css/util.css">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		em {
+			font-style: normal;
+		}
+	</style>
+	<script src="../jq/jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+	<div class="nav">
+		<h1 class="logo">期末作业之服装网页设计</h1>
+		<a href="../index.html">首页</a>
+		<a href="../index.html#styles">服装系列</a>
+		<a href="../html/introduce.html">品牌介绍</a>
+		<a href="../html/comment.html">论坛</a>
+	</div>
+	<div class="main-content">
+		<div class="left">
+			<main>
+				<h1 class="title">论坛界面</h1>
+				<div class="box">
+					<div class="client-title">
+						<img src="../imgs/comment/1.jpg" alt="">
+						<h4>locus</h4>
+					</div>
+					<div class="content">
+						<h4>分享一种手机调色</h4>
+						<p>
+							高级灰冷绿万能滤镜
+							调色分享 VSCO G7(11) 曝光1.2 对比0.9
+						</p>
+						<h6>查看详细</h6>
+					</div>
+				</div>
+				<div class="box">
+					<div class="client-title">
+						<img src="../imgs/comment/1.jpg" alt="">
+						<h4>regen</h4>
+					</div>
+					<div class="content">
+						<h4>悬疑推理爱好者的电影推荐</h4>
+						<p>
+							内容：蒙太奇（2013年）豆瓣8.2
+							看不见的客人（2019年） 豆瓣7.6
+							致命ID(2003)年 豆瓣8.8
+							消失的爱人（2014年） 豆瓣8.7
+						</p>
+						<h6>查看详细</h6>
+					</div>
+				</div>
+				<div class="box">
+					<div class="client-title">
+						<img src="../imgs/comment/1.jpg" alt="">
+						<h4>Ruby</h4>
+					</div>
+					<div class="content">
+						<h4>发型推荐—男士碎盖烫</h4>
+						<p>
+							一款烫形不烫卷的阳光发型
+						</p>
+						<h6>查看详细</h6>
+					</div>
+				</div>
+				<div class="box">
+					<div class="client-title">
+						<img src="../imgs/comment/1.jpg" alt="">
+						<h4>Weiss</h4>
+					</div>
+					<div class="content">
+						<h4>街头随机拍</h4>
+						<p>
+							路上发现的高颜值小哥哥小姐姐
+						</p>
+						<h6>查看详细</h6>
+					</div>
+				</div>
+			</main>
+		</div>
+
+		<div class="right">
+			<div class="user">
+				<div class="head">
+					<img src="../imgs/comment/1.jpg" alt="">
+					<h2>Ozpin</h2>
+				</div>
+				<div class="top">
+					<p>leve: 3</p>
+					<div class="bar">
+						<div class="inner"></div>
+					</div>
+					<p>👍165 &nbsp; 👁166 &nbsp;❤15</p>
+					<div class="middle">
+						<div class="m-box">
+							<p>关注</p>
+							<span>15</span>
+							<img src="../imgs/icon/t (1).png" alt="">
+						</div>
+						<div class="m-box">
+							<p>粉丝</p>
+							<span>15</span>
+							<img src="../imgs/icon/t (2).png" alt="">
+						</div>
+						<div class="m-box">
+							<p>好友</p>
+							<span>15</span>
+							<img src="../imgs/icon/t (3).png" alt="">
+						</div>
+					</div>
+					<div class="item">个人中心</div>
+					<div class="item">回复我的</div>
+					<button>退出登陆</button>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="footer">
+		<h1 class="twoColorFont">JOIN US</h1>
+		<hr>
+		<div class="main">
+			<div class="items">
+				<div class="item" onclick="go('../html/introduce.html')">
+					<img src="../imgs/icon/li.png" alt="">
+					<span class="twoColorFont">小店简介</span>
+				</div>
+				<div class="item" onclick="go('../html/ys.html')">
+					<img src="../imgs/icon/li.png" alt="">
+					<span class="twoColorFont">隐私权声明</span>
+				</div>
+				<div class="item" onclick="go('../html/comment.html')">
+					<img src="../imgs/icon/li.png" alt="">
+					<span class="twoColorFont">粉丝论坛</span>
+				</div>
+			</div>
+			<p>这只是前端一个期末作业写的一个网页啊，和商业完全没有关系，内容纯属虚构，请勿当真！这是一个网页作业仅供展示！
+				<br>
+				这只是前端一个期末作业写的一个网页啊，和商业完全没有关系，内容纯属虚构，请勿当真！
+			</p>
+		</div>
+	</div>
+	<script src="../js/util.js"></script>
+	<script>
+		// 给所有有 twoColorFonts 类名的文字元素设置成奇数个字改变颜色的样式
+		var twoColorFonts = document.getElementsByClassName("twoColorFont");
+		for (let elem of twoColorFonts) {
+			changeColor(elem, "#e89f71");
+		}
+		$(document).ready(function () {
+			// 滑动滚动条的时候触发函数
+			var top = document.documentElement.scrollTop || document.body.scrollTop;
+			$(window).scroll(function () {
+				top = document.documentElement.scrollTop || document.body.scrollTop;
+				if (top < 600) {
+					$(".user").fadeIn("fast");
+				}
+				if (top > 600) {
+					$(".user").fadeOut("fast");
+				}
+			});
+		})
+	</script>
+</body>
+
+</html>

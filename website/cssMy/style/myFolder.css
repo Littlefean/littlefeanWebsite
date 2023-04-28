@@ -1,0 +1,62 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #1e1e1e;
+  padding-top: 50px;
+}
+.folder {
+  margin: 5px;
+  padding: 15px 5px 1px 10px;
+  width: 500px;
+  box-sizing: content-box;
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  border: solid 2px #afb1b3;
+  background-color: #323232;
+  transition: all 0.5s;
+}
+.folder:hover {
+  background-color: #50323c;
+  border-color: #ffffff;
+}
+.folder:hover > .folderName {
+  opacity: 1;
+  margin-left: 0.5em;
+}
+.folder:hover > .file {
+  color: white;
+  background-color: rgba(29, 75, 157, 0.7);
+}
+.folder .folderName {
+  padding-left: 2em;
+  padding-right: 2em;
+  opacity: 0;
+  position: absolute;
+  height: 20px;
+  background-color: #ce9178;
+  left: 0;
+  top: -20px;
+  transition: all 0.5s;
+}
+.file {
+  width: 50px;
+  height: 20px;
+  margin: 3px;
+  padding: 5px;
+  font-size: 5px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  color: white;
+  background-color: rgba(29, 75, 157, 0.5);
+  transition: all 0.5s;
+}
+.file:hover {
+  width: auto;
+  overflow: visible;
+  z-index: 100;
+}
+/*# sourceMappingURL=myFolder.css.map */

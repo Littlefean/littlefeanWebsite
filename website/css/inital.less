@@ -1,0 +1,120 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #333333;
+  --select-text-bg-color: #B5D6FC;
+  --select-text-font-color: auto;
+  --monospace: "Lucida Console", Consolas, "Courier", monospace;
+  --title-bar-height: 20px;
+  --mermaid-theme: night;
+}
+
+a {
+  cursor: pointer;
+  outline: 0;
+  -webkit-transition: all .2s ease-in-out;
+  transition: all .2s ease-in-out;
+  color: #e0e0e0;
+  text-decoration: underline;
+
+  .url {
+    word-break: break-all;
+  }
+
+  &:active, &:hover {
+    outline: 0;
+    color: #fff;
+  }
+
+  &:focus {
+    outline: thin dotted;
+  }
+}
+
+img {
+  max-width: 100%;
+  vertical-align: middle;
+  image-orientation: from-image;
+}
+
+*, ::after, ::before {
+  box-sizing: border-box;
+}
+
+p {
+  line-height: inherit;
+  orphans: 4;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  break-after: avoid-page;
+  break-inside: avoid;
+  orphans: 4;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.8rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+h5 {
+  font-size: 1.2rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+li div {
+  padding-top: 0;
+}
+
+li blockquote {
+  margin: 1rem 0;
+}
+
+li {
+  margin: 0;
+  position: relative;
+}
+
+a img, img a {
+  cursor: pointer;
+}
+
+code, pre, samp, tt {
+  font-family: var(--monospace);
+}
+code {
+  text-align: left;
+  vertical-align: initial;
+}
+
+table tr th {
+  border-bottom: 0;
+}
+
+video {
+  max-width: 100%;
+  display: block;
+  margin: 0 auto;
+}
+iframe {
+  max-width: 100%;
+  width: 100%;
+  border: none;
+}
+mark {
+  background: rgb(255, 255, 0);
+  color: rgb(0, 0, 0);
+}

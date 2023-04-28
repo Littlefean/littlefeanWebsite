@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@keyframes planetRound {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+body {
+  background-color: black;
+}
+body main {
+  position: relative;
+  width: 1000px;
+  height: 800px;
+  margin: 0 auto;
+  color: white;
+  outline: solid 1px;
+  overflow: hidden;
+}
+body main .slideWay {
+  position: absolute;
+  height: 10px;
+  width: 400px;
+  left: 50%;
+  top: 50%;
+  transform-origin: left top;
+  animation-name: planetRound;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+}
+body main .slideWay .star {
+  width: 10px;
+  height: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  float: right;
+  box-shadow: 0 0 5px yellow;
+  transition: all 0.1s;
+}
+body main .slideWay .star:hover {
+  transform: scale(10);
+}
+/*# sourceMappingURL=index.css.map */

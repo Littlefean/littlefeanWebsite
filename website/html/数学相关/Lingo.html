@@ -1,0 +1,351 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Lingo</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>学习笔记Lingo</h1>
+<hr />
+<h2>格式要求</h2>
+<ol>
+<li>空格无所谓</li>
+<li>语句末尾加分号</li>
+</ol>
+<h2>界面解释</h2>
+<h3>结果界面</h3>
+<p>第一行会说：可行的解被发现了</p>
+<p>然后会打印所有变量的的值</p>
+<h2>用途</h2>
+<h3>解方程</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">x&nbsp;+&nbsp;1&nbsp;=&nbsp;2;</span></div></div></li>
+</ol></div>
+
+<h2>运算符</h2>
+<h4>算数运算符</h4>
+<ol>
+<li><code>+ - * /</code> 加减乘除</li>
+<li><code>^</code> 代表乘方</li>
+<li><code>@sqrt(x)</code>表示开根号，但是可以用 <code>x^(1/2)</code>表示</li>
+<li></li>
+</ol>
+<h4>关系运算符</h4>
+<ol>
+<li>
+<p>左右两边的关系</p>
+</li>
+<li>
+<p>只有三种 <code>=</code> <code>&gt;=</code> <code>&lt;=</code>， 没有单独的大于小于号，因为他会省略这个等于号</p>
+</li>
+<li>
+<p>如果想严格表达 <code>A &gt; B</code></p>
+</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;B&nbsp;=&nbsp;10;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;e&nbsp;=&nbsp;0.00001;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;A&nbsp;-&nbsp;e&nbsp;&gt;&nbsp;B;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<h4>逻辑运算符</h4>
+<h5>两个数字之间</h5>
+<ul>
+<li><code>#eq#</code> 两个相等为真</li>
+<li><code>#ne#</code> 两个不相等为真</li>
+<li><code>#gt#</code> 左&gt;右 为真</li>
+<li><code>#ge#</code> 左&gt;=右 为真</li>
+<li><code>#lt#</code> 左&lt;右 为真</li>
+<li><code>#le#</code> 左&lt;=右 为真</li>
+</ul>
+<h5>两个逻辑表达式之间</h5>
+<ul>
+<li><code>#not#</code>取反</li>
+<li><code>#and#</code>与</li>
+<li><code>#or#</code>或</li>
+</ul>
+<p>逻辑判断唯一出现的位置：</p>
+<ol>
+<li>for和sum之中</li>
+<li>if判断之中</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">data</span><span class="o">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">a</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">6</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">5</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">4</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">3</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">2</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">1</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">enddata</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">y</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="err">@</span><span class="n">sum</span><span class="o">(</span><span class="">&nbsp;</span><span class="n">factory</span><span class="o">(</span><span class="n">i</span><span class="o">)|</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="err">#</span><span class="n">ge</span><span class="err">#</span><span class="">&nbsp;</span><span class="mi">5</span><span class="o">:</span><span class="">&nbsp;</span><span class="n">a</span><span class="o">(</span><span class="n">i</span><span class="o">)</span><span class="">&nbsp;</span><span class="o">);</span></div></div></li>
+</ol></div>
+
+<h2>变量</h2>
+<ol>
+<li>默认所有的变量都是大于等于0的数字，非负条件不用写</li>
+<li>如果想让变量的值小于零，那么可以用 <code>@FREE(x);</code></li>
+<li>变量名不分大小写，可以含有下划线，但是只能以字母开头</li>
+</ol>
+<h3>注释</h3>
+<p><code>!...;</code> 注释的写法</p>
+<h3>语句</h3>
+<p>没有重新赋值的说法，因为一个一个的单等于号语句是一个一个的方程，出现两个不等的方程会报错</p>
+<h2>线性规划基础</h2>
+<ol>
+<li>一个线性规划中只能含有一个目标函数，如果超过了两个，就要想办法整合成一个</li>
+<li>求目标函数的最大值和最小值用 <code>max = ……</code> <code>min = ……</code> 表示</li>
+<li>线性函数和非线性函数的本质区别是：目标函数是否是线性的，其余的都一致</li>
+<li>非线性函数求解十分困难，基本得不到全局最优解</li>
+</ol>
+<h2>集合 &amp; 矩阵工厂</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">a1&nbsp;=&nbsp;1;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">a2&nbsp;=&nbsp;2;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">a3&nbsp;=&nbsp;3;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">a4&nbsp;=&nbsp;4;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">a5&nbsp;=&nbsp;5;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">max&nbsp;=&nbsp;s;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">s&nbsp;=&nbsp;a1&nbsp;*&nbsp;x1;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">s&nbsp;=&nbsp;a2&nbsp;*&nbsp;x2;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">s&nbsp;=&nbsp;a3&nbsp;*&nbsp;x3;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">s&nbsp;=&nbsp;a4&nbsp;*&nbsp;x4;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">s&nbsp;=&nbsp;a5&nbsp;*&nbsp;x5;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">x1&nbsp;+&nbsp;x2&nbsp;+&nbsp;x3&nbsp;+&nbsp;x4&nbsp;+&nbsp;x5&nbsp;=&nbsp;5000;</span></div></div></li>
+</ol></div>
+
+<h3>矩阵工厂</h3>
+<p>生产一维矩阵</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">sets</span><span class="o">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="n">factory</span><span class="">&nbsp;</span><span class="sr">/1..6/</span><span class="">&nbsp;</span><span class="o">:</span><span class="">&nbsp;</span><span class="n">a</span><span class="o">,</span><span class="">&nbsp;</span><span class="n">b</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="n">plant</span><span class="">&nbsp;</span><span class="sr">/1..3/</span><span class="">&nbsp;</span><span class="o">:</span><span class="">&nbsp;</span><span class="n">x</span><span class="o">,</span><span class="">&nbsp;</span><span class="n">y</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">endsets</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">a</span><span class="o">(</span><span class="mi">1</span><span class="o">)</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">100</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="o">!</span><span class="err">可</span><span class="err">以</span><span class="err">修</span><span class="err">改</span><span class="err">一</span><span class="err">个</span><span class="err">集</span><span class="err">合</span><span class="err">里</span><span class="err">的</span><span class="err">一</span><span class="err">个</span><span class="err">值</span><span class="o">;</span></div></div></li>
+</ol></div>
+
+<p>结果：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">A&nbsp;=&nbsp;(100,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5,&nbsp;6)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">B&nbsp;=&nbsp;(1,&nbsp;2,&nbsp;3,&nbsp;4,&nbsp;5,&nbsp;6)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">X&nbsp;=&nbsp;(1,&nbsp;2,&nbsp;3)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">Y&nbsp;=&nbsp;(1,&nbsp;2,&nbsp;3)</span></div></div></li>
+</ol></div>
+
+<ol>
+<li>factory和plant都是两家不同的工厂</li>
+<li>/1..6/ 说明这个工厂生产 1行6列的矩阵</li>
+<li>冒号后面的 量都接收了工厂生产出来的矩阵</li>
+<li>工厂名可以随便起</li>
+<li>lingo不是一行一行读代码的，所以要用sets和endsets包围起来</li>
+<li>矩阵完成后，工厂和矩阵就会脱离联系</li>
+</ol>
+<p>矩阵使用的时候要付初始值</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">sets</span><span class="o">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">f</span><span class="">&nbsp;</span><span class="sr">/1..6/</span><span class="">&nbsp;</span><span class="o">:</span><span class="">&nbsp;</span><span class="n">a</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">endsets</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">data</span><span class="o">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">a</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">1</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">2</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">3</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">4</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">5</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">6</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">enddata</span></div></div></li>
+</ol></div>
+
+<p>注意：</p>
+<ol>
+<li>不是每个矩阵都要赋初始值，有些矩阵就是我们要求解的变量</li>
+<li>矩阵赋初始值的时候不能多也不能漏</li>
+<li>赋值可以是整数，也可以是小数</li>
+</ol>
+<h3>循环</h3>
+<p>求 a1x1, a2x2, a3x3, ... a5x5 的最大值</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">sets</span><span class="o">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">gc</span><span class="">&nbsp;</span><span class="sr">/1..5/</span><span class="">&nbsp;</span><span class="o">:</span><span class="">&nbsp;</span><span class="n">a</span><span class="o">,</span><span class="">&nbsp;</span><span class="n">x</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">endsets</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">data</span><span class="o">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">a</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">1</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">2</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">3</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">4</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">5</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">enddata</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">max</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">s</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="err">@</span><span class="k">for</span><span class="o">(</span><span class="">&nbsp;</span><span class="n">gc</span><span class="o">(</span><span class="n">i</span><span class="o">)</span><span class="">&nbsp;</span><span class="o">:</span><span class="">&nbsp;</span><span class="n">s</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">a</span><span class="o">(</span><span class="n">i</span><span class="o">)</span><span class="">&nbsp;</span><span class="o">*</span><span class="">&nbsp;</span><span class="n">x</span><span class="o">(</span><span class="n">i</span><span class="o">)</span><span class="">&nbsp;</span><span class="o">);</span></div></div></li>
+</ol></div>
+
+<p>for循环里先写循环范围，和循环变量，用矩阵工厂表示范围，用自定义i来表示变量</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nv">@for</span><span class="p">(</span><span class="w">&nbsp;</span><span class="n">矩阵工厂</span><span class="p">(</span><span class="n">循环变量</span><span class="p">)</span><span class="err">:</span><span class="w">&nbsp;</span><span class="n">语句</span><span class="err">、</span><span class="n">方程</span><span class="w">&nbsp;</span><span class="p">)</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<h3>求和</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">sets</span><span class="o">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">gc</span><span class="">&nbsp;</span><span class="sr">/1..5/</span><span class="">&nbsp;</span><span class="o">:</span><span class="">&nbsp;</span><span class="n">a</span><span class="o">,</span><span class="">&nbsp;</span><span class="n">x</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">endsets</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">data</span><span class="o">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">a</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">1</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">2</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">3</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">4</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">5</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">enddata</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">max</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">s</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="err">@</span><span class="k">for</span><span class="o">(</span><span class="">&nbsp;</span><span class="n">gc</span><span class="o">(</span><span class="n">i</span><span class="o">)</span><span class="">&nbsp;</span><span class="o">:</span><span class="">&nbsp;</span><span class="n">s</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">a</span><span class="o">(</span><span class="n">i</span><span class="o">)</span><span class="">&nbsp;</span><span class="o">*</span><span class="">&nbsp;</span><span class="n">x</span><span class="o">(</span><span class="n">i</span><span class="o">)</span><span class="">&nbsp;</span><span class="o">);</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="err">@</span><span class="n">sum</span><span class="o">(</span><span class="">&nbsp;</span><span class="n">gc</span><span class="o">(</span><span class="n">i</span><span class="o">)</span><span class="">&nbsp;</span><span class="o">:</span><span class="">&nbsp;</span><span class="n">x</span><span class="o">(</span><span class="n">i</span><span class="o">))</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">5000</span><span class="o">;</span></div></div></li>
+</ol></div>
+
+<p>上面的求和语句表示 把 x里面的每一个数求和，这个求和的结果必须等于 5000作为一个约束条件</p>
+<ol>
+<li>sum求和里面不可以阔起来完整的求和语句</li>
+<li>写好求和语句之后再加约束条件</li>
+</ol>
+<h3>工厂合并 —— 可以生产二维矩阵</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">sets</span><span class="o">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">factory</span><span class="">&nbsp;</span><span class="sr">/1..6/</span><span class="">&nbsp;</span><span class="o">:</span><span class="">&nbsp;</span><span class="n">a</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">plan</span><span class="">&nbsp;</span><span class="sr">/1..8/</span><span class="o">:</span><span class="">&nbsp;</span><span class="n">d</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">copperation</span><span class="o">(</span><span class="n">factory</span><span class="o">,</span><span class="">&nbsp;</span><span class="n">plan</span><span class="o">):</span><span class="">&nbsp;</span><span class="n">c</span><span class="o">,</span><span class="">&nbsp;</span><span class="n">x</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">endsets</span></div></div></li>
+</ol></div>
+
+<p>c, x 就是 6行8列的矩阵</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">矩阵名称(一个行矩阵工厂名,&nbsp;另一个行矩阵工厂名):&nbsp;获得矩阵的变量,&nbsp;获得矩阵的变量,&nbsp;...;</span></div></div></li>
+</ol></div>
+
+<p>第一个矩阵工厂决定了合并矩阵的行数，第二个决定列数</p>
+<h4>二维工厂赋值</h4>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">data</span><span class="o">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">c</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">1</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">2</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">3</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">4</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">5</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="mi">4</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">5</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">6</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">7</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">8</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="mi">1</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">1</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">1</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">1</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">1</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="mi">4</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">5</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">6</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">7</span><span class="o">,</span><span class="">&nbsp;</span><span class="mi">9</span><span class="o">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">enddata</span></div></div></li>
+</ol></div>
+
+<p>写法注意：最后以分号结尾，且只有最后一行有分号</p>
+<p>二维矩阵对角线求和</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="nf">min</span><span class="w">&nbsp;</span><span class="o">=</span><span class="w">&nbsp;</span><span class="nv">@sum</span><span class="p">(</span><span class="w">&nbsp;</span><span class="n">coo</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w">&nbsp;</span><span class="n">j</span><span class="p">)</span><span class="err">:</span><span class="w">&nbsp;</span><span class="n">c</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w">&nbsp;</span><span class="n">j</span><span class="p">)</span><span class="w">&nbsp;</span><span class="o">*</span><span class="w">&nbsp;</span><span class="n">x</span><span class="p">(</span><span class="n">i</span><span class="p">,</span><span class="w">&nbsp;</span><span class="n">j</span><span class="p">)</span><span class="w">&nbsp;</span><span class="p">)</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<h3>条件语句</h3>
+<p>一般只在分段函数里用到</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">@free</span><span class="p">(</span><span class="n">x</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">@free</span><span class="p">(</span><span class="n">y</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">x</span><span class="">&nbsp;</span><span class="p">=</span><span class="">&nbsp;</span><span class="p">-</span><span class="m">1</span><span class="m">0</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">y</span><span class="">&nbsp;</span><span class="p">=</span><span class="">&nbsp;</span><span class="n">@if</span><span class="p">(</span><span class="n">x</span><span class="err">#</span><span class="n">ge</span><span class="err">#</span><span class="m">0</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">x</span><span class="">&nbsp;</span><span class="p">+</span><span class="">&nbsp;</span><span class="m">1</span><span class="m">0</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">x</span><span class="">&nbsp;</span><span class="p">-</span><span class="">&nbsp;</span><span class="m">1</span><span class="m">0</span><span class="p">)</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">@if</span><span class="p">(</span><span class="err">条</span><span class="err">件</span><span class="err">表</span><span class="err">达</span><span class="err">式</span><span class="err">，</span><span class="">&nbsp;</span><span class="err">成</span><span class="err">立</span><span class="err">的</span><span class="err">语</span><span class="err">句</span><span class="err">、</span><span class="err">式</span><span class="err">子</span><span class="err">，</span><span class="err">不</span><span class="err">成</span><span class="err">立</span><span class="err">的</span><span class="err">语</span><span class="err">句</span><span class="err">、</span><span class="err">式</span><span class="err">子</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<p>注意：</p>
+<ol>
+<li>出现频率十分之低</li>
+<li>若有if语句，必须带一个else</li>
+</ol>
+<h2>内置函数</h2>
+<h3>变量定界函数</h3>
+<ol>
+<li><code>@bin(x);</code> 限制x只能取0，1</li>
+<li><code>@gin(x);</code> 限制x为整数</li>
+<li><code>@bnd(x);</code> 限制 a ≤ x ≤ b，推荐直接替换两个约束条件</li>
+</ol>
+<h3>数学函数</h3>
+<ol>
+<li><code>@sin(x)</code></li>
+<li><code>@cos(x)</code></li>
+<li><code>@tan(x)</code></li>
+<li><code>@log(x)</code> 返回x自然对数的值，想用其他底就用换底公式</li>
+<li><code>@exp(x)</code> e的x次方</li>
+<li><code>@abs(x)</code> </li>
+<li><code>@sigh(x)</code> 返回x的符号值，x ≥ 0 就是 1，x ＜ 0 就是 -1</li>
+<li><code>@floor(x)</code> 向下取整</li>
+<li><code>@smax(x1, x2, x3, ...., xn)</code> 返回其中的全部最大值</li>
+<li><code>@smin(x1, x2, x3, ....., xn)</code> 返回其中的全部最小值</li>
+</ol>
+<h3>集合操作函数</h3>
+<p>熟人：</p>
+<ul>
+<li>@for</li>
+<li>@sum</li>
+</ul>
+<p>有用：</p>
+<ul>
+<li><code>@prod(factory: a)</code> 求积</li>
+<li><code>@max(factory: a)</code>  求最大值</li>
+<li><code>@min(factory: a)</code> 求最小值</li>
+</ul>
+<p>鸡肋：</p>
+<ul>
+<li><code>@in(factory, c)</code> 判断常数c是不是在集合里面</li>
+<li><code>@size(factory)</code> 返回工厂可生产矩阵的长度</li>
+</ul>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

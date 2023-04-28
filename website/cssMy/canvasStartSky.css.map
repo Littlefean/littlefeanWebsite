@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "sources": [
+    "canvasStartSky.less"
+  ],
+  "names": [],
+  "mappings": "AAAA;EACE,aAAA;EACA,WAAA;EACA,eAAA;EACA,WAAA;EACA,gBAAA",
+  "file": "canvasStartSky.css"
+}

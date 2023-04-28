@@ -1,0 +1,247 @@
+@font-face {
+  font-family: "lovely";
+  src: url("../font/comicbd.ttf");
+}
+@font-face {
+  font-family: "han";
+  src: url("../font/方正粗黑宋简体.ttf");
+}
+html {
+  font-size: 10px;
+}
+em {
+  font-family: 'lovely';
+  font-size: 3rem;
+  color: white;
+  background-color: #eeb896;
+}
+.line-bar {
+  width: 80%;
+  height: 7rem;
+  margin: 0 auto;
+  margin-top: 3rem;
+}
+.line-bar em {
+  float: right;
+  width: 20rem;
+  padding-left: 10rem;
+  line-height: 6rem;
+}
+.line1,
+.line2,
+.line4 {
+  width: 80%;
+  margin: 0 auto;
+}
+.line1 h2,
+.line2 h2,
+.line4 h2,
+.line1 p,
+.line2 p,
+.line4 p {
+  color: #3c2601;
+  font-weight: 400;
+}
+.line1 h2,
+.line2 h2,
+.line4 h2 {
+  font-family: 'han';
+  text-align: center;
+}
+.line1 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+.line1 .box {
+  width: 35rem;
+  height: 42rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  box-shadow: rgba(128, 128, 128, 0.37) 0px 0px 0px;
+  transition: all 0.5s;
+}
+.line1 .box:hover {
+  transform: translateX(-1.5rem);
+  box-shadow: rgba(128, 128, 128, 0.37) 5px 5px 15px;
+}
+.line1 .b1 {
+  background-color: #eeb896;
+  padding: 3rem 3rem 1rem 3rem;
+  box-sizing: border-box;
+}
+.line1 .b1 h2 {
+  text-align: center;
+  font-size: 2.5rem;
+}
+.line1 .b1 p {
+  font-size: 1.8rem;
+  text-indent: 2em;
+  line-height: 2em;
+  margin-bottom: 2rem;
+}
+.line1 .b2 img,
+.line1 .b3 img {
+  display: block;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+.line1 .b2 h2,
+.line1 .b3 h2,
+.line1 .b2 p,
+.line1 .b3 p {
+  text-align: center;
+}
+.line1 .b2 h2,
+.line1 .b3 h2 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.line1 .b2 p,
+.line1 .b3 p {
+  font-size: 1.5rem;
+  line-height: 1.5em;
+}
+.line2 {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.line2 .left,
+.line2 .right {
+  width: 50%;
+  height: 60rem;
+  position: relative;
+}
+.line2 .left img,
+.line2 .right img {
+  height: 100%;
+  position: absolute;
+  box-shadow: rgba(128, 128, 128, 0.37) 0px 0px 0px;
+  transition: all 0.5s;
+}
+.line2 .left img:hover,
+.line2 .right img:hover {
+  transform: translateX(-1.5rem);
+  box-shadow: rgba(128, 128, 128, 0.37) 5px 5px 15px;
+}
+.line2 .left .text,
+.line2 .right .text {
+  width: 22rem;
+  padding: 2rem;
+  box-sizing: border-box;
+  position: absolute;
+  background-color: #ffe8e8;
+  border-radius: 2rem;
+}
+.line2 .left .text h2,
+.line2 .right .text h2 {
+  font-size: 1.8rem;
+}
+.line2 .left .text p,
+.line2 .right .text p {
+  font-size: 1.5rem;
+  text-indent: 2em;
+  line-height: 2em;
+}
+.line2 .left .text {
+  left: 60%;
+  top: 5%;
+}
+.line2 .right img {
+  right: 0;
+}
+.line2 .right .text {
+  bottom: 5%;
+}
+.line3 {
+  width: 100%;
+  height: 37rem;
+  background-color: #edcfa9;
+  margin-top: 8rem;
+  margin-bottom: 12rem;
+  position: relative;
+}
+.line3 .main {
+  width: 124.8rem;
+  height: 45rem;
+  position: absolute;
+  top: -2rem;
+  left: 50%;
+  margin-left: -62.4rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.line3 .main .box {
+  width: 35rem;
+  width: 30%;
+  height: 45rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  box-shadow: rgba(128, 128, 128, 0.37) 0px 0px 0px;
+  transition: all 0.5s;
+}
+.line3 .main .box:hover {
+  transform: translateY(-1.5rem);
+  box-shadow: rgba(128, 128, 128, 0.37) 5px 5px 15px;
+}
+.line3 .main .box img {
+  height: 100%;
+}
+.line3 .main .b3 {
+  background-color: #eeb896;
+  position: relative;
+  padding: 3rem 3rem 1rem 3rem;
+  box-sizing: border-box;
+}
+.line3 .main .b3 h2 {
+  text-align: center;
+  top: 20%;
+  font-size: 2rem;
+  font-family: 'han';
+  font-weight: 400;
+  line-height: 2em;
+}
+.line3 .main .b3 em {
+  position: absolute;
+  width: 100%;
+  top: 70%;
+  display: block;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0);
+}
+.line4 {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.line4 .box {
+  width: 35rem;
+  height: 60rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  box-shadow: rgba(128, 128, 128, 0.37) 0px 0px 0px;
+  transition: all 0.5s;
+}
+.line4 .box:hover {
+  transform: translateY(-1.5rem);
+  box-shadow: rgba(128, 128, 128, 0.37) 5px 5px 15px;
+}
+.line4 .box img {
+  width: 100%;
+}
+.line4 .box h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-size: 2.2rem;
+}
+.line4 .box p {
+  text-align: center;
+  line-height: 2em;
+  font-size: 1.4rem;
+}

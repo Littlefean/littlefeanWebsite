@@ -1,0 +1,130 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Java 图像操作</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>Java 图像操作</h1>
+<hr />
+<h2>生成图片</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">BufferedImage</span><span class="">&nbsp;</span><span class="n">image</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">BufferedImage</span><span class="p">(</span><span class="n">imageWidth</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">imageHeight</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">BufferedImage</span><span class="p">.</span><span class="na">TYPE_INT_RGB</span><span class="p">)</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<h2>获取图片信息</h2>
+<h3>宽度高度</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">img</span><span class="p">.</span><span class="na">getWidth</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">img</span><span class="p">.</span><span class="na">getHeight</span><span class="p">(</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h2>对图片进行操作</h2>
+<h3>像素操作</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">//&nbsp;设置图片坐标&nbsp;(x,&nbsp;y)&nbsp;处的&nbsp;RGB&nbsp;像素值
+</span><span class="n">img</span><span class="p">.</span><span class="na">setRGB</span><span class="p">(</span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">x</span><span class="p">,</span><span class="">&nbsp;</span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">y</span><span class="p">,</span><span class="">&nbsp;</span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">rgb</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">//&nbsp;获取图片坐标&nbsp;(x,&nbsp;y)&nbsp;处的&nbsp;RGB&nbsp;像素值
+</span><span class="n">img</span><span class="p">.</span><span class="na">getRGB</span><span class="p">(</span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">x</span><span class="p">,</span><span class="">&nbsp;</span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">y</span><span class="p">)</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<h3>保存图片</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">import</span><span class="">&nbsp;</span><span class="nn">java.io.File</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">import</span><span class="">&nbsp;</span><span class="nn">java.awt.image.BufferedImage</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">//生成图片
+</span><span class="n">BufferedImage</span><span class="">&nbsp;</span><span class="n">bufferedImage</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">BufferedImage</span><span class="p">(</span><span class="n">width</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">height</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">BufferedImage</span><span class="p">.</span><span class="na">TYPE_INT_RGB</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">//保存图片
+</span><span class="n">File</span><span class="">&nbsp;</span><span class="n">file</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">File</span><span class="p">(</span><span class="s">"</span><span class="s">createImage.jpg</span><span class="s">"</span><span class="p">)</span><span class="p">;</span><span class="">&nbsp;</span><span class="c1">//相对路径
+</span><span class="n">ImageIO</span><span class="p">.</span><span class="na">write</span><span class="p">(</span><span class="n">bufferedImage</span><span class="p">,</span><span class="">&nbsp;</span><span class="s">"</span><span class="s">jpg</span><span class="s">"</span><span class="p">,</span><span class="">&nbsp;</span><span class="n">file</span><span class="p">)</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<h3>裁剪图片</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="cm">/**
+&nbsp;*&nbsp;裁剪图片,&nbsp;参数说明:
+&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;x:&nbsp;裁剪起点横坐标
+&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;y:&nbsp;裁剪起点纵坐标
+&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;w:&nbsp;需要裁剪的宽度
+&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h:&nbsp;需要裁剪的高度
+&nbsp;*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">img</span><span class="p">.</span><span class="na">getSubimage</span><span class="p">(</span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">x</span><span class="p">,</span><span class="">&nbsp;</span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">y</span><span class="p">,</span><span class="">&nbsp;</span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">w</span><span class="p">,</span><span class="">&nbsp;</span><span class="kt">int</span><span class="">&nbsp;</span><span class="n">h</span><span class="p">)</span><span class="p">;</span></div></div></li>
+</ol></div>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

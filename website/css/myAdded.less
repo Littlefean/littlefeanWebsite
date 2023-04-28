@@ -1,0 +1,204 @@
+/**
+ 基于 mys.less
+ 我增加的 关于 md 的 css
+ 此次样式用于 笔记内容页面
+ */
+@import "../cssMy/myInit";
+@import "../cssMy/centerStar";
+@import "../cssMy/myKeyframes";
+@import "../cssMy/canvasStartSky";
+@import "mediaScreenMy";
+
+html {
+  background-color: black;
+
+  body {
+    background-color: transparent;
+  }
+
+  main {
+    padding: 4em;
+    background-color: rgba(255, 255, 255, 0.1);
+
+    & > pre {
+      & > code {
+        line-height: 1.5em;
+        font-family: "Consolas", sans-serif;
+        font-size: 1rem;
+        background-color: transparent;
+      }
+    }
+
+    iframe {
+      width: 100%;
+      height: 100vh;
+    }
+  }
+}
+
+#changeStyle {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  padding: 5px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.1s;
+  color: whitesmoke;
+  background-color: transparent;
+  border: 1px whitesmoke solid;
+  border-radius: 5px;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(.9);
+  }
+}
+
+::selection {
+  /* 选中是绿色的个性 */
+  color: lawngreen;
+  background-color: black;
+  //box-shadow: white 0 0 2px;
+}
+
+
+.code-container {
+  padding-left: 3em;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  background-color: rgb(51, 51, 51);
+  font-family: "Consolas", sans-serif;
+  font-weight: lighter;
+
+  li {
+    list-style-type: none;
+    text-decoration: none;
+  }
+}
+
+.code-line {
+  @light-yellow: rgb(215, 186, 125);
+  @yellow: rgb(187, 181, 41);
+  @green-yellow: rgb(144, 139, 37);
+  @green: rgb(106, 135, 89);
+  @light-green: rgb(98, 151, 85);
+  @orange: rgb(204, 120, 50);
+  @orange1: rgb(206, 145, 120);
+  @light-orange: rgb(255, 197, 98);
+  @red: rgb(170, 73, 38);
+  @purple: rgb(152, 118, 170);
+  @light-purple: rgb(178, 0, 178);
+  @blue: rgb(104, 151, 187);
+  @blue-pure: rgb(76, 155, 213);
+  @light-blue: rgb(156, 220, 254);
+
+
+  @gray: rgb(128, 128, 128);
+
+  span {
+    white-space: pre;
+  }
+
+  // CSS html js
+  .kd {
+    color: @orange;
+  }
+
+  .nx {
+    color: @purple;
+  }
+
+  .nt {
+    color: @blue-pure;
+  }
+
+  .nn {
+    color: @orange1;
+  }
+
+  .na {
+    color: @light-blue;
+  }
+
+  .nd {
+    color: @light-yellow;
+  }
+
+  .kc {
+    color: @orange1;
+  }
+
+  .c {
+    color: @light-green;
+  }
+
+  // C 语言
+  .cp {
+    color: @yellow;
+  }
+
+  .c1 {
+    color: @gray;
+  }
+
+  .nb {
+    color: @green-yellow;
+  }
+
+  .cm {
+    color: @light-green;
+  }
+
+  .cpf, .sc, .s, .s2, .s1, .sr, .sd {
+    color: @green;
+  }
+
+  .se {
+    color: @red;
+  }
+
+  .kt, .k {
+    color: @orange;
+  }
+
+  .nf {
+    color: @light-orange;
+  }
+
+  .mi, .mf {
+    color: @blue;
+  }
+
+  // python
+  .bp {
+    color: @purple;
+  }
+
+  .sa, .si {
+    color: @light-green;
+  }
+
+  .fm {
+    color: @light-purple;
+  }
+
+  .k {
+    color: @orange;
+  }
+
+  .nc {
+    color: @light-orange;
+  }
+
+  .kn {
+    color: @orange;
+  }
+}
+
+pre {
+  .code-container();
+}

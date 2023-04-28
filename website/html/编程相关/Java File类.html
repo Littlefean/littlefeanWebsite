@@ -1,0 +1,180 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Java File类</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h2>File类</h2>
+<h3>概述：</h3>
+<p>主要用来操控电脑中的文件夹，在java.io包下</p>
+<h3>功能：</h3>
+<p>创建、删除、获取、判断是否存在、（文件或者文件夹），遍历文件夹，获取文件的大小。</p>
+<h3>重点：</h3>
+<p>file，directory，path</p>
+<h3>路径：</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">static</span><span class="">&nbsp;</span><span class="n">String</span><span class="">&nbsp;</span><span class="n">pathSeparator</span><span class="">&nbsp;</span><span class="n">与系统有关的路径分隔符</span><span class="err">，</span><span class="n">为了方便</span><span class="err">，</span><span class="n">它表示为一个字符串</span><span class="err">【</span><span class="p">;</span><span class="err">】</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">static</span><span class="">&nbsp;</span><span class="kt">char</span><span class="">&nbsp;</span><span class="n">pathSeparatorChar</span><span class="">&nbsp;</span><span class="n">与系统有关的路径分隔符</span><span class="err">。</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">static</span><span class="">&nbsp;</span><span class="n">String</span><span class="">&nbsp;</span><span class="n">separator</span><span class="">&nbsp;</span><span class="n">与系统有关的路径分隔符</span><span class="err">，</span><span class="n">为了方便</span><span class="err">，</span><span class="n">它表示为一个字符串</span><span class="err">【</span><span class="err">\</span><span class="err">】</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">static</span><span class="">&nbsp;</span><span class="n">String</span><span class="">&nbsp;</span><span class="n">separatorChar</span><span class="">&nbsp;</span><span class="n">与系统有关的路径分隔符</span><span class="err">。</span></div></div></li>
+</ol></div>
+
+<h3>注意：</h3>
+<p>路径不要写死了。斜杠用File.sparator表示。</p>
+<h3>绝对路径和相对路径：</h3>
+<h5>绝对路径：一个完整的根目录</h5>
+<p>盘符开始</p>
+<h5>相对路径：简化的路径</h5>
+<p>相对于当前项目的根目录</p>
+<h3>构造方法：</h3>
+<p>单个参数构造</p>
+<p><code>File 对象名 = new File("C:\\\users...");</code></p>
+<p>父路径和子路径构造</p>
+<p><code>File(String parent, String child)  根据 parent 路径名字字符串和 child 路径字符串创建一个新file实例</code></p>
+<h3>获取功能方法：</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="n">String</span><span class="">&nbsp;</span><span class="nf">getAbsolutePath</span><span class="p">(</span><span class="p">)</span><span class="p">;</span><span class="">   </span><span class="n">返回此File的绝对路径名字符串</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="n">String</span><span class="">&nbsp;</span><span class="nf">getPath</span><span class="p">(</span><span class="p">)</span><span class="p">;</span><span class="">           </span><span class="n">将此file转换成路径名称字符串</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="n">String</span><span class="">&nbsp;</span><span class="nf">getName</span><span class="p">(</span><span class="p">)</span><span class="p">;</span><span class="">           </span><span class="n">返回此file表示的文件或目录名称</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kt">long</span><span class="">&nbsp;</span><span class="nf">length</span><span class="p">(</span><span class="p">)</span><span class="p">;</span><span class="">             </span><span class="n">返回此file表示此文件的长度</span></div></div></li>
+</ol></div>
+
+<p>注意：文件夹是没有大小概念的</p>
+<h3>判断功能方法：</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kt">boolean</span><span class="">&nbsp;</span><span class="nf">exists</span><span class="p">(</span><span class="p">)</span><span class="p">;</span><span class="">        </span><span class="n">此File的文件或目录是否真实存在</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kt">boolean</span><span class="">&nbsp;</span><span class="nf">isDirectory</span><span class="p">(</span><span class="p">)</span><span class="p">;</span><span class=""> </span><span class="n">判断此File是否为文件夹结尾</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kt">boolean</span><span class="">&nbsp;</span><span class="nf">isFile</span><span class="p">(</span><span class="p">)</span><span class="p">;</span><span class="">      </span><span class="n">此File表示的是否为文件</span></div></div></li>
+</ol></div>
+
+<h3>创建删除功能方法：</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kt">boolean</span><span class="">&nbsp;</span><span class="nf">createNewFile</span><span class="p">(</span><span class="p">)</span><span class="p">;</span><span class=""> </span><span class="n">当且仅当具有该名称的文件尚不存在时</span><span class="err">，</span><span class="n">创建一个新的空文件</span></div></div></li>
+</ol></div>
+
+<p>文件不存在，返回真并创建文件。</p>
+<p>文件存在，返回假并不创建文件。</p>
+<p>此方法抛出IO异常，我们调用了这个方法，就必须处理这个异常，要么throws，要么try catch</p>
+<p>注意：此方法只能创建文件，不能创建文件夹。拆功能键文件的路径必须存在，否则会抛出异常 </p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kt">boolean</span><span class="">&nbsp;</span><span class="nf">delete</span><span class="p">(</span><span class="p">)</span><span class="p">;</span><span class="">    </span><span class="n">删除此File表示的文件或目录</span></div></div></li>
+</ol></div>
+
+<p>举例：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">File</span><span class="">&nbsp;</span><span class="n">f2</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">File</span><span class="p">(</span><span class="s">"</span><span class="s">name</span><span class="s">\\</span><span class="s">\</span><span class="s">111</span><span class="s">\\</span><span class="s">\</span><span class="s">222</span><span class="s">\\</span><span class="s">\</span><span class="s">333</span><span class="s">\\</span><span class="s">\</span><span class="s">文件</span><span class="s">"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kt">boolean</span><span class="">&nbsp;</span><span class="n">b2</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">f2</span><span class="p">.</span><span class="na">delete</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">sout</span><span class="p">(</span><span class="n">b2</span><span class="p">)</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<p>注意：此方法直接删除，没有回收站</p>
+<p>删除文件不成功的原因：</p>
+<ol>
+<li>看看是否被别的进程引用，手工删除试试(删除不了就是被别的进程占用)</li>
+<li>file是文件夹 并且不为空，有别的文件夹或文件， </li>
+<li>极有可能自己前面没有关闭此文件的流(我遇到的情况)</li>
+</ol>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kt">boolean</span><span class="">&nbsp;</span><span class="nf">mkdir</span><span class="p">(</span><span class="p">)</span><span class="p">;</span><span class="">   </span><span class="n">创建由此File表示的目录</span><span class="err">（</span><span class="n">创建单级文件夹</span><span class="err">）</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="kt">boolean</span><span class="">&nbsp;</span><span class="nf">mkdirs</span><span class="p">(</span><span class="p">)</span><span class="p">;</span><span class="">  </span><span class="n">创建由此File表示的目录</span><span class="err">，</span><span class="n">包括任何必须但是不存在的目录</span><span class="err">（</span><span class="n">创建多级文件夹</span><span class="err">）</span></div></div></li>
+</ol></div>
+
+<p>文件夹不存在，返回真并创建文件夹。</p>
+<p>文件夹存在，返回假并不创建文件夹。</p>
+<p>举例：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">File</span><span class="">&nbsp;</span><span class="n">f2</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">File</span><span class="p">(</span><span class="s">"</span><span class="s">name</span><span class="s">\\</span><span class="s">\</span><span class="s">111</span><span class="s">\\</span><span class="s">\</span><span class="s">222</span><span class="s">\\</span><span class="s">\</span><span class="s">333</span><span class="s">"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kt">boolean</span><span class="">&nbsp;</span><span class="n">b2</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">f2</span><span class="p">.</span><span class="na">mkdirs</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">sout</span><span class="p">(</span><span class="n">b2</span><span class="p">)</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<h3>目录的遍历：</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="n">String</span><span class="o">[</span><span class="o">]</span><span class="">&nbsp;</span><span class="nf">list</span><span class="p">(</span><span class="p">)</span><span class="p">;</span><span class="">  </span><span class="n">返回一个String数组</span><span class="err">，</span><span class="n">表示该File目录中的所有子文件或目录</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">public</span><span class="">&nbsp;</span><span class="n">File</span><span class="o">[</span><span class="o">]</span><span class="">&nbsp;</span><span class="nf">listFiles</span><span class="p">(</span><span class="p">)</span><span class="p">;</span><span class="">   </span><span class="n">返回一个File数组</span><span class="err">，</span><span class="n">表示该File目录中的所有子文件或目录</span><span class="err">（</span><span class="n">打印出来会是绝对路径</span><span class="err">）</span></div></div></li>
+</ol></div>
+
+<p>举例：</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="n">File</span><span class="">&nbsp;</span><span class="n">file</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="k">new</span><span class="">&nbsp;</span><span class="n">File</span><span class="p">(</span><span class="p">.</span><span class="p">.</span><span class="p">.</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="n">String</span><span class="">&nbsp;</span><span class="n">arr</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">file</span><span class="p">.</span><span class="na">list</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">for</span><span class="p">(</span><span class="n">String</span><span class="">&nbsp;</span><span class="n">fileName</span><span class="">&nbsp;</span><span class="p">:</span><span class="">&nbsp;</span><span class="n">arr</span><span class="">&nbsp;</span><span class="p">)</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""> </span><span class="n">sout</span><span class="p">(</span><span class="n">fileName</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span></div></div></li>
+</ol></div>
+
+<p>注意：隐藏的文件也能获取到</p>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

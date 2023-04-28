@@ -1,0 +1,24 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  color: whitesmoke;
+  background-color: black;
+}
+body h1 {
+  text-align: center;
+}
+body .dfs {
+  background-color: black;
+  color: deepskyblue;
+  text-shadow: blue;
+}
+body .mainCanvas {
+  color: white;
+  outline: solid 1px;
+  margin: 0 auto;
+  display: block;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,64 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: darkslategray;
+  color: whitesmoke;
+}
+body h1 {
+  text-align: center;
+  line-height: 2em;
+}
+body main {
+  height: 1000px;
+}
+body main .board {
+  margin: 50px auto;
+  width: 80%;
+  overflow: hidden;
+  padding: 50px;
+  background-color: sandybrown;
+}
+body main .board .data {
+  float: right;
+  width: 200px;
+  height: 200px;
+  outline: solid 1px;
+}
+body main .board .line {
+  width: 100%;
+  height: 25px;
+  float: left;
+}
+body main .board .line .cell {
+  float: left;
+  height: 100%;
+  width: 25px;
+  outline: solid 1px dimgray;
+}
+body main .board .line .type0:hover {
+  cursor: pointer;
+  color: red;
+  outline-width: 3px;
+}
+body main .board .line .type1 {
+  background-color: black;
+  border-radius: 50%;
+}
+body main .board .line .type-1 {
+  background-color: white;
+  border-radius: 50%;
+}
+body main .settings {
+  width: 80%;
+  margin: 0 auto;
+  background-color: lightgray;
+  padding: 30px;
+  color: black;
+}
+body main .settings p {
+  line-height: 2em;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,178 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Python pyMySQL</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>python连接数据库</h1>
+<hr />
+<p>教程示例</p>
+<p>https://www.cnblogs.com/xfxing/p/9322199.html</p>
+<p>代码测试</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div><div class="line-numbers"><div class="line-num" data-line-num="19"></div></div><div class="line-numbers"><div class="line-num" data-line-num="20"></div></div><div class="line-numbers"><div class="line-num" data-line-num="21"></div></div><div class="line-numbers"><div class="line-num" data-line-num="22"></div></div><div class="line-numbers"><div class="line-num" data-line-num="23"></div></div><div class="line-numbers"><div class="line-num" data-line-num="24"></div></div><div class="line-numbers"><div class="line-num" data-line-num="25"></div></div><div class="line-numbers"><div class="line-num" data-line-num="26"></div></div><div class="line-numbers"><div class="line-num" data-line-num="27"></div></div><div class="line-numbers"><div class="line-num" data-line-num="28"></div></div><div class="line-numbers"><div class="line-num" data-line-num="29"></div></div><div class="line-numbers"><div class="line-num" data-line-num="30"></div></div><div class="line-numbers"><div class="line-num" data-line-num="31"></div></div><div class="line-numbers"><div class="line-num" data-line-num="32"></div></div><div class="line-numbers"><div class="line-num" data-line-num="33"></div></div><div class="line-numbers"><div class="line-num" data-line-num="34"></div></div><div class="line-numbers"><div class="line-num" data-line-num="35"></div></div><div class="line-numbers"><div class="line-num" data-line-num="36"></div></div><div class="line-numbers"><div class="line-num" data-line-num="37"></div></div><div class="line-numbers"><div class="line-num" data-line-num="38"></div></div><div class="line-numbers"><div class="line-num" data-line-num="39"></div></div><div class="line-numbers"><div class="line-num" data-line-num="40"></div></div><div class="line-numbers"><div class="line-num" data-line-num="41"></div></div><div class="line-numbers"><div class="line-num" data-line-num="42"></div></div><div class="line-numbers"><div class="line-num" data-line-num="43"></div></div><div class="line-numbers"><div class="line-num" data-line-num="44"></div></div><div class="line-numbers"><div class="line-num" data-line-num="45"></div></div><div class="line-numbers"><div class="line-num" data-line-num="46"></div></div><div class="line-numbers"><div class="line-num" data-line-num="47"></div></div><div class="line-numbers"><div class="line-num" data-line-num="48"></div></div><div class="line-numbers"><div class="line-num" data-line-num="49"></div></div><div class="line-numbers"><div class="line-num" data-line-num="50"></div></div><div class="line-numbers"><div class="line-num" data-line-num="51"></div></div><div class="line-numbers"><div class="line-num" data-line-num="52"></div></div><div class="line-numbers"><div class="line-num" data-line-num="53"></div></div><div class="line-numbers"><div class="line-num" data-line-num="54"></div></div><div class="line-numbers"><div class="line-num" data-line-num="55"></div></div><div class="line-numbers"><div class="line-num" data-line-num="56"></div></div><div class="line-numbers"><div class="line-num" data-line-num="57"></div></div><div class="line-numbers"><div class="line-num" data-line-num="58"></div></div><div class="line-numbers"><div class="line-num" data-line-num="59"></div></div><div class="line-numbers"><div class="line-num" data-line-num="60"></div></div><div class="line-numbers"><div class="line-num" data-line-num="61"></div></div><div class="line-numbers"><div class="line-num" data-line-num="62"></div></div><div class="line-numbers"><div class="line-num" data-line-num="63"></div></div><div class="line-numbers"><div class="line-num" data-line-num="64"></div></div><div class="line-numbers"><div class="line-num" data-line-num="65"></div></div><div class="line-numbers"><div class="line-num" data-line-num="66"></div></div><div class="line-numbers"><div class="line-num" data-line-num="67"></div></div><div class="line-numbers"><div class="line-num" data-line-num="68"></div></div><div class="line-numbers"><div class="line-num" data-line-num="69"></div></div><div class="line-numbers"><div class="line-num" data-line-num="70"></div></div><div class="line-numbers"><div class="line-num" data-line-num="71"></div></div><div class="line-numbers"><div class="line-num" data-line-num="72"></div></div><div class="line-numbers"><div class="line-num" data-line-num="73"></div></div><div class="line-numbers"><div class="line-num" data-line-num="74"></div></div><div class="line-numbers"><div class="line-num" data-line-num="75"></div></div><div class="line-numbers"><div class="line-num" data-line-num="76"></div></div><div class="line-numbers"><div class="line-num" data-line-num="77"></div></div><div class="line-numbers"><div class="line-num" data-line-num="78"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">#&nbsp;-*-&nbsp;encoding:&nbsp;utf-8&nbsp;-*-</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="sd">"""
+PyCharm&nbsp;test
+2022年01月21日
+by&nbsp;littlefean
+"""</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">import</span><span class="">&nbsp;</span><span class="nn">random</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kn">import</span><span class="">&nbsp;</span><span class="nn">pymysql</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">randomName</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="kn">from</span><span class="">&nbsp;</span><span class="nn">random</span><span class="">&nbsp;</span><span class="kn">import</span><span class="">&nbsp;</span><span class="n">choice</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">alphabet</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">abcdefghigklmnopqrstuvwxyz</span><span class="s2">"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">res</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">for</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">res</span><span class="">&nbsp;</span><span class="o">+</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">choice</span><span class="p">(</span><span class="n">alphabet</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="n">res</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">class</span><span class="">&nbsp;</span><span class="nc">Student</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">def</span><span class="">&nbsp;</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">19</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="bp">self</span><span class="o">.</span><span class="n">gender</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">男</span><span class="s2">"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="bp">self</span><span class="o">.</span><span class="n">score</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">100</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="bp">self</span><span class="o">.</span><span class="n">classNumber</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="mi">0</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nd">@classmethod</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">def</span><span class="">&nbsp;</span><span class="nf">getRandom</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">res</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="bp">cls</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">res</span><span class="o">.</span><span class="n">name</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">randomName</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">res</span><span class="o">.</span><span class="n">age</span><span class="">&nbsp;</span><span class="o">+</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">5</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">res</span><span class="o">.</span><span class="n">score</span><span class="">&nbsp;</span><span class="o">+</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="o">-</span><span class="mi">50</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">50</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">res</span><span class="o">.</span><span class="n">gender</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">女</span><span class="s2">"</span><span class="">&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="n">random</span><span class="o">.</span><span class="n">random</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="o">&lt;</span><span class="">&nbsp;</span><span class="mi">5</span><span class="">&nbsp;</span><span class="k">else</span><span class="">&nbsp;</span><span class="o">.</span><span class="o">.</span><span class="o">.</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">res</span><span class="o">.</span><span class="n">classNumber</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="">&nbsp;</span><span class="mi">10</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="n">res</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">def</span><span class="">&nbsp;</span><span class="nf">toSQLStr</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="sa">f</span><span class="s2">"</span><span class="s2">insert&nbsp;into&nbsp;students&nbsp;values(</span><span class="s2">"</span><span class="">&nbsp;</span><span class="">\</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="sa">f</span><span class="s2">"</span><span class="s2">'</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">'</span><span class="s2">,&nbsp;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">age</span><span class="si">}</span><span class="s2">,&nbsp;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">score</span><span class="si">}</span><span class="s2">,</span><span class="s2">'</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">gender</span><span class="si">}</span><span class="s2">'</span><span class="s2">,&nbsp;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">classNumber</span><span class="si">}</span><span class="s2">);</span><span class="s2">"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">def</span><span class="">&nbsp;</span><span class="nf">main</span><span class="p">(</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;打开数据库连接</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">conn</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">pymysql</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">user</span><span class="o">=</span><span class="s2">"</span><span class="s2">root</span><span class="s2">"</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">passwd</span><span class="o">=</span><span class="s2">"</span><span class="s2">123456</span><span class="s2">"</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">database</span><span class="o">=</span><span class="s2">"</span><span class="s2">pythontest1</span><span class="s2">"</span><span class="p">,</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">charset</span><span class="o">=</span><span class="s2">"</span><span class="s2">utf8</span><span class="s2">"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;获取游标&nbsp;通过游标对象就可对数据库进行增、删、查、改。</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">cursor</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;res&nbsp;=&nbsp;cursor.execute("show&nbsp;databases;")</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;print(res)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;cursor.execute("create&nbsp;database&nbsp;pythonTest1;")</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;cursor.execute("use&nbsp;pythonTest1;")</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">try</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s2">"</span><span class="s2">create&nbsp;table&nbsp;students(name&nbsp;varchar(15),&nbsp;age&nbsp;int,&nbsp;score&nbsp;int,&nbsp;gender&nbsp;varchar(2),&nbsp;classNumber&nbsp;int);</span><span class="s2">"</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">except</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">pass</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;for&nbsp;i&nbsp;in&nbsp;range(100):</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cursor.execute(f"insert&nbsp;into&nbsp;persons&nbsp;values({i},&nbsp;'{randomName()}');")</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">res</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="sa">f</span><span class="s2">"</span><span class="s2">select&nbsp;*&nbsp;from&nbsp;persons;</span><span class="s2">"</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="n">res</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">for</span><span class="">&nbsp;</span><span class="n">i</span><span class="">&nbsp;</span><span class="ow">in</span><span class="">&nbsp;</span><span class="nb">range</span><span class="p">(</span><span class="mi">100</span><span class="p">)</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">try</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">s</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="n">Student</span><span class="o">.</span><span class="n">getRandom</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">toSQLStr</span><span class="p">(</span><span class="p">)</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">toSQLStr</span><span class="p">(</span><span class="p">)</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">except</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">conn</span><span class="o">.</span><span class="n">rollback</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">#&nbsp;close</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">cursor</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">(</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">return</span><span class="">&nbsp;</span><span class="kc">None</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="k">if</span><span class="">&nbsp;</span><span class="vm">__name__</span><span class="">&nbsp;</span><span class="o">==</span><span class="">&nbsp;</span><span class="s2">"</span><span class="s2">__main__</span><span class="s2">"</span><span class="p">:</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="n">main</span><span class="p">(</span><span class="p">)</span></div></div></li>
+</ol></div>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

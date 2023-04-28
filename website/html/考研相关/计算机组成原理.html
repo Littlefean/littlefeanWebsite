@@ -1,0 +1,191 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>计算机组成原理</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>计算机组成原理</h1>
+<hr />
+<h2>硬件基本组成</h2>
+<p><img alt="Snipaste_2022-03-24_15-19-37" src="计算机组成原理\0.png" /></p>
+<p>软件和硬件在逻辑上是等效的，因为乘法可以用多次加法表示，不一定非要用一个特定的乘法物理结构组成</p>
+<p>冯诺依曼结构是以运算器为中心的、但是现代计算机用存储器为核心</p>
+<p>输出设备可以直接从内存中取出数据，也就是从存储器里取出数据，不需要cpu来传递了。</p>
+<p>现代的cpu，既包含了运算器，也包含了控制器</p>
+<p><img alt="Snipaste_2022-03-24_15-26-44" src="计算机组成原理\1.png" /></p>
+<p>cpu里的控制器执行指令。控制器也可以控制IO设备，主存储器就是内存。辅助存储器就是硬盘</p>
+<h2>认识各个硬件</h2>
+<h3>主存储器</h3>
+<p>内存里还有两个小寄存器，一个放地址MAR，一个放一些实际数据MDR。</p>
+<p>但是通常现代的，MAR，MDR都集成到CPU里面了</p>
+<p>cpu读内存：把要读的内存写到MAR里，然后就能从MDR里取到对应数据。</p>
+<p>cpu写内存：把要写的地址写到MAR里，要写的数据写到MDR里。然后通过控制总线告诉内存，这次操作是写操作</p>
+<p>1B = 8b</p>
+<h3>运算器</h3>
+<p><img alt="Snipaste_2022-03-24_15-44-44" src="计算机组成原理\2.png" /></p>
+<p>ACC：累加器</p>
+<p>MQ：* / 运算器</p>
+<p>X：通用计算器，可能有多个，理论上用一个就可以了</p>
+<p>ALU：算数逻辑单元：里面集成了很多复杂的运算</p>
+<h3>控制器</h3>
+<p><img alt="Snipaste_2022-03-24_15-46-10" src="计算机组成原理\3.png" /></p>
+<p>CU：控制单元,，最核心。分析指令，给出控制信号【control Unit】</p>
+<p>IR：指令寄存器，存放的是当前的指令【Instruction Register】</p>
+<p>IRl会把指令的操作码部分放到CU里</p>
+<p>PC：程序计数器，存放下一个指令的地址，有自动++的功能【Program Counter】</p>
+<p>指令：操作码+地址码，有的计算机可能支持多个地址吗</p>
+<h2>计算机性能指标</h2>
+<p>一些基本概念</p>
+<p>K：2的十次方，1024。1M = 1024K</p>
+<h3>cpu主频</h3>
+<p>数字脉冲信号震荡频率，2.9GHZ</p>
+<p><img alt="Snipaste_2022-03-25_13-47-04" src="计算机组成原理\4.png" /></p>
+<p>吞吐量，每秒可以处理多少个http请求，并不局限某个特定场景</p>
+<h2>进位计数制</h2>
+<p>二进制，八进制、十进制、十六进制互相转化</p>
+<p>十进制转任意进制怎么转？</p>
+<p>真值：符合人类习惯的数字</p>
+<p>机器数：数字实际存在计算机里的形式，正负号要被数字化</p>
+<h2>BCD码</h2>
+<p>BCD的意思是用二进制编码的十进制</p>
+<h3>8421码</h3>
+<p>每四位对应一个十进制数</p>
+<h3>余3码</h3>
+<p>在8421基础上加了3</p>
+<h3>2421码</h3>
+<p>权值是2421</p>
+<h2>字符串</h2>
+<p>ASCII码，理论上只用7位就可以，但是通常用8位。</p>
+<p>ACK：两个计算机通信的时候，发的报文。</p>
+<p>汉字：GB2312汉字总共7445个，是94*94的矩阵刚好可以装下</p>
+<p>大端模式、小端模式</p>
+<h2>奇偶校验码</h2>
+<p>只具有检错能力。</p>
+<p>奇校验码：让整个数字串有奇数个数字。</p>
+<p>异或运算也叫模二加</p>
+<h2>海明校验码</h2>
+<p>能够纠错</p>
+<h2>循环冗余校验码</h2>
+<p>..</p>
+<h2>定点数</h2>
+<p>和浮点数相对，小数点固定。</p>
+<p>无符号数、有符号数</p>
+<p>无符号数的表示范围。2的n次方-1。n是位数</p>
+<p>没有无符号小数。</p>
+<h3>有符号数定点表示</h3>
+<p>小数点是在哪一位，是暗含规定好的</p>
+<h4>原码</h4>
+<p>就是机器上是什么数字，就是什么数字，第一位是1表示的时负数</p>
+<h4>反码</h4>
+<p>如果符号位0，和原码一样</p>
+<p>如果符号位1，除了符号部分其他都按位取反</p>
+<p>反码没什么直接的用处，是原码转化成补码的一种中间状态</p>
+<h4>补码</h4>
+<p>就是反码+1</p>
+<p>如果是正数就还是和反码一样。</p>
+<h4>移码</h4>
+<p>只能用于表示正数</p>
+<p>把补码的符号位取反就得到了。</p>
+<h4>三种码的作用</h4>
+<p>补码的真实定义是：模-a的绝对值 </p>
+<p>补码：可以把减法操作转化成对应的加法操作</p>
+<p>《数论》是计算机世界中强大的数学工具</p>
+<h3>移位运算</h3>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&gt;&gt;&nbsp;相当于除以2</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">如果最低位是1，会直接丢弃，损失精度</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&lt;&lt;&nbsp;相当于乘以2</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">如果最高位也是1，会丢弃最高位</span></div></div></li>
+</ol></div>
+
+<p>也不能等效乘除法</p>
+<h4>计算机硬件实现算数乘法</h4>
+<p>n * 7 = n * （2零次方 + 2的1次方 + 2的2次方）</p>
+<h4>循环移位</h4>
+<p><img alt="TIM截图20220331171841" src="计算机组成原理\5.png" /></p>
+<h2>加减运算、溢出判断</h2>
+<p>原码加法运算：需要特殊处理最终的符号位</p>
+<p>补码加减运算：</p>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

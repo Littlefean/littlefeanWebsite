@@ -1,0 +1,140 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes shake {
+  0% {
+    outline: solid lightyellow 0;
+    box-shadow: black 0 0 0;
+    transform: translateX(5px);
+  }
+  25% {
+    outline: solid orangered 15px;
+    box-shadow: black 0 0 15px;
+  }
+  50% {
+    outline: solid lightyellow 0;
+    box-shadow: black 0 0 0;
+    transform: translateX(-5px) translateY(10px);
+  }
+  75% {
+    outline: solid orangered 15px;
+    box-shadow: black 0 0 15px;
+    transform: translateX(2.5px) translateY(-5px);
+  }
+  100% {
+    outline: solid lightyellow 0;
+    box-shadow: black 0 0 0;
+    transform: translateX(5px);
+  }
+}
+body h1,
+body .title {
+  text-align: center;
+  line-height: 2em;
+}
+body main {
+  padding-top: 50px;
+  width: 90%;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+body main .musicImg {
+  text-align: center;
+}
+body main .musicImg .rotateBox {
+  width: 320px;
+  height: 320px;
+  border-radius: 50%;
+  margin: 0 auto;
+  animation-name: rotate;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-play-state: paused;
+  position: relative;
+}
+body main .musicImg .rotateBox img {
+  width: 300px;
+  height: 300px;
+  margin-left: -7px;
+  margin-top: 9px;
+  border-radius: 1000px;
+  border: solid 50px black;
+  animation-name: shake;
+  animation-timing-function: linear;
+  animation-duration: 0.2s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+body main .btnArea {
+  text-align: center;
+}
+body main .btnArea .ctlBtn {
+  font-size: 20px;
+  color: black;
+  background-color: whitesmoke;
+  box-shadow: gray 3px 3px 5px;
+  font-weight: bolder;
+  padding: 5px 20px 5px 20px;
+  border-radius: 100px;
+  margin: 10px;
+  line-height: 2em;
+  transition: all 0.2s;
+  border: none;
+  outline: none;
+}
+body main .btnArea .ctlBtn:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+body main .btnArea input {
+  margin-top: 15px;
+}
+body main .way {
+  width: 600px;
+  margin: 50px auto;
+  height: 30px;
+  border: solid 1px;
+  border-left: none;
+  position: relative;
+  transition: all 0.5s;
+}
+body main .way:hover {
+  cursor: pointer;
+  background-color: blanchedalmond;
+}
+body main .way .ball {
+  width: 30px;
+  height: 30px;
+  outline: solid 1px;
+  background-color: orangered;
+  left: 0;
+  float: right;
+  z-index: 100;
+  margin-right: -30px;
+  transition: all 0.5s;
+}
+body main .way .ball:hover {
+  transform: scale(1.5) rotate(15deg);
+  background-color: orange;
+  border-radius: 50%;
+  outline: solid 5px;
+}
+body main .way .water {
+  background-color: green;
+  height: 30px;
+  width: 0;
+  margin-left: -15px;
+  transition: all 0.2s;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+<h1>动态带权无向图的算法可视化</h1>
+<label>
+    躁动系数
+    <input type="range" value="1" min="0" max="10" id="hotRate">
+    联通程度
+    <input type="range" value="1" min="0" max="2" id="connRate">
+    搜索单步卡顿时间
+    <input type="range" value="1" min="1" max="10" id="dfsSpeedRate">
+    搜索视觉持续时间
+    <input type="range" value="1" min="1" max="100" id="dfsDurRate">
+    <button class="nodeSwitch">节点显示开关</button>
+    <button class="lineSwitch">边显示开关</button>
+    <button class="treeSwitch">最短路径显示开关</button>
+    <button class="dfs">深度优先搜索0节点</button>
+    <button class="bfs">广度搜索0节点</button>
+    点击屏幕上的节点可以更改最短路径起始点
+</label>
+<canvas class="mainCanvas"></canvas>
+</body>
+<script src="js/globalData.js"></script>
+<script src="js/ball.js"></script>
+<script src="js/vector.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/net.js"></script>
+<script src="js/index.js"></script>
+</html>

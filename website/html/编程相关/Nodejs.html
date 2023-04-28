@@ -1,0 +1,249 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Nodejs</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>学习笔记Node js</h1>
+<hr />
+<h2>介绍</h2>
+<h3>主要应用领域</h3>
+<ul>
+<li>高并发</li>
+<li>IO阻塞</li>
+</ul>
+<h3>社区</h3>
+<ul>
+<li>Github</li>
+</ul>
+<h3>生态圈</h3>
+<ul>
+<li>以NPM为中心</li>
+<li>周边服务商</li>
+</ul>
+<h3>开源项目</h3>
+<ul>
+<li>express</li>
+<li>PM2</li>
+</ul>
+<h3>特点</h3>
+<ol>
+<li>部署简单方便</li>
+<li>注重约定</li>
+<li>扩展不冲突</li>
+<li>事件驱动</li>
+<li>异步编程</li>
+<li>回调函数</li>
+<li>事件监听</li>
+<li>发布/订阅模式</li>
+<li>高效与性能</li>
+<li>IO操作高效</li>
+<li>单线程与多线程</li>
+<li>子进程：Node.js 的child_process模块</li>
+</ol>
+<h3>缺点</h3>
+<ol>
+<li>大量的匿名函数，是抛出的异常不易阅读</li>
+<li>异常捕获只限于同步代码，异常捕获很麻烦</li>
+<li>单线程可靠性</li>
+<li>不适合CPU密集操作</li>
+<li>回调代码习惯影响阅读</li>
+</ol>
+<h2>文件读取</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">let</span><span class="">&nbsp;</span><span class="nx">fs</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">require</span><span class="p">(</span><span class="s2">"fs"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="c1">//&nbsp;第一个参数是&nbsp;读取文件的路径
+</span><span class="c1">//&nbsp;第二个是回调函数
+</span><span class="nx">fs</span><span class="p">.</span><span class="nx">readFile</span><span class="p">(</span><span class="s2">"./data/hello.txt"</span><span class="p">,</span><span class="">&nbsp;</span><span class="kd">function</span><span class="">&nbsp;</span><span class="p">(</span><span class="nx">error</span><span class="p">,</span><span class="">&nbsp;</span><span class="nx">data</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="c1">//&nbsp;回调函数中
+</span><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="cm">/**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;data：数据
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;error：错误对象
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">data</span><span class="p">.</span><span class="nx">toString</span><span class="p">(</span><span class="p">)</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span><span class="p">)</span></div></div></li>
+</ol></div>
+
+<h2>文件生成书写</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="cm">/**
+&nbsp;*&nbsp;第一个参数：写的文件路径
+&nbsp;*&nbsp;这个写是覆盖写
+&nbsp;*&nbsp;第二个参数：文件内容
+&nbsp;*&nbsp;第二个参数：回调函数
+&nbsp;*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">fs</span><span class="p">.</span><span class="nx">writeFile</span><span class="p">(</span><span class="s2">"./data/新文件.txt"</span><span class="p">,</span><span class="">&nbsp;</span><span class="s2">"内容内容"</span><span class="p">,</span><span class="">&nbsp;</span><span class="kd">function</span><span class="">&nbsp;</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="cm">/**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;如果这个error&nbsp;是null，表示写入成功了，
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*&nbsp;如果这个error是一个错误对象
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="k">if</span><span class="">&nbsp;</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"写入失败"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span><span class="">&nbsp;</span><span class="k">else</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"写入成功"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">}</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span><span class="p">)</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<h2>服务器</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div><div class="line-numbers"><div class="line-num" data-line-num="17"></div></div><div class="line-numbers"><div class="line-num" data-line-num="18"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">const</span><span class="">&nbsp;</span><span class="nx">http</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">require</span><span class="p">(</span><span class="s2">"http"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">const</span><span class="">&nbsp;</span><span class="nx">sever</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="">&nbsp;</span><span class="nx">res</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">=&gt;</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="cm">/**
+&nbsp;*&nbsp;服务器收到请求的处理函数
+&nbsp;*&nbsp;req:&nbsp;请求对象，获取客户的请求信息
+&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;比如请求路径&nbsp;这个是客户端浏览器上网址后面跟着的东西
+&nbsp;*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;"http://127.0.0.1:5568/a"&nbsp;,&nbsp;req.url&nbsp;就是&nbsp;"/a"
+&nbsp;*
+&nbsp;*&nbsp;res:&nbsp;响应对象，可以给客户响应信息
+&nbsp;*&nbsp;write可以响应多次，但是最后要用end结束响应，否则客户端会一直等待
+&nbsp;*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">sever</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"request"</span><span class="p">,</span><span class="">&nbsp;</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="">&nbsp;</span><span class="nx">res</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">=&gt;</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"收到客户的请求了"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">res</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s2">"hello"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span><span class="p">)</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="cm">/**
+&nbsp;*&nbsp;绑定端口号，启动服务器
+&nbsp;*&nbsp;如果这个端口号是80
+&nbsp;*&nbsp;那么&nbsp;http://127.0.0.1&nbsp;就可以直接访问
+&nbsp;*/</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">sever</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mf">5568</span><span class="p">,</span><span class="">&nbsp;</span><span class="p">(</span><span class="p">)</span><span class="">&nbsp;</span><span class="p">=&gt;</span><span class="">&nbsp;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"服务器开始运行了"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s2">"http://127.0.0.1:5568/&nbsp;进行访问"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span><span class="p">)</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<h2>硬件信息</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">let</span><span class="">&nbsp;</span><span class="nx">os</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">require</span><span class="p">(</span><span class="s1">'os'</span><span class="p">)</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<h2>模块化编程</h2>
+<p>node中，模块有三种</p>
+<ol>
+<li>
+<p>具名核心模块，例如 fs，http</p>
+</li>
+<li>
+<p>用户自己编写的文件模块</p>
+</li>
+</ol>
+<p>相对路径必须加 <code>./</code> ，如果去掉点杠，就把它当成核心模块了</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="">&nbsp;&nbsp;&nbsp;</span><span class="nx">require</span><span class="p">(</span><span class="s1">'./b.js'</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ol>
+<li></li>
+</ol>
+<h3>注意</h3>
+<ol>
+<li>node中没有全局作用域，只有模块作用域</li>
+</ol>
+<h3>加载和导出</h3>
+<p>require的第二个作用：拿到被加载文件模块导出的接口对象 exports</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="c1">//&nbsp;被加载文件&nbsp;b.js
+</span><span class="nx">exports</span><span class="p">.</span><span class="nx">foo</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="s2">"hello"</span><span class="p">;</span></div></div></li>
+</ol></div>
+
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class=""></span><span class="c1">//&nbsp;main
+</span><span class="kd">let</span><span class="">&nbsp;</span><span class="nx">ret</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">require</span><span class="p">(</span><span class="s1">'./b'</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"></div></div></li>
+</ol></div>
+
+<h2>ip和端口号</h2>
+<p>端口号范围是 <code>0 ~ 65535</code></p>
+<h2>解决编码问题</h2>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">var</span><span class="">&nbsp;</span><span class="nx">http</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">require</span><span class="p">(</span><span class="s1">'http'</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="kd">var</span><span class="">&nbsp;</span><span class="nx">server</span><span class="">&nbsp;</span><span class="o">=</span><span class="">&nbsp;</span><span class="nx">http</span><span class="p">.</span><span class="nx">createSever</span><span class="p">(</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="nx">sever</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">"request"</span><span class="p">,</span><span class="">&nbsp;</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span><span class="">&nbsp;</span><span class="nx">res</span><span class="p">)</span><span class="p">=&gt;</span><span class="p">{</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">res</span><span class="p">.</span><span class="nx">setHeader</span><span class="p">(</span><span class="s2">"Content-Type"</span><span class="p">,</span><span class="">&nbsp;</span><span class="s2">"text/plain;&nbsp;charset=utf-8"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s2">"你好世界"</span><span class="p">)</span><span class="p">;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="p">}</span><span class="p">)</span></div></div></li>
+</ol></div>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

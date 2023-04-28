@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  background-color: darkslategray;
+  overflow: hidden;
+}
+body #scoreN {
+  position: absolute;
+  font-size: 30px;
+  color: whitesmoke;
+}
+body .card {
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  font-size: 50px;
+  font-weight: bolder;
+  font-family: "Consolas", serif;
+  text-align: center;
+  background-color: lightgray;
+  outline: solid 1px;
+}
+/*# sourceMappingURL=index.css.map */

@@ -1,0 +1,516 @@
+
+                <html lang="zh-CN">
+                <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+                <title>Uniapp-组件</title>
+                    <link rel="stylesheet" href="../../css/night/mermaid.dark.css">
+                    <link rel="stylesheet" href="../../css/night/codeblock.dark.css">
+                    <link rel="stylesheet" href="../../css/night/sourcemode.dark.css">
+                    
+                    <link rel="stylesheet" href="../../css/mys.css">
+                    <link rel="stylesheet" href="../../css/myAdded.css">
+                    <link rel="stylesheet" href="../../cssMy/nav/nav-basic.css">
+                    <link rel="stylesheet" href="../../cssMy/footer/footer-basic.css">
+                <body>
+                <nav>
+                <div class="title">
+                    <h1>个人学习小站</h1>
+                    <p>岳同学的学习网站</p>
+                </div>
+                <ul>
+                    <li><a href="../../index.html">首页</a></li>
+                    <li><a href="../../history/historySingleLine.html">历史</a></li>
+                    <li><a href="../../htmlMy/howWork.html">关于</a></li>
+                    <li><a href="">友情连接</a></li>
+                </ul>
+            </nav>
+                <div class="canvasTmp">
+                    <canvas width="1920" height="1080"></canvas>
+                </div>
+                <button id="changeStyle">太黑了</button>
+                <main>
+                    <h1>Uniapp组件</h1>
+<hr />
+<h2>视图容器</h2>
+<ul>
+<li>view</li>
+</ul>
+<p>相当于div，但是包裹文字需要使用组件</p>
+<p>属性</p>
+<ul>
+<li>hover-class：按下时的样式</li>
+<li>hover-start-time：按住多久出现点击态</li>
+<li>
+<p>hover-stay-time：松开后点击态出现的时间</p>
+</li>
+<li>
+<p>scroll-view</p>
+</li>
+</ul>
+<p>用于区域滚动</p>
+<p>属性</p>
+<ul>
+<li>scroll-x、scroll-y：是否允许横向竖向滚动</li>
+<li>upper-threshold、lower-threshold：距离左上角、右下角多远的时候触发scrolltoupper 、scrolltolower 事件</li>
+<li>scroll-top、scroll-left：竖向、横向滚动条的位置</li>
+<li>show-scrollbar：是否出现滚动条</li>
+<li>refresher-enabled：开启自定义下拉菜单刷新</li>
+<li>refresher-background：下拉刷新的背景颜色</li>
+<li>
+<p>enable-flex：是否启用flex布局</p>
+</li>
+<li>
+<p>swiper</p>
+</li>
+</ul>
+<p>滑块视图容器，像轮播图，整个一个屏幕的切换</p>
+<p>属性</p>
+<ul>
+<li>indicator-dots：是否显示面板指示点</li>
+<li>indicator-color：指示点颜色</li>
+<li>indicator-active-color：当前选中的指示点颜色</li>
+<li>autoplay：是否自动切换</li>
+<li>current：当前所在滑块的 index</li>
+<li>interval：自动切换时间间隔</li>
+<li>circular：是否播放到末尾后重新回到开头</li>
+</ul>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">swiper</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"swiper"</span><span class="">&nbsp;</span><span class="na">:indicator-dots</span><span class="o">=</span><span class="s">"indicatorDots"</span><span class="">&nbsp;</span><span class="na">:autoplay</span><span class="o">=</span><span class="s">"autoplay"</span><span class="">&nbsp;</span><span class="na">:interval</span><span class="o">=</span><span class="s">"interval"</span><span class="">&nbsp;</span><span class="na">:duration</span><span class="o">=</span><span class="s">"duration"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">swiper-item</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">view</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"swiper-item&nbsp;uni-bg-red"</span><span class="p">&gt;</span><span class="">A</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">swiper-item</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">swiper-item</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">view</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"swiper-item&nbsp;uni-bg-green"</span><span class="p">&gt;</span><span class="">B</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">swiper-item</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">swiper-item</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">view</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"swiper-item&nbsp;uni-bg-blue"</span><span class="p">&gt;</span><span class="">C</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">swiper-item</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">swiper</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ul>
+<li>match-media</li>
+</ul>
+<p>类似媒体查询</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">match-media</span><span class="">&nbsp;</span><span class="na">:min-width</span><span class="o">=</span><span class="s">"375"</span><span class="">&nbsp;</span><span class="na">:max-width</span><span class="o">=</span><span class="s">"800"</span><span class="">&nbsp;</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">view</span><span class="p">&gt;</span><span class="">当页面最小宽度&nbsp;375px，&nbsp;页面宽度最大&nbsp;800px&nbsp;时显示</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">match-media</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">match-media</span><span class="">&nbsp;</span><span class="na">:min-height</span><span class="o">=</span><span class="s">"400"</span><span class="">&nbsp;</span><span class="na">:orientation</span><span class="o">=</span><span class="s">"landscape"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">view</span><span class="p">&gt;</span><span class="">当页面高度不小于&nbsp;400px&nbsp;且屏幕方向为纵向时展示这里</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">match-media</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ul>
+<li>movable-area、movable-view</li>
+</ul>
+<p>必须area是父，view是直接子节点</p>
+<ul>
+<li>cover-view</li>
+</ul>
+<p>覆盖在原生组件上的文本视图</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">video</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"video"</span><span class="">&nbsp;</span><span class="na">src</span><span class="o">=</span><span class="s">"……"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">cover-view</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"controls-title"</span><span class="p">&gt;</span><span class="">简单的自定义&nbsp;controls</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">cover-view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">cover-image</span><span class="">&nbsp;</span><span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">"play"</span><span class="">&nbsp;</span><span class="na">src</span><span class="o">=</span><span class="s">"……"</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">cover-image</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">cover-image</span><span class="">&nbsp;</span><span class="err">@</span><span class="na">click</span><span class="o">=</span><span class="s">"pause"</span><span class="">&nbsp;</span><span class="na">src</span><span class="o">=</span><span class="s">"……"</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">cover-image</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">video</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ul>
+<li>cover-image</li>
+</ul>
+<p>覆盖在原生组件上的图片视图，可覆盖的原生组件同<code>cover-view</code>，支持嵌套在<code>cover-view</code>里</p>
+<h2>基础内容</h2>
+<ul>
+<li>
+<p>icon 图标</p>
+</li>
+<li>
+<p>type：icon的类型</p>
+</li>
+<li>size：icon的大小，单位px</li>
+<li>color：icon的颜色，同css的color</li>
+</ul>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">icon</span><span class="">&nbsp;</span><span class="na">:type</span><span class="o">=</span><span class="s">"value"</span><span class="">&nbsp;</span><span class="na">size</span><span class="o">=</span><span class="s">"26"</span><span class="p">/</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ul>
+<li>
+<p>text 文本组件</p>
+</li>
+<li>
+<p>selectable、user-select：文本是否可选</p>
+</li>
+<li>space：显示连续空格<ul>
+<li>ensp：中文字符空格一半大小</li>
+<li>emsp：中文字符空格大小</li>
+<li>nbsp：根据字体设置的空格大小</li>
+</ul>
+</li>
+<li>decode：是否解码</li>
+</ul>
+<p>注意：</p>
+<ul>
+<li><code>&lt;text&gt;</code> 组件内只支持嵌套 <code>&lt;text&gt;</code></li>
+<li>app-nvue下，只有<code>&lt;text&gt;</code>才能包裹文本内容</li>
+<li>支持 <code>\n</code> 方式换行</li>
+</ul>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">text</span><span class="p">&gt;</span><span class="">{{text}}</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">text</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ul>
+<li>
+<p>rich-text 富文本</p>
+</li>
+<li>
+<p>nodes：节点列表 / HTML String</p>
+</li>
+<li>space：显示连续空格</li>
+<li>
+<p>selectable：富文本是否可以长按选中，可用于复制，粘贴等场景</p>
+</li>
+<li>
+<p>progress 进度条</p>
+</li>
+<li>
+<p>percent：百分比</p>
+</li>
+<li>show-info：是否在右侧显示百分比</li>
+<li>border-radius：圆角大小</li>
+<li>font-size：右侧百分比字体大小</li>
+<li>stroke-width：进度条线的宽度，单位px</li>
+<li>activeColor：已选择的进度条的颜色</li>
+<li>backgroundColor：未选择的进度条的颜色</li>
+<li>duration：进度增加1%所需毫秒数</li>
+<li>@activeend：动画完成事件</li>
+</ul>
+<h2>表单组件</h2>
+<ul>
+<li>
+<p>button 按钮</p>
+</li>
+<li>
+<p>size：按钮的大小</p>
+</li>
+<li>type：按钮的样式类型</li>
+<li>plain：是否镂空，背景色透明</li>
+<li>disabled：是否禁用</li>
+<li>form-type：用于 <code>&lt;form&gt;</code> 组件，点击分别会触发 <code>&lt;form&gt;</code> 组件的 submit/reset 事件</li>
+<li>
+<p>按下的样式变化，大部分和view相同</p>
+</li>
+<li>
+<p>checkbox-group、checkbox 多项选择器</p>
+</li>
+</ul>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">checkbox-group</span><span class="">&nbsp;</span><span class="err">@</span><span class="na">change</span><span class="o">=</span><span class="s">"checkboxChange"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">label</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"uni-list-cell&nbsp;uni-list-cell-pd"</span><span class="">&nbsp;</span><span class="na">v-for</span><span class="o">=</span><span class="s">"item&nbsp;in&nbsp;items"</span><span class="">&nbsp;</span><span class="na">:key</span><span class="o">=</span><span class="s">"item.value"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">checkbox</span><span class="">&nbsp;</span><span class="na">:value</span><span class="o">=</span><span class="s">"item.value"</span><span class="">&nbsp;</span><span class="na">:checked</span><span class="o">=</span><span class="s">"item.checked"</span><span class="">&nbsp;</span><span class="p">/</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">view</span><span class="p">&gt;</span><span class="">{{item.name}}</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">label</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">checkbox-group</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ul>
+<li>editor 富文本编辑器</li>
+</ul>
+<p>可以对图片、文字格式进行编辑和混排。</p>
+<ul>
+<li>form 表单</li>
+</ul>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div><div class="line-numbers"><div class="line-num" data-line-num="13"></div></div><div class="line-numbers"><div class="line-num" data-line-num="14"></div></div><div class="line-numbers"><div class="line-num" data-line-num="15"></div></div><div class="line-numbers"><div class="line-num" data-line-num="16"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">form</span><span class="">&nbsp;</span><span class="err">@</span><span class="na">submit</span><span class="o">=</span><span class="s">"formSubmit"</span><span class="">&nbsp;</span><span class="err">@</span><span class="na">reset</span><span class="o">=</span><span class="s">"formReset"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">view</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"uni-form-item&nbsp;uni-column"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">view</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"title"</span><span class="p">&gt;</span><span class="">radio</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">radio-group</span><span class="">&nbsp;</span><span class="na">name</span><span class="o">=</span><span class="s">"radio"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">radio</span><span class="">&nbsp;</span><span class="na">value</span><span class="o">=</span><span class="s">"radio1"</span><span class="">&nbsp;</span><span class="p">/</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="nt">text</span><span class="p">&gt;</span><span class="">选项一</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">text</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">label</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">label</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">radio</span><span class="">&nbsp;</span><span class="na">value</span><span class="o">=</span><span class="s">"radio2"</span><span class="">&nbsp;</span><span class="p">/</span><span class="p">&gt;</span><span class="p">&lt;</span><span class="nt">text</span><span class="p">&gt;</span><span class="">选项二</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">text</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">label</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">radio-group</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">form</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ul>
+<li>
+<p>input 输入框</p>
+</li>
+<li>
+<p>value：输入框的初始内容</p>
+</li>
+<li>type：input 的类型<ul>
+<li>text：文本输入键盘</li>
+<li>number：数字输入键盘</li>
+<li>idcard：身份证输入键盘</li>
+<li>digit：带小数点的数字键盘</li>
+</ul>
+</li>
+<li>password：是否是密码类型</li>
+<li>placeholder：输入框为空时占位符</li>
+<li>disabled：是否禁用</li>
+<li>maxlength：最大输入长度，-1不限制长度</li>
+<li>focus：获取焦点</li>
+<li>cursor：指定focus时的光标位置</li>
+<li>@input：当键盘输入时，触发input事件</li>
+<li>@focus：输入框聚焦时触发</li>
+<li>@blur：输入框失去焦点时触发</li>
+<li>@confirm：点击完成按钮时触发</li>
+<li>
+<p>@keyboardheightchange：键盘高度发生变化的时候触发此事件</p>
+</li>
+<li>
+<p>label 改进表单组件的可用性</p>
+</li>
+<li>
+<p>picker  从底部弹起的滚动选择器</p>
+</li>
+<li>
+<p>@change：value 改变时触发 change 事件</p>
+</li>
+<li>@columnchange：某一列的值改变时触发 columnchange 事件</li>
+<li>
+<p>@cancel：取消选择时触发</p>
+</li>
+<li>
+<p>picker-view  嵌入页面的滚动选择器</p>
+</li>
+</ul>
+<p>注意：其中只可放置 <code>&lt;picker-view-column/&gt;</code> 组件，其他节点不会显示</p>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div><div class="line-numbers"><div class="line-num" data-line-num="12"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">picker-view</span><span class="">&nbsp;</span><span class="na">v-if</span><span class="o">=</span><span class="s">"visible"</span><span class="">&nbsp;</span><span class="na">:indicator-style</span><span class="o">=</span><span class="s">"indicatorStyle"</span><span class="">&nbsp;</span><span class="na">:value</span><span class="o">=</span><span class="s">"value"</span><span class="">&nbsp;</span><span class="err">@</span><span class="na">change</span><span class="o">=</span><span class="s">"bindChange"</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"picker-view"</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">picker-view-column</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="p">&lt;</span><span class="nt">view</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"item"</span><span class="">&nbsp;</span><span class="na">v-for</span><span class="o">=</span><span class="s">"(item,index)&nbsp;in&nbsp;years"</span><span class="">&nbsp;</span><span class="na">:key</span><span class="o">=</span><span class="s">"index"</span><span class="p">&gt;</span><span class="">{{item}}年</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">picker-view-column</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">picker-view-column</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="p">&lt;</span><span class="nt">view</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"item"</span><span class="">&nbsp;</span><span class="na">v-for</span><span class="o">=</span><span class="s">"(item,index)&nbsp;in&nbsp;months"</span><span class="">&nbsp;</span><span class="na">:key</span><span class="o">=</span><span class="s">"index"</span><span class="p">&gt;</span><span class="">{{item}}月</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">picker-view-column</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">picker-view-column</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </span><span class="p">&lt;</span><span class="nt">view</span><span class="">&nbsp;</span><span class="na">class</span><span class="o">=</span><span class="s">"item"</span><span class="">&nbsp;</span><span class="na">v-for</span><span class="o">=</span><span class="s">"(item,index)&nbsp;in&nbsp;days"</span><span class="">&nbsp;</span><span class="na">:key</span><span class="o">=</span><span class="s">"index"</span><span class="p">&gt;</span><span class="">{{item}}日</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">picker-view-column</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="p">/</span><span class="nt">picker-view</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+
+<ul>
+<li>
+<p>radio-group、radio 单选</p>
+</li>
+<li>
+<p>value：<code>&lt;radio&gt;</code> 标识。当该 <code>&lt;radio&gt;</code> 选中时，<code>&lt;radio-group&gt;</code> 的 change 事件会携带 <code>&lt;radio&gt;</code> 的 value</p>
+</li>
+<li>checked：当前是否选中</li>
+<li>disabled：是否禁用</li>
+<li>
+<p>color：radio的颜色，同css的color</p>
+</li>
+<li>
+<p>slider  滑动选择器</p>
+</li>
+<li>
+<p>min、max：最小值最大值</p>
+</li>
+<li>step：步长，取值必须大于 0，并且可被(max - min)整除</li>
+<li>value：当前值</li>
+<li>activeColor：滑块左侧已选择部分的线条颜色</li>
+<li>backgroundColor：滑块右侧背景条的颜色</li>
+<li>block-size：滑块的大小，（12 - 28）</li>
+<li>block-color：滑块的颜色</li>
+<li>
+<p>show-value：是否显示当前 value</p>
+</li>
+<li>
+<p>switch  开关选择器</p>
+</li>
+<li>
+<p>checked：是否选中</p>
+</li>
+<li>disabled：是否禁用</li>
+<li>type：样式，有效值：switch, checkbox</li>
+<li>@change：checked 改变时触发 change 事件</li>
+<li>
+<p>color：switch 的颜色</p>
+</li>
+<li>
+<p>textarea  多行输入框</p>
+</li>
+<li>
+<p>value：输入框的内容</p>
+</li>
+<li>placeholder：输入框为空时占位符</li>
+<li>maxlength：最大输入长度，设置为 -1 的时候不限制最大长度</li>
+<li>focus：获取焦点</li>
+<li>auto-height：是否自动增高</li>
+</ul>
+<h2>跳转</h2>
+<ul>
+<li>navigator  类似 a标签</li>
+<li>custom-tab-bar  自定义tabBar组件</li>
+<li>direction：选项的排列方向</li>
+<li>show-icon：是否显示icon</li>
+<li>selected：选中的tabBar选项索引值</li>
+<li>onTabItemTap：点击事件，参数为Object</li>
+</ul>
+<h2>媒体组件</h2>
+<ul>
+<li>
+<p>audio 音频</p>
+</li>
+<li>
+<p>camera 相机</p>
+</li>
+<li>
+<p>image 图片</p>
+</li>
+<li>
+<p>src：图片资源地址</p>
+</li>
+<li>mode：图片裁剪、缩放的模式</li>
+<li>lazy-load：图片懒加载。</li>
+<li>fade-show：图片显示动画效果</li>
+</ul>
+<p>注意：</p>
+<ol>
+<li>
+<p><code>&lt;image&gt;</code> 组件默认宽度 300px、高度 225px；`app-nvue平台，暂时默认为屏幕宽度</p>
+</li>
+<li>
+<p><code>src</code> 仅支持相对路径、绝对路径，支持 base64 码；</p>
+</li>
+<li>
+<p>video  视频播放组件</p>
+</li>
+</ol>
+<h2>画布</h2>
+<ul>
+<li>canvas</li>
+<li>type：指定 canvas 类型</li>
+<li>canvas-id：canvas 组件的唯一标识符</li>
+<li>disable-scroll：当在 canvas 中移动时且有绑定手势事件时，禁止屏幕滚动以及下拉刷新</li>
+</ul>
+<h2>webview</h2>
+<ul>
+<li>web-view</li>
+</ul>
+<p>web 浏览器组件，可以用来承载网页的容器，会自动铺满整个页面（nvue 使用需要手动指定宽高）</p>
+<h2>导航类组件</h2>
+<ul>
+<li>navigation-bar  用于指定导航栏的一些属性</li>
+<li>title：导航条标题</li>
+<li>title-icon：标题图标</li>
+<li>title-icon-radius：标题图标圆角</li>
+<li>subtitle-text：副标题文字内容</li>
+<li>subtitle-size：副标题文字字体大小</li>
+<li>subtitle-color：副标题文字颜色</li>
+<li>subtitle-overflow：标题文字超出显示区域时处理方式</li>
+<li>title-align：对齐方式</li>
+<li>front-color：导航条前景颜色值</li>
+<li>background-color：导航条背景颜色值</li>
+<li>custom-tab-bar  自定义tabBar组件</li>
+<li>direction：选项的排列方向 可选值：horizontal，vertical</li>
+<li>show-icon：是否显示icon</li>
+<li>selected：选中的tabBar选项索引值</li>
+<li>onTabItemTap：点击事件，参数为Object<ul>
+<li>index：被点击tabItem的序号，从0开始</li>
+<li>pagePath：被点击tabItem的页面路径</li>
+<li>text：被点击tabItem的按钮文字</li>
+</ul>
+</li>
+</ul>
+<h2>页面属性配置节点</h2>
+<ul>
+<li>page-meta</li>
+</ul>
+<p><code>page-meta</code>对pages.json有一定替代作用，可以让页面的配置和页面内容代码写在一个vue文件中。</p>
+<p>注意：<code>page-meta</code>只能是页面内的第一个节点</p>
+<ul>
+<li>background-text-style：下拉背景字体</li>
+<li>background-color：窗口的背景色</li>
+<li>background-color-top：顶部窗口的背景色</li>
+<li>background-color-bottom：底部窗口的背景色</li>
+<li>scroll-top：滚动位置</li>
+<li>scroll-duration：滚动动画时长</li>
+</ul>
+<div class="code"><ol class="num-container"><div class="line-numbers"><div class="line-num" data-line-num="1"></div></div><div class="line-numbers"><div class="line-num" data-line-num="2"></div></div><div class="line-numbers"><div class="line-num" data-line-num="3"></div></div><div class="line-numbers"><div class="line-num" data-line-num="4"></div></div><div class="line-numbers"><div class="line-num" data-line-num="5"></div></div><div class="line-numbers"><div class="line-num" data-line-num="6"></div></div><div class="line-numbers"><div class="line-num" data-line-num="7"></div></div><div class="line-numbers"><div class="line-num" data-line-num="8"></div></div><div class="line-numbers"><div class="line-num" data-line-num="9"></div></div><div class="line-numbers"><div class="line-num" data-line-num="10"></div></div><div class="line-numbers"><div class="line-num" data-line-num="11"></div></div></ol><ol class="code-container"><li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">template</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&lt;</span><span class="nt">page-meta</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="na">:background-text-style</span><span class="o">=</span><span class="s">"bgTextStyle"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="na">:background-color</span><span class="o">=</span><span class="s">"bgColor"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="na">:background-color-top</span><span class="o">=</span><span class="s">"bgColorTop"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="na">:background-color-bottom</span><span class="o">=</span><span class="s">"bgColorBottom"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="na">:scroll-top</span><span class="o">=</span><span class="s">"scrollTop"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="na">page-style</span><span class="o">=</span><span class="s">"color:&nbsp;green"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="na">root-font-size</span><span class="o">=</span><span class="s">"16px"</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="p">&gt;</span></div></div></li>
+<li class="line"><div class="highlight-code"><div class="code-line"><span class="">&nbsp;&nbsp;</span></div></div></li>
+</ol></div>
+                </main>
+                <footer class="mainFooter">
+    <ul class="topUl">
+        <li><a href="../../index.html">首页</a></li>
+        <li><a href="#">其他作品</a></li>
+        <li><a href="../../htmlMy/howWork.html">网站说明</a></li>
+        <li><a href="#">回到顶部</a></li>
+    </ul>
+    <div class="mid">
+        <div class="left">
+            <h2>个人学习小站</h2>
+            <p>个人学习小站是岳同学做的一个包含很多很多学习笔记的宇宙风格的网站，所有人都可以看学习笔记，希望其他人能够少走弯路</p>
+        </div>
+        <div class="center">
+            <h2>岳同学</h2>
+            <table>
+                <tr>
+                    <td>bilibili</td>
+                    <td><img src="../../image/footerIcon/哔哩哔哩.png" alt=""></td>
+                    <td><a href="https://space.bilibili.com/480804525">阿-岳同学</a></td>
+                </tr>
+                <tr>
+                    <td>知乎</td>
+                    <td><img src="../../image/footerIcon/知乎.png" alt=""></td>
+                    <td><a href="https://www.zhihu.com/people/lan-xi-36-22">诗云</a></td>
+                </tr>
+                <tr>
+                    <td>简书</td>
+                    <td><img src="../../image/footerIcon/简书.jpg" alt=""></td>
+                    <td><a href="https://www.jianshu.com/u/b69af9df5272">littlefean</a></td>
+                </tr>
+                <tr>
+                    <td>CSDN</td>
+                    <td><img src="../../image/footerIcon/csdn.jpg" alt=""></td>
+                    <td><a href="https://blog.csdn.net/weixin_42318668">Littlefean</a></td>
+                </tr>
+            </table>
+        </div>
+        <div class="right">
+            <h2>友情链接</h2>
+            <ul>
+                
+            <li><a href="http://coder.cwp.cool/">蔡蔡的个人网站</a></li>
+            <li><a href="http://litchi.3vzhuji.net/">凉拌荔枝的个人网站</a></li>
+            <li><a href="http://oys68.cn">欧阳松的个人网站</a></li>
+            <li><a href="http://zjcdlp54.cn">吕怡婷的个人网站</a></li>
+            </ul>
+        </div>
+    </div>
+    <p class="sub">
+        若有内容侵权，可以联系QQ:2385190373 或者 2385190373@qq.com 我会进行删除处理&nbsp;
+        <a href="https://beian.miit.gov.cn" id="beiAnId">冀ICP备2022004336号</a>
+    </p>
+</footer>
+                </body>
+                </html>
+                <script src="../../js/util.js"></script>
+                <script src="../../js/startSky.js"></script>
+                <script src="../../js/mdPageUtil.js"></script>
+                

@@ -1,0 +1,370 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@font-face {
+  font-family: "words";
+  src: url("../fonts/造字工房言宋体.otf");
+}
+@keyframes flash {
+  0% {
+    filter: blur(10px);
+    transform: scale(0.5);
+    background-color: black;
+  }
+  50% {
+    filter: blur(10px);
+    transform: scale(0.6);
+    background-color: white;
+  }
+  100% {
+    filter: blur(10px);
+    transform: scale(0.5);
+    background-color: black;
+  }
+}
+body {
+  background: black;
+  transition: background-color 1s;
+  position: relative;
+  overflow: hidden;
+}
+body .lock {
+  width: 600px;
+  height: 300px;
+  z-index: 10000;
+  position: absolute;
+  left: 35px;
+  top: 33px;
+  transform-origin: left top;
+  transform: scale(0.5);
+  transition: all 1s;
+}
+body .lock .dig {
+  position: absolute;
+  width: 65px;
+  height: 119px;
+}
+body .lock .dig img.bar {
+  position: absolute;
+  width: 10px;
+  transition: all 1s;
+  box-shadow: rgba(0, 0, 0, 0.6) 2px 2px 3px;
+}
+body .lock .dig .b1 {
+  left: 27px;
+  top: -21px;
+  transform: rotate(90deg);
+}
+body .lock .dig .b2 {
+  left: 27px;
+  top: 33px;
+  transform: rotate(90deg);
+}
+body .lock .dig .b3 {
+  left: 27px;
+  top: 86px;
+  transform: rotate(90deg);
+}
+body .lock .dig .b4 {
+  left: 0;
+  top: 6px;
+}
+body .lock .dig .b5 {
+  top: 6px;
+  left: 54px;
+}
+body .lock .dig .b6 {
+  top: 60px;
+}
+body .lock .dig .b7 {
+  top: 60px;
+  left: 54px;
+}
+body .lock .dig .digBlock {
+  width: 15px;
+  height: 15px;
+  background-color: white;
+  box-shadow: 2px 2px 2px gray;
+  position: absolute;
+  left: 32.5px;
+  margin-left: -7.5px;
+  top: 59.5px;
+  margin-top: -7.5px;
+}
+body .lock .dig .blk1 {
+  transform: translateY(-20px);
+}
+body .lock .dig .blk2 {
+  transform: translateY(20px);
+}
+body .lock .dig1 {
+  left: 0px;
+}
+body .lock .dig2 {
+  left: 80px;
+}
+body .lock .dig3 {
+  left: 160px;
+}
+body .lock .dig4 {
+  left: 240px;
+}
+body .lock .dig5 {
+  left: 320px;
+}
+body .roundMask {
+  width: 1457px;
+  height: 792px;
+  margin: 0 auto;
+  position: absolute;
+  z-index: 9000;
+  left: 0;
+  opacity: 1;
+  transition: all 1s;
+}
+body .roundMask img {
+  width: 100%;
+  height: 100%;
+}
+body .touch {
+  position: absolute;
+  left: 0;
+  width: 80%;
+  height: 100vh;
+  z-index: 11000;
+}
+body .endTitle {
+  z-index: 6000;
+  font-family: "words", serif;
+  font-size: 100px;
+  text-align: center;
+  margin-top: 350px;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: all 1s;
+}
+body .doc {
+  position: absolute;
+  width: 0;
+  height: 0;
+  z-index: 9500;
+}
+body .doc .words {
+  position: absolute;
+  color: white;
+  width: 400px;
+  height: 200px;
+  font-size: 30px;
+  user-select: none;
+  font-family: "words", serif;
+  line-height: 2em;
+  left: 0;
+  top: 0;
+  transition: all 1.2s;
+}
+body .control {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 9500;
+  height: 100vh;
+  width: 300px;
+  transition: all 1s;
+  user-select: none;
+}
+body .control .led {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  top: 165px;
+  left: 121px;
+  z-index: 5000;
+  transition: all 0.5s;
+}
+body .control .opening {
+  background-color: deepskyblue;
+  box-shadow: deepskyblue 0 0 20px, deepskyblue 0 0 5px;
+}
+body .control .shutDown {
+  background-color: #333;
+}
+body .control img {
+  position: absolute;
+}
+body .control img.night {
+  left: 98px;
+  top: 239px;
+}
+body .control .pbOn {
+  left: 41px;
+  top: 140px;
+  background-color: deepskyblue;
+}
+body .control .pbOff {
+  top: 140px;
+  left: 151px;
+}
+body .control .pb1 {
+  left: 41px;
+  top: 332px;
+}
+body .control .pb2 {
+  left: 151px;
+  top: 332px;
+}
+body .control .pb3 {
+  left: 41px;
+  top: 437px;
+}
+body .control .pb4 {
+  left: 151px;
+  top: 437px;
+}
+body .control .lightBtn {
+  position: absolute;
+  border-width: 4px;
+  border-color: black;
+  border-style: solid;
+  z-index: 2000;
+  padding: 10px;
+  box-shadow: 3px 3px 10px #232323, 0 0 5px #222 inset;
+  transition: all 0.1s;
+  filter: brightness(75%);
+  padding: 5px;
+  width: 200px;
+  height: 60px;
+  left: 31px;
+  top: 559px;
+  border-radius: 1000px;
+  font-size: 40px;
+  color: white;
+  line-height: 60px;
+}
+body .control .lightBtn:hover {
+  cursor: pointer;
+  filter: brightness(100%);
+  box-shadow: 3px 3px 10px black, 0 0 5px black inset;
+}
+body .control .lightBtn:active {
+  filter: brightness(90%);
+  transform: scale(0.9);
+  box-shadow: 0 0 10px #333 inset;
+}
+body .control .lightBtn img {
+  width: 40px;
+  height: 40px;
+  position: static;
+  float: left;
+}
+body .control .lightBtn .sub {
+  float: left;
+}
+body .control .lightBtn .lightLogo {
+  position: absolute;
+  left: 75px;
+  top: 6px;
+}
+body .control .lightBtn .plus {
+  float: right;
+}
+body .control img.pannelBtn {
+  width: 60px;
+  border-radius: 50%;
+  border-width: 4px;
+  border-color: black;
+  border-style: solid;
+  z-index: 2000;
+  padding: 10px;
+  box-shadow: 3px 3px 10px #232323, 0 0 5px #222 inset;
+  transition: all 0.1s;
+  filter: brightness(75%);
+}
+body .control img.pannelBtn:hover {
+  cursor: pointer;
+  filter: brightness(100%);
+  box-shadow: 3px 3px 10px black, 0 0 5px black inset;
+}
+body .control img.pannelBtn:active {
+  filter: brightness(90%);
+  transform: scale(0.9);
+  box-shadow: 0 0 10px #333 inset;
+}
+body .control .mainPannel {
+  right: 20px;
+  bottom: 0;
+}
+body .btn {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  left: 190px;
+  top: 262px;
+  border-radius: 50%;
+  z-index: 10000;
+  opacity: 1;
+  filter: blur(10px);
+  background-color: yellow;
+  transition: all 0.5s;
+  animation-name: flash;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+body main {
+  width: 1457px;
+  margin: 0 auto;
+  height: 792px;
+  position: relative;
+  overflow: hidden;
+}
+body main .mask {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  z-index: 1000;
+  box-shadow: 0 0 0 1000px rgba(0, 0, 0, 0.92);
+  filter: blur(50px);
+  transition: all 0.8s;
+}
+body main .bg {
+  transition: all 1s;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+}
+body main .bg10 {
+  left: 728.5px;
+  top: 396px;
+  margin-left: -529.5px;
+  margin-top: -375px;
+}
+body main .maskBg {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  filter: blur(30px);
+}
+body main .light {
+  transition: all 0.5s;
+  animation-name: fadeIn;
+  animation-duration: 1s;
+  transform: scale(0.4);
+}
+body main img {
+  position: absolute;
+}
+/*# sourceMappingURL=main_4.css.map */

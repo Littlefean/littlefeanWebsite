@@ -1,0 +1,234 @@
+@font-face {
+  font-family: "lovely";
+  src: url("../font/comicbd.ttf");
+}
+@font-face {
+  font-family: "han";
+  src: url("../font/方正粗黑宋简体.ttf");
+}
+html {
+  font-size: 10px;
+}
+body {
+  background-color: white;
+}
+.main-content {
+  overflow: hidden;
+}
+.main-content > .left {
+  position: relative;
+  width: 75%;
+  padding-top: 2rem;
+  float: left;
+  overflow: hidden;
+}
+.main-content > .left main {
+  width: 84%;
+  float: right;
+  overflow: hidden;
+}
+.main-content > .left main h1,
+.main-content > .left main h4,
+.main-content > .left main h6 {
+  font-family: 'han';
+  font-weight: 400;
+  color: #3c2601;
+}
+.main-content > .left main .title {
+  text-align: center;
+  font-size: 4rem;
+  letter-spacing: 0.2em;
+  line-height: 2em;
+  margin-bottom: -4rem;
+}
+.main-content > .left main .box {
+  width: 80%;
+  padding: 2rem 3rem 2rem 3rem;
+  margin: 0 auto;
+  margin-top: 8rem;
+  margin-bottom: 4rem;
+  background-color: #fdf6ed;
+  box-shadow: rgba(60, 38, 1, 0.2) 5px 5px 15px;
+  transition: all 0.5s;
+}
+.main-content > .left main .box:hover {
+  transform: scale(1.01);
+  box-shadow: rgba(60, 38, 1, 0.2) 1rem 1rem 3rem;
+}
+.main-content > .left main .box .client-title {
+  width: 25rem;
+  height: 8rem;
+  position: relative;
+  top: -6rem;
+  z-index: 20;
+}
+.main-content > .left main .box .client-title img {
+  width: 6rem;
+  height: 6rem;
+  border-radius: 10rem;
+  padding: 8px;
+  border-color: #3c2601;
+  box-shadow: 2px 5px 5px #b76a55;
+  background-color: #fff;
+  float: left;
+}
+.main-content > .left main .box .client-title h4 {
+  line-height: 8rem;
+  display: block;
+  font-size: 2.5rem;
+  text-indent: 0.5em;
+}
+.main-content > .left main .box .content {
+  margin-top: -4rem;
+  padding-bottom: 2em;
+}
+.main-content > .left main .box .content h4 {
+  font-size: 2rem;
+  line-height: 4.5rem;
+}
+.main-content > .left main .box .content p {
+  line-height: 2em;
+  padding-left: 4rem;
+  text-indent: 2em;
+  font-size: 1.5em;
+}
+.main-content > .left main .box .content h6 {
+  width: 18rem;
+  text-align: right;
+  padding-right: 2rem;
+  font-size: 1.8rem;
+  float: right;
+  transition: all 0.2s;
+}
+.main-content > .left main .box .content h6:hover {
+  padding-right: 2.5rem;
+  cursor: pointer;
+  color: black;
+}
+.main-content > .right {
+  width: 25%;
+  padding-top: 2rem;
+  float: left;
+  overflow: hidden;
+}
+.main-content > .right .user {
+  width: 30rem;
+  height: 43rem;
+  margin-top: 5rem;
+  position: fixed;
+  box-shadow: rgba(60, 38, 1, 0.2) 5px 5px 15px;
+  background-color: #fdf6ed;
+}
+.main-content > .right .user h2,
+.main-content > .right .user p,
+.main-content > .right .user span {
+  text-align: center;
+}
+.main-content > .right .user p {
+  font-size: 1.6rem;
+}
+.main-content > .right .user .head {
+  width: 20rem;
+  height: 15rem;
+  margin: 0 auto;
+  margin-top: -5rem;
+}
+.main-content > .right .user .head img {
+  display: block;
+  width: 8rem;
+  height: 8rem;
+  border-radius: 10rem;
+  margin: 0 auto;
+  padding: 1rem;
+  background-color: #fff;
+  box-shadow: rgba(226, 54, 41, 0.5) 2px 5px 5px;
+}
+.main-content > .right .user .head h2 {
+  font-size: 2rem;
+  padding-top: 1rem;
+  font-family: 'han';
+  font-weight: 300;
+}
+.main-content > .right .user .top {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+.main-content > .right .user .top .bar {
+  height: 1rem;
+  background-color: whitesmoke;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10rem;
+  box-shadow: rgba(60, 38, 1, 0.2) 2px 2px 2px;
+  overflow: hidden;
+}
+.main-content > .right .user .top .bar .inner {
+  width: 35%;
+  height: 100%;
+  background-image: linear-gradient(270deg, rgba(226, 54, 41, 0.5), #aa4a30);
+  box-shadow: rgba(226, 54, 41, 0.5) 2rem 0rem 2rem;
+}
+.main-content > .right .user .middle {
+  height: 10rem;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.main-content > .right .user .middle .m-box {
+  height: 100%;
+  width: 30%;
+  float: left;
+  margin-left: 11px;
+  box-shadow: rgba(60, 38, 1, 0.2) 2px 2px 5px;
+  background-color: white;
+}
+.main-content > .right .user .middle .m-box p {
+  line-height: 3rem;
+}
+.main-content > .right .user .middle .m-box span {
+  display: block;
+  margin: 0 auto;
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+.main-content > .right .user .middle .m-box img {
+  display: block;
+  margin: 0 auto;
+  width: 3rem;
+  height: 3rem;
+}
+.main-content > .right .user .middle .m-box:nth-child(1) {
+  margin-left: 0px;
+}
+.main-content > .right .user .item {
+  line-height: 3rem;
+  text-align: center;
+  transition: all 0.2s;
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+.main-content > .right .user .item:hover {
+  transform: scale(1.1);
+  background-color: #b76a55;
+}
+.main-content > .right .user button {
+  width: 10rem;
+  height: 4rem;
+  display: block;
+  margin: 0 auto;
+  margin-top: 1rem;
+  outline: 0;
+  border: 0;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  font-size: 15px;
+  background-color: #fff;
+}
+.main-content > .right .user button:hover {
+  background-color: darkred;
+  color: white;
+  box-shadow: #3c2601 0rem 0rem 5px;
+}
+.main-content > .right .user button:active {
+  transform: scale(0.8);
+}

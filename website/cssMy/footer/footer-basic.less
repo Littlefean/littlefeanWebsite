@@ -1,0 +1,146 @@
+@keyframes flash {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+footer.mainFooter {
+  //height: 300px;
+  padding-top: 20px;
+  padding-bottom: 50px;
+  background-color: rgba(255, 255, 255, 0.2);
+
+  ul.topUl {
+    //outline: solid 1px;
+    height: 30px;
+    width: 60%;
+    margin: 0 auto;
+
+    li {
+      float: left;
+      //margin-left: 30px;
+      margin-right: 60px;
+      height: 30px;
+      list-style-type: none;
+
+      a {
+        height: 30px;
+        line-height: 30px;
+        text-decoration: none;
+        border-left-width: 5px;
+        padding-left: 20px;
+        border-left: solid whitesmoke;
+
+        transition: all 0.2s;
+
+        &:hover {
+          color: yellow;
+        }
+      }
+    }
+  }
+
+
+  .mid {
+    position: relative;
+    //height: 200px;
+    overflow: hidden;
+    width: 60%;
+    margin: 20px auto;
+    //background-color: pink;
+    //outline: solid 1px green;
+
+    .left, .center, .right {
+      width: 33.333%;
+      float: left;
+      padding-right: 30px;
+
+      h2 {
+        line-height: 3em;
+      }
+    }
+
+    .left {
+      p {
+        line-height: 2em;
+      }
+    }
+
+    .center {
+      table {
+        //border: solid 1px whitesmoke;
+
+        tr {
+          min-height: 60px;
+          transition: all 0.5s;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+
+            img {
+              transform: rotate(15deg);
+            }
+
+            td:nth-child(3) {
+              color: yellow;
+              animation-play-state: running;
+            }
+          }
+
+          td {
+
+            min-width: 30px;
+            padding: 5px 5px 5px 0;
+
+            img {
+              width: 30px;
+              height: 30px;
+              border-radius: 20%;
+              transition: all 0.5s;
+            }
+
+          }
+
+          td:nth-child(3) {
+            animation-name: flash;
+            animation-duration: 0.2s;
+            animation-play-state: paused;
+            animation-iteration-count: infinite;
+          }
+        }
+
+      }
+    }
+
+    .right {
+      ul {
+        display: block;
+
+        li {
+          float: none;
+          line-height: 2em;
+
+          &:hover {
+            color: lime;
+          }
+
+          a {
+            width: auto;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+
+
+  .sub {
+    text-align: center;
+  }
+}

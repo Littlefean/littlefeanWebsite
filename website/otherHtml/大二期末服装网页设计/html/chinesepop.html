@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>期末作业之服装网页设计</title>
+	<link rel="stylesheet" href="../css/nav.css">
+	<link rel="stylesheet" href="../css/footer.css">
+	<link rel="stylesheet" href="../css/chinesepop.css">
+	<link rel="stylesheet" href="../css/util.css">
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+		}
+
+		em {
+			font-style: normal;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="nav">
+		<h1 class="logo">期末作业之服装网页设计</h1>
+		<a href="../index.html">首页</a>
+		<a href="../index.html#styles">服装系列</a>
+		<a href="../html/introduce.html">品牌介绍</a>
+		<a href="../html/comment.html">论坛</a>
+	</div>
+	<div class="top-line">
+		<h1>国潮系列</h1>
+		<div class="box b1">
+			<img src="../imgs/chinesepop/图层 21.png" alt="">
+			<h1>渐变潮牌外套</h1>
+			<em>235￥</em>
+		</div>
+		<div class="box b2">
+			<img src="../imgs/chinesepop/图层 22.png" alt="">
+			<h1>渐变花卉卫衣</h1>
+			<em>288￥</em>
+		</div>
+		<div class="box b3">
+			<img src="../imgs/chinesepop/图片.png" alt="">
+			<h1>潮牌涂鸦卫衣</h1>
+			<em>228￥</em>
+		</div>
+	</div>
+	<div class="hr"></div>
+	<div class="line">
+		<img src="../imgs/chinesepop/图层 25.png" alt="">
+		<div class="site">
+			<div class="content">
+				<img src="../imgs/chinesepop/细节图.png" alt="">
+				<h1>高街潮牌涂鸦外套</h1>
+				<button class="buy">立即抢购</button>
+			</div>
+		</div>
+	</div>
+	<div class="line reverse">
+		<img src="../imgs/chinesepop/图层 23.png" alt="">
+		<div class="site">
+			<div class="content">
+				<img src="../imgs/chinesepop/图层 24.png" alt="">
+				<h1>高街潮牌涂鸦外套</h1>
+				<button class="buy">立即抢购</button>
+			</div>
+		</div>
+	</div>
+	<div class="line">
+		<img src="../imgs/chinesepop/大图.png" alt="">
+		<div class="site">
+			<div class="content">
+				<img src="../imgs/chinesepop/细节图2.png" alt="">
+				<h1>高街潮牌涂鸦外套</h1>
+				<button class="buy">立即抢购</button>
+			</div>
+		</div>
+	</div>
+	<div class="bottom-line">
+		<div class="background">
+			<h1>潮人馆</h1>
+			<img src="../imgs/chinesepop/大图1.png" alt="" class="big">
+			<img src="../imgs/chinesepop/小图2.png" alt="" class="small">
+		</div>
+	</div>
+	<div class="footer">
+		<h1 class="twoColorFont">JOIN US</h1>
+		<hr>
+		<div class="main">
+			<div class="items">
+				<div class="item" onclick="go('../html/introduce.html')">
+					<img src="../imgs/icon/li.png" alt="">
+					<span class="twoColorFont">小店简介</span>
+				</div>
+				<div class="item" onclick="go('../html/ys.html')">
+					<img src="../imgs/icon/li.png" alt="">
+					<span class="twoColorFont">隐私权声明</span>
+				</div>
+				<div class="item" onclick="go('../html/comment.html')">
+					<img src="../imgs/icon/li.png" alt="">
+					<span class="twoColorFont">粉丝论坛</span>
+				</div>
+			</div>
+			<p>这只是前端一个期末作业写的一个网页啊，和商业完全没有关系，内容纯属虚构，请勿当真！这是一个网页作业仅供展示！
+				<br>
+				期末作业之服装网页设计，内容为虚构内容，请勿当真对待！这是一个网页作业仅供展示！
+			</p>
+		</div>
+	</div>
+	<script src="../js/util.js"></script>
+	<script>
+		// 给所有有 twoColorFonts 类名的文字元素设置成奇数个字改变颜色的样式
+		var twoColorFonts = document.getElementsByClassName("twoColorFont");
+		for (let elem of twoColorFonts) {
+			changeColor(elem, "#e89f71");
+		}
+	</script>
+</body>
+
+</html>
