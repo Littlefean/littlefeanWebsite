@@ -21,7 +21,7 @@ def main():
 
 def start():
     my_ftp = MyFTP("012.3vftp.cn")
-    my_ftp.login("littlefean", "134514web")
+    my_ftp.login("littlefean", input("请输入ftp服务器的密码"))
 
     my_ftp.clearTree()
 
